@@ -56,23 +56,10 @@ public class CG_3Ball extends SequentialCommandGroup {
                   // Trying to pass a translationXSupploier, translationYSupplier, and rotationalSupplier
                   () -> {return 0.7;}, //Forwards speed
                   () -> {return 0.0;}, //Left speed
-                  () -> {return 0.0;}), //Turn speed
-                  new LauncherSpeed(launcher, 0.32, 0.32).withTimeout(0.75), // +0.02
-                  new SequentialCommandGroup(
-                  // Maintain Launcher speed
-                    new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.50).alongWith( 
-                    // Index the ball #1 into the running Launcher
-                      new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)), 
-                        new ParallelDeadlineGroup(
-                          new WaitCommand(4),
-                          // Maintain Launcher speed
-                          new LauncherSpeed(launcher, 0.36, 0.42),
-                          // Intake ball #2 if needed
-                          new IntakeSpeed(intakeMotor, 0.5),
-                          // Index ball #2 into already running Launcher
-                          new IndexSpeed(indexMotors, 0.5)
+                  () -> {return 0.0;}) //Turn speed
+            
             
                 ) // end of ParallelDeadlineGroup
-      ))))); //end of addCommands
+      ))); //end of addCommands
   }
 }

@@ -30,7 +30,7 @@ public class CG_DEV extends SequentialCommandGroup {
 
     addCommands(
       // Launches the preloaded ball
-      new CG_1BallLaunch(indexMotors, intakeMotor, launcher) //,
+      // new CG_1BallLaunch(indexMotors, intakeMotor, launcher) //,
       // new CG_1Ball        
     ); //end of addCommands
   }

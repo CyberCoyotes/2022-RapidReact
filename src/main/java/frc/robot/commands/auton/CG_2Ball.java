@@ -56,7 +56,9 @@ public class CG_2Ball extends SequentialCommandGroup {
                   // Trying to pass a translationXSupploier, translationYSupplier, and rotationalSupplier
                   () -> {return 0.7;}, //Forwards speed
                   () -> {return 0.0;}, //Left speed
-                  () -> {return 0.0;}), //Turn speed
+                  () -> {return 0.0;}) //Turn speed
+
+                  /** 
                   new LauncherSpeed(launcher, 0.32, 0.32).withTimeout(0.75), // +0.02
                   new SequentialCommandGroup(
                   // Maintain Launcher speed
@@ -71,8 +73,9 @@ public class CG_2Ball extends SequentialCommandGroup {
                           new IntakeSpeed(intakeMotor, 0.5),
                           // Index ball #2 into already running Launcher
                           new IndexSpeed(indexMotors, 0.5)
+                          */
             
                 ) // end of ParallelDeadlineGroup
-      ))))); //end of addCommands
+      ))); //end of addCommands
   }
 }

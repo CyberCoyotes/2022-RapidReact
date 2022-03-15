@@ -35,7 +35,6 @@ import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.Lift.LockLiftCommandBar1;
 import frc.robot.commands.Lift.LockLiftCommandBar2;
 // import frc.robot.commands.PathPlannerBased.CG_2BalDrivePlus;
-import frc.robot.commands.PathPlannerBased.CG_2BallDrive;
 import frc.robot.commands.auton.CG_1BallLaunch;
 // import frc.robot.commands.PathPlannerBased.Drive2m;
 // import frc.robot.commands.PathPlannerBased.DriveV;
@@ -43,7 +42,7 @@ import frc.robot.commands.auton.CG_1BallLaunch;
 import frc.robot.commands.auton.CG_1BallPLUS;
 import frc.robot.commands.auton.CG_2Ball;
 import frc.robot.commands.auton.CG_3Ball;
-import frc.robot.commands.auton.CG_DEV;
+// import frc.robot.commands.auton.CG_DEV;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -118,8 +117,8 @@ public class RobotContainer {
     autonChooser.addOption("3 Ball DEV",
       new CG_3Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.addOption("DEV TESTING",
-      new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
+    // autonChooser.addOption("DEV TESTING",
+    //  new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
