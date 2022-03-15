@@ -8,6 +8,7 @@
 
 package frc.robot.commands.auton;
 
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
@@ -23,14 +24,18 @@ import frc.robot.subsystems.Launcher;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class CG_1BallDriveStraight_dev extends SequentialCommandGroup {
-  public CG_1BallDriveStraight_dev(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class CG_1BallDriveStraight_dev_2 extends SequentialCommandGroup {
+  public CG_1BallDriveStraight_dev_2(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      
       // Start the Launcher - speedFront is first double, speedBack is second
       new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.75),
+      
       new SequentialCommandGroup(
+      /** Hoping to remove the above command at some point by switching to velocity based launcher rather than PercentOutput
+       * Logic would be something like; when Launcher velocity >= (mininum) then run IndexMotors
+       * Super fancy? add a PID? to maintain that launcher velocity while then intake and/or indexing the second ball
+       */
       // Maintain Launcher speed
         new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.25).alongWith( 
         // Index the first ball into the running Launcher
@@ -52,11 +57,12 @@ public class CG_1BallDriveStraight_dev extends SequentialCommandGroup {
               new IntakeSpeed(intakeMotor, 0.5),
               // Index ball #2 into already running Launcher
               new IndexSpeed(indexMotors, 0.5)
-                ) // end of ParallelDeadlineGroup
-              // TODO Get robot to turn approximately the correct number of degrees for an easier gyro reset
-              
-              // TODO Add gyroreset for assisting the driver going into teleop
+              ) // end of ParallelDeadlineGroup
 
-      )); //end of addCommands
+              // TODO See ISSUE #87. Get robot to turn approximately the correct number of degrees. 
+
+              // Add gyroreset for assisting the driver going into teleop
+              
+              )); //end of addCommands
   }
 }
