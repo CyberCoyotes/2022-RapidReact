@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
 public class xmode extends CommandBase {
-    boolean isFin = false;
+  
     Drivetrain driveTrain;
     public xmode(Drivetrain subsystem) {
         this.driveTrain = subsystem;
@@ -30,7 +30,7 @@ public class xmode extends CommandBase {
 
     @Override
     public boolean isFinished() {
-        return isFin;
+      return false;
     }
     
     
