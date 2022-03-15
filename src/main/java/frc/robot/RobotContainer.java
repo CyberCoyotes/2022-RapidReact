@@ -113,7 +113,7 @@ public class RobotContainer {
       new CG_2BallDrive(m_drivetrain, indexMotors, intakeMotor, launcher));
 
       autonChooser.addOption("DEV Index",
-      new IndexTEST(indexMotors));
+      new IndexTEST(indexMotors, intakeMotor));
     
     // autonChooser.addOption("2 Ball Launch, Pickup 1",
       // new CG_2BalDrivePlus(m_drivetrain, indexMotors, intakeMotor, launcher));

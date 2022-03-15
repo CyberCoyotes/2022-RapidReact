@@ -38,6 +38,7 @@ public class Index extends SubsystemBase {
 
   //Sets the Speed of Index Motor
   // 
+  
   double indexVelocity = 3500;
   public void setIndexSpeed() {
     backIndexMotor.set(TalonFXControlMode.Velocity, indexVelocity);

@@ -25,9 +25,11 @@ import frc.robot.subsystems.Launcher;
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class IndexTEST extends SequentialCommandGroup {
   /** Creates a new Drive2Seconds. */
-  public IndexTEST(Index indexMotors) {
+  public IndexTEST(Index indexMotors, Intake intakeMotor) {
 
     addCommands(
-          new IndexSpeed(indexMotors, 1)); //end of addCommands
-  }
+          new IntakeSpeed(intakeMotor, 1.0).withTimeout(1),
+          new IndexSpeed(indexMotors, 1.0).withTimeout(1));
+
+}
 }
