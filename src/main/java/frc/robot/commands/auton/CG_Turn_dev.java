@@ -59,13 +59,11 @@ public class CG_Turn_dev extends SequentialCommandGroup {
               new IntakeSpeed(intakeMotor, 0.5),
               // Index ball #2 into already running Launcher
               new IndexSpeed(indexMotors, 0.5)
-              ) //end of addCommands
+              ) // end of ParallelDeadlineGroup
               // TODO See ISSUE #87. Get robot to turn approximately the correct number of degrees. 
               
               // Add gyroreset for assisting the driver going into teleop
-               
-              )); // end of ParallelDeadlineGroup
-
-  //code is doing something, specifically the ))); part just above
+              
+              )); //end of addCommands
   }
 }
