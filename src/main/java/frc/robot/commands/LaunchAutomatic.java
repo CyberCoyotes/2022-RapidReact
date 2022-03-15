@@ -28,10 +28,14 @@ public class LaunchAutomatic extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double yAngle = limelight.getY();
-    double speedFront = Interpolator.getFrontSpeed(yAngle);
-    double speedBack = Interpolator.getBackSpeed(yAngle);
-    subsystem.setLauncherSpeed(speedFront, speedBack);
+    if(limelight.hasValidTarget()) {
+      double yAngle = limelight.getY();
+      double speedFront = Interpolator.getFrontSpeed(yAngle);
+      double speedBack = Interpolator.getBackSpeed(yAngle);
+      subsystem.setLauncherSpeed(speedFront, speedBack);
+    } else {
+      subsystem.setLauncherSpeed(0.35, 0.40);
+    }
   }
 
   // Called once the command ends or is interrupted.
