@@ -23,8 +23,6 @@ import frc.robot.commands.PathPlannerBased.DriveV;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
-import com.kauailabs.navx.frc.AHRS;
-
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
@@ -62,7 +60,6 @@ public class CG_Turn_dev extends SequentialCommandGroup {
               // Index ball #2 into already running Launcher
               new IndexSpeed(indexMotors, 0.5)
               ) // end of ParallelDeadlineGroup
-
               // TODO See ISSUE #87. Get robot to turn approximately the correct number of degrees. 
               
               // Add gyroreset for assisting the driver going into teleop
