@@ -23,15 +23,10 @@ import frc.robot.commands.PathPlannerBased.DriveV;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
-import com.kauailabs.navx.frc.AHRS;
-import edu.wpi.first.wpilibj.SPI;
-
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class CG_Turn_dev extends SequentialCommandGroup {
-private final AHRS m_navx = new AHRS(SPI.Port.kMXP, (byte) 200);
-
   public CG_Turn_dev(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
@@ -64,13 +59,12 @@ private final AHRS m_navx = new AHRS(SPI.Port.kMXP, (byte) 200);
               new IntakeSpeed(intakeMotor, 0.5),
               // Index ball #2 into already running Launcher
               new IndexSpeed(indexMotors, 0.5)
-              ))); //end of addCommands
+              ) //end of addCommands
               // TODO See ISSUE #87. Get robot to turn approximately the correct number of degrees. 
               
               // Add gyroreset for assisting the driver going into teleop
-              m_navx.zeroYaw();
                
-               // end of ParallelDeadlineGroup
+              )); // end of ParallelDeadlineGroup
 
   //code is doing something, specifically the ))); part just above
   }
