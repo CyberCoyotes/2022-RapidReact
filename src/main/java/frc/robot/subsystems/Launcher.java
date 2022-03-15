@@ -67,7 +67,7 @@ public class Launcher extends SubsystemBase {
   public double getIntakeSpeed() {
     return backLauncherMotor.getMotorOutputPercent(); // add another for Top if desired
   }
-
+  
   @Override
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation

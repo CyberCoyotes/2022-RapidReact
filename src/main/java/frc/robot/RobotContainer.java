@@ -34,11 +34,7 @@ import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.Lift.LockLiftCommandBar1;
 import frc.robot.commands.Lift.LockLiftCommandBar2;
-// import frc.robot.commands.PathPlannerBased.CG_2BalDrivePlus;
-import frc.robot.commands.auton.CG_1BallLaunch;
-// import frc.robot.commands.PathPlannerBased.Drive2m;
-// import frc.robot.commands.PathPlannerBased.DriveV;
-// import frc.robot.commands.auton.CG_1BallDriveNone;
+import frc.robot.commands.auton.CG_1Ball;
 import frc.robot.commands.auton.CG_1BallPLUS;
 import frc.robot.commands.auton.CG_2Ball;
 import frc.robot.commands.auton.CG_3Ball;
@@ -106,7 +102,7 @@ public class RobotContainer {
 
     // Launches high goal inside tarmac, drives out with launch sequence operating
     autonChooser.setDefaultOption("1 Ball + Stay",
-      new CG_1BallLaunch(indexMotors, intakeMotor, launcher));
+      new CG_1Ball(indexMotors, intakeMotor, launcher));
 
     autonChooser.setDefaultOption("1 Ball + Pickup",
       new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));

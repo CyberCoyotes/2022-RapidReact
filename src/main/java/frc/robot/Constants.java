@@ -81,12 +81,13 @@ public final class Constants {
       // Sets the bottom launcher motor ID value
       public static final int BACK_LAUNCHER_MOTOR = 9; 
       // Sets the top launcher motor ID value
-      public static final int FRONT_LAUNCHER_MOTOR = 10; 
+      public static final int FRONT_LAUNCHER_MOTOR = 10;
+      
     }
 
     // Intake motors
     public static final int INTAKE_MOTOR = 11; // Sets the Intake Motor ID value
-
+    
     // Index motors
     public static final int FRONT_INDEX_MOTOR = 13; // Grouped with the mid motor
     public static final int BACK_INDEX_MOTOR = 14; // Group with the high motor
