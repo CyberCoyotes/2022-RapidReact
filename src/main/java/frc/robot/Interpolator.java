@@ -15,10 +15,6 @@ public class Interpolator {
     // FIXME Find these values from Limelight
     private static double angles[] = {20.00, 18.00, 11.75, 3.75};
     
-    //This is an ordered list of "speed" outputs (this example is for a PID loop being fed raw encoder values)
-    // FIXME Find through trial and error
-    private static double speeds[] = {0.30, 0.35, 0.40, 0.45};
-    
     // The front and back launch motors need to have different speeds,
     // so that's why there is a front and back speed
     // Speed of the front launcher motor
@@ -34,7 +30,7 @@ public class Interpolator {
      * @param Distance measurement in "distance" units
      * @returns Speed in "speed" units
      */
-    public static double getInterpolation(double angle) {
+    private static double getInterpolation(double[] speeds, double angle) {
 
         //Search through the angles[] array to find the two values that the current
         //measurement is between (this is like finding two points on a graph)
@@ -42,9 +38,9 @@ public class Interpolator {
         while(angles[i] > angle) {
             i++;
 
-            //If it didn't find two points, return 0
+            //If it didn't find two points, return the last speed
             if(i >= angles.length) {
-                return 0;
+                return speeds[speeds.length - 1];
             }
         }
         
@@ -62,6 +58,14 @@ public class Interpolator {
         //Find where the recorded point fits on that line, that's the speed!
         double interpolation = m*angle + b + m_offset;
         return interpolation;
+    }
+
+    public static double getFrontSpeed(double angle) {
+        return getInterpolation(speedFront, angle);
+    }
+
+    public static double getBackSpeed(double angle) {
+        return getInterpolation(speedBack, angle);
     }
 
     /**
