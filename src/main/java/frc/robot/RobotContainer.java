@@ -27,6 +27,7 @@ import frc.robot.subsystems.Lift;
 // Command imports
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
+import frc.robot.commands.IndexTEST;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.LauncherSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
@@ -110,6 +111,9 @@ public class RobotContainer {
 
     autonChooser.addOption("2 Ball Launch",
       new CG_2BallDrive(m_drivetrain, indexMotors, intakeMotor, launcher));
+
+      autonChooser.addOption("DEV Index",
+      new IndexTEST(indexMotors));
     
     // autonChooser.addOption("2 Ball Launch, Pickup 1",
       // new CG_2BalDrivePlus(m_drivetrain, indexMotors, intakeMotor, launcher));
@@ -190,7 +194,7 @@ public class RobotContainer {
         new LauncherSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LauncherSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+              new IndexSpeed(indexMotors, 0.5).withTimeout(3)),
                 new ParallelCommandGroup (
                   new LauncherSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
