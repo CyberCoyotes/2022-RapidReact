@@ -28,6 +28,7 @@ import frc.robot.subsystems.Lift;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.LaunchAutomatic;
 import frc.robot.commands.LauncherSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
@@ -141,6 +142,7 @@ public class RobotContainer {
     final JoystickButton d_ButtonY = new JoystickButton(driverController, Button.kY.value);
     final JoystickButton d_RightBumper = new JoystickButton(driverController, Button.kRightBumper.value);
     final JoystickButton d_LeftBumper = new JoystickButton(driverController, Button.kLeftBumper.value);
+    final JoystickButton d_start = new JoystickButton(driverController, Button.kStart.value);
 
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
@@ -207,9 +209,13 @@ public class RobotContainer {
     d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.5));
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
-    // Hold X to manually Advance cargo to the launcher, release to stop motors
-    d_ButtonX.whenPressed(new IndexSpeed(indexMotors, 0.5));
-    d_ButtonX.whenReleased(new IndexSpeed(indexMotors, 0));
+    // Hold Start to manually Advance cargo to the launcher, release to stop motors
+    d_start.whenPressed(new IndexSpeed(indexMotors, 0.5));
+    d_start.whenReleased(new IndexSpeed(indexMotors, 0));
+
+    // Hold X to set launch speed according to Limelight
+    d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
+    d_ButtonX.whenPressed(new LauncherSpeed(launcher, 0, 0));
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(

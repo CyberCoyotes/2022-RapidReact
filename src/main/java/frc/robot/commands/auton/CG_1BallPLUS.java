@@ -8,6 +8,7 @@
 
 package frc.robot.commands.auton;
 
+import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
@@ -25,14 +26,32 @@ import frc.robot.subsystems.Launcher;
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class CG_1BallPLUS extends SequentialCommandGroup {
   public CG_1BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
-
+    addCommands(
+      new ParallelDeadlineGroup(
+        new SequentialCommandGroup(
+          new WaitCommand(0.75),
+          new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)
+        ),
+        new LauncherSpeed(launcher, 0.30, 0.35)
+      ),
+      new ParallelDeadlineGroup(
+        new WaitCommand(3),
+        new ParallelCommandGroup(
+          new IntakeSpeed(intakeMotor, 0.5),
+          new DriveCommand(
+                  drivetrain,
+                  // Trying to pass a translationXSupploier, translationYSupplier, and rotationalSupplier
+                  () -> {return 0.7;}, //Forwards speed
+                  () -> {return 0.0;}, //Left speed
+                  () -> {return 0.0;}) //Turn speed
+        )
+      )
+    );
+    /*
     addCommands(
       
       // Start the Launcher - speedFront is first double, speedBack is second
-      new LauncherSpeed(launcher, 0.32, 0.32).withTimeout(0.75), // +0.02
-      new SequentialCommandGroup(
-      // Maintain Launcher speed
-        new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.50).alongWith( 
+      new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.50),
         // Index the ball #1 into the running Launcher
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)), 
             new ParallelDeadlineGroup(
@@ -56,7 +75,12 @@ public class CG_1BallPLUS extends SequentialCommandGroup {
                   () -> {return 0.7;}, //Forwards speed
                   () -> {return 0.0;}, //Left speed
                   () -> {return 0.0;}) //Turn speed
-                ) // end of ParallelDeadlineGroup
-      ))); //end of addCommands
+                ) // end of Drive ParallelDeadlineGroup
+                // Launch commands for second Cargo
+
+                // Second set of drive commands
+
+      ); //end of addCommands
+      */
   }
 }

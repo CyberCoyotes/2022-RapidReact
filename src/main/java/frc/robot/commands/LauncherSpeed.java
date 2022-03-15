@@ -23,7 +23,7 @@ public class LauncherSpeed extends CommandBase {
   
     @Override
     public void end(boolean interrupted){ 
-      subsystem.setLauncherSpeed(0, 0);
+      subsystem.stopLauncher();
     }
     
     
