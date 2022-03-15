@@ -1,0 +1,77 @@
+
+
+OLD VERSION - Does not use drive command; new version is fit to conform with standard. This has not been tested
+
+
+package frc.robot.commands;
+import java.util.List;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Subsystem;
+import frc.robot.CBA1Input;
+import frc.robot.subsystems.Drivetrain;
+
+
+
+public class CBA extends CommandBase {
+    /**the coords to for the robot to attempt to replicate; note this will be a shallow attempt, and may need tuning forward*/
+    //#region properties
+    List<CBA1Input> coords;
+    //this timer is the wpilib version, if it doesnt work its the build teams fault
+    Timer timer;
+    
+    //#endregion
+    private Drivetrain driveSubsytem;
+    private boolean isFin = false;
+    
+
+/**
+ * @param subsystem The subsystem
+ * @param coords the Inputs to use 
+ * 
+ */
+ public CBA(Drivetrain subsystem,List<CBA1Input> coords) {
+
+     this.timer = new Timer();
+     this.driveSubsytem = subsystem;
+     this.coords = coords;//'this' keyword refers to the instance of the class, not the parameter. Technically 'lesser' practice 
+     addRequirements(subsystem);
+}
+    
+
+    @Override
+    public void execute() 
+        {
+            for (CBA1Input currentInput : coords) {
+                //Start!
+                timer.start();
+                //check that the second-based measure of the clock is less than the amount the current input should be fed to the auto
+                while (timer.get() > currentInput.interval)
+                {
+                    driveSubsytem.drive(
+                        ChassisSpeeds.fromFieldRelativeSpeeds(
+                                (currentInput.x),
+                                (currentInput.y),
+                                (currentInput.theta),
+                                driveSubsytem.getGyroscopeRotation()
+                        )
+                );
+
+
+                }
+                timer.reset();
+            
+            
+            }
+            isFin = true;
+        }
+
+    @Override
+    public boolean isFinished() {
+        
+        return isFin;
+    }
+
+   //end code not currently in place, no need?
+}
