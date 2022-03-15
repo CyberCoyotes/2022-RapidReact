@@ -39,10 +39,12 @@ public class Index extends SubsystemBase {
   //Sets the Speed of Index Motor
   // 
   
-  double indexVelocity = 3500;
+  // double indexVelocity = 3500;
   public void setIndexSpeed() {
-    backIndexMotor.set(TalonFXControlMode.Velocity, indexVelocity);
-    frontIndexMotor.set(TalonFXControlMode.Velocity, indexVelocity);
+    backIndexMotor.set(TalonFXControlMode.PercentOutput, 0.5);
+    frontIndexMotor.set(TalonFXControlMode.PercentOutput, 0.5);
+    // backIndexMotor.set(TalonFXControlMode.PercentOutput, indexVelocity);
+    // frontIndexMotor.set(TalonFXControlMode.Velocity, indexVelocity);
   }
 
   public void stopIndex() {

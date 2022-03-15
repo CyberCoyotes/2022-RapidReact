@@ -28,8 +28,8 @@ public class IndexTEST extends SequentialCommandGroup {
   public IndexTEST(Index indexMotors, Intake intakeMotor) {
 
     addCommands(
-          new IntakeSpeed(intakeMotor, 1.0).withTimeout(1),
-          new IndexSpeed(indexMotors, 1.0).withTimeout(1));
+          new IntakeSpeed(intakeMotor, 0.5).withTimeout(1),
+          new IndexSpeed(indexMotors, .5).withTimeout(1));
 
 }
 }
