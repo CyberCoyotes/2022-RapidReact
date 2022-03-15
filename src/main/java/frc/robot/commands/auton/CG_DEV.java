@@ -6,8 +6,10 @@
 * Goal: launch cargo from inside the tarmac and drive forward a set time
 **/ 
 
-package frc.robot.commands;
+package frc.robot.commands.auton;
 
+import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
@@ -23,13 +25,13 @@ import frc.robot.subsystems.Launcher;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class IndexTEST extends SequentialCommandGroup {
-  /** Creates a new Drive2Seconds. */
-  public IndexTEST(Index indexMotors, Intake intakeMotor) {
+public class CG_DEV extends SequentialCommandGroup {
+  public CG_DEV(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-          new IntakeSpeed(intakeMotor, 0.5).withTimeout(1),
-          new IndexSpeed(indexMotors, .5).withTimeout(1));
-
-}
+      // Launches the preloaded ball
+      new CG_1BallLaunch(indexMotors, intakeMotor, launcher) //,
+      // new CG_1Ball        
+    ); //end of addCommands
+  }
 }

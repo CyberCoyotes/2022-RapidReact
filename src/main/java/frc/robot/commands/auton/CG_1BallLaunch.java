@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 /** Autonomous place holder for testing purposes
  * Runs the Launcher for second, then runs the launcher again along with index motors with index, launcher, intake, index
 */ 
-public class CG_1BallDriveNone extends SequentialCommandGroup {
+public class CG_1BallLaunch extends SequentialCommandGroup {
     
-    public CG_1BallDriveNone(Index indexMotors, Intake intakeMotor, Launcher launcher) {
+    public CG_1BallLaunch(Index indexMotors, Intake intakeMotor, Launcher launcher) {
       addCommands(
       // Start the Launcher - speedFront is first double, speedBack is second
         new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.75),

@@ -23,9 +23,9 @@ import frc.robot.subsystems.Launcher;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class CG_2BallDrive extends SequentialCommandGroup {
+public class CG_3Ball extends SequentialCommandGroup {
   /** Creates a new Drive2Seconds. */
-  public CG_2BallDrive(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+  public CG_3Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       
@@ -55,7 +55,7 @@ public class CG_2BallDrive extends SequentialCommandGroup {
                   drivetrain,
                   // Trying to pass a translationXSupploier, translationYSupplier, and rotationalSupplier
                   () -> {return 0.7;}, //Forwards speed
-                  () -> {return 0.15;}, //Left speed
+                  () -> {return 0.0;}, //Left speed
                   () -> {return 0.0;}), //Turn speed
                   new LauncherSpeed(launcher, 0.32, 0.32).withTimeout(0.75), // +0.02
                   new SequentialCommandGroup(

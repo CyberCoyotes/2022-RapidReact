@@ -27,7 +27,6 @@ import frc.robot.subsystems.Lift;
 // Command imports
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.IndexTEST;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.LauncherSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
@@ -37,10 +36,14 @@ import frc.robot.commands.Lift.LockLiftCommandBar1;
 import frc.robot.commands.Lift.LockLiftCommandBar2;
 // import frc.robot.commands.PathPlannerBased.CG_2BalDrivePlus;
 import frc.robot.commands.PathPlannerBased.CG_2BallDrive;
+import frc.robot.commands.auton.CG_1BallLaunch;
 // import frc.robot.commands.PathPlannerBased.Drive2m;
 // import frc.robot.commands.PathPlannerBased.DriveV;
 // import frc.robot.commands.auton.CG_1BallDriveNone;
-import frc.robot.commands.auton.CG_1BallDriveStraight;
+import frc.robot.commands.auton.CG_1BallPLUS;
+import frc.robot.commands.auton.CG_2Ball;
+import frc.robot.commands.auton.CG_3Ball;
+import frc.robot.commands.auton.CG_DEV;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -100,29 +103,23 @@ public class RobotContainer {
     
     m_drivetrain.setDefaultCommand(driveCommand);
     
-    // TODO add and test autonomous files here
     // AUTONOMOUS chooser
 
-    // Launches high goal inside the tarmac, doesn't drive out
-
     // Launches high goal inside tarmac, drives out with launch sequence operating
-    autonChooser.setDefaultOption("1 Ball Launch",
-      new CG_1BallDriveStraight(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.setDefaultOption("1 Ball + Stay",
+      new CG_1BallLaunch(indexMotors, intakeMotor, launcher));
 
-    autonChooser.addOption("2 Ball Launch",
-      new CG_2BallDrive(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.setDefaultOption("1 Ball + Pickup",
+      new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
 
-      autonChooser.addOption("DEV Index",
-      new IndexTEST(indexMotors, intakeMotor));
+    autonChooser.addOption("2 Ball DEV",
+      new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
+
+    autonChooser.addOption("3 Ball DEV",
+      new CG_3Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    // autonChooser.addOption("2 Ball Launch, Pickup 1",
-      // new CG_2BalDrivePlus(m_drivetrain, indexMotors, intakeMotor, launcher));
-    
-    // autonChooser.addOption("Drive 2m",
-      // new Drive2m(m_drivetrain));
-
-    // autonChooser.addOption("Drive V",
-      // new DriveV(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.addOption("DEV TESTING",
+      new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
@@ -194,7 +191,7 @@ public class RobotContainer {
         new LauncherSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LauncherSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(3)),
+              new IndexSpeed(indexMotors, 0.5).withTimeout(2)),
                 new ParallelCommandGroup (
                   new LauncherSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
