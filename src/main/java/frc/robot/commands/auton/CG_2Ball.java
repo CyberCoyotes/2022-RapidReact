@@ -13,13 +13,15 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
+import frc.robot.Limelight;
 import frc.robot.commands.IndexSpeed;
+import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 public class CG_2Ball extends SequentialCommandGroup {
-  public CG_2Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+  public CG_2Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher, Limelight limelight) {
 
     addCommands(
       new CG_1BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
@@ -28,8 +30,9 @@ public class CG_2Ball extends SequentialCommandGroup {
           new WaitCommand(0.75),
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)
         ),
-        new LaunchSpeed(launcher, 0.30, 0.60) // FIXME check values
-      )
-    ); // End of addCommands
+        new LaunchSpeed(launcher, 0.30, 0.60) // FIXME Test these values. Consider using LaunchAutomatic
+        //, new LaunchAutomatic(launcher, limelight)
+      
+    )); // End of addCommands
   }
 }

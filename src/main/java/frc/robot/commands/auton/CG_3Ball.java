@@ -13,13 +13,13 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.Launcher.LaunchAutomatic;
-import frc.robot.commands.Launcher.LaunchExtended;
+// import frc.robot.commands.Launcher.LaunchExtended;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 import frc.robot.Limelight;
 
 public class CG_3Ball extends SequentialCommandGroup {
-  public CG_3Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+  public CG_3Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher, Limelight limelight) {
 
     addCommands(
       new CG_2BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
@@ -30,8 +30,8 @@ public class CG_3Ball extends SequentialCommandGroup {
       new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;}).withTimeout(1),
       
       // Launch cargo
-      // new LaunchAutomatic(launcher, null), // FIXME 'limelight' isn't recognized as a variable and the quick fix says 'null'
-      new LaunchExtended(launcher) // FIXME remove after LaunchAutomatic tested
+      new LaunchAutomatic(launcher, limelight)
+      //, new LaunchExtended(launcher) // FIXME remove after LaunchAutomatic tested and confirmed
       );
   }
 }
