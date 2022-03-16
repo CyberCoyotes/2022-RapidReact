@@ -18,11 +18,7 @@ import frc.robot.commands.IntakeSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
-// NOTE:  Consider using this command inline, rather than writing a subclass.  For more
-// information, see:
-// https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class CG_2BallPLUS extends SequentialCommandGroup {
-  /** Creates a new Drive2Seconds. */
   public CG_2BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(

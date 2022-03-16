@@ -3,7 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 /** FRC 3603
-* Goal: launch cargo from inside the tarmac and drive forward a set time
+*** Goal: launch cargo from inside the tarmac and drive forward a set time
 **/ 
 
 package frc.robot.commands.auton;
@@ -18,12 +18,7 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 import frc.robot.Limelight;
 
-
-// NOTE:  Consider using this command inline, rather than writing a subclass.  For more
-// information, see:
-// https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class CG_3Ball extends SequentialCommandGroup {
-  /** Creates a new Drive2Seconds. */
   public CG_3Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(

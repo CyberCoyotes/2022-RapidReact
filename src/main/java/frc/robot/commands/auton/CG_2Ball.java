@@ -19,7 +19,6 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 public class CG_2Ball extends SequentialCommandGroup {
-  /** Creates a new Drive2Seconds. */
   public CG_2Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
