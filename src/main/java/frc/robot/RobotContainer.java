@@ -200,8 +200,8 @@ public class RobotContainer {
                 new ParallelCommandGroup (
                   new LaunchSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)) // FIXME added to stop Index, not stopping still
-      )));
+                  new IndexSpeed(indexMotors, 0.5))) // FIXME added to stop Index, not stopping still
+      ));
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
