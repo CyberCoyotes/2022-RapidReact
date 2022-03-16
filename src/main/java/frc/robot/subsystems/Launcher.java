@@ -59,19 +59,24 @@ public class Launcher extends SubsystemBase {
   }
 
   // Set HIGH goal speed
-  public void setLauncherExtended() {
+  public void setExtendedLaunch() {
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);
     backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
   }
 
   // Set HIGH goal speed
-  public void setLauncherHigh() {
+  public void setHighLaunch() {
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.40);
     backLauncherMotor.set(ControlMode.PercentOutput, 0.35);
   }
+  
+  public void setTarmacLaunch() {
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.36);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.42);
+  }
 
   // Set LOW goal speed
-  public void setLauncherLow() {
+  public void setLowLaunch() {
     backLauncherMotor.set(ControlMode.PercentOutput, 0.20);
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.20);
   }

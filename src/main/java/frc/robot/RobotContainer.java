@@ -36,10 +36,13 @@ import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.Lift.LockLiftCommandBar1;
 import frc.robot.commands.Lift.LockLiftCommandBar2;
 import frc.robot.commands.auton.CG_1Ball;
-// import frc.robot.commands.auton.CG_1BallPLUS;
-// import frc.robot.commands.auton.CG_2Ball;
-// import frc.robot.commands.auton.CG_2BallPLUS;
-// import frc.robot.commands.CommandGroups.CG_DEV;
+import frc.robot.commands.auton.CG_1BallPLUS_original;
+
+//import frc.robot.commands.auton.CG_1BallPLUS;
+import frc.robot.commands.auton.CG_2Ball;
+import frc.robot.commands.auton.CG_2BallPLUS;
+import frc.robot.commands.auton.CG_3Ball;
+import frc.robot.commands.CommandGroups.CG_DEV;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -102,25 +105,27 @@ public class RobotContainer {
     // AUTONOMOUS chooser
 
     // Launches high goal inside tarmac, drives out with launch sequence operating
-    autonChooser.setDefaultOption("1 Ball & Stay",
+    autonChooser.addOption("1 Ball & Stay",
       new CG_1Ball(indexMotors, intakeMotor, launcher));
-
-    /** 
-    autonChooser.setDefaultOption("1 Ball & Pickup",
-      new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
-
+    
+    autonChooser.setDefaultOption("1 Ball & Pickup 2nd",
+       new CG_1BallPLUS_original(m_drivetrain, indexMotors, intakeMotor, launcher));
+    
     autonChooser.addOption("2 Ball DEV",
       new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher, limelight));
 
-    autonChooser.addOption("2 Ball+ DEV",
+    autonChooser.addOption("2 Ball + Pickup 3rd DEV",
       new CG_2BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
-    
+   
+    autonChooser.addOption("3 Ball DEV",
+      new CG_3Ball(m_drivetrain, indexMotors, intakeMotor, launcher, limelight));
+   
     autonChooser.addOption("DEV TESTING",
       new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
-    */
+  
     
     // DEBUGGING CODE:
     // System.out.println("subsystem requirements for autonShortDrive");
