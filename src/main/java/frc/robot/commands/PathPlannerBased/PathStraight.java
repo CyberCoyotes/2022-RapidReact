@@ -6,7 +6,7 @@
  * Experimental 
  * */
 
-package frc.robot.commands;
+package frc.robot.commands.PathPlannerBased;
 
 import com.pathplanner.lib.PathPlannerTrajectory;
 import com.pathplanner.lib.commands.PPSwerveControllerCommand;

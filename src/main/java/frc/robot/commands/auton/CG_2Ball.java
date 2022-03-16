@@ -11,18 +11,13 @@ package frc.robot.commands.auton;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
-import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.LauncherSpeed;
+import frc.robot.commands.Launcher.LauncherSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
-// NOTE:  Consider using this command inline, rather than writing a subclass.  For more
-// information, see:
-// https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class CG_2Ball extends SequentialCommandGroup {
   /** Creates a new Drive2Seconds. */
   public CG_2Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
@@ -34,7 +29,7 @@ public class CG_2Ball extends SequentialCommandGroup {
           new WaitCommand(0.75),
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)
         ),
-        new LauncherSpeed(launcher, 0.40, 0.50) // FIXME check values
+        new LauncherSpeed(launcher, 0.30, 0.60) // FIXME check values
       )
     ); // End of addCommands
   }

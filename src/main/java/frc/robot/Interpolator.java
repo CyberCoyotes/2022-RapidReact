@@ -12,7 +12,7 @@ public class Interpolator {
     //This is an ordered list of "distance" measurements (this example is the y-angle reported by the Limelight).
     //This must be monotonically decreasing
 
-    // FIXME Find these values from Limelight
+    // Find these values from Limelight
     private static double angles[] = {20.00, 18.00, 11.75, 3.75};
     
     // The front and back launch motors need to have different speeds,

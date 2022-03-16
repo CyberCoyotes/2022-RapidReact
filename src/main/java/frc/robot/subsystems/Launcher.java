@@ -26,27 +26,39 @@ public class Launcher extends SubsystemBase {
     frontLauncherMotor.setNeutralMode(NeutralMode.Coast);
     frontLauncherMotor.setInverted(true);
 
+    /** 
     backLauncherMotor.configNominalOutputForward(0, Constants.kTimeoutMs);
     frontLauncherMotor.configNominalOutputForward(0, Constants.kTimeoutMs);
     backLauncherMotor.configNominalOutputReverse(0, Constants.kTimeoutMs);
     frontLauncherMotor.configNominalOutputReverse(0, Constants.kTimeoutMs);
-    
+    */
+
   }
 
-  /** Launches the Cargo with speed set for low hub
-    * Eventually the absolute value could potentially be replaced with sensor-driven values
-    **/
+  /* Launches the Cargo with speed set for low hub
+  *  Eventually the absolute value could potentially be replaced with sensor-driven values
+  */
+  public static double speedFront;
+  public static double speedBack;
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
 
+  // Set VARIABLE goal speed
   public void setLauncherSpeed(double speedFront, double speedBack) {
     frontLauncherMotor.set(ControlMode.PercentOutput, speedFront);
     backLauncherMotor.set(ControlMode.PercentOutput, speedBack);
   }
   
+  // Set Pre Launch Speed
+  public void setPreLaunch(){
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.30);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
+  }
+
+
   // Set HIGH goal speed
   public void setLauncherHigh() {
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.40);

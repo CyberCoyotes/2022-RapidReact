@@ -6,7 +6,7 @@
 * Goal: launch cargo from inside the tarmac and drive forward a set time
 **/ 
 
-package frc.robot.commands.auton;
+package frc.robot.commands.CommandGroups;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
@@ -18,7 +18,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.LauncherSpeed;
+import frc.robot.commands.Launcher.LauncherSpeed;
 import frc.robot.commands.PathPlannerBased.DriveV;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;

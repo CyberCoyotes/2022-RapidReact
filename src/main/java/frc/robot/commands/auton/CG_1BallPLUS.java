@@ -17,7 +17,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.LauncherSpeed;
+import frc.robot.commands.Launcher.*;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
@@ -28,6 +28,7 @@ public class CG_1BallPLUS extends SequentialCommandGroup {
   public CG_1BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
     addCommands(
       new ParallelDeadlineGroup(
+        new PreLaunchRamp(launcher),
         new SequentialCommandGroup(
           new WaitCommand(0.75),
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)
@@ -40,10 +41,12 @@ public class CG_1BallPLUS extends SequentialCommandGroup {
           new IntakeSpeed(intakeMotor, 0.5),
           new DriveCommand(
                   drivetrain,
-                  // Trying to pass a translationXSupploier, translationYSupplier, and rotationalSupplier
-                  () -> {return 0.7;}, //Forwards speed
-                  () -> {return 0.0;}, //Left speed
-                  () -> {return 0.0;}) //Turn speed
+                  // (+) Forward speed
+                  () -> {return 0.7;},
+                  // (+) Strafe left speed
+                  () -> {return 0.0;},
+                  // (+) Turn speed
+                  () -> {return 0.0;})
         )
       )
     );

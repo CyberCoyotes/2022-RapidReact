@@ -15,29 +15,26 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
-import frc.robot.Limelight;
-
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class CG_3Ball extends SequentialCommandGroup {
+public class CG_2BallPLUS extends SequentialCommandGroup {
   /** Creates a new Drive2Seconds. */
-  public CG_3Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+  public CG_2BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      new CG_2BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
-      // Turn left 90 degrees
-      new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return -0.7;}).withTimeout(1),
+      new CG_2Ball(drivetrain, indexMotors, intakeMotor, launcher),
+      // Turn right 90 degrees
+      new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 0.7;}).withTimeout(1),
 
-      // Turn on  and Drive forward
-      new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;}).withTimeout(1),
-      
-      // Launch cargo
-      new LaunchAutomatic(launcher, limelight) // FIXME limelight isn't recognized as a variable
-      );
+      // Turn on Intake and Drive forward
+      new ParallelDeadlineGroup(
+        new WaitCommand(3),
+        new IntakeSpeed(intakeMotor, 0.5),
+        new DriveCommand(drivetrain, () -> {return 0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
+    ); //end of addCommands
   }
 }
