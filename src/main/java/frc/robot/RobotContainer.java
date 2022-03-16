@@ -29,6 +29,7 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.LauncherSpeed;
+import frc.robot.commands.xmode;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -145,7 +146,7 @@ public class RobotContainer {
     final JoystickButton d_ButtonY = new JoystickButton(driverController, Button.kY.value);
     final JoystickButton d_RightBumper = new JoystickButton(driverController, Button.kRightBumper.value);
     final JoystickButton d_LeftBumper = new JoystickButton(driverController, Button.kLeftBumper.value);
-
+    final JoystickButton d_Start = new JoystickButton(driverController, Button.kStart.value);
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
     final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
@@ -159,6 +160,8 @@ public class RobotContainer {
     // Defining the actions associated with buttons
 
     // DRIVER Controller button commands
+
+    d_Start.whenPressed(new xmode(m_drivetrain));
 
     // Resets the gyroscope to 0 degrees when back button is pressed
     d_backButton.whenPressed(m_drivetrain::zeroGyroscope);
@@ -313,7 +316,8 @@ public class RobotContainer {
 
   public Command getAutonomousCommand() {
 
-    return autonChooser.getSelected();
+     return autonChooser.getSelected();
+    
 
   }; // end of getAutonomusCommand()
 
