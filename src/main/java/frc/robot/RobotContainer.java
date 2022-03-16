@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 
 // Subsystem imports
@@ -172,7 +173,9 @@ public class RobotContainer {
       /**  LOW HOOP UP CLOSE LAUNCH SEQUENCE
        when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
        then finally run all 3 motors at once. release to stop all motors */
-      d_ButtonA.whenPressed(new SequentialCommandGroup(
+      d_ButtonA.whenPressed(
+      
+      new ParallelDeadlineGroup( new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
@@ -181,7 +184,9 @@ public class RobotContainer {
                   new LaunchSpeed(launcher, 0.25, 0.25),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5)))
-      ));
+      ),new xmode(m_drivetrain))
+      
+     );
       //stops all 3 motors when A button released
       d_ButtonA.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
@@ -192,7 +197,9 @@ public class RobotContainer {
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
-      d_ButtonY.whenPressed(new SequentialCommandGroup(
+      d_ButtonY.whenPressed(
+        
+      new ParallelDeadlineGroup(new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
@@ -201,7 +208,9 @@ public class RobotContainer {
                   new LaunchSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)) // FIXME added to stop Index, not stopping still
-      )));
+      )), new xmode(m_drivetrain))
+      
+      );
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
