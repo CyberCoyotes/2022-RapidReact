@@ -247,7 +247,7 @@ public class RobotContainer {
         m_drivetrain,
           () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
           () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-          () -> {return -limelight.getX() * Constants.kPThetaLimelightController;}
+          () -> {return limelight.getX() * Constants.kPThetaLimelightController;}
       ));
       op_ButtonX.whenReleased(new DriveCommand(
           m_drivetrain,
