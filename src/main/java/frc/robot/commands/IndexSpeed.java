@@ -21,9 +21,10 @@ public class IndexSpeed extends CommandBase {
       subsystem.startIndex(speed);
     }
   
+    /** 
     public void execute() {
       subsystem.setIndexSpeed();
-    }
+    } */
 
     @Override
     public void end(boolean interrupted){ 
