@@ -1,0 +1,507 @@
+[
+    {
+        "messageType": 2,
+        "timestamp": 95.83889770507812,
+        "seqNumber": 1266,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.66897583007812,
+        "seqNumber": 1267,
+        "line": "NT: server: client CONNECTED: 10.36.3.207 port 57925"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.76077270507812,
+        "seqNumber": 1268,
+        "line": "navX-Sensor Java library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.88711547851562,
+        "seqNumber": 1269,
+        "line": "NT: server: client CONNECTED: 10.36.3.36 port 50292"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.88955688476562,
+        "seqNumber": 1270,
+        "line": "NT: server: client CONNECTED: 10.36.3.64 port 40686"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.9521484375,
+        "seqNumber": 1271,
+        "line": "navX-Sensor Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.99313354492188,
+        "seqNumber": 1272,
+        "line": "navX-Sensor Board Type 50 (navX-MXP (Classic))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.0029296875,
+        "seqNumber": 1273,
+        "line": "navX-Sensor firmware version 3.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.00784301757812,
+        "seqNumber": 1274,
+        "line": "navX-Sensor onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.012451171875,
+        "seqNumber": 1275,
+        "line": "navX-Sensor Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 97.50836181640625,
+        "seqNumber": 1276,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 5 ConfigSupplyCurrentLimit",
+        "callStack": "\tat c_MotController_ConfigSupplyCurrentLimit\n\tat Java_com_ctre_phoenix_motorcontrol_can_MotControllerJNI_ConfigSupplyCurrentLimit\n",
+        "messageType": 0
+    },
+    {
+        "timestamp": 97.50955200195312,
+        "seqNumber": 1277,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 5 ConfigSupplyCurrentLimit",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 97.51577758789062,
+        "seqNumber": 1278,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Failed to configure Falcon 500: SigNotUpdated",
+        "location": "com.swervedrivespecialties.swervelib.ctre.CtreUtils.checkCtreError(CtreUtils.java:12)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.51712036132812,
+        "seqNumber": 1279,
+        "line": "Error at com.swervedrivespecialties.swervelib.ctre.CtreUtils.checkCtreError(CtreUtils.java:12): Failed to configure Falcon 500: SigNotUpdated"
+    },
+    {
+        "timestamp": 97.85809326171875,
+        "seqNumber": 1280,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 3 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.85916137695312,
+        "seqNumber": 1281,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 3 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 97.95074462890625,
+        "seqNumber": 1282,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception: java.lang.IllegalArgumentException: Multiple commands in a parallel group cannotrequire the same subsystems",
+        "location": "frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36)",
+        "callStack": "\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.addCommands(ParallelDeadlineGroup.java:69)\n\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.<init>(ParallelDeadlineGroup.java:39)\n\tat frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:107)\n\tat frc.robot.Robot.robotInit(Robot.java:35)\n\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)\n\tat frc.robot.Main.main(Main.java:24)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.9515380859375,
+        "seqNumber": 1283,
+        "line": "Error at frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36): Unhandled exception: java.lang.IllegalArgumentException: Multiple commands in a parallel group cannotrequire the same subsystems"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95193481445312,
+        "seqNumber": 1284,
+        "line": "\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.addCommands(ParallelDeadlineGroup.java:69)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95223999023438,
+        "seqNumber": 1285,
+        "line": "\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.<init>(ParallelDeadlineGroup.java:39)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.9525146484375,
+        "seqNumber": 1286,
+        "line": "\tat frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95278930664062,
+        "seqNumber": 1287,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:107)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95303344726562,
+        "seqNumber": 1288,
+        "line": "\tat frc.robot.Robot.robotInit(Robot.java:35)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95339965820312,
+        "seqNumber": 1289,
+        "line": "\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95394897460938,
+        "seqNumber": 1290,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.9542236328125,
+        "seqNumber": 1291,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95455932617188,
+        "seqNumber": 1292,
+        "line": "\tat frc.robot.Main.main(Main.java:24)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.954833984375,
+        "seqNumber": 1293,
+        "line": ""
+    },
+    {
+        "timestamp": 97.95672607421875,
+        "seqNumber": 1294,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95718383789062,
+        "seqNumber": 1295,
+        "line": "Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95748901367188,
+        "seqNumber": 1296,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95791625976562,
+        "seqNumber": 1297,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "timestamp": 97.9593505859375,
+        "seqNumber": 1298,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The startCompetition() method (or methods called by it) should have handled the exception above.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 97.95986938476562,
+        "seqNumber": 1299,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above."
+    },
+    {
+        "timestamp": 98.49301147460938,
+        "seqNumber": 1300,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 98.49447631835938,
+        "seqNumber": 1301,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix] Library shutdown cleanly",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 98.70526123046875,
+        "seqNumber": 1302,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 101.93344116210938,
+        "seqNumber": 1303,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 102.17578125,
+        "seqNumber": 1304,
+        "line": "NT: server: client CONNECTED: 10.36.3.207 port 57932"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 102.82061767578125,
+        "seqNumber": 1305,
+        "line": "navX-Sensor Java library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.0191650390625,
+        "seqNumber": 1306,
+        "line": "NT: server: client CONNECTED: 10.36.3.36 port 50312"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.02194213867188,
+        "seqNumber": 1307,
+        "line": "NT: server: client CONNECTED: 10.36.3.64 port 40706"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.1566162109375,
+        "seqNumber": 1308,
+        "line": "navX-Sensor Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.15859985351562,
+        "seqNumber": 1309,
+        "line": "navX-Sensor onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.16073608398438,
+        "seqNumber": 1310,
+        "line": "navX-Sensor Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 103.79342651367188,
+        "seqNumber": 1311,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 3 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.79513549804688,
+        "seqNumber": 1312,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 3 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 103.8795166015625,
+        "seqNumber": 1313,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception: java.lang.IllegalArgumentException: Multiple commands in a parallel group cannotrequire the same subsystems",
+        "location": "frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36)",
+        "callStack": "\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.addCommands(ParallelDeadlineGroup.java:69)\n\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.<init>(ParallelDeadlineGroup.java:39)\n\tat frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:107)\n\tat frc.robot.Robot.robotInit(Robot.java:35)\n\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)\n\tat frc.robot.Main.main(Main.java:24)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88015747070312,
+        "seqNumber": 1314,
+        "line": "Error at frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36): Unhandled exception: java.lang.IllegalArgumentException: Multiple commands in a parallel group cannotrequire the same subsystems"
+    },
+    {
+        "timestamp": 103.88134765625,
+        "seqNumber": 1315,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 103.88278198242188,
+        "seqNumber": 1316,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The startCompetition() method (or methods called by it) should have handled the exception above.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.8846435546875,
+        "seqNumber": 1317,
+        "line": "\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.addCommands(ParallelDeadlineGroup.java:69)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88504028320312,
+        "seqNumber": 1318,
+        "line": "\tat edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup.<init>(ParallelDeadlineGroup.java:39)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.8853759765625,
+        "seqNumber": 1319,
+        "line": "\tat frc.robot.commands.auton.CG_1BallPLUS.<init>(CG_1BallPLUS.java:36)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88568115234375,
+        "seqNumber": 1320,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:107)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.885986328125,
+        "seqNumber": 1321,
+        "line": "\tat frc.robot.Robot.robotInit(Robot.java:35)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88629150390625,
+        "seqNumber": 1322,
+        "line": "\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.8865966796875,
+        "seqNumber": 1323,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.886962890625,
+        "seqNumber": 1324,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88726806640625,
+        "seqNumber": 1325,
+        "line": "\tat frc.robot.Main.main(Main.java:24)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88751220703125,
+        "seqNumber": 1326,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88787841796875,
+        "seqNumber": 1327,
+        "line": "Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88919067382812,
+        "seqNumber": 1328,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.88967895507812,
+        "seqNumber": 1329,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.89007568359375,
+        "seqNumber": 1330,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above."
+    },
+    {
+        "timestamp": 104.41522216796875,
+        "seqNumber": 1331,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 104.4166259765625,
+        "seqNumber": 1332,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix] Library shutdown cleanly",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 104.62744140625,
+        "seqNumber": 1333,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 104.63607788085938,
+        "seqNumber": 1334,
+        "line": "pure virtual method called"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 104.63717651367188,
+        "seqNumber": 1335,
+        "line": "terminate called without an active exception"
+    }
+]

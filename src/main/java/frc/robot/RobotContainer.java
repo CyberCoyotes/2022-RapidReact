@@ -35,10 +35,10 @@ import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.Lift.LockLiftCommandBar1;
 import frc.robot.commands.Lift.LockLiftCommandBar2;
 import frc.robot.commands.auton.CG_1Ball;
-import frc.robot.commands.auton.CG_1BallPLUS;
-import frc.robot.commands.auton.CG_2Ball;
-import frc.robot.commands.auton.CG_2BallPLUS;
-import frc.robot.commands.CommandGroups.CG_DEV;
+// import frc.robot.commands.auton.CG_1BallPLUS;
+// import frc.robot.commands.auton.CG_2Ball;
+// import frc.robot.commands.auton.CG_2BallPLUS;
+// import frc.robot.commands.CommandGroups.CG_DEV;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -104,6 +104,7 @@ public class RobotContainer {
     autonChooser.setDefaultOption("1 Ball & Stay",
       new CG_1Ball(indexMotors, intakeMotor, launcher));
 
+    /** 
     autonChooser.setDefaultOption("1 Ball & Pickup",
       new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
 
@@ -118,7 +119,8 @@ public class RobotContainer {
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
-
+    */
+    
     // DEBUGGING CODE:
     // System.out.println("subsystem requirements for autonShortDrive");
     // autonShortDrive.getRequirements().forEach((x) -> System.out.println(x));
@@ -187,11 +189,11 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(2)),
+              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)), // shortened between launches, good timing
                 new ParallelCommandGroup (
                   new LaunchSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5))
+                  new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)) // FIXME added to stop Index, not stopping still
       )));
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(

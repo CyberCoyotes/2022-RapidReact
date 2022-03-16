@@ -13,7 +13,7 @@ public class Interpolator {
     //This must be monotonically decreasing
 
     // Find these values from Limelight
-    private static double angles[] = {20.00, 18.00, 11.75, 3.75};
+    private static double angles[] = {20.00, 18.00, 11.75, 2.00}; // 3.75 was max previously
     
     // The front and back launch motors need to have different speeds
 

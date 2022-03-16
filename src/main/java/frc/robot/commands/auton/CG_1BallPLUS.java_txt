@@ -30,6 +30,7 @@ public class CG_1BallPLUS extends SequentialCommandGroup {
   public CG_1BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
     addCommands(
       new ParallelDeadlineGroup(
+        new WaitCommand(1.5), // FIXME Added b/c of parallel group error, still not working
         new LaunchPre(launcher),
         new SequentialCommandGroup(
           new WaitCommand(0.75),
