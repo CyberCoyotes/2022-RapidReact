@@ -108,7 +108,7 @@ public class RobotContainer {
       new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     autonChooser.addOption("2 Ball DEV",
-      new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher, limelight));
 
     autonChooser.addOption("2 Ball+ DEV",
       new CG_2BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
@@ -145,7 +145,7 @@ public class RobotContainer {
 
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
-    final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
+    // Not being used. final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
     final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
     final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
