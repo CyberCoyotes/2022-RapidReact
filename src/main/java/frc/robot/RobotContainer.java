@@ -27,13 +27,9 @@ import frc.robot.subsystems.Lift;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-<<<<<<< HEAD
 import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.commands.Launcher.LaunchSpeed;
-=======
-import frc.robot.commands.LauncherSpeed;
 import frc.robot.commands.xmode;
->>>>>>> CBA-dev
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -148,12 +144,7 @@ public class RobotContainer {
     final JoystickButton d_ButtonY = new JoystickButton(driverController, Button.kY.value);
     final JoystickButton d_RightBumper = new JoystickButton(driverController, Button.kRightBumper.value);
     final JoystickButton d_LeftBumper = new JoystickButton(driverController, Button.kLeftBumper.value);
-<<<<<<< HEAD
-    final JoystickButton d_start = new JoystickButton(driverController, Button.kStart.value);
-
-=======
     final JoystickButton d_Start = new JoystickButton(driverController, Button.kStart.value);
->>>>>>> CBA-dev
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
     // Not being used. final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
@@ -222,8 +213,8 @@ public class RobotContainer {
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_start.whenPressed(new IndexSpeed(indexMotors, 0.5));
-    d_start.whenReleased(new IndexSpeed(indexMotors, 0));
+    d_Start.whenPressed(new IndexSpeed(indexMotors, 0.5));
+    d_Start.whenReleased(new IndexSpeed(indexMotors, 0));
 
     // Hold X to set launch speed according to Limelight
     d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
