@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 public class Interpolator {
 
     //This is an ordered list of "distance" measurements (this example is the y-angle reported by the Limelight).
@@ -60,12 +62,18 @@ public class Interpolator {
         return interpolation;
     }
 
+    // Returns the interpolation speed value of the front motor to the SmartDashboard
     public static double getFrontSpeed(double angle) {
-        return getInterpolation(speedFront, angle);
+        double i_Result = getInterpolation(speedFront, angle);
+        SmartDashboard.putNumber("Inter. Front Speed", i_Result);
+        return i_Result;
     }
 
+    // Returns the interpolation speed value of the back motor to the SmartDashboard
     public static double getBackSpeed(double angle) {
-        return getInterpolation(speedBack, angle);
+        double i_Result = getInterpolation(speedBack, angle);
+        SmartDashboard.putNumber("Inter. Back Speed", i_Result);
+        return i_Result;
     }
 
     /**
