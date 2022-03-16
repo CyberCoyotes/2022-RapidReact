@@ -223,7 +223,7 @@ public class RobotContainer {
 
     // Hold X to set launch speed according to Limelight
     d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
-    d_ButtonX.whenPressed(new LaunchSpeed(launcher, 0, 0));
+    d_ButtonX.whenReleased(new LaunchSpeed(launcher, 0, 0));
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(
