@@ -7,7 +7,6 @@ package frc.robot.commands.Launcher;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Interpolator;
 import frc.robot.Limelight;
-import frc.robot.RobotContainer;
 import frc.robot.subsystems.Launcher;
 
 public class LaunchAutomatic extends CommandBase {
@@ -34,7 +33,7 @@ public class LaunchAutomatic extends CommandBase {
       double speedBack = Interpolator.getBackSpeed(yAngle);
       subsystem.setLauncherSpeed(speedFront, speedBack);
     } else {
-      subsystem.setLauncherSpeed(0.35, 0.40);
+      subsystem.setLauncherSpeed(0.35, 0.40); // Split the tape launching
     }
   }
 

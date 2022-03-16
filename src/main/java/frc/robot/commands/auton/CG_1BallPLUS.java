@@ -28,12 +28,12 @@ public class CG_1BallPLUS extends SequentialCommandGroup {
   public CG_1BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
     addCommands(
       new ParallelDeadlineGroup(
-        new PreLaunchRamp(launcher),
+        new LaunchPre(launcher),
         new SequentialCommandGroup(
           new WaitCommand(0.75),
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)
         ),
-        new LauncherSpeed(launcher, 0.30, 0.35)
+        new LaunchSpeed(launcher, 0.30, 0.35)
       ),
       new ParallelDeadlineGroup(
         new WaitCommand(3),

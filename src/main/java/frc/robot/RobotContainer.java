@@ -9,7 +9,6 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
@@ -29,7 +28,7 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.Launcher.LaunchAutomatic;
-import frc.robot.commands.Launcher.LauncherSpeed;
+import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -38,8 +37,8 @@ import frc.robot.commands.Lift.LockLiftCommandBar2;
 import frc.robot.commands.auton.CG_1Ball;
 import frc.robot.commands.auton.CG_1BallPLUS;
 import frc.robot.commands.auton.CG_2Ball;
-import frc.robot.commands.auton.CG_3Ball;
-// import frc.robot.commands.auton.CG_DEV;
+import frc.robot.commands.auton.CG_2BallPLUS;
+import frc.robot.commands.CommandGroups.CG_DEV;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -102,20 +101,20 @@ public class RobotContainer {
     // AUTONOMOUS chooser
 
     // Launches high goal inside tarmac, drives out with launch sequence operating
-    autonChooser.setDefaultOption("1 Ball + Stay",
+    autonChooser.setDefaultOption("1 Ball & Stay",
       new CG_1Ball(indexMotors, intakeMotor, launcher));
 
-    autonChooser.setDefaultOption("1 Ball + Pickup",
+    autonChooser.setDefaultOption("1 Ball & Pickup",
       new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     autonChooser.addOption("2 Ball DEV",
       new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
 
-    autonChooser.addOption("3 Ball DEV",
-      new CG_3Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.addOption("2 Ball+ DEV",
+      new CG_2BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    // autonChooser.addOption("DEV TESTING",
-    //  new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.addOption("DEV TESTING",
+      new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
@@ -165,12 +164,12 @@ public class RobotContainer {
        when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
        then finally run all 3 motors at once. release to stop all motors */
       d_ButtonA.whenPressed(new SequentialCommandGroup(
-        new LauncherSpeed(launcher, 0.20, 0.20).withTimeout(1),
+        new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
           new SequentialCommandGroup(
-            new LauncherSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
+            new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
               new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
                 new ParallelCommandGroup (
-                  new LauncherSpeed(launcher, 0.25, 0.25),
+                  new LaunchSpeed(launcher, 0.25, 0.25),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5)))
       ));
@@ -178,19 +177,19 @@ public class RobotContainer {
       d_ButtonA.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
-        new LauncherSpeed(launcher, 0.0, 0.0))
+        new LaunchSpeed(launcher, 0.0, 0.0))
       );
 
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
       d_ButtonY.whenPressed(new SequentialCommandGroup(
-        new LauncherSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
+        new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
-            new LauncherSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
+            new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
               new IndexSpeed(indexMotors, 0.5).withTimeout(2)),
                 new ParallelCommandGroup (
-                  new LauncherSpeed(launcher, 0.36, 0.42),
+                  new LaunchSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5))
       )));
@@ -198,7 +197,7 @@ public class RobotContainer {
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
-        new LauncherSpeed(launcher, 0.0, 0.0))
+        new LaunchSpeed(launcher, 0.0, 0.0))
       );
 
     // Hold right bumper to manually Intake cargo from the field, release to stop motors
@@ -215,7 +214,7 @@ public class RobotContainer {
 
     // Hold X to set launch speed according to Limelight
     d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
-    d_ButtonX.whenPressed(new LauncherSpeed(launcher, 0, 0));
+    d_ButtonX.whenPressed(new LaunchSpeed(launcher, 0, 0));
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(

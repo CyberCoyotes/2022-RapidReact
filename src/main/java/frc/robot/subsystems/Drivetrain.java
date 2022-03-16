@@ -57,7 +57,7 @@ public class Drivetrain extends SubsystemBase {
    * This is a measure of how fast the robot should be able to drive in a straight line.
    */
 
-  // TODO Our value is 6380, #5804 uses 5000
+  // Our value is 6380, #5804 uses 5000
   public static final double MAX_VELOCITY_METERS_PER_SECOND = 6380.0 / 60.0 * 
           SdsModuleConfigurations.MK3_STANDARD.getDriveReduction() *
           SdsModuleConfigurations.MK3_STANDARD.getWheelDiameter() * Math.PI;
@@ -69,7 +69,7 @@ public class Drivetrain extends SubsystemBase {
   public static final double MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND = MAX_VELOCITY_METERS_PER_SECOND /
           Math.hypot(DRIVETRAIN_TRACKWIDTH_METERS / 2.0, DRIVETRAIN_WHEELBASE_METERS / 2.0);
   
-  // TODO Added from #5804
+  // Added from #5804
   public final SwerveDriveKinematics m_kinematics = new SwerveDriveKinematics(
     // Front left
     new Translation2d(DRIVETRAIN_TRACKWIDTH_METERS / 2.0, DRIVETRAIN_WHEELBASE_METERS / 2.0),
@@ -85,7 +85,7 @@ public class Drivetrain extends SubsystemBase {
     Math.hypot(DRIVETRAIN_TRACKWIDTH_METERS / 2.0, DRIVETRAIN_WHEELBASE_METERS / 2.0);
 
  
-  // FIXME Test this on our robot
+  // Test this on our robot
   // The important thing about how you configure your gyroscope is that rotating the robot counter-clockwise should
   // cause the angle reading to increase until it wraps back over to zero.
   
@@ -102,7 +102,7 @@ public class Drivetrain extends SubsystemBase {
   private final SwerveModule m_backLeftModule;
   private final SwerveModule m_backRightModule;
 
-  // TODO Added from #5804
+  // Added from #5804
   Pose2d targetPose;
 
   public double target = (getGyroscopeRotation().getDegrees());
@@ -110,14 +110,14 @@ public class Drivetrain extends SubsystemBase {
 
   private ChassisSpeeds m_chassisSpeeds = new ChassisSpeeds(0.0, 0.0, 0.0);
 
-  // TODO Added from #5804
+  // Added from #5804
   SwerveDriveOdometry odometry =   // Needed for swerve drive
     new SwerveDriveOdometry(m_kinematics, getGyroscopeRotation());;
   //
 
   public Drivetrain() {
     ShuffleboardTab tab = Shuffleboard.getTab("Drivetrain");
-    // TODO Added from #5804
+    // Added from #5804
     thetaController.enableContinuousInput(-Math.PI, Math.PI);
 
 
@@ -181,7 +181,7 @@ public class Drivetrain extends SubsystemBase {
   }
   
   //method to stop motors, used for auton
-  /** FIXME not in #5804 code
+  /** This block was not in #5804 code
   public void stop() {
         m_frontLeftModule.set(0, 0);
         m_frontRightModule.set(0, 0);
@@ -199,7 +199,7 @@ public class Drivetrain extends SubsystemBase {
     m_navx.zeroYaw();
   }
 
-  // TODO Added from #5804
+  // Added from #5804
   public double getRawRoation() {
     return m_navx.getRotation2d().getDegrees();
 }
@@ -268,7 +268,7 @@ public class Drivetrain extends SubsystemBase {
     // removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
     // and changed the first param from itself(states) to the chassisspeeds object 
     
-    // FIXME update the odometer constantly - removing for testing. Added back in
+    // Updates the odometer constantly - removing for testing. Added back in
     odometer.update(getGyroscopeRotation(), states);
    
     //This part is for TELEOP
@@ -285,7 +285,7 @@ public class Drivetrain extends SubsystemBase {
     SmartDashboard.putNumber("Raw Angle", getRawRoation());
     // FIXME This updates on Dashboard but doesn't wrap to zero. Same as Raw Angle.
     SmartDashboard.putNumber("current angle", getGyroscopeRotation().getDegrees());
-    // FIXME Doesn't actually update on Dashboard
+    // FIXME See if it actually updates on Dashboard
     SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
     SmartDashboard.putNumber("Current X", getPose().getX()); 
     SmartDashboard.putNumber("Current Y", getPose().getY());
@@ -326,6 +326,7 @@ public class Drivetrain extends SubsystemBase {
 
   }
 
+  /** Example code I saw to drive set outputs 
   public void driveForward(double speed) {
         m_frontLeftModule.set(speed, 0);
         m_frontRightModule.set(speed, 0);
@@ -339,5 +340,5 @@ public class Drivetrain extends SubsystemBase {
       m_backLeftModule.set(0.4, 0);
       m_backRightModule.set(0.4, 0);
   }
-
+  */
 }

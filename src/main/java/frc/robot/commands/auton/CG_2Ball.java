@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.Launcher.LauncherSpeed;
+import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
@@ -29,7 +29,7 @@ public class CG_2Ball extends SequentialCommandGroup {
           new WaitCommand(0.75),
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)
         ),
-        new LauncherSpeed(launcher, 0.30, 0.60) // FIXME check values
+        new LaunchSpeed(launcher, 0.30, 0.60) // FIXME check values
       )
     ); // End of addCommands
   }

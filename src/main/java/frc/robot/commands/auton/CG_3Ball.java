@@ -8,14 +8,12 @@
 
 package frc.robot.commands.auton;
 
-import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
-import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.Launcher.LaunchAutomatic;
+import frc.robot.commands.Launcher.LaunchExtended;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 import frc.robot.Limelight;
@@ -31,13 +29,14 @@ public class CG_3Ball extends SequentialCommandGroup {
     addCommands(
       new CG_2BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
       // Turn left 90 degrees
-      new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return -0.7;}).withTimeout(1),
+      new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return -0.7;}).withTimeout(1), // FIXME Use gyro to turn to degrees
 
-      // Turn on  and Drive forward
+      // Drive Backwards
       new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;}).withTimeout(1),
       
       // Launch cargo
-      new LaunchAutomatic(launcher, limelight) // FIXME limelight isn't recognized as a variable
+      // new LaunchAutomatic(launcher, null), // FIXME 'limelight' isn't recognized as a variable and the quick fix says 'null'
+      new LaunchExtended(launcher) // FIXME remove after LaunchAutomatic tested
       );
   }
 }

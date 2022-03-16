@@ -6,7 +6,7 @@ package frc.robot.commands.auton;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.Launcher.LauncherSpeed;
+import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
@@ -20,16 +20,16 @@ public class CG_1Ball extends SequentialCommandGroup {
     public CG_1Ball(Index indexMotors, Intake intakeMotor, Launcher launcher) {
       addCommands(
       // Start the Launcher - speedFront is first double, speedBack is second
-        new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.75),
+        new LaunchSpeed(launcher, 0.30, 0.35).withTimeout(0.75),
           new SequentialCommandGroup(
           // Maintain Launcher speed
-            new LauncherSpeed(launcher, 0.30, 0.35).withTimeout(0.25).alongWith( 
+            new LaunchSpeed(launcher, 0.30, 0.35).withTimeout(0.25).alongWith( 
             // Index the ball #1 into the running Launcher
             new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)), 
                          
             new ParallelCommandGroup (
               // Maintain Launcher speed
-              new LauncherSpeed(launcher, 0.36, 0.42),
+              new LaunchSpeed(launcher, 0.36, 0.42),
               // Intake ball #2 if needed
               new IntakeSpeed(intakeMotor, 0.5),
               // Index ball #2 into already running Launcher
