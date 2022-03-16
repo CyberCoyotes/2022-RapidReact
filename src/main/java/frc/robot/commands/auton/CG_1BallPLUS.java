@@ -31,15 +31,14 @@ public class CG_1BallPLUS extends SequentialCommandGroup {
         new SequentialCommandGroup(
           new WaitCommand(0.75),
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
-          new LaunchSpeed(launcher, 0.30, 0.35)), 
+          new LaunchSpeed(launcher, 0.30, 0.35)));
 
       new ParallelDeadlineGroup(
         new WaitCommand(3),
         new ParallelCommandGroup(
           new IntakeSpeed(intakeMotor, 0.5),
           // (+) Forward speed || (+) Strafe left speed || (+) Turn speed
-          new DriveCommand(drivetrain, () -> {return 0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
-      )
-    );
+          new DriveCommand(drivetrain, () -> {return 0.7;}, () -> {return 0.0;}, () -> {return 0.0;})));
+      
   }
 }

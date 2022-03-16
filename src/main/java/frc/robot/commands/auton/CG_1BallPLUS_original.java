@@ -36,7 +36,7 @@ public class CG_1BallPLUS_original extends SequentialCommandGroup{
                   new ParallelDeadlineGroup(
                     new WaitCommand(4),
                     // Maintain Launcher speed
-                    new LaunchTarmac(launcher), // This is new since event 1
+                    new LaunchTarmac(launcher).withTimeout(2), // This is new since event 1
                     // Intake ball #2 if needed
                     new IntakeSpeed(intakeMotor, 0.5),
                     // Index ball #2 into already running Launcher
@@ -44,15 +44,11 @@ public class CG_1BallPLUS_original extends SequentialCommandGroup{
       
                     // Start the drivetrain
                     new ParallelDeadlineGroup(
-                      // Wait command will stop the paralleldeadlinegroup
-                      // Other conditions could subsituted for time to make the group stop
-                      // 4 seconds of drivetime at 0.70 equates to 105 inches of x,y movement
                       new WaitCommand(3), // 4 seconds drives a little too far
                       new DriveCommand(drivetrain, () -> {return 0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
                       ) // end of Drive ParallelDeadlineGroup
-                      // Launch commands for second Cargo
-      
-                      // Second set of drive commands
+                    
+                      // Launcher wheels still running after everything else is done
       
             ); //end of addCommands
     }
