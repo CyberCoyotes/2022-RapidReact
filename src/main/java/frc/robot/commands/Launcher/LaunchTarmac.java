@@ -9,11 +9,11 @@ package frc.robot.commands.Launcher;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
-public class LaunchHigh extends CommandBase {
-  private final Launcher launcher;
+public class LaunchTarmac extends CommandBase {
+    private final Launcher launcher;
 
   
-  public LaunchHigh(Launcher launch) {
+  public LaunchTarmac(Launcher launch) {
 
     launcher = launch;
     addRequirements(launcher);
@@ -26,8 +26,18 @@ public class LaunchHigh extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    launcher.setHighLaunch();
+    launcher.setTarmacLaunch();
   }
+
+  /** 
+  new LaunchSpeed(launcher, 0.30, 0.35).withTimeout(0.50),
+  // Index the ball #1 into the running Launcher
+    new IndexSpeed(indexMotors, 0.5).withTimeout(0.5), 
+      new ParallelDeadlineGroup(
+        new WaitCommand(4),
+        // Maintain Launcher speed
+        new LaunchSpeed(launcher, 0.36, 0.42),
+*/
 
   // Called once the command ends or is interrupted.
   @Override

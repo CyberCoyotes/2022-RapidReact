@@ -24,7 +24,7 @@ public class CG_2Ball extends SequentialCommandGroup {
   public CG_2Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher, Limelight limelight) {
 
     addCommands(
-      new CG_1BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
+      new CG_1BallPLUS_original(drivetrain, indexMotors, intakeMotor, launcher),
       new ParallelDeadlineGroup(
         new SequentialCommandGroup(
           new WaitCommand(0.75),
