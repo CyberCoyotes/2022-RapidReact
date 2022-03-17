@@ -13,9 +13,11 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 // import frc.robot.Limelight;
 
 
-/** Autonomous place holder for testing purposes
- * Runs the Launcher for second, then runs the launcher again along with index motors with index, launcher, intake, index
+/**  Auton file name for Auton Chooser = 1 Ball & Stay
+ *   
+ *   This command shoots the pre-loaded cargo ball and robot stays put inside of the tarmac
 */ 
+
 public class CG_1Ball extends SequentialCommandGroup {
     
     public CG_1Ball(Index indexMotors, Intake intakeMotor, Launcher launcher) {
