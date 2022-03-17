@@ -9,12 +9,11 @@ package frc.robot.commands.Launcher;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
-
-public class LaunchExtended extends CommandBase {
+public class PreLaunch extends CommandBase {
     private final Launcher launcher;
 
   
-  public LaunchExtended(Launcher launch) {
+  public PreLaunch(Launcher launch) {
 
     launcher = launch;
     addRequirements(launcher);
@@ -27,7 +26,7 @@ public class LaunchExtended extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    launcher.setExtendedLaunch();
+    launcher.setPreLaunch();
   }
 
   // Called once the command ends or is interrupted.
@@ -35,7 +34,6 @@ public class LaunchExtended extends CommandBase {
   public void end(boolean interrupted) {
     launcher.stopLauncher();
   }
-  
   
   // Returns true when the command should end.
   @Override

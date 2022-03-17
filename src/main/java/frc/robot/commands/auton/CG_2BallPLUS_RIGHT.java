@@ -20,19 +20,29 @@ import frc.robot.subsystems.Launcher;
 // import frc.robot.Limelight;
 
 
-public class CG_2BallPLUS extends SequentialCommandGroup {
-  public CG_2BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class CG_2BallPLUS_RIGHT extends SequentialCommandGroup {
+  public CG_2BallPLUS_RIGHT(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       new CG_2Ball(drivetrain, indexMotors, intakeMotor, launcher),
       // Turn right 90 degrees
-      new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 0.7;}).withTimeout(1),
+      new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return -1.0;}).withTimeout(2.25),
 
       // Turn on Intake and Drive forward
       new ParallelDeadlineGroup(
         new WaitCommand(3),
         new IntakeSpeed(intakeMotor, 0.5),
-        new DriveCommand(drivetrain, () -> {return 0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
+        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -0.7;}, () -> {return 0.0;})),
+
+        // Turn Launcher towards the goal
+        new ParallelDeadlineGroup(
+          new WaitCommand(2),
+          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;})),
+
+        // Back up to Goal
+        new ParallelDeadlineGroup(
+          new WaitCommand(0.5),
+          new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
     ); //end of addCommands
   }
 }

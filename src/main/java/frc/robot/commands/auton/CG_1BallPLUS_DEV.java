@@ -28,7 +28,7 @@ public class CG_1BallPLUS_DEV extends SequentialCommandGroup {
       // FIXME This parallel group is still running (I think) and causing illegal operation for subsystems resources. In the meantime, we are using the other 1BallPLUS
       new ParallelDeadlineGroup( 
         new WaitCommand(1.5), // added b/c of parallel group error, but still not working
-        new LaunchPre(launcher),
+        new PreLaunch(launcher),
         new SequentialCommandGroup(
           new WaitCommand(0.75),
           new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),

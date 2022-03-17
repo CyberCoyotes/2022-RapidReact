@@ -39,8 +39,10 @@ import frc.robot.commands.auton.CG_1BallPLUS;
 
 //import frc.robot.commands.auton.CG_1BallPLUS;
 import frc.robot.commands.auton.CG_2Ball;
-import frc.robot.commands.auton.CG_2BallPLUS;
-import frc.robot.commands.auton.CG_3Ball;
+import frc.robot.commands.auton.CG_2BallPLUS_LEFT;
+import frc.robot.commands.auton.CG_2BallPLUS_RIGHT;
+// import frc.robot.commands.auton.CG_3Ball_LEFT;
+import frc.robot.commands.auton.CG_3Ball_RIGHT;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -109,14 +111,17 @@ public class RobotContainer {
     autonChooser.setDefaultOption("1 Ball & Pickup 2nd",
        new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.addOption("2 Ball DEV",
+    autonChooser.addOption("2 Ball",
       new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
 
-    autonChooser.addOption("2 Ball + Pickup 3rd DEV",
-      new CG_2BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.addOption("2 Ball + Pickup 3rd Turned LEFT",
+      new CG_2BallPLUS_LEFT(m_drivetrain, indexMotors, intakeMotor, launcher));
+    
+    autonChooser.addOption("2 Ball + Pickup 3rd Turned RIGHT ",
+      new CG_2BallPLUS_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     autonChooser.addOption("3 Ball DEV",
-      new CG_3Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new CG_3Ball_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     //autonChooser.addOption("DEV TESTING",
       // new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));

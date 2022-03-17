@@ -13,7 +13,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.Launcher.LaunchExtended;
-import frc.robot.commands.Launcher.LaunchPre;
+import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
@@ -23,7 +23,7 @@ public class CG_2Ball extends SequentialCommandGroup {
     addCommands(
       // TODO needs testing and tuning
       new CG_1BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
-      new LaunchPre(launcher).withTimeout(0.50),
+      new PreLaunch(launcher).withTimeout(0.75),
       new LaunchExtended(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))
     ); // End of addCommands
   }
