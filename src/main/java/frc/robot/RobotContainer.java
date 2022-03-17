@@ -172,6 +172,10 @@ public class RobotContainer {
     // Resets the gyroscope to 0 degrees when back button is pressed
     d_backButton.whenPressed(m_drivetrain::zeroGyroscope);
 
+    // Hold Start to manually Advance cargo to the launcher, release to stop motors
+    // d_Start.whenPressed(new IndexSpeed(indexMotors, 0.5));
+    // d_Start.whenReleased(new IndexSpeed(indexMotors, 0));
+
       /**  LOW HOOP UP CLOSE LAUNCH SEQUENCE
        when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
        then finally run all 3 motors at once. release to stop all motors */
@@ -212,21 +216,17 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.0, 0.0))
       );
 
-    // Hold right bumper to manually Intake cargo from the field, release to stop motors
+    // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
     d_RightBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
-    // Hold left bumper to manually Reverse cargo back to the field, release to stop motors
+    // Hold left bumper to manually Intake cargo back to the field, release to stop motors
     d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.5));
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
-    // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_Start.whenPressed(new IndexSpeed(indexMotors, 0.5));
-    d_Start.whenReleased(new IndexSpeed(indexMotors, 0));
-
     // Hold X to set launch speed according to Limelight
-    d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
-    d_ButtonX.whenReleased(new LaunchSpeed(launcher, 0, 0)); // FIXME the launcher continues with Limelight even after releasing 
+    // d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
+    // d_ButtonX.whenReleased(new LaunchSpeed(launcher, 0, 0)); // FIXME the launcher continues with Limelight even after releasing 
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(
@@ -246,14 +246,18 @@ public class RobotContainer {
     // OPERATOR Controller commands
     
     // Press the Start button to make an x-lockout when shooting
-    op_StartButton.whenPressed(new xmode(m_drivetrain));
-    op_StartButton.whenReleased(new xmode(m_drivetrain)); // FIXME to make xmode release
+    // op_StartButton.whenPressed(new xmode(m_drivetrain));
+    // op_StartButton.whenReleased(new xmode(m_drivetrain)); // FIXME to make xmode release
 
     // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
     //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
 
+    // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
+    //op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
+
     //Hold X to rotationally align the robot (driver still has control of translational motion)
-      op_ButtonX.whenPressed(new DriveCommand(
+    /** FIXME
+    op_ButtonX.whenPressed(new DriveCommand(
         m_drivetrain,
           () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
           () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
@@ -265,6 +269,7 @@ public class RobotContainer {
           () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
           () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
       ));
+      */
 
     // hold left bumper to manually raise both climbing arms, release to stop motors
     op_LeftBumper.whenPressed(new LiftCommand(liftMotors, 0.5));
@@ -277,30 +282,10 @@ public class RobotContainer {
     // press A to auto raise both climbing arms to the encoder value of bar #1
     op_ButtonA.whenPressed(new AutoLiftCommandBar1(liftMotors, 0.5));
 
-    // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
-    op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
-
     // press Y to auto raise both climbing arms to encoder value of bar #2
     op_ButtonY.whenPressed(new AutoLiftCommandBar2(liftMotors, 0.5));
-
-   
-
-    /** Did not work, no movement
-    // Use left stick up and down to manually move ONLY left climbing arm up and down
-    leftLiftMotor.setDefaultCommand(new DefaultDriveCommand(
-      m_drivetrainSubsystem,
-      () -> -modifyAxis(operatorController.getLeftY()) * DrivetrainSubsystem.MAX_VELOCITY_METERS_PER_SECOND,
-      () -> -modifyAxis(operatorController.getLeftX()) * DrivetrainSubsystem.MAX_VELOCITY_METERS_PER_SECOND,
-      () -> -modifyAxis(operatorController.getRightX()) * DrivetrainSubsystem.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
-    ));
-    */
-
-    // Use right stick up and down to manually move ONLY right climbing arm up and down
-    rightLiftMotor.setDefaultCommand(new LiftCommand(
-      rightLiftMotor, modifyAxis(operatorController.getRightY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND
-      ));
-
-  }
+    
+  } // End of operator controller
 
   private static double deadband(double value, double deadband) {
     if (Math.abs(value) > deadband) {
