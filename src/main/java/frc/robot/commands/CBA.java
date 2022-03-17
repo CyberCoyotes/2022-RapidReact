@@ -64,7 +64,7 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
  */
  public CBA(Drivetrain subsystem,CBA1Input[] coords) {
 
-    //boring init
+    //boring init(you thought)
      this.driveSubsytem = subsystem;
      this.coords = coords;//'this' keyword refers to the instance of the class, not the parameter. Technically 'lesser' practice 
      
@@ -83,11 +83,12 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
     public void initialize() {
         
         super.initialize();
+        addRequirements(driveSubsytem);
         for(CBA1Input input : coords){
             //Adds a usable version of the input as a command deadlined by the interval for every input.
             //This could possibly be optimized, but list conversions make me wanna cry 
             addCommands(TranslateIntoUsableCommand(input));}
-            addRequirements(driveSubsytem);
+          
     }
     
 
