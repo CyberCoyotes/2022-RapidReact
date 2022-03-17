@@ -55,7 +55,7 @@ public class Launcher extends SubsystemBase {
   // Set Pre Launch Speed
   public void setPreLaunch(){
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-    backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.35);
   }
 
   // Set HIGH goal speed

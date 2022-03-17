@@ -29,14 +29,14 @@ public class CG_1BallPLUS_original extends SequentialCommandGroup{
 
         addCommands(
             // Start the Launcher - speedFront is first double, speedBack is second
-            new LaunchPre(launcher), // This is new since event 1
+            new LaunchPre(launcher), // New since EVENT 1
             new LaunchSpeed(launcher, 0.30, 0.35).withTimeout(0.50),
               // Index the ball #1 into the running Launcher
                 new IndexSpeed(indexMotors, 0.5).withTimeout(0.5), 
                   new ParallelDeadlineGroup(
                     new WaitCommand(4),
                     // Maintain Launcher speed
-                    new LaunchTarmac(launcher).withTimeout(2), // This is new since event 1
+                    new LaunchTarmac(launcher).withTimeout(2), // New since EVENT 1
                     // Intake ball #2 if needed
                     new IntakeSpeed(intakeMotor, 0.5),
                     // Index ball #2 into already running Launcher

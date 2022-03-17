@@ -29,7 +29,7 @@ import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.commands.Launcher.LaunchSpeed;
-import frc.robot.commands.xmode;
+import frc.robot.commands.Launcher.xmode;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -164,7 +164,7 @@ public class RobotContainer {
 
     // DRIVER Controller button commands
 
-    d_Start.whenPressed(new xmode(m_drivetrain));
+    
 
     // Resets the gyroscope to 0 degrees when back button is pressed
     d_backButton.whenPressed(m_drivetrain::zeroGyroscope);
@@ -197,10 +197,10 @@ public class RobotContainer {
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
               new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)), // shortened between launches, good timing
-                new ParallelCommandGroup (
-                  new LaunchSpeed(launcher, 0.36, 0.42),
-                  new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5))) // FIXME added to stop Index, not stopping still
+            new ParallelCommandGroup (
+              new LaunchSpeed(launcher, 0.36, 0.42),
+              new IntakeSpeed(intakeMotor, 0.5),
+              new IndexSpeed(indexMotors, 0.5))) // FIXME added to stop Index, not stopping still
       ));
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(
@@ -223,7 +223,7 @@ public class RobotContainer {
 
     // Hold X to set launch speed according to Limelight
     d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
-    d_ButtonX.whenReleased(new LaunchSpeed(launcher, 0, 0));
+    d_ButtonX.whenReleased(new LaunchSpeed(launcher, 0, 0)); // FIXME the launcher continues with Limelight even after releasing 
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(
@@ -241,6 +241,13 @@ public class RobotContainer {
 
 
     // OPERATOR Controller commands
+    
+    // Press the Start button to make an x-lockout when shooting
+    op_StartButton.whenPressed(new xmode(m_drivetrain));
+    op_StartButton.whenReleased(new xmode(m_drivetrain)); // FIXME to make xmode release
+
+    // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
+    //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
 
     //Hold X to rotationally align the robot (driver still has control of translational motion)
       op_ButtonX.whenPressed(new DriveCommand(
@@ -273,8 +280,7 @@ public class RobotContainer {
     // press Y to auto raise both climbing arms to encoder value of bar #2
     op_ButtonY.whenPressed(new AutoLiftCommandBar2(liftMotors, 0.5));
 
-    // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
-    op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
+   
 
     /** Did not work, no movement
     // Use left stick up and down to manually move ONLY left climbing arm up and down
