@@ -36,7 +36,7 @@ import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.Lift.LockLiftCommandBar1;
 import frc.robot.commands.Lift.LockLiftCommandBar2;
 import frc.robot.commands.auton.CG_1Ball;
-import frc.robot.commands.auton.CG_1BallPLUS_original;
+import frc.robot.commands.auton.CG_1BallPLUS;
 
 //import frc.robot.commands.auton.CG_1BallPLUS;
 import frc.robot.commands.auton.CG_2Ball;
@@ -109,19 +109,19 @@ public class RobotContainer {
       new CG_1Ball(indexMotors, intakeMotor, launcher));
     
     autonChooser.setDefaultOption("1 Ball & Pickup 2nd",
-       new CG_1BallPLUS_original(m_drivetrain, indexMotors, intakeMotor, launcher));
+       new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.addOption("2 Ball DEV",
-      new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher, limelight));
+      new CG_2Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     autonChooser.addOption("2 Ball + Pickup 3rd DEV",
       new CG_2BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     autonChooser.addOption("3 Ball DEV",
-      new CG_3Ball(m_drivetrain, indexMotors, intakeMotor, launcher, limelight));
+      new CG_3Ball(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("DEV TESTING",
-      new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
+    //autonChooser.addOption("DEV TESTING",
+      // new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);

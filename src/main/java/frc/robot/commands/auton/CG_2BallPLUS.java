@@ -24,7 +24,7 @@ public class CG_2BallPLUS extends SequentialCommandGroup {
   public CG_2BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      new CG_2Ball(drivetrain, indexMotors, intakeMotor, launcher, null),
+      new CG_2Ball(drivetrain, indexMotors, intakeMotor, launcher),
       // Turn right 90 degrees
       new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 0.7;}).withTimeout(1),
 

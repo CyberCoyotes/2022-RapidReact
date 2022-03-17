@@ -18,8 +18,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 public class Index extends SubsystemBase {
   
   // variables
-  private final WPI_TalonFX backIndexMotor = new WPI_TalonFX(Constants.BACK_INDEX_MOTOR); // Added so Index() worked
-  private final WPI_TalonFX frontIndexMotor = new WPI_TalonFX(Constants.FRONT_INDEX_MOTOR); // Added so Index() worked
+  private final static WPI_TalonFX backIndexMotor = new WPI_TalonFX(Constants.BACK_INDEX_MOTOR); // Added so Index() worked
+  private final static WPI_TalonFX frontIndexMotor = new WPI_TalonFX(Constants.FRONT_INDEX_MOTOR); // Added so Index() worked
 
   // NOTE you must use WPI_TalonFX subclass rather than TalonFX when grouping motors... 60 minutes of my life wasted
   private MotorControllerGroup indexMotors = new MotorControllerGroup(
@@ -41,7 +41,7 @@ public class Index extends SubsystemBase {
   // 
   
   // double indexVelocity = 3500;
-  public void setIndexSpeed() {
+  public static void setIndexSpeed() {
     backIndexMotor.set(TalonFXControlMode.PercentOutput, 0.5);
     frontIndexMotor.set(TalonFXControlMode.PercentOutput, 0.5);
     // backIndexMotor.set(TalonFXControlMode.PercentOutput, indexVelocity);
