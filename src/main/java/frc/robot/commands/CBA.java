@@ -1,11 +1,8 @@
 package frc.robot.commands;
 import java.util.List;
-<<<<<<< Updated upstream
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-=======
->>>>>>> Stashed changes
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -25,8 +22,23 @@ public class CBA extends SequentialCommandGroup {
     private boolean isFin = false;
     //#endregion
    
-    /**
-     * 
+//#region helpers
+
+
+    private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input)
+    {
+        
+        WaitCommand deadline = new WaitCommand(input.interval);
+        DriveCommand driver = new DriveCommand(driveSubsytem, () -> {return input.x;}, () -> {return input.y;}, () -> {return input.theta;});
+    
+        return new ParallelDeadlineGroup(deadline, driver);
+    
+    }
+    
+//#endregion
+
+//#region constructors
+/**
      * @param collections the Double array to construct a new Clock-Based-Auton sequence. The ordering for each double is as follows:
      *  <ol>
      *      <li>X-coord</li>
@@ -35,7 +47,8 @@ public class CBA extends SequentialCommandGroup {
      *      <li>Interval</li>
      *  </ol>
      */
-public CBA(Double[]... collections) {
+public CBA(Drivetrain subsystem, Double[]... collections) {
+    this.driveSubsytem = subsystem;
     for(int i = 0; i < collections.length; i++){
        coords[i].x = collections[i][0];
        coords[i].y = collections[i][1];
@@ -44,18 +57,6 @@ public CBA(Double[]... collections) {
        
     }
 }
-
-private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input){
-
-    WaitCommand deadline = new WaitCommand(input.interval);
-    DriveCommand driver = new DriveCommand(driveSubsytem, () -> {return input.x;}, () -> {return input.y;}, () -> {return input.theta;});
-
-return new ParallelDeadlineGroup(deadline, driver);
-
-}
-
-
-
 /**
  * @param subsystem The subsystem
  * @param coords the Inputs to use 
@@ -66,17 +67,28 @@ return new ParallelDeadlineGroup(deadline, driver);
     //boring init
      this.driveSubsytem = subsystem;
      this.coords = coords;//'this' keyword refers to the instance of the class, not the parameter. Technically 'lesser' practice 
-     addRequirements(subsystem);
+     
 
-     //good stuff
-     for(CBA1Input input : coords){
-         //Adds a usable version of the input as a command deadlined by the interval for every input.
-         //This could possibly be optimized, but list conversions make me wanna cry 
-         addCommands(TranslateIntoUsableCommand(input));
+   
      }
      
 
-}
+
+//#endregion
+
+
+//#region overrides
+
+    @Override
+    public void initialize() {
+        
+        super.initialize();
+        for(CBA1Input input : coords){
+            //Adds a usable version of the input as a command deadlined by the interval for every input.
+            //This could possibly be optimized, but list conversions make me wanna cry 
+            addCommands(TranslateIntoUsableCommand(input));}
+            addRequirements(driveSubsytem);
+    }
     
 
     @Override
@@ -93,7 +105,7 @@ return new ParallelDeadlineGroup(deadline, driver);
         return isFin;
     }
 
-   //#region my_region
-   
-   //#endregion
+
+//#endregion
+
 }
