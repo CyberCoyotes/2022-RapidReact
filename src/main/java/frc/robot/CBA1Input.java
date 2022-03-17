@@ -6,6 +6,7 @@ public double x, y, theta, interval; //joint declaration, usable for seperate ty
 
 
 
+
 public CBA1Input(double x, double y, double interval) {
     this.x = x;
     this.y = y;

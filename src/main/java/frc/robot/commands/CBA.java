@@ -1,8 +1,11 @@
 package frc.robot.commands;
 import java.util.List;
+<<<<<<< Updated upstream
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+=======
+>>>>>>> Stashed changes
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -15,17 +18,32 @@ import frc.robot.subsystems.Drivetrain;
 public class CBA extends SequentialCommandGroup {
     /**the coords to for the robot to attempt to replicate; note this will be a shallow attempt, and may need tuning forward*/
     //#region properties
-    List<CBA1Input> coords;
-    //this timer is the wpilib version, if it doesnt work its the build teams fault
-    Timer timer;
-
-    //The paralleldeadlinegroup commands that are executed as part of this command
-    List<ParallelDeadlineGroup> commands;
-    
-    //#endregion
+    private CBA1Input[] coords;
+    //Subsystem. Drives.
     private Drivetrain driveSubsytem;
+    //A simple flag to indicate if the command has finished.
     private boolean isFin = false;
-    
+    //#endregion
+   
+    /**
+     * 
+     * @param collections the Double array to construct a new Clock-Based-Auton sequence. The ordering for each double is as follows:
+     *  <ol>
+     *      <li>X-coord</li>
+     *      <li>Y-coord</li>
+     *      <li>Theta(turning)</li>
+     *      <li>Interval</li>
+     *  </ol>
+     */
+public CBA(Double[]... collections) {
+    for(int i = 0; i < collections.length; i++){
+       coords[i].x = collections[i][0];
+       coords[i].y = collections[i][1];
+       coords[i].theta = collections[i][2];
+       coords[i].interval = collections[i][3];
+       
+    }
+}
 
 private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input){
 
@@ -36,15 +54,16 @@ return new ParallelDeadlineGroup(deadline, driver);
 
 }
 
+
+
 /**
  * @param subsystem The subsystem
  * @param coords the Inputs to use 
  * 
  */
- public CBA(Drivetrain subsystem,List<CBA1Input> coords) {
+ public CBA(Drivetrain subsystem,CBA1Input[] coords) {
 
     //boring init
-     this.timer = new Timer();
      this.driveSubsytem = subsystem;
      this.coords = coords;//'this' keyword refers to the instance of the class, not the parameter. Technically 'lesser' practice 
      addRequirements(subsystem);
@@ -63,10 +82,8 @@ return new ParallelDeadlineGroup(deadline, driver);
     @Override
     public void execute() 
         {
+            //this only works because we added the commands on 
             super.execute();
-
-
-            
             isFin = true;
         }
 
@@ -76,5 +93,7 @@ return new ParallelDeadlineGroup(deadline, driver);
         return isFin;
     }
 
-   //end code not currently in place, no need?
+   //#region my_region
+   
+   //#endregion
 }
