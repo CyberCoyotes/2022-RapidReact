@@ -34,7 +34,6 @@ import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.Lift.LockLiftCommandBar1;
-import frc.robot.commands.Lift.LockLiftCommandBar2;
 import frc.robot.commands.auton.CG_1Ball;
 import frc.robot.commands.auton.CG_1BallPLUS;
 
@@ -42,7 +41,6 @@ import frc.robot.commands.auton.CG_1BallPLUS;
 import frc.robot.commands.auton.CG_2Ball;
 import frc.robot.commands.auton.CG_2BallPLUS;
 import frc.robot.commands.auton.CG_3Ball;
-import frc.robot.commands.CommandGroups.CG_DEV;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
