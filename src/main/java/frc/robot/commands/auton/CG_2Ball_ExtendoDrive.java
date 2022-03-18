@@ -11,7 +11,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.Launcher.LaunchExtended;
+import frc.robot.commands.Launcher.LaunchBall2;
 import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
@@ -29,7 +29,7 @@ public class CG_2Ball_ExtendoDrive extends SequentialCommandGroup {
       // TODO needs tuning
       new CG_1BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchExtended(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+      new LaunchBall2(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
 
       //drive further away from goal after launch
       new ParallelDeadlineGroup(

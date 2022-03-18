@@ -10,11 +10,11 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
 
-public class LaunchExtended extends CommandBase {
+public class LaunchBall3 extends CommandBase {
     private final Launcher launcher;
 
   
-  public LaunchExtended(Launcher launch) {
+  public LaunchBall3(Launcher launch) {
 
     launcher = launch;
     addRequirements(launcher);
