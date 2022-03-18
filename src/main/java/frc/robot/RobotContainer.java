@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-
+import edu.wpi.first.wpilibj2.command.WaitCommand;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Index;
@@ -199,7 +199,7 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
       d_ButtonY.whenPressed(
         
-      new ParallelDeadlineGroup(new SequentialCommandGroup(
+      new ParallelCommandGroup(new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
@@ -216,6 +216,7 @@ public class RobotContainer {
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
         new LaunchSpeed(launcher, 0.0, 0.0))
+
       );
 
     // Hold right bumper to manually Intake cargo from the field, release to stop motors
@@ -331,8 +332,30 @@ public class RobotContainer {
 
 
   public Command getAutonomousCommand() {
+//<>purpose
+    //sequential(deadline(wait, sequential<launching>, xmode), parallel<stop all motors>)
 
-     return autonChooser.getSelected();
+    return
+    new SequentialCommandGroup(
+      //for 2 seconds, run the launchers and xmode
+      new ParallelDeadlineGroup(
+        new WaitCommand(5),
+        new SequentialCommandGroup(
+          new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
+            new SequentialCommandGroup(
+              new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
+                new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
+                  new ParallelCommandGroup (
+                    new LaunchSpeed(launcher, 0.25, 0.25),
+                    new IntakeSpeed(intakeMotor, 0.5),
+                    new IndexSpeed(indexMotors, 0.5)))),
+      
+        new xmode(m_drivetrain)));
+        //after the 2 seconds are up, stop the motors in parallel.
+        // new ParallelCommandGroup(
+        //   new IntakeSpeed(intakeMotor, 0.0),
+        //   new IndexSpeed(indexMotors, 0.0),
+        //   new LaunchSpeed(launcher, 0.0, 0.0)));
     
 
   }; // end of getAutonomusCommand()

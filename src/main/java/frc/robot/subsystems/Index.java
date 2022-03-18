@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.TalonFXControlMode;
 
 // Shuffleboard imports
@@ -48,7 +49,9 @@ public class Index extends SubsystemBase {
   }
 
   public void stopIndex() {
-    indexMotors.set(0);
+    backIndexMotor.set(ControlMode.PercentOutput, 0);
+    frontIndexMotor.set(ControlMode.PercentOutput, 0);
+
   }
 
   @Override
