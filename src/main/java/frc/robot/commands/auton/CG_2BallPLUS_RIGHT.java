@@ -40,21 +40,22 @@ public class CG_2BallPLUS_RIGHT extends SequentialCommandGroup {
         new WaitCommand(1.85),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return -1.0;})),
 
-      // Turn on Intake and Drive forward
+      // Turn on Intake and Drive towards ball 3
       new ParallelDeadlineGroup(
-        new WaitCommand(4),
+        new WaitCommand(4.5),
         new IntakeSpeed(intakeMotor, 0.5),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -0.7;}, () -> {return 0.0;})),
 
         // Turn Launcher towards the goal
         new ParallelDeadlineGroup(
-          new WaitCommand(1.85),
-          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;})),
+          new WaitCommand(1.25),
+          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;}))
 
-        // Back up to Goal
-        new ParallelDeadlineGroup(
-          new WaitCommand(0.5),
-          new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
+        // Back up to Goal - commenting out for now 
+        //new ParallelDeadlineGroup(
+          //new WaitCommand(0.5),
+          //new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
+
    ); //end of addCommands
   }
 }
