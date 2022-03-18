@@ -13,6 +13,7 @@ import frc.robot.commands.IntakeSpeed;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.Launcher.LaunchExtended;
+import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
@@ -28,6 +29,7 @@ public class CG_3Ball_RIGHT extends SequentialCommandGroup {
 
     addCommands(
       new CG_2BallPLUS_RIGHT(drivetrain, indexMotors, intakeMotor, launcher),
-      new LaunchExtended(launcher));
+      new PreLaunch(launcher).withTimeout(0.75),
+      new LaunchExtended(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)));
   }
 }

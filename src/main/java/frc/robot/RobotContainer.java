@@ -102,19 +102,19 @@ public class RobotContainer {
     // AUTONOMOUS chooser
 
     // Launches high goal inside tarmac, drives out with launch sequence operating
-    autonChooser.addOption("1 Ball & Stay",
-      new CG_1Ball(indexMotors, intakeMotor, launcher));
+    //autonChooser.addOption("1 Ball & Stay",
+      //new CG_1Ball(indexMotors, intakeMotor, launcher));
     
-    autonChooser.addOption("1 Ball & Pickup 2nd",
-       new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
+    //autonChooser.addOption("1 Ball & Pickup 2nd",
+       //new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.setDefaultOption("2 Ball",
+    autonChooser.addOption("2 Ball",
       new CG_2Ball_ExtendoDrive(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.addOption("2 Ball + Pickup 3rd",
       new CG_2BallPLUS_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("3 Ball BETA",
+    autonChooser.setDefaultOption("3 Ball BETA",
       new CG_3Ball_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     //autonChooser.addOption("DEV TESTING",
