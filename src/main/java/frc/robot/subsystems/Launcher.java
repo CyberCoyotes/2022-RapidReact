@@ -70,11 +70,11 @@ public class Launcher extends SubsystemBase {
       backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
     }
 
-    // Set for bumper on outside tarmac
+    // Set for 3rd ball pickup spot
     public void setLaunch3() {
-      frontLauncherMotor.set(ControlMode.PercentOutput, 0.65);
+      frontLauncherMotor.set(ControlMode.PercentOutput, 0.68); //0.65 hit the front rim of Hub, changing to 0.68
       backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-        }
+    }
   
   // Set HIGH goal speed
   public void setHighLaunch() {
