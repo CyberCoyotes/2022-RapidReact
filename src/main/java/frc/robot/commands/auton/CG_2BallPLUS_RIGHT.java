@@ -49,12 +49,12 @@ public class CG_2BallPLUS_RIGHT extends SequentialCommandGroup {
         // Turn Launcher towards the goal
         new ParallelDeadlineGroup(
           new WaitCommand(1),
-          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;})),
+          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;}))
 
         // Back up to Goal - commenting out for now 
-        new ParallelDeadlineGroup(
-          new WaitCommand(0.35),
-          new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))
+       // new ParallelDeadlineGroup(
+         // new WaitCommand(0.35),
+         // new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))
 
    ); //end of addCommands
   }

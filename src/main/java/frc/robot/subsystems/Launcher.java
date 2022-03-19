@@ -72,7 +72,7 @@ public class Launcher extends SubsystemBase {
 
     // Set for bumper on outside tarmac
     public void setLaunch3() {
-      frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);
+      frontLauncherMotor.set(ControlMode.PercentOutput, 0.65);
       backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
         }
   
