@@ -32,8 +32,8 @@ public class CG_2BallPLUS_RIGHT extends SequentialCommandGroup {
 
        // Back up to Goal
        new ParallelDeadlineGroup(
-        new WaitCommand(0.75),
-        new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;})),
+        new WaitCommand(0.5),
+        new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
 
       // Turn right 90 degrees
       new ParallelDeadlineGroup(
@@ -42,19 +42,19 @@ public class CG_2BallPLUS_RIGHT extends SequentialCommandGroup {
 
       // Turn on Intake and Drive towards ball 3
       new ParallelDeadlineGroup(
-        new WaitCommand(5),
+        new WaitCommand(3.25),
         new IntakeSpeed(intakeMotor, 0.5),
-        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -0.7;}, () -> {return 0.0;})),
+        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -1.0;}, () -> {return 0.0;})),
 
         // Turn Launcher towards the goal
         new ParallelDeadlineGroup(
           new WaitCommand(1),
-          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;}))
+          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;})),
 
         // Back up to Goal - commenting out for now 
-        //new ParallelDeadlineGroup(
-          //new WaitCommand(0.5),
-          //new DriveCommand(drivetrain, () -> {return -0.7;}, () -> {return 0.0;}, () -> {return 0.0;}))
+        new ParallelDeadlineGroup(
+          new WaitCommand(0.35),
+          new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))
 
    ); //end of addCommands
   }

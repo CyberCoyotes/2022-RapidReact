@@ -27,9 +27,9 @@ public class CG_1BallPLUS extends SequentialCommandGroup{
             new CG_1Ball(indexMotors, intakeMotor, launcher),
             // Start the drivetrain
             new ParallelDeadlineGroup(
-              new WaitCommand(1.75),  
+              new WaitCommand(1.1),  
               new IntakeSpeed(intakeMotor, 0.5),
-              new DriveCommand(drivetrain, () -> {return 0.7;}, () -> {return 0.0;}, () -> {return 0.0;})),
+              new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;})), //1st return was 0.7
 
             new IntakeSpeed(intakeMotor, 0.5).withTimeout(1)
 
