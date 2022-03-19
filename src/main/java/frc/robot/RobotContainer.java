@@ -14,8 +14,9 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-
+import edu.wpi.first.wpilibj2.command.WaitCommand;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Index;
@@ -27,6 +28,7 @@ import frc.robot.subsystems.Lift;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.XLaunch;
 import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Launcher.xmode;
@@ -162,6 +164,7 @@ public class RobotContainer {
     // DRIVER Controller button commands
 
     
+    //d_Start.whenPressed(new xmode(m_drivetrain));
 
     // Resets the gyroscope to 0 degrees when back button is pressed
     d_backButton.whenPressed(m_drivetrain::zeroGyroscope);
@@ -173,7 +176,8 @@ public class RobotContainer {
       /**  LOW HOOP UP CLOSE LAUNCH SEQUENCE
        when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
        then finally run all 3 motors at once. release to stop all motors */
-      d_ButtonA.whenPressed(new SequentialCommandGroup(
+      d_ButtonA.whenPressed(
+       new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
@@ -182,7 +186,8 @@ public class RobotContainer {
                   new LaunchSpeed(launcher, 0.25, 0.25),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5)))
-      ));
+       )
+     );
       //stops all 3 motors when A button released
       d_ButtonA.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
@@ -193,7 +198,9 @@ public class RobotContainer {
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
-      d_ButtonY.whenPressed(new SequentialCommandGroup(
+      d_ButtonY.whenPressed(
+        
+    new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
@@ -208,7 +215,9 @@ public class RobotContainer {
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
         new LaunchSpeed(launcher, 0.0, 0.0))
+
       );
+      d_ButtonX.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
@@ -218,9 +227,13 @@ public class RobotContainer {
     d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.5));
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
+    // Hold Start to manually Advance cargo to the launcher, release to stop motors
+    d_Start.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
+    
+
     // Hold X to set launch speed according to Limelight
     // d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
-    // d_ButtonX.whenReleased(new LaunchSpeed(launcher, 0, 0)); // FIXME the launcher continues with Limelight even after releasing 
+    // d_ButtonX.whenPressed(new LaunchSpeed(launcher, 0, 0));
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(
@@ -310,8 +323,10 @@ public class RobotContainer {
 
 
   public Command getAutonomousCommand() {
+//<>purpose
+    //sequential(deadline(wait, sequential<launching>, xmode), parallel<stop all motors>)
 
-     return autonChooser.getSelected();
+    return autonChooser.getSelected();
     
 
   }; // end of getAutonomusCommand()

@@ -26,7 +26,6 @@ public class Index extends SubsystemBase {
     new WPI_TalonFX(Constants.FRONT_INDEX_MOTOR), 
     new WPI_TalonFX(Constants.BACK_INDEX_MOTOR));
   
-
   public Index() {
     backIndexMotor.setInverted(true);
     frontIndexMotor.setInverted(false);
