@@ -28,6 +28,7 @@ import frc.robot.subsystems.Lift;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.XLaunch;
 import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.xmode;
@@ -165,7 +166,7 @@ public class RobotContainer {
 
     // DRIVER Controller button commands
 
-    d_Start.whenPressed(new xmode(m_drivetrain));
+    //d_Start.whenPressed(new xmode(m_drivetrain));
 
     // Resets the gyroscope to 0 degrees when back button is pressed
     d_backButton.whenPressed(m_drivetrain::zeroGyroscope);
@@ -174,8 +175,7 @@ public class RobotContainer {
        when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
        then finally run all 3 motors at once. release to stop all motors */
       d_ButtonA.whenPressed(
-      
-      new ParallelDeadlineGroup( new SequentialCommandGroup(
+       new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
@@ -184,8 +184,7 @@ public class RobotContainer {
                   new LaunchSpeed(launcher, 0.25, 0.25),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5)))
-      ),new xmode(m_drivetrain))
-      
+       )
      );
       //stops all 3 motors when A button released
       d_ButtonA.whenReleased(new ParallelCommandGroup(
@@ -199,7 +198,7 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
       d_ButtonY.whenPressed(
         
-      new ParallelCommandGroup(new SequentialCommandGroup(
+    new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
@@ -208,9 +207,7 @@ public class RobotContainer {
                   new LaunchSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)) // FIXME added to stop Index, not stopping still
-      )), new xmode(m_drivetrain))
-      
-      );
+      )));
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
@@ -228,8 +225,8 @@ public class RobotContainer {
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_Start.whenPressed(new IndexSpeed(indexMotors, 0.5));
-    d_Start.whenReleased(new IndexSpeed(indexMotors, 0));
+    d_Start.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
+    
 
     // Hold X to set launch speed according to Limelight
     d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
@@ -335,27 +332,7 @@ public class RobotContainer {
 //<>purpose
     //sequential(deadline(wait, sequential<launching>, xmode), parallel<stop all motors>)
 
-    return
-    new SequentialCommandGroup(
-      //for 2 seconds, run the launchers and xmode
-      new ParallelDeadlineGroup(
-        new WaitCommand(5),
-        new SequentialCommandGroup(
-          new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
-            new SequentialCommandGroup(
-              new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
-                new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
-                  new ParallelCommandGroup (
-                    new LaunchSpeed(launcher, 0.25, 0.25),
-                    new IntakeSpeed(intakeMotor, 0.5),
-                    new IndexSpeed(indexMotors, 0.5)))),
-      
-        new xmode(m_drivetrain)));
-        //after the 2 seconds are up, stop the motors in parallel.
-        // new ParallelCommandGroup(
-        //   new IntakeSpeed(intakeMotor, 0.0),
-        //   new IndexSpeed(indexMotors, 0.0),
-        //   new LaunchSpeed(launcher, 0.0, 0.0)));
+    return autonChooser.getSelected();
     
 
   }; // end of getAutonomusCommand()
