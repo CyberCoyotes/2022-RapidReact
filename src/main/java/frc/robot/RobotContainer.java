@@ -215,6 +215,7 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.0, 0.0))
 
       );
+      d_ButtonX.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Hold right bumper to manually Intake cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
@@ -229,8 +230,8 @@ public class RobotContainer {
     
 
     // Hold X to set launch speed according to Limelight
-    d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
-    d_ButtonX.whenPressed(new LaunchSpeed(launcher, 0, 0));
+    // d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
+    // d_ButtonX.whenPressed(new LaunchSpeed(launcher, 0, 0));
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(
