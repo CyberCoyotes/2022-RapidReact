@@ -14,9 +14,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
-import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import edu.wpi.first.wpilibj2.command.WaitCommand;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Index;
@@ -29,16 +27,10 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.XLaunch;
-import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.commands.Launcher.LaunchSpeed;
-import frc.robot.commands.Launcher.xmode;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.Lift.LockLiftCommandBar1;
-import frc.robot.commands.auton.CG_1Ball;
-import frc.robot.commands.auton.CG_1BallPLUS;
-import frc.robot.commands.auton.CG_2Ball;
 import frc.robot.commands.auton.CG_2BallPLUS_RIGHT;
 import frc.robot.commands.auton.CG_2Ball_ExtendoDrive;
 import frc.robot.commands.auton.CG_3Ball_RIGHT;
@@ -70,7 +62,7 @@ public class RobotContainer {
   
   //// Lift 
   private final Lift liftMotors = new Lift();
-  private final Lift rightLiftMotor = new Lift();
+  // private final Lift rightLiftMotor = new Lift();
   // private final Lift leftLiftMotor = new Lift();
   // private final LiftPivot liftPivotMotors = new LiftPivot();
 
@@ -152,10 +144,10 @@ public class RobotContainer {
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
     // Not being used. final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
-    final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
+    // final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
-    final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
-    final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
+    // final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
+    // final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
 

@@ -25,7 +25,6 @@ public class LaunchAutomatic extends CommandBase {
   public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
-  // FIXME stuck in the launch wheel loop, does not stop after releasing button
   // adjusting range to include 2.0 but still using default power output 
   @Override
   public void execute() {

@@ -23,7 +23,6 @@ public class CG_2Ball extends SequentialCommandGroup {
   public CG_2Ball(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      // TODO needs tuning
       new CG_1BallPLUS(drivetrain, indexMotors, intakeMotor, launcher),
       new PreLaunch(launcher).withTimeout(0.5),
       new LaunchBall2(launcher).withTimeout(0.5).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))
