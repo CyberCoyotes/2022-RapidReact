@@ -110,13 +110,13 @@ public class RobotContainer {
     //autonChooser.addOption("1 Ball & Pickup 2nd",
        //new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.addOption("2 Ball",
+    autonChooser.addOption("2 Ball + Drive straight",
       new CG_2Ball_ExtendoDrive(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.addOption("2 Ball + Pickup 3rd",
       new CG_2BallPLUS_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.setDefaultOption("3 Ball BETA",
+    autonChooser.setDefaultOption("3 Ball",
       new CG_3Ball_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     //autonChooser.addOption("DEV TESTING",
