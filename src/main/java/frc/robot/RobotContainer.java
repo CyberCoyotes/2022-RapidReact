@@ -209,6 +209,8 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.0, 0.0))
 
       );
+
+      // FIXME missing whenReleased
       d_ButtonX.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
