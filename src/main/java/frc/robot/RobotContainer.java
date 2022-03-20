@@ -196,11 +196,11 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)), // shortened between launches, good timing
+              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
             new ParallelCommandGroup (
               new LaunchSpeed(launcher, 0.36, 0.42),
               new IntakeSpeed(intakeMotor, 0.5),
-              new IndexSpeed(indexMotors, 0.5))) // FIXME added to stop Index, not stopping still
+              new IndexSpeed(indexMotors, 0.5)))
       ));
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(
@@ -246,7 +246,7 @@ public class RobotContainer {
     
     // Press the Start button to make an x-lockout when shooting
     // op_StartButton.whenPressed(new xmode(m_drivetrain));
-    // op_StartButton.whenReleased(new xmode(m_drivetrain)); // FIXME to make xmode release
+    // op_StartButton.whenReleased(new xmode(m_drivetrain));
 
     // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
     //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
@@ -255,7 +255,7 @@ public class RobotContainer {
     //op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
 
     //Hold X to rotationally align the robot (driver still has control of translational motion)
-    /** FIXME
+    /**
     op_ButtonX.whenPressed(new DriveCommand(
         m_drivetrain,
           () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,

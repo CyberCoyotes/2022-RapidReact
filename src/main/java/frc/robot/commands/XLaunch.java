@@ -30,11 +30,11 @@ public class XLaunch extends SequentialCommandGroup{
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
             new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)), // shortened between launches, good timing
+              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
                 new ParallelCommandGroup (
                   new LaunchSpeed(launcher, 0.36, 0.42),
                   new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)) // FIXME added to stop Index, not stopping still
+                  new IndexSpeed(indexMotors, 0.5).withTimeout(0.5))
       )), new xmode(m_drivetrain))
       );
   }
