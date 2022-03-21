@@ -17,8 +17,8 @@ import frc.robot.subsystems.Launcher;
 
 // TODO See ISSUE #87. Get robot to turn approximately the correct number of degrees. 
 
-public class CG_Turn_dev extends SequentialCommandGroup {
-  public CG_Turn_dev(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Turn_dev extends SequentialCommandGroup {
+  public Turn_dev(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       // Reset the gyro for assisting the driver going into teleop

@@ -283,9 +283,7 @@ public class Drivetrain extends SubsystemBase {
       states[3].angle.getRadians());
 
     SmartDashboard.putNumber("Raw Angle", getRawRoation());
-    // FIXME This updates on Dashboard but doesn't wrap to zero. Same as Raw Angle.
     SmartDashboard.putNumber("current angle", getGyroscopeRotation().getDegrees());
-    // FIXME See if it actually updates on Dashboard
     SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
     SmartDashboard.putNumber("Current X", getPose().getX()); 
     SmartDashboard.putNumber("Current Y", getPose().getY());

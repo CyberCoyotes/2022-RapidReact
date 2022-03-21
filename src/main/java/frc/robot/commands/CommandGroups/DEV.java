@@ -19,8 +19,8 @@ import frc.robot.subsystems.Launcher;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class CG_DEV extends SequentialCommandGroup {
-  public CG_DEV(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class DEV extends SequentialCommandGroup {
+  public DEV(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       // Launches the preloaded ball

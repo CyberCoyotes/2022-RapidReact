@@ -31,9 +31,9 @@ import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.auton.CG_2BallPLUS_RIGHT;
-import frc.robot.commands.auton.CG_2Ball_ExtendoDrive;
-import frc.robot.commands.auton.CG_3Ball_RIGHT;
+import frc.robot.commands.auton.Ball2PlusAuton;
+import frc.robot.commands.auton.Ball2Auton;
+import frc.robot.commands.auton.Ball3Auton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -103,13 +103,13 @@ public class RobotContainer {
        //new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.addOption("2 Ball + Drive straight",
-      new CG_2Ball_ExtendoDrive(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new Ball2Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.addOption("2 Ball + Pickup 3rd",
-      new CG_2BallPLUS_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new Ball2PlusAuton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     autonChooser.setDefaultOption("3 Ball",
-      new CG_3Ball_RIGHT(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     //autonChooser.addOption("DEV TESTING",
       // new CG_DEV(m_drivetrain, indexMotors, intakeMotor, launcher));
@@ -190,8 +190,7 @@ public class RobotContainer {
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
-      d_ButtonY.whenPressed(
-        
+    d_ButtonY.whenPressed(    
     new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(

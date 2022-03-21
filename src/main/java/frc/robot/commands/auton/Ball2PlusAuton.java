@@ -24,11 +24,11 @@ import frc.robot.subsystems.Launcher;
 */
 
 
-public class CG_2BallPLUS_RIGHT extends SequentialCommandGroup {
-  public CG_2BallPLUS_RIGHT(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Ball2PlusAuton extends SequentialCommandGroup {
+  public Ball2PlusAuton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      new CG_2Ball(drivetrain, indexMotors, intakeMotor, launcher),
+      new Ball2DriveStraightAuton(drivetrain, indexMotors, intakeMotor, launcher),
 
        // Back up to Goal
        new ParallelDeadlineGroup(

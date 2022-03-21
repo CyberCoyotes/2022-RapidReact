@@ -20,11 +20,11 @@ import frc.robot.subsystems.Launcher;
  *   up a second ball and stops
 */
 
-public class CG_1BallPLUS extends SequentialCommandGroup{
-    public CG_1BallPLUS(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher){
+public class Ball1PlusAuton extends SequentialCommandGroup{
+    public Ball1PlusAuton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher){
 
         addCommands(
-            new CG_1Ball(indexMotors, intakeMotor, launcher),
+            new Ball1Auton(indexMotors, intakeMotor, launcher),
             // Start the drivetrain
             new ParallelDeadlineGroup(
               new WaitCommand(1.1),  

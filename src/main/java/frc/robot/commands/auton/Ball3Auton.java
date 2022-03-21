@@ -20,11 +20,11 @@ import frc.robot.subsystems.Launcher;
  *   then robot turns right and drives to picks up and shoots a 3rd cargo ball
 */
 
-public class CG_3Ball_RIGHT extends SequentialCommandGroup {
-  public CG_3Ball_RIGHT(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Ball3Auton extends SequentialCommandGroup {
+  public Ball3Auton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      new CG_2BallPLUS_RIGHT(drivetrain, indexMotors, intakeMotor, launcher),
+      new Ball2PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)));
   }

@@ -18,9 +18,9 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
  *   This command shoots the pre-loaded cargo ball and robot stays put inside of the tarmac
 */ 
 
-public class CG_1Ball extends SequentialCommandGroup {
+public class Ball1Auton extends SequentialCommandGroup {
     
-    public CG_1Ball(Index indexMotors, Intake intakeMotor, Launcher launcher) {
+    public Ball1Auton(Index indexMotors, Intake intakeMotor, Launcher launcher) {
       addCommands(
         new PreLaunch(launcher).withTimeout(0.75),
         new SequentialCommandGroup(
