@@ -27,6 +27,7 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.XLaunch;
+import frc.robot.commands.Launcher.LaunchHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
@@ -190,7 +191,9 @@ public class RobotContainer {
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
-    d_ButtonY.whenPressed(    
+    d_ButtonY.whenPressed(new LaunchHigh(launcher));
+    
+    /** original 
     new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
@@ -201,16 +204,21 @@ public class RobotContainer {
               new IntakeSpeed(intakeMotor, 0.5),
               new IndexSpeed(indexMotors, 0.5)))
       ));
+      */
+
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
         new LaunchSpeed(launcher, 0.0, 0.0))
-
       );
 
-      // FIXME missing whenReleased
-      d_ButtonX.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_ButtonX.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_ButtonX.whenReleased(new ParallelCommandGroup(
+      new IntakeSpeed(intakeMotor, 0.0),
+      new IndexSpeed(indexMotors, 0.0),
+      new LaunchSpeed(launcher, 0.0, 0.0)
+    ));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));

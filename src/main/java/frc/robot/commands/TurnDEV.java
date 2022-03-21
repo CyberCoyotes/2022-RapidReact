@@ -6,7 +6,7 @@
 * Goal: launch cargo from inside the tarmac and drive forward a set time
 **/ 
 
-package frc.robot.commands.CommandGroups;
+package frc.robot.commands;
 
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -15,10 +15,8 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
 
-// TODO See ISSUE #87. Get robot to turn approximately the correct number of degrees. 
-
-public class Turn_dev extends SequentialCommandGroup {
-  public Turn_dev(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class TurnDEV extends SequentialCommandGroup {
+  public TurnDEV(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       // Reset the gyro for assisting the driver going into teleop
