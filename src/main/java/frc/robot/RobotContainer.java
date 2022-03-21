@@ -27,7 +27,7 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.XLaunch;
-import frc.robot.commands.Launcher.LaunchHigh;
+import frc.robot.commands.CommandGroups.Group2BallsHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
@@ -68,7 +68,7 @@ public class RobotContainer {
   // private final LiftPivot liftPivotMotors = new LiftPivot();
 
   //// Limelight
-  private final Limelight limelight = new Limelight();
+  // private final Limelight limelight = new Limelight();
   
   //// Autonomous
   SendableChooser<Command> autonChooser = new SendableChooser<>();
@@ -191,7 +191,9 @@ public class RobotContainer {
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
-    d_ButtonY.whenPressed(new LaunchHigh(launcher));
+
+    // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
+    d_ButtonY.whenPressed(new Group2BallsHigh(launcher, intakeMotor, indexMotors));
     
     /** original 
     new SequentialCommandGroup(

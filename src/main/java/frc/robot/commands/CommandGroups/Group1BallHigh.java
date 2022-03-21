@@ -1,9 +1,10 @@
+
 package frc.robot.commands.CommandGroups;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.Launcher.LaunchHigh;
+import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
@@ -14,14 +15,15 @@ import frc.robot.subsystems.Launcher;
  * It will allow easier recycing of launcer code for auton
  * */
 
-public class Launch1HighBall extends SequentialCommandGroup {
+public class Group1BallHigh extends SequentialCommandGroup {
     
-    public Launch1HighBall(Launcher launcher, Intake intakeMotor, Index indexMotors) {
+    public Group1BallHigh(Launcher launcher, Intake intakeMotor, Index indexMotors) {
      addCommands(
-       new LaunchHigh(launcher), //.withTimeout(0.75),
-       new IndexSpeed(indexMotors, 0.5), // .withTimeout(0.25))
-       new IntakeSpeed(intakeMotor, 0.5)
-      ); // end of commands
+       new PreLaunch(launcher).withTimeout(0.4),
+       new SequentialCommandGroup(
+         new LaunchHigh(launcher).withTimeout(0.25),
+         new IndexSpeed(indexMotors, 0.5).withTimeout(0.4))
+         ); // end of commands
 
     } // end of CG
     
