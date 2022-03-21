@@ -32,7 +32,6 @@ import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.PathPlannerBased.SimplePath;
 import frc.robot.commands.auton.Ball2PlusAuton;
 import frc.robot.commands.auton.Ball2Auton;
 import frc.robot.commands.auton.Ball3Auton;
@@ -114,7 +113,7 @@ public class RobotContainer {
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     autonChooser.addOption("DEV TESTING",
-       new SimplePath(m_drivetrain));
+       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
