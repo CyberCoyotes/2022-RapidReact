@@ -26,8 +26,8 @@ import frc.robot.subsystems.Lift;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.XLaunch;
 import frc.robot.commands.CommandGroups.Group2BallsHigh;
-import frc.robot.commands.CommandGroups.GroupXHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
@@ -113,7 +113,6 @@ public class RobotContainer {
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     autonChooser.addOption("DEV TESTING",
-      // The auton command group that needs to be tested can be swapped in & out here
        new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
@@ -216,7 +215,7 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.0, 0.0))
       );
 
-    d_ButtonX.whenPressed(new GroupXHigh(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_ButtonX.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
@@ -232,7 +231,7 @@ public class RobotContainer {
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_Start.whenPressed(new GroupXHigh(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_Start.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
     
 
     // Hold X to set launch speed according to Limelight
