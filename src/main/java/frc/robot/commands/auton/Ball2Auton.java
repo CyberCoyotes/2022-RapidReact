@@ -33,8 +33,7 @@ public class Ball2Auton extends SequentialCommandGroup {
       //drive further away from goal after launch
       new ParallelDeadlineGroup(
         new WaitCommand(1.2),
-        new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;})) //1st return was 0.7
-      
+        new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))      
     ); // End of addCommands
   } // end of sequential group
 } //end of file

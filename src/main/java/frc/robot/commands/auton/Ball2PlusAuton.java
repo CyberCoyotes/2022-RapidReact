@@ -11,6 +11,7 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.TurnToDegrees;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 // import frc.robot.Limelight;
@@ -36,9 +37,12 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
         new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
 
       // Turn right 90 degrees
-      new ParallelDeadlineGroup(
+      new TurnToDegrees(drivetrain, 90), // TODO Confirm experimentally that values are correct
+
+      /* new ParallelDeadlineGroup(
         new WaitCommand(1.85),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return -1.0;})),
+      */
 
       // Turn on Intake and Drive towards ball 3
       new ParallelDeadlineGroup(
@@ -47,9 +51,12 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -1.0;}, () -> {return 0.0;})),
 
         // Turn Launcher towards the goal
+      new TurnToDegrees(drivetrain, 90) // TODO Confirm experimentally that values are correct
+        /** 
         new ParallelDeadlineGroup(
           new WaitCommand(1),
           new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;}))
+        */
 
         // Back up to Goal - commenting out for now 
        // new ParallelDeadlineGroup(

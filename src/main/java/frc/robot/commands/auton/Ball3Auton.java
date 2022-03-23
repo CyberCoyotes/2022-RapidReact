@@ -6,6 +6,7 @@ package frc.robot.commands.auton;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
+import frc.robot.commands.TurnToDegrees;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.Launcher.LaunchBall3;
@@ -26,6 +27,10 @@ public class Ball3Auton extends SequentialCommandGroup {
     addCommands(
       new Ball2PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)));
+      new LaunchBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+      new TurnToDegrees(drivetrain, 45) // TODO confirm experimentallly
+      // FIXME new Drivetrain.zeroGyroscope(drivetrain)
+      ); // End of commands
   }
+
 }
