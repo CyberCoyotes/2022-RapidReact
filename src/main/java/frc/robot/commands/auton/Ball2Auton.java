@@ -26,15 +26,18 @@ public class Ball2Auton extends SequentialCommandGroup {
   public Ball2Auton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
+      /** Shoots preloaded ball from inside the tarmac
+       *  Starts drivetrain and subsystems to collect the second cargo
+      */
       new Ball1PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
+      // Launches second cargo
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchBall2(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
 
-      //drive further away from goal after launch
+      // Drive further away from goal after launch
       new ParallelDeadlineGroup(
         new WaitCommand(1.2),
-        new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;})) //1st return was 0.7
-      
+        new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))      
     ); // End of addCommands
   } // end of sequential group
 } //end of file

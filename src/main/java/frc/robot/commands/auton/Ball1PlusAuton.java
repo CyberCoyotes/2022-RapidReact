@@ -24,13 +24,13 @@ public class Ball1PlusAuton extends SequentialCommandGroup{
     public Ball1PlusAuton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher){
 
         addCommands(
-            new Ball1Auton(indexMotors, intakeMotor, launcher),
-            // Start the drivetrain
-            new ParallelDeadlineGroup(
-              new WaitCommand(1.1),  
-              new IntakeSpeed(intakeMotor, 0.5),
-              new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;})), //1st return was 0.7
-
+          // Shoots preloaded ball from inside the tarmac  
+          new Ball1Auton(indexMotors, intakeMotor, launcher),
+          // Start the drivetrains and subsystems to get second cargo
+          new ParallelDeadlineGroup(
+            new WaitCommand(1.1),  
+            new IntakeSpeed(intakeMotor, 0.5),
+            new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
             new IntakeSpeed(intakeMotor, 0.5).withTimeout(1)
 
         ); // End of addCommands
