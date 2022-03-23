@@ -36,12 +36,14 @@ public class TargetStatus {
 
     public boolean targetStatus(double ty, double tx)  {  
       if ((10 < ty || ty < 14) & (-5 < tx || tx <5)) {
-         // or launch ball?
-        return true; 
+        targetLock = true;
+        return targetLock; 
         } // end of if conditional
         else{
           return false;
         }
+
+    //     
     //SmartDashboard.putNumber("Limelight x", tx);
     //SmartDashboard.putNumber("Limelight y", ty);
     }
