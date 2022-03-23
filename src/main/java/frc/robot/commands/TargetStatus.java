@@ -17,7 +17,7 @@ import frc.robot.commands.Launcher.LaunchBall2;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
 
-public class SemiAutomaticLaunch extends SequentialCommandGroup{
+public class TargetStatus {
     /* This proof of concept is to have the driver manually drive to the correct distance from the goal
      * ty = {10, 14} range 
      * and correctly align left-to-right
@@ -27,13 +27,19 @@ public class SemiAutomaticLaunch extends SequentialCommandGroup{
      * The full launch sequence command is "Group2BallsHigh"
      */ 
 
-    // FIXME I know syntax isn't correct
+    // FIXME I know syntax isn't correct    
+    // Target Lock default should be false, i.e. not shoot cargo
+    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+    NetworkTableEntry ty = table.getEntry("ty");
+    NetworkTableEntry tx = table.getEntry("tx");
 
-    public static double launchingSolution(Launcher launch) {
-            // FIXME command to launch 2 balls when conditions are met. 
-            // I'm home with a sick toddler and sleep deprived. Reasoning skills diminished & subpar
-        addCommands(
-           new TargetStatus(),
-           new LaunchBall2(launch));
-        }
+    public static boolean targetStatus(double ty, double tx)  {  
+      if ((10 < ty || ty < 14) & (-5 < tx || tx <5)) {
+        return true;
+            
+        SmartDashboard.getNumber("Limelight x", tx);
+        SmartDashboard.putNumber("Limelight y", ty);
+        SmartDashboard.putBoolean("Target Status", targetStatus);
+        } // end of if conditional
+    }
 } // end of class
