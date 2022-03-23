@@ -34,17 +34,19 @@ public class TargetStatus {
     NetworkTableEntry tx = table.getEntry("tx");
     boolean targetLock = false;
 
-    public boolean targetStatus(double ty, double tx)  {  
+    public boolean targetStatus(double ty, double tx, Launcher launch)  {  
+      // if targetLock = true, then run the LaunchBall2 command
       if ((10 < ty || ty < 14) & (-5 < tx || tx <5)) {
         targetLock = true;
+        new LaunchBall2(launch);
         return targetLock; 
-        } // end of if conditional
-        else{
-          return false;
-        }
+      } // end of if conditional
+      else{
+        return false;
+      } // end of else
 
-    //     
-    //SmartDashboard.putNumber("Limelight x", tx);
-    //SmartDashboard.putNumber("Limelight y", ty);
+    // TODO move these to RobotContainer
+      //SmartDashboard.putNumber("Limelight x", tx);
+      //SmartDashboard.putNumber("Limelight y", ty);
     }
 } // end of class
