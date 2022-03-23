@@ -36,8 +36,12 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
         new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
 
       // Turn right 90 degrees
-       // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, -90),
+      new TurnToDegrees(drivetrain, 90), // TODO Confirm experimentally that values are correct
+
+      /* new ParallelDeadlineGroup(
+        new WaitCommand(1.85),
+        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return -1.0;})),
+      */
 
       // Turn on Intake and Drive towards ball 3
       new ParallelDeadlineGroup(
@@ -45,12 +49,16 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
         new IntakeSpeed(intakeMotor, 0.5),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -1.0;}, () -> {return 0.0;})),
 
-      // Turn Launcher towards the goal
-      // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, 90) 
+        // Turn Launcher towards the goal
+      new TurnToDegrees(drivetrain, 90) // TODO Confirm experimentally that values are correct
+        /** 
+        new ParallelDeadlineGroup(
+          new WaitCommand(1),
+          new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 1.0;}))
+        */
 
-      // Back up to Goal - commenting out for now 
-      // new ParallelDeadlineGroup(
+        // Back up to Goal - commenting out for now 
+       // new ParallelDeadlineGroup(
          // new WaitCommand(0.35),
          // new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))
 

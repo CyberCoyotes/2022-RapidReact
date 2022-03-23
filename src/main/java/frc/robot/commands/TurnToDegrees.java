@@ -17,7 +17,8 @@ public class TurnToDegrees extends CommandBase {
   public TurnToDegrees(Drivetrain drivetrain, double target_angle) {
     m_drivetrain = drivetrain;
     m_target_angle = target_angle;
-    m_speed = 0.7; //TODO Set default turn speed
+    // Adjust speed of turns here if needed
+    m_speed = 0.7;
   }
 
   public TurnToDegrees(Drivetrain drivetrain, double target_angle, double speed) {
@@ -39,7 +40,8 @@ public class TurnToDegrees extends CommandBase {
                 ChassisSpeeds.fromFieldRelativeSpeeds(
                         0,
                         0,
-                        Math.signum(m_target_angle - m_drivetrain.getRawRoation())*m_speed, //TODO: This might need a negative
+                        // This might need a negative, but testing on cart seemed to correctly turn robot left with positive angles, right with negative angles
+                        Math.signum(m_target_angle - m_drivetrain.getRawRoation())*m_speed,
                         m_drivetrain.getGyroscopeRotation()
                 )
         );
@@ -54,6 +56,7 @@ public class TurnToDegrees extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return Math.abs(m_target_angle - m_drivetrain.getRawRoation()) < 1.0; //1.0: Error threshold
+    // Margin of error threshold currently set at 1.0
+    return Math.abs(m_target_angle - m_drivetrain.getRawRoation()) < 1.0;
   }
 }
