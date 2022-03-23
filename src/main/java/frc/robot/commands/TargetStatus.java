@@ -32,14 +32,15 @@ public class TargetStatus {
     NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
     NetworkTableEntry ty = table.getEntry("ty");
     NetworkTableEntry tx = table.getEntry("tx");
+    boolean targetLock = false;
 
-    public static boolean targetStatus(double ty, double tx)  {  
+    public boolean targetStatus(double ty, double tx)  {  
       if ((10 < ty || ty < 14) & (-5 < tx || tx <5)) {
-        return true;
+        targetLock true; // or launch ball?
             
-        SmartDashboard.getNumber("Limelight x", tx);
-        SmartDashboard.putNumber("Limelight y", ty);
-        SmartDashboard.putBoolean("Target Status", targetStatus);
         } // end of if conditional
+    SmartDashboard.putNumber("Limelight x", tx);
+    SmartDashboard.putNumber("Limelight y", ty);
+        
     }
 } // end of class
