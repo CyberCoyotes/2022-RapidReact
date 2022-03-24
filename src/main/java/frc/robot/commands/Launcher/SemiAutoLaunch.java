@@ -10,9 +10,13 @@ package frc.robot.commands.Launcher;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import frc.robot.subsystems.Launcher;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.commands.IndexSpeed;
+import frc.robot.subsystems.Index;
 
-public class SemiAutoLaunch {
+
+public class SemiAutoLaunch extends CommandBase {
     /* This proof of concept is to have the driver manually drive to the correct distance from the goal
      * ty = {10, 14} range 
      * and correctly align left-to-right
@@ -37,16 +41,16 @@ public class SemiAutoLaunch {
 
 
 
-    public boolean targetStatus(double ty, double tx, Launcher launch)  {  
+    public boolean targetStatus(double ty, double tx, Index indexMotors)  {  
       // if targetLock = true, then run the LaunchBall2 command
       /* Consider adding conditional that angular velocity and robot veloctiy are sufficiently low
       * so robot momententum doesn't become an issue
       * if ((10 < ty || ty < 14) & (-5 < tx || tx <5) & (xSpeed < 0.5) & (ySpeed < 0.5) & (rotationSpeed < 0.5))
       */
 
-      if ((10 < ty || ty < 14) & (-5 < tx || tx <5)) {
+      if (-5 < tx || tx < 5) {
         targetLock = true;
-        new LaunchBall2(launch);
+        new IndexSpeed(indexMotors, 0.5);
         return targetLock; 
       } // end of if conditional
       else{
