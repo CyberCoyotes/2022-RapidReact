@@ -115,7 +115,8 @@ public class RobotContainer {
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("DEV TESTING", new SemiAutoLaunch());
+    autonChooser.addOption("DEV TESTING", 
+      new SemiAutoLaunch(indexMotors, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
@@ -151,7 +152,7 @@ public class RobotContainer {
     // Not being used. final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
     // final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
-    // final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
+    final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
     // final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
@@ -265,6 +266,7 @@ public class RobotContainer {
 
     // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
     //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
+    op_StartButton.whenPressed(new SemiAutoLaunch(indexMotors, launcher));
 
     // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
     //op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
