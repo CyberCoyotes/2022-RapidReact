@@ -27,27 +27,37 @@ public class SemiAutoLaunch extends CommandBase {
      */ 
 
     // Target Lock default should be false, i.e. not shoot cargo
+    /** TODO Method one from WPI
     NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
     NetworkTableEntry ty = table.getEntry("ty");
     NetworkTableEntry tx = table.getEntry("tx");
+    */
     boolean targetLock = false;
 
-    // TODO more advanced conditional variables
-    // Not sure if the values would come from "private final SwerveModule m_frontLeftModule" states or ;
+    // TODO Methon two from limelight
+    // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
+    double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
+    double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
 
+    // TODO more advanced conditional variables
+    // Not sure if the values would come from "private final SwerveModule m_frontLeftModule" states or something else;
     double xSpeed; // Get current speed or velocity of the robot
     double ySpeed; // Get current speed or velocity of the robot
     double rotationSpeed; // Get the current rotational speed or angular velocity of the robot
 
 
 
-    public boolean targetStatus(double ty, double tx, Index indexMotors)  {  
+    public boolean targetStatus(Index indexMotors)  {  
       // if targetLock = true, then run the LaunchBall2 command
       /* Consider adding conditional that angular velocity and robot veloctiy are sufficiently low
       * so robot momententum doesn't become an issue
       * if ((10 < ty || ty < 14) & (-5 < tx || tx <5) & (xSpeed < 0.5) & (ySpeed < 0.5) & (rotationSpeed < 0.5))
       */
+      SmartDashboard.putNumber("Limelight x", tx);
+      SmartDashboard.putNumber("Limelight y", ty);
+      // SmartDashboard.putBoolean("Target Status", targetLock);
 
+      // TODO eventually add the ty conditional, but for now just use the tx and indexMotors command.
       if (-5 < tx || tx < 5) {
         targetLock = true;
         new IndexSpeed(indexMotors, 0.5);
@@ -56,9 +66,6 @@ public class SemiAutoLaunch extends CommandBase {
       else{
         return false;
       } // end of else
-
-    // TODO move these to RobotContainer
-      // SmartDashboard.putNumber("Limelight x", tx);
-      // SmartDashboard.putNumber("Limelight y", ty);
+    
     }
 } // end of class

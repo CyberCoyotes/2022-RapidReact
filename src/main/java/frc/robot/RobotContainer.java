@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
@@ -131,6 +132,8 @@ public class RobotContainer {
   public void debugMethod () {
     // SmartDashboard.putBoolean("Short Drive", autonShortDrive.isScheduled());
     // SmartDashboard.putBoolean("DriveCommand", driveCommand.isScheduled());
+    // SmartDashboard.putBoolean("Target Status", targetStatus.isScheduled(0, 0, indexMotors));
+
   }
   
   private void configureButtonBindings() {
