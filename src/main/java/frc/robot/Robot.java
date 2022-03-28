@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.util.net.PortForwarder;
+
 // USB Camera Imports
 // import edu.wpi.first.cameraserver.CameraServer;
 // import edu.wpi.first.cscore.UsbCamera;
@@ -11,6 +13,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+
 
 
 /**
@@ -42,6 +45,17 @@ public class Robot extends TimedRobot {
     camera.setExposureManual(10);
     camera.setWhiteBalanceManual(50);
     */
+
+  // Not entirely sure if this is the correct java file 
+
+  // Make sure you only configure port forwarding once in your robot code.
+  // Do not place these function calls in any periodic functions
+  PortForwarder.add(5800, "limelight.local", 5800);
+  PortForwarder.add(5801, "limelight.local", 5801);
+  PortForwarder.add(5802, "limelight.local", 5802);
+  PortForwarder.add(5803, "limelight.local", 5803);
+  PortForwarder.add(5804, "limelight.local", 5804);
+  PortForwarder.add(5805, "limelight.local", 5805);
 
   }
 
