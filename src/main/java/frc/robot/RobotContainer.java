@@ -32,6 +32,9 @@ import frc.robot.commands.CommandGroups.Group2BallsHigh;
 import frc.robot.commands.CommandGroups.GroupXHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Launcher.SemiAutoLaunch;
+import frc.robot.commands.Launcher.SemiAutoVersion2;
+import frc.robot.commands.Launcher.SemiAutoVersion3;
+import frc.robot.commands.Launcher.SemiAutoVersion4;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -115,8 +118,17 @@ public class RobotContainer {
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("DEV TESTING", 
+    autonChooser.addOption("DEV TESTING 1", 
       new SemiAutoLaunch(indexMotors, launcher));
+
+    autonChooser.addOption("DEV TESTING 2", 
+      new SemiAutoVersion2(indexMotors, launcher));
+
+    autonChooser.addOption("DEV TESTING 3", 
+      new SemiAutoVersion3(indexMotors, launcher));
+
+    autonChooser.addOption("DEV TESTING 4", 
+      new SemiAutoVersion4());
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
