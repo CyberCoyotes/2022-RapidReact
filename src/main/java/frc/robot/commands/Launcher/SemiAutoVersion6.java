@@ -4,8 +4,13 @@
 
 package frc.robot.commands.Launcher;
 
+import edu.wpi.first.networktables.NetworkTable;
+
+// Copied as a reference
+// From https://docs.limelightvision.io/en/latest/cs_aiming.html
+
 /** Add your docs here. */
-public class SemiAutoVersion6 {}
+public class SemiAutoVersion6 {
 float Kp = -0.1f;
 float min_command = 0.05f;
 
@@ -26,4 +31,5 @@ if (joystick->GetRawButton(9))
         }
         left_command += steering_adjust;
         right_command -= steering_adjust;
+}
 }
