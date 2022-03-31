@@ -14,15 +14,4 @@ import frc.robot.subsystems.Launcher;
 
 
 public class SemiAutoVersion3 extends CommandBase {
-   
-    public SemiAutoVersion3(Index indexMotors, Launcher launcher){
-    // double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
-    double tx = 2; // Defining for testing purposes
-    // double ty = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("ty").getDouble(0);
-    
-      if (tx < 5) {
-          new IndexSpeed(indexMotors, 0.5);
-         } else {
-          new LaunchSpeed(launcher, 0.5, 0.5);}
-    }
 } // end of class

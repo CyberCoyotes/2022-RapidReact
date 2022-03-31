@@ -13,9 +13,9 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion4 extends CommandBase {
+public class SemiAutoVersion8_NO extends CommandBase {
    
-    public SemiAutoVersion4(){}
+    public SemiAutoVersion8_NO(){}
     
     public void excute(Index indexMotors, Launcher launcher){
     // double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);

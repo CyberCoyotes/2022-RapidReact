@@ -13,27 +13,7 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion2 extends CommandBase {
-    boolean targetLock = false;
+public class SemiAutoVersion2 {
+
+}
     
-    double tx = 2;
-
-    public void targetStatus(Index indexMotors, Launcher launcher)  {  
-
-      // TODO eventually add the ty conditional, but for now just use the tx and indexMotors command.
-      if (tx < 5) {
-        //set targetLock to true when tx & ty are within the parameters
-        targetLock = true;
-        return; 
-      } // end of 'if' conditional
-      
-    }
-
-    public SemiAutoVersion2(Index indexMotors, Launcher launcher){
-      //if targetLock equals true, run the launch sequence
-      if (targetLock){
-          new IndexSpeed(indexMotors, 0.5);
-         } else {
-          new LaunchSpeed(launcher, 0.5, 0.5);}
-    }
-} // end of class
