@@ -7,7 +7,13 @@
 
 package frc.robot.commands.Launcher;
 
+// import edu.wpi.first.networktables.NetworkTable;
+// import edu.wpi.first.networktables.NetworkTableEntry;
+// import edu.wpi.first.networktables.NetworkTableInstance;
+// import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+// import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+// import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
@@ -24,12 +30,19 @@ public class SemiAutoVersion1_NO extends CommandBase {
      */ 
 
     // Target Lock default should be false, i.e. not shoot cargo
+    /** TODO Method one from WPI
+    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+    NetworkTableEntry ty = table.getEntry("ty");
+    NetworkTableEntry tx = table.getEntry("tx");
+    */
     boolean targetLock = false;
 
+    // TODO Methon two from limelight
     // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
     // double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
     // double ty = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("ty").getDouble(0);
     double tx = 2;
+    // TODO more advanced conditional variables
     // Not sure if the values would come from "private final SwerveModule m_frontLeftModule" states or something else;
     double xSpeed; // Get current speed or velocity of the robot
     double ySpeed; // Get current speed or velocity of the robot
@@ -48,6 +61,7 @@ public class SemiAutoVersion1_NO extends CommandBase {
       // SmartDashboard.putNumber("LimeLight X", tx);
       // SmartDashboard.putNumber("LimeLight Y", ty);
 
+      // TODO eventually add the ty conditional, but for now just use the tx and indexMotors command.
       if (targetLock) {
         //set targetLock to true when tx & ty are within the parameters
         targetLock = true;
