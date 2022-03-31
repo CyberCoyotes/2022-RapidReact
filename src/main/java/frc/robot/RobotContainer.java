@@ -31,6 +31,9 @@ import frc.robot.commands.CommandGroups.GroupXHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Launcher.SemiAutoLaunch;
 import frc.robot.commands.Launcher.SemiAutoVersion5;
+import frc.robot.commands.Launcher.SemiAutoVersion6;
+import frc.robot.commands.Launcher.SemiAutoVersion7;
+import frc.robot.commands.Launcher.SemiAutoVersion8;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -116,6 +119,15 @@ public class RobotContainer {
    
     autonChooser.addOption("DEV TESTING 5", 
       new SemiAutoVersion5());
+
+    autonChooser.addOption("DEV TESTING 6", 
+      new SemiAutoVersion6(launcher));
+
+    autonChooser.addOption("DEV TESTING 7", 
+      new SemiAutoVersion7(launcher));
+
+    autonChooser.addOption("DEV TESTING 8", 
+      new SemiAutoVersion8(launcher));
     
 
     // Puts the chooser on the dashboard

@@ -14,11 +14,10 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion7 extends CommandBase{
+public class SemiAutoVersion8 extends CommandBase{
     private final Launcher launcher;
-    double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
-
-    public SemiAutoVersion7(Launcher launch) {
+    
+    public SemiAutoVersion8(Launcher launch) {
         // Use addRequirements() here to declare subsystem dependencies.
 
         
@@ -33,10 +32,13 @@ public class SemiAutoVersion7 extends CommandBase{
       // Called every time the scheduler runs while the command is scheduled.
       @Override
       public void execute() {
+        
+        double tx = 2;
+
         if (tx <= 5){
             launcher.setLaunch2();
         }
-        
+      
       }
     
       // Called once the command ends or is interrupted.
