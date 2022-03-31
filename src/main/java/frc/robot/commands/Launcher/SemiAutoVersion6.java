@@ -5,11 +5,12 @@
 package frc.robot.commands.Launcher;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.TargetStatus;
 import frc.robot.subsystems.Launcher;
 
 public class SemiAutoVersion6 extends CommandBase {
   private final Launcher launcher;
-
+  double tx;
   public SemiAutoVersion6(Launcher launch) {
     // Use addRequirements() here to declare subsystem dependencies.
     launcher = launch;

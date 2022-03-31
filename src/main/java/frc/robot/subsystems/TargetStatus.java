@@ -4,13 +4,25 @@
 
 package frc.robot.subsystems;
 
-/** Add your docs here. */
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
+
 public class TargetStatus {
- // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
+  // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
 
- boolean targetStatus = false;
- double tx = 2;
+  boolean targetStatus = false;
+  NetworkTable limelight = NetworkTableInstance.getDefault().getTable("limelight-back");//Instantiate the tables
+  // double tx = limelight.getEntry("tx").getDouble(0.0);
+  double tx = 5;
 
+public static boolean setTargetStatus(double tx) {
+  if (tx < 5) {
+    System.out.println("Missile lock-on");
+    return true;
+  } else {
+    System.out.println("Still seeking target");
+    return false;}
+ }
 
  public void targetLocked()  {  
 
