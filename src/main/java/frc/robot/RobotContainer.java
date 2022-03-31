@@ -127,8 +127,10 @@ public class RobotContainer {
     autonChooser.addOption("DEV TESTING 3", 
       new SemiAutoVersion3(indexMotors, launcher));
 
+    
     autonChooser.addOption("DEV TESTING 4", 
       new SemiAutoVersion4());
+    
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
