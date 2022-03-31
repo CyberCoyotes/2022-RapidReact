@@ -12,9 +12,8 @@ public class TargetStatus {
 
   boolean targetStatus = false;
   NetworkTable limelight = NetworkTableInstance.getDefault().getTable("limelight-back");//Instantiate the tables
-  // double tx = limelight.getEntry("tx").getDouble(0.0);
-  double tx = 5;
-
+  double tx = limelight.getEntry("tx").getDouble(0.0);
+  
 public static boolean setTargetStatus(double tx) {
   if (tx < 5) {
     System.out.println("Missile lock-on");
