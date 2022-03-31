@@ -4,13 +4,12 @@
 
 
 package frc.robot.commands.Launcher;
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion7_NO {
+public class SemiAutoVersion3_NO {
     public void SemiAutoVersion3(Index indexMotors, Launcher launcher){
     // double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
     double tx = 2; // Defining for testing purposes

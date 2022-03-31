@@ -13,7 +13,7 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion2 {
+public class SemiAutoVersion7 extends CommandBase{
 
 }
     

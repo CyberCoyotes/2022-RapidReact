@@ -7,13 +7,12 @@
 
 package frc.robot.commands.Launcher;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 /** Add your docs here. */
-public class SemiAutoVersion6_NO{
+public class SemiAutoVersion2_NO{
 
 boolean targetLock = false;
     

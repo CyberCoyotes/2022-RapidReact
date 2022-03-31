@@ -9,7 +9,6 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
@@ -27,14 +26,11 @@ import frc.robot.subsystems.Lift;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.CommandGroups.DEV;
 import frc.robot.commands.CommandGroups.Group2BallsHigh;
 import frc.robot.commands.CommandGroups.GroupXHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Launcher.SemiAutoLaunch;
-import frc.robot.commands.Launcher.SemiAutoVersion2;
-import frc.robot.commands.Launcher.SemiAutoVersion3;
-import frc.robot.commands.Launcher.SemiAutoVersion4;
+import frc.robot.commands.Launcher.SemiAutoVersion5;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -118,18 +114,8 @@ public class RobotContainer {
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("DEV TESTING 1", 
-      new SemiAutoLaunch(indexMotors, launcher));
-
-    autonChooser.addOption("DEV TESTING 2", 
-      new SemiAutoVersion2(indexMotors, launcher));
-
-    autonChooser.addOption("DEV TESTING 3", 
-      new SemiAutoVersion3(indexMotors, launcher));
-
-    
-    autonChooser.addOption("DEV TESTING 4", 
-      new SemiAutoVersion4());
+    autonChooser.addOption("DEV TESTING 5", 
+      new SemiAutoVersion5());
     
 
     // Puts the chooser on the dashboard
