@@ -10,18 +10,22 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 public class TargetStatus {
   // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
 
-  boolean targetStatus = false;
+  static boolean targetStatus = false;
   NetworkTable limelight = NetworkTableInstance.getDefault().getTable("limelight-back");//Instantiate the tables
   double tx = limelight.getEntry("tx").getDouble(0.0);
   
-public static boolean setTargetStatus(double tx) {
+public static boolean getTargetStatus(double tx) {
   if (tx < 5) {
     System.out.println("Missile lock-on");
+    targetStatus = true; // Don't know if this is needed if call 'getTargetStatus'
     return true;
   } else {
     System.out.println("Still seeking target");
+    targetStatus = false; // Don't know if this is needed if call 'getTargetStatus'
     return false;}
  }
+
+ 
 
  public void targetLocked()  {  
 

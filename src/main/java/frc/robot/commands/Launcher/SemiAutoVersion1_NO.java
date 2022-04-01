@@ -54,7 +54,7 @@ public class SemiAutoVersion1_NO extends CommandBase {
       // if targetLock = true, then run the LaunchBall2 command
       /* Consider adding conditional that angular velocity and robot veloctiy are sufficiently low
       * so robot momententum doesn't become an issue
-      * if ((10 < ty || ty < 14) & (-5 < tx || tx <5) & (xSpeed < 0.5) & (ySpeed < 0.5) & (rotationSpeed < 0.5))
+      * if ((10 < ty && ty < 14) & (-5 < tx && tx <5) & (xSpeed < 0.5) & (ySpeed < 0.5) & (rotationSpeed < 0.5))
       */
      
       // SmartDashboard.putBoolean("Target Status", targetLock);
