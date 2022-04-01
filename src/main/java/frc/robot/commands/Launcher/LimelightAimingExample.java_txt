@@ -10,7 +10,7 @@ import edu.wpi.first.networktables.NetworkTable;
 // From https://docs.limelightvision.io/en/latest/cs_aiming.html
 
 /** Add your docs here. */
-public class SemiAutoVersion6 {
+public class LimelightAimingExample {
 float Kp = -0.1f;
 float min_command = 0.05f;
 

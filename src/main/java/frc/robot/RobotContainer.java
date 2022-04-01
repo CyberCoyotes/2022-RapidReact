@@ -121,7 +121,7 @@ public class RobotContainer {
       new SemiAutoVersion5());
 
     autonChooser.addOption("DEV TESTING 6", 
-      new SemiAutoVersion6(launcher));
+      new SemiAutoVersion6(launcher, null));
 
     autonChooser.addOption("DEV TESTING 7", 
       new SemiAutoVersion7(launcher));

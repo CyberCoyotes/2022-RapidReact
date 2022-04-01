@@ -10,14 +10,13 @@ import frc.robot.subsystems.Launcher;
 
 public class SemiAutoVersion6 extends CommandBase {
   private final Launcher launcher;
-  private final TargetStatus status;
 
   public SemiAutoVersion6(Launcher launch, TargetStatus targetStatus) {
     // Use addRequirements() here to declare subsystem dependencies.
     launcher = launch;
-    status = targetStatus;
 
-    addRequirements(launcher, targetStatus);
+    addRequirements(launcher);
+
   }
 
   // Called when the command is initially scheduled.
@@ -27,7 +26,8 @@ public class SemiAutoVersion6 extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    targetStatus.setTargetStatus(double tx);
+
+      ;
   }
 
   // Called once the command ends or is interrupted.

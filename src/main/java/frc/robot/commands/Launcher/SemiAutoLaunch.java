@@ -7,9 +7,9 @@
 
 package frc.robot.commands.Launcher;
 
-// import edu.wpi.first.networktables.NetworkTable;
-// import edu.wpi.first.networktables.NetworkTableEntry;
-// import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 // import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 // import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
@@ -30,18 +30,13 @@ public class SemiAutoLaunch extends CommandBase {
      */ 
 
     // Target Lock default should be false, i.e. not shoot cargo
-    /** TODO Method one from WPI
-    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
-    NetworkTableEntry ty = table.getEntry("ty");
-    NetworkTableEntry tx = table.getEntry("tx");
-    */
     boolean targetLock = false;
 
     // TODO Methon two from limelight
     // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
-    // double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
-    // double ty = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("ty").getDouble(0);
-    double tx = 2;
+    double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
+    double ty = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("ty").getDouble(0);
+
     // TODO more advanced conditional variables
     // Not sure if the values would come from "private final SwerveModule m_frontLeftModule" states or something else;
     double xSpeed; // Get current speed or velocity of the robot
@@ -54,7 +49,7 @@ public class SemiAutoLaunch extends CommandBase {
       // if targetLock = true, then run the LaunchBall2 command
       /* Consider adding conditional that angular velocity and robot veloctiy are sufficiently low
       * so robot momententum doesn't become an issue
-      * if ((10 < ty || ty < 14) & (-5 < tx || tx <5) & (xSpeed < 0.5) & (ySpeed < 0.5) & (rotationSpeed < 0.5))
+      * if ((10 < ty && ty < 14) & (-5 < tx && tx <5) & (xSpeed < 0.5) & (ySpeed < 0.5) & (rotationSpeed < 0.5))
       */
      
       // SmartDashboard.putBoolean("Target Status", targetLock);

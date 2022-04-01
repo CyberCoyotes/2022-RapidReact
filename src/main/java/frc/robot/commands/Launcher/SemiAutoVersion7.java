@@ -8,11 +8,8 @@
 package frc.robot.commands.Launcher;
 
 import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.commands.IndexSpeed;
-import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
