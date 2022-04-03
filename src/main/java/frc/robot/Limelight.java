@@ -12,7 +12,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class Limelight {
-    NetworkTable limelight;//Table for the limelight
+    NetworkTable limelightBack;//Table for the limelight
     NetworkTableEntry tx;//Table for the x-coordinate
     NetworkTableEntry ty;//Table for the y-coordinate
     NetworkTableEntry ta;//Table for the area
@@ -30,21 +30,21 @@ public class Limelight {
     double[] defaultArray = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 
     public Limelight() {
-        limelight = NetworkTableInstance.getDefault().getTable("limelight");//Instantiate the tables
-        tx = limelight.getEntry("tx");
-        ty = limelight.getEntry("ty");
-        ta = limelight.getEntry("ta");
-        ts = limelight.getEntry("ts");
-        tv = limelight.getEntry("tv");
-        tl = limelight.getEntry("tl");
-        tshort = limelight.getEntry("tshort");
-        tlong = limelight.getEntry("tlong");
-        thoriz = limelight.getEntry("thoriz");
-        tvert = limelight.getEntry("tvert");
-        ledMode = limelight.getEntry("ledMode");
-        camMode = limelight.getEntry("camMode");
-        pipeline = limelight.getEntry("pipeline");
-        solvePNP = limelight.getEntry("camtran");
+        limelightBack = NetworkTableInstance.getDefault().getTable("limelight");//Instantiate the tables
+        tx = limelightBack.getEntry("tx");
+        ty = limelightBack.getEntry("ty");
+        ta = limelightBack.getEntry("ta");
+        ts = limelightBack.getEntry("ts");
+        tv = limelightBack.getEntry("tv");
+        tl = limelightBack.getEntry("tl");
+        tshort = limelightBack.getEntry("tshort");
+        tlong = limelightBack.getEntry("tlong");
+        thoriz = limelightBack.getEntry("thoriz");
+        tvert = limelightBack.getEntry("tvert");
+        ledMode = limelightBack.getEntry("ledMode");
+        camMode = limelightBack.getEntry("camMode");
+        pipeline = limelightBack.getEntry("pipeline");
+        solvePNP = limelightBack.getEntry("camtran");
     }
 
     /**
