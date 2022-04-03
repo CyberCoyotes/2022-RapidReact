@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion10 extends CommandBase {
+public class SemiAuto_9 extends CommandBase {
     private final Launcher launcher;
   
     // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
@@ -20,8 +20,18 @@ public class SemiAutoVersion10 extends CommandBase {
     static boolean targetStatus = false;
     NetworkTable limelight = NetworkTableInstance.getDefault().getTable("limelight-back");//Instantiate the tables
     double tx = limelight.getEntry("tx").getDouble(0.0);
-
-  public SemiAutoVersion10(Launcher launch) {
+      
+    public static boolean getTargetStatus(double tx) {
+      if (tx < 5) {
+        System.out.println("Missile lock-on");
+        targetStatus = true; // Don't know if this is needed if call 'getTargetStatus'
+        return true;
+      } else {
+        System.out.println("Still seeking target");
+        targetStatus = false; // Don't know if this is needed if call 'getTargetStatus'
+        return false;}
+     }  
+  public SemiAuto_9(Launcher launch) {
 
     launcher = launch;
     addRequirements(launcher);
@@ -34,14 +44,7 @@ public class SemiAutoVersion10 extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (tx < 5) {
-      launcher.setLaunch2();
-      System.out.println("Missile lock-on");
-    } else {
-      System.out.println("Still seeking target");
-      launcher.stopLauncher();
-   }  
-    
+    launcher.setLaunch2();
   }
 
   // Called once the command ends or is interrupted.

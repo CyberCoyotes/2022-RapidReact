@@ -34,6 +34,10 @@ import frc.robot.commands.Launcher.SemiAutoVersion5;
 import frc.robot.commands.Launcher.SemiAutoVersion6;
 import frc.robot.commands.Launcher.SemiAutoVersion7;
 import frc.robot.commands.Launcher.SemiAutoVersion8;
+import frc.robot.commands.Launcher.SemiAuto_10;
+import frc.robot.commands.Launcher.SemiAuto_11;
+import frc.robot.commands.Launcher.SemiAuto_12;
+import frc.robot.commands.Launcher.SemiAuto_9;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -129,6 +133,14 @@ public class RobotContainer {
     autonChooser.addOption("DEV TESTING 8", 
       new SemiAutoVersion8(launcher));
     
+    autonChooser.addOption("DEV TESTING 9", 
+      new SemiAuto_9(launcher));
+    
+    autonChooser.addOption("DEV TESTING 10", 
+      new SemiAuto_10(launcher));
+    
+    autonChooser.addOption("DEV TESTING 11", 
+      new SemiAuto_11());
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
@@ -165,7 +177,7 @@ public class RobotContainer {
     // final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
     final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
-    // final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
+    final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
 
@@ -281,8 +293,11 @@ public class RobotContainer {
     op_StartButton.whenPressed(new SemiAutoLaunch(indexMotors, launcher));
 
     // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
-    //op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
+    // op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
 
+    // When pressed, activates a DEVELOPMENT of Semi-Automatic launching, currently outputs data to log
+    op_BackButton.whenPressed(new SemiAuto_12(launcher));
+    op_BackButton.whenReleased(new LaunchSpeed(launcher, 0.0, 0.0));
     //Hold X to rotationally align the robot (driver still has control of translational motion)
     /**
     op_ButtonX.whenPressed(new DriveCommand(
