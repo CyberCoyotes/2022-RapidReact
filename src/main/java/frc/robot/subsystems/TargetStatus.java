@@ -5,35 +5,48 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import frc.robot.Constants.LimelightRange;
 
 public class TargetStatus {
   // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
 
-  static boolean targetStatus = false;
-  NetworkTable limelight = NetworkTableInstance.getDefault().getTable("limelight-back");//Instantiate the tables
-  double tx = limelight.getEntry("tx").getDouble(0.0);
+  static boolean targetLock = false;
+
+  NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-back");
+  NetworkTableEntry tx = table.getEntry("tx");
+  NetworkTableEntry ty = table.getEntry("ty");
+  NetworkTableEntry ta = table.getEntry("ta");
+
+  double TX = tx.getDouble(0.0);
+  double TY = ty.getDouble(0.0);
+  double area = ta.getDouble(0.0);
   
-public static boolean getTargetStatus(double tx) {
-  if (tx < 5) {
+public static boolean getTargetStatus(double TX, double TY) {
+  if ((LimelightRange.txMin< TX && TX < LimelightRange.txMax) & (LimelightRange.tyMin< TY && TY < LimelightRange.tyMax)) {
+    
     System.out.println("Missile lock-on");
-    targetStatus = true; // Don't know if this is needed if call 'getTargetStatus'
-    return true;
+    return targetLock == true;
+
   } else {
+
     System.out.println("Still seeking target");
-    targetStatus = false; // Don't know if this is needed if call 'getTargetStatus'
-    return false;}
+    return targetLock == false;
+    }
  }
 
  
 
- public void targetLocked()  {  
+ public boolean targetLocked(double TX)  {  
 
 
-   if (tx < 5) {
-     targetStatus = true;
+   if (TX < 5) {
+     return targetLock == true;
+
    } else {
-    targetStatus = false;}
+     
+    return targetLock == false;}
 
    } // end of if conditional
 

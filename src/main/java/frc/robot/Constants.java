@@ -116,6 +116,15 @@ public final class Constants {
          Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
          Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND);
     
+    
+    // TODO Values need to be updated on the game Field
+    public static final class LimelightRange {
+     public static double txMin = -5;
+     public static double txMax = 5;
+     public static double tyMin = 10;
+     public static double tyMax = 15;
+    }
+    
     /**
     public static final double MAX_VELOCITY_METERS_PER_SECOND = 6380.0 / 60.0 *
       SdsModuleConfigurations.MK3_STANDARD.getDriveReduction() *

@@ -64,7 +64,6 @@ public class SemiAuto_14 extends CommandBase {
     SmartDashboard.putNumber(("tX"), TX); // Added since v.12
     SmartDashboard.putNumber(("tY"), TY); // Added since v.12
 
-    // TODO Values need to be updated on the game Field
     if((5 < TY && TY < 14) & (-5 < TX && TX <5))
     {
       //Sets targetLock to true when tx & ty are within the parameters
@@ -81,10 +80,6 @@ public class SemiAuto_14 extends CommandBase {
   @Override
   public void end(boolean interrupted) {      
       launcher.stopLauncher();}
-      // FIXME Do TX and TY need to be reset to zero to prevent false positives with next attempt at a shot?
-      // double TX = tx.getDouble(0.0);
-      // double TY = ty.getDouble(0.0);
-      // double area = ta.getDouble(0.0);
 
   // Returns true when the command should end.
   @Override

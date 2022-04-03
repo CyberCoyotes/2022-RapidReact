@@ -9,14 +9,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
-
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -35,9 +30,7 @@ import frc.robot.commands.CommandGroups.Group2BallsHigh;
 import frc.robot.commands.CommandGroups.GroupXHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Launcher.SemiAutoLaunch;
-import frc.robot.commands.Launcher.SemiAuto_12;
 import frc.robot.commands.Launcher.SemiAuto_14;
-import frc.robot.commands.Launcher.SemiAuto_15;
 import frc.robot.commands.Launcher.SemiAuto_16;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
@@ -141,33 +134,6 @@ public class RobotContainer {
     // SmartDashboard.putBoolean("Short Drive", autonShortDrive.isScheduled());
     // SmartDashboard.putBoolean("DriveCommand", driveCommand.isScheduled());
     // SmartDashboard.putBoolean("Target Status", targetStatus.isScheduled(0, 0, indexMotors));
-
-  }
-
-  public void visionStatus () {
-    boolean targetLock = false;
-
-    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-back");
-    NetworkTableEntry tx = table.getEntry("tx");
-    NetworkTableEntry ty = table.getEntry("ty");
-    NetworkTableEntry ta = table.getEntry("ta");
-  
-    double TX = tx.getDouble(0.0);
-    double TY = ty.getDouble(0.0);
-    double area = ta.getDouble(0.0);
-    
-    SmartDashboard.putNumber(("tX"), TX); // Added since v.12
-    SmartDashboard.putNumber(("tY"), TY); // Added since v.12
-    SmartDashboard.putBoolean("Target Status", targetLock);
-
-    // TODO Values need to be updated on the game Field
-    if((5 < TY && TY < 14) & (-5 < TX && TX <5))
-    {
-      targetLock = true; // Added since v.12
-
-    } else {
-      targetLock = false; // Added since v.12
-    } 
 
   }
   
