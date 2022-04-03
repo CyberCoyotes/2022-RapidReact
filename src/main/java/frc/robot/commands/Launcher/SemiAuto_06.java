@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.TargetStatus;
 import frc.robot.subsystems.Launcher;
 
-public class SemiAutoVersion6 extends CommandBase {
+public class SemiAuto_06 extends CommandBase {
   private final Launcher launcher;
 
-  public SemiAutoVersion6(Launcher launch, TargetStatus targetStatus) {
+  public SemiAuto_06(Launcher launch, TargetStatus targetStatus) {
     // Use addRequirements() here to declare subsystem dependencies.
     launcher = launch;
 

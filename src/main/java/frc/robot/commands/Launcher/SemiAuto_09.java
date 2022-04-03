@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAuto_9 extends CommandBase {
+public class SemiAuto_09 extends CommandBase {
     private final Launcher launcher;
   
     // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
@@ -31,7 +31,7 @@ public class SemiAuto_9 extends CommandBase {
         targetStatus = false; // Don't know if this is needed if call 'getTargetStatus'
         return false;}
      }  
-  public SemiAuto_9(Launcher launch) {
+  public SemiAuto_09(Launcher launch) {
 
     launcher = launch;
     addRequirements(launcher);

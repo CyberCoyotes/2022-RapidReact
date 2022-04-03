@@ -9,7 +9,7 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion3_NO {
+public class SemiAuto_03 {
     public void SemiAutoVersion3(Index indexMotors, Launcher launcher){
     // double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
     double tx = 2; // Defining for testing purposes

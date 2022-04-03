@@ -7,31 +7,29 @@
 
 package frc.robot.commands.Launcher;
 
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion5 extends CommandBase {
-  private static boolean targetLock = false;
-
-  static double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
-  
-  public static void targetStatus(Index indexMotors, Launcher launcher)  {  
-      if (tx < 5) {
-        targetLock = true;
-        return ; 
-      } // end of if conditional
-      
-    }
-
-  public void semiAutoLaunch(Index indexMotors, Launcher launcher){
+public class SemiAuto_04 extends CommandBase {
+   
+    public SemiAuto_04(){}
     
-    if (targetLock == true){
-      new IndexSpeed(indexMotors, 0.5);
-      } else {
-      new LaunchSpeed(launcher, 0.5, 0.5);}
+    public void excute(Index indexMotors, Launcher launcher){
+    // double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
+    double tx = 2; // Defining for testing purposes
+    // double ty = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("ty").getDouble(0);
+    
+      if (tx < 5) {
+          new IndexSpeed(indexMotors, 0.5);
+         } else {
+          new LaunchSpeed(launcher, 0.5, 0.5);}
     }
+
+    public void end(boolean interrupted) {
+        ;
+      }
+
 } // end of class

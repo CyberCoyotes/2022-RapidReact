@@ -30,14 +30,8 @@ import frc.robot.commands.CommandGroups.Group2BallsHigh;
 import frc.robot.commands.CommandGroups.GroupXHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Launcher.SemiAutoLaunch;
-import frc.robot.commands.Launcher.SemiAutoVersion5;
-import frc.robot.commands.Launcher.SemiAutoVersion6;
-import frc.robot.commands.Launcher.SemiAutoVersion7;
-import frc.robot.commands.Launcher.SemiAutoVersion8;
-import frc.robot.commands.Launcher.SemiAuto_10;
-import frc.robot.commands.Launcher.SemiAuto_11;
 import frc.robot.commands.Launcher.SemiAuto_12;
-import frc.robot.commands.Launcher.SemiAuto_9;
+import frc.robot.commands.Launcher.SemiAuto_14;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -121,26 +115,8 @@ public class RobotContainer {
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("DEV TESTING 5", 
-      new SemiAutoVersion5());
-
-    autonChooser.addOption("DEV TESTING 6", 
-      new SemiAutoVersion6(launcher, null));
-
-    autonChooser.addOption("DEV TESTING 7", 
-      new SemiAutoVersion7(launcher));
-
-    autonChooser.addOption("DEV TESTING 8", 
-      new SemiAutoVersion8(launcher));
-    
-    autonChooser.addOption("DEV TESTING 9", 
-      new SemiAuto_9(launcher));
-    
-    autonChooser.addOption("DEV TESTING 10", 
-      new SemiAuto_10(launcher));
-    
-    autonChooser.addOption("DEV TESTING 11", 
-      new SemiAuto_11());
+    autonChooser.addOption("DEV TESTING 14", 
+      new SemiAuto_14(launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);

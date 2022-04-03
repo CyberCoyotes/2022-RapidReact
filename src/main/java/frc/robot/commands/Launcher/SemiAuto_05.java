@@ -7,33 +7,31 @@
 
 package frc.robot.commands.Launcher;
 
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
-/** Add your docs here. */
-public class SemiAutoVersion2_NO{
 
-boolean targetLock = false;
-    
-    double tx = 2;
+public class SemiAuto_05 extends CommandBase {
+  private static boolean targetLock = false;
 
-    public void targetStatus(Index indexMotors, Launcher launcher)  {  
-
-      // TODO eventually add the ty conditional, but for now just use the tx and indexMotors command.
+  static double tx = NetworkTableInstance.getDefault().getTable("limelight-back").getEntry("tx").getDouble(0);
+  
+  public static void targetStatus(Index indexMotors, Launcher launcher)  {  
       if (tx < 5) {
-        //set targetLock to true when tx & ty are within the parameters
         targetLock = true;
-        return; 
-      } // end of 'if' conditional
+        return ; 
+      } // end of if conditional
       
     }
 
-    public void SemiAutoVersion6(Index indexMotors, Launcher launcher){
-      //if targetLock equals true, run the launch sequence
-      if (targetLock){
-          new IndexSpeed(indexMotors, 0.5);
-         } else {
-          new LaunchSpeed(launcher, 0.5, 0.5);}
+  public void semiAutoLaunch(Index indexMotors, Launcher launcher){
+    
+    if (targetLock == true){
+      new IndexSpeed(indexMotors, 0.5);
+      } else {
+      new LaunchSpeed(launcher, 0.5, 0.5);}
     }
 } // end of class

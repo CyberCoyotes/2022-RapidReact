@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.CommandGroups;
+package frc.robot.commands.Launcher;
 
 import java.util.Set;
 
@@ -14,10 +14,9 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Subsystem;
-import frc.robot.commands.Launcher.LaunchBall2;
 import frc.robot.subsystems.Launcher;
 
-public class DEV implements Command {
+public class SemiAuto_01_2 implements Command {
     /* This proof of concept is to have the driver manually drive to the correct distance from the goal
      * ty = {10, 14} range 
      * and correctly align left-to-right
@@ -32,15 +31,6 @@ public class DEV implements Command {
     NetworkTableEntry ty = table.getEntry("ty");
     NetworkTableEntry tx = table.getEntry("tx");
     boolean targetLock = false;
-
-    // TODO more advanced conditional variables
-    // Not sure if the values would come from "private final SwerveModule m_frontLeftModule" states or ;
-
-    double xSpeed; // Get current speed or velocity of the robot
-    double ySpeed; // Get current speed or velocity of the robot
-    double rotationSpeed; // Get the current rotational speed or angular velocity of the robot
-
-
 
     public boolean targetStatus(double ty, double tx, Launcher launch)  {  
       // if targetLock = true, then run the LaunchBall2 command
@@ -58,7 +48,7 @@ public class DEV implements Command {
         return false;
       } // end of else
 
-    // TODO move these to RobotContainer
+    // Move these to RobotContainer ?
       // SmartDashboard.putNumber("Limelight x", tx);
       // SmartDashboard.putNumber("Limelight y", ty);
     }
@@ -67,7 +57,6 @@ public class DEV implements Command {
 
 	@Override
 	public Set<Subsystem> getRequirements() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 } // end of class

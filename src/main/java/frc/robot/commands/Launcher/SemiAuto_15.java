@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAuto_14 extends CommandBase {
+public class SemiAuto_15 extends CommandBase {
 
   private final Launcher launcher;
   boolean targetLock = false;
@@ -43,7 +43,7 @@ public class SemiAuto_14 extends CommandBase {
   */
 
   
-  public SemiAuto_14(Launcher launch) {
+  public SemiAuto_15(Launcher launch) {
     // Use addRequirements() here to declare subsystem dependencies.
     launcher = launch;
     addRequirements(launcher);
@@ -63,6 +63,7 @@ public class SemiAuto_14 extends CommandBase {
 
     SmartDashboard.putNumber(("tX"), TX); // Added since v.12
     SmartDashboard.putNumber(("tY"), TY); // Added since v.12
+    SmartDashboard.putBoolean("Target Status", targetLock);
 
     // TODO Values need to be updated on the game Field
     if((5 < TY && TY < 14) & (-5 < TX && TX <5))
@@ -70,10 +71,12 @@ public class SemiAuto_14 extends CommandBase {
       //Sets targetLock to true when tx & ty are within the parameters
       System.out.println("++ Target LOCKED ++ " + "(" + TX + "," + TY + ")" + " Area:" + area); // Revised since v.12
       launcher.setLaunch2();
+      targetLock = true; // Added since v.12
 
     } else {
       System.out.println("-- Target NOT locked --" + "(" + TX + "," + TY + ")" + " Area:" + area);
       launcher.stopLauncher();
+      targetLock = false; // Added since v.12
     } 
   
   }

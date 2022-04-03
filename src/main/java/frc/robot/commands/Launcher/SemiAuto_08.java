@@ -7,20 +7,14 @@
 
 package frc.robot.commands.Launcher;
 
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoVersion7 extends CommandBase{
+public class SemiAuto_08 extends CommandBase{
     private final Launcher launcher;
     
-      NetworkTable limelight = NetworkTableInstance.getDefault().getTable("limelight-back");//Instantiate the tables
-       double tx = limelight.getEntry("tx").getDouble(0.0);
-       double triggerValue = 5.0;
-
-    public SemiAutoVersion7(Launcher launch) {
+    public SemiAuto_08(Launcher launch) {
         // Use addRequirements() here to declare subsystem dependencies.
 
         
@@ -35,19 +29,18 @@ public class SemiAutoVersion7 extends CommandBase{
       // Called every time the scheduler runs while the command is scheduled.
       @Override
       public void execute() {
-        if (tx <= triggerValue){
-          launcher.setLauncherSpeed(0.5, 0.5);
-        }
-        else {
-          launcher.stopLauncher();
-        }
         
+        double tx = 2;
+
+        if (tx <= 5){
+            launcher.setLaunch2();
+        }
+      
       }
     
       // Called once the command ends or is interrupted.
       @Override
-      public void end(boolean interrupted) {
-      }
+      public void end(boolean interrupted) {}
     
       // Returns true when the command should end.
       @Override
