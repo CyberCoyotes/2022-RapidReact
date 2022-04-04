@@ -23,8 +23,8 @@ public class XLaunch extends SequentialCommandGroup{
       addRequirements(m_drivetrain, indexMotors);
       
       addCommands( //for 2.05 seconds, run the launchers and xmode, giving the robot resistance to obstrusive pests.
-        new ParallelDeadlineGroup(
-          new WaitCommand(2.05),
+        new ParallelCommandGroup(
+        
           new SequentialCommandGroup(
         new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
           new SequentialCommandGroup(
@@ -36,8 +36,12 @@ public class XLaunch extends SequentialCommandGroup{
                   new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)) // FIXME added to stop Index, not stopping still
       )), new xmode(m_drivetrain))
       );
+      
   }
   
-    
+    @Override
+    public boolean isFinished() {
+      return true;
+    }
     
 }
