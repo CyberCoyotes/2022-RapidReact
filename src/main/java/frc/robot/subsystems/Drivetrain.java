@@ -101,7 +101,7 @@ public class Drivetrain extends SubsystemBase {
   private final SwerveModule m_frontRightModule;
   private final SwerveModule m_backLeftModule;
   private final SwerveModule m_backRightModule;
-
+  
   // Added from #5804
   Pose2d targetPose;
 
@@ -196,6 +196,10 @@ public class Drivetrain extends SubsystemBase {
    * 'forwards' direction.
    */
   
+  public boolean IsMoving()
+  {
+    return this.m_frontLeftModule.getDriveVelocity() != 0;
+  }
   public void zeroGyroscope() {
     m_navx.zeroYaw();
   }
