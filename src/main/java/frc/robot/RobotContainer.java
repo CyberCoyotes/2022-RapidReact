@@ -115,8 +115,8 @@ public class RobotContainer {
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("DEV TESTING 14", 
-      new SemiAuto_14(launcher));
+    autonChooser.addOption("DEV TESTING 16", 
+      new SemiAuto_16(launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
@@ -136,7 +136,7 @@ public class RobotContainer {
     // SmartDashboard.putBoolean("Target Status", targetStatus.isScheduled(0, 0, indexMotors));
 
   }
-  
+
   private void configureButtonBindings() {
     /// Declaring buttons on driver controller
     final JoystickButton d_backButton = new JoystickButton(driverController, Button.kBack.value);
@@ -256,6 +256,7 @@ public class RobotContainer {
       () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
       () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
     ));
+
 
 
     // OPERATOR Controller commands
