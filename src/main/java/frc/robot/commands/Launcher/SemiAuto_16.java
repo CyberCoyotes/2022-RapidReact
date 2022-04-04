@@ -72,12 +72,12 @@ public class SemiAuto_16 extends CommandBase {
 
     if ((VisionRange.txMin< TX && TX < VisionRange.txMax) & (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
       //Sets targetLock to true when tx & ty are within the parameters
-      System.out.println("++ Target LOCKED ++ " + "(" + TX + "," + TY + ")" + " Area:" + area);
+      System.out.println("+ Missle LOCK + " + "(" + TX + "," + TY + ")" + " Area:" + area);
       launcher.setLaunch2();
       targetLock = true;
 
     } else {
-      System.out.println("-- Target NOT locked -- " + "(" + TX + "," + TY + ")" + " Area:" + area);
+      System.out.println("- Seeking Target - " + "(" + TX + "," + TY + ")" + " Area:" + area);
       launcher.stopLauncher();
       targetLock = false;
     } 
