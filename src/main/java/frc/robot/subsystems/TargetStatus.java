@@ -9,9 +9,10 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants.VisionRange;
 
-public class TargetStatus {
+public class TargetStatus extends CommandBase{
   // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
 
   static boolean targetLock = false;
@@ -38,11 +39,10 @@ public static boolean getTargetStatus(double TX, double TY) {
     }
   }
 
-protected void execute() {
+public void execute() {
   SmartDashboard.putBoolean("MISSLE LOCK", targetLock);
   SmartDashboard.putNumber("X Target", TX);
   SmartDashboard.putNumber("Y Target", TY);
-  
 }
 
  public boolean targetLocked(double TX)  {  
