@@ -57,12 +57,12 @@ public class Robot extends TimedRobot {
 
   // Make sure you only configure port forwarding once in your robot code.
   // Do not place these function calls in any periodic functions
-  PortForwarder.add(5800, "limelight.local", 5800);
-  PortForwarder.add(5801, "limelight.local", 5801);
-  PortForwarder.add(5802, "limelight.local", 5802);
-  PortForwarder.add(5803, "limelight.local", 5803);
-  PortForwarder.add(5804, "limelight.local", 5804);
-  PortForwarder.add(5805, "limelight.local", 5805);
+  PortForwarder.add(5800, "limelight-back.local", 5800);
+  PortForwarder.add(5801, "limelight-back.local", 5801);
+  PortForwarder.add(5802, "limelight-back.local", 5802);
+  PortForwarder.add(5803, "limelight-back.local", 5803);
+  PortForwarder.add(5804, "limelight-back.local", 5804);
+  PortForwarder.add(5805, "limelight-back.local", 5805);
 
   }
 
