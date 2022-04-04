@@ -7,6 +7,8 @@ package frc.robot.subsystems;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants.VisionRange;
 
 public class TargetStatus {
@@ -26,17 +28,22 @@ public class TargetStatus {
 public static boolean getTargetStatus(double TX, double TY) {
   if ((VisionRange.txMin< TX && TX < VisionRange.txMax) & (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
     
-    System.out.println("Missile lock-on");
+    System.out.println("+ Missile lock +");
     return targetLock == true;
 
   } else {
 
-    System.out.println("Still seeking target");
+    System.out.println("- Seeking target -");
     return targetLock == false;
     }
- }
+  }
 
- 
+protected void execute() {
+  SmartDashboard.putBoolean("MISSLE LOCK", targetLock);
+  SmartDashboard.putNumber("X Target", TX);
+  SmartDashboard.putNumber("Y Target", TY);
+  
+}
 
  public boolean targetLocked(double TX)  {  
 

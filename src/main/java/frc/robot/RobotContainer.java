@@ -12,6 +12,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
+
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -72,11 +76,10 @@ public class RobotContainer {
 
   //// Limelight
   // TODO Changed to public static and added TargetStatus
+
   public static Limelight limelight = new Limelight();
   public static TargetStatus targetStatus = new TargetStatus();
 
-  
-  
   //// Autonomous
   SendableChooser<Command> autonChooser = new SendableChooser<>();
 
