@@ -118,7 +118,7 @@ public final class Constants {
     
     
     // TODO Values need to be updated on the game Field
-    public static final class LimelightRange {
+    public static final class VisionRange {
      public static double txMin = -5;
      public static double txMax = 5;
      public static double tyMin = 10;

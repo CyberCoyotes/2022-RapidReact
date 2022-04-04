@@ -16,7 +16,7 @@ import frc.robot.Constants.VisionRange;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAuto_16 extends CommandBase {
+public class LaunchSemiAuto extends CommandBase {
 
   private final Launcher launcher;
   boolean targetLock = false;
@@ -48,7 +48,7 @@ public class SemiAuto_16 extends CommandBase {
   */
 
   
-  public SemiAuto_16(Launcher launch) {
+  public LaunchSemiAuto(Launcher launch) {
     // Use addRequirements() here to declare subsystem dependencies.
     launcher = launch;
     addRequirements(launcher);
@@ -73,6 +73,8 @@ public class SemiAuto_16 extends CommandBase {
     if ((VisionRange.txMin< TX && TX < VisionRange.txMax) & (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
       //Sets targetLock to true when tx & ty are within the parameters
       System.out.println("++ Target LOCKED ++ " + "(" + TX + "," + TY + ")" + " Area:" + area);
+
+      // TODO Replace with Group2BallsHigh once intake is fixed
       launcher.setLaunch2();
       targetLock = true;
 

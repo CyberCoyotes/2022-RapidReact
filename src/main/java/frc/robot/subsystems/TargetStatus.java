@@ -7,7 +7,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import frc.robot.Constants.LimelightRange;
+import frc.robot.Constants.VisionRange;
 
 public class TargetStatus {
   // https://docs.limelightvision.io/en/latest/cs_drive_to_goal_2019.html
@@ -24,7 +24,7 @@ public class TargetStatus {
   double area = ta.getDouble(0.0);
   
 public static boolean getTargetStatus(double TX, double TY) {
-  if ((LimelightRange.txMin< TX && TX < LimelightRange.txMax) & (LimelightRange.tyMin< TY && TY < LimelightRange.tyMax)) {
+  if ((VisionRange.txMin< TX && TX < VisionRange.txMax) & (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
     
     System.out.println("Missile lock-on");
     return targetLock == true;
