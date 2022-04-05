@@ -2,19 +2,19 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands.Launcher;
+package frc.robot.DEV;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Interpolator;
 import frc.robot.Limelight;
 import frc.robot.subsystems.Launcher;
 
-public class LaunchAutomatic extends CommandBase {
+public class AutomaticAdaptiveLaunch extends CommandBase {
   private Launcher subsystem;
   private Limelight limelight;
 
   /** Creates a new LaunchAutomatic. */
-  public LaunchAutomatic(Launcher subsystem, Limelight limelight) {
+  public AutomaticAdaptiveLaunch(Launcher subsystem, Limelight limelight) {
     this.subsystem = subsystem;
     this.limelight = limelight;
     // Use addRequirements() here to declare subsystem dependencies

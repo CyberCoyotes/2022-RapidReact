@@ -13,9 +13,6 @@ import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -25,8 +22,7 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
 import frc.robot.subsystems.Lift;
-import frc.robot.subsystems.TargetStatus;
-
+import frc.robot.DEV.SemiAuto_16;
 // Command imports
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
@@ -34,8 +30,7 @@ import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.CommandGroups.Group2BallsHigh;
 import frc.robot.commands.CommandGroups.GroupXHigh;
 import frc.robot.commands.Launcher.LaunchSpeed;
-import frc.robot.commands.Launcher.LaunchSemiAuto;
-import frc.robot.commands.Launcher.SemiAuto_16;
+import frc.robot.commands.Launcher.SemiAutoLaunch;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -75,10 +70,7 @@ public class RobotContainer {
   // private final LiftPivot liftPivotMotors = new LiftPivot();
 
   //// Limelight
-  // TODO Changed to public static and added TargetStatus
-
-  public static Limelight limelight = new Limelight();
-  public static TargetStatus targetStatus = new TargetStatus();
+  // public Limelight limelight = new Limelight();
 
   //// Autonomous
   SendableChooser<Command> autonChooser = new SendableChooser<>();
@@ -274,13 +266,13 @@ public class RobotContainer {
 
     // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
     //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
-    op_StartButton.whenPressed(new LaunchSemiAuto(launcher));
+    op_StartButton.whenPressed(new SemiAutoLaunch(launcher));
 
     // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
     // op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
 
     // When pressed, activates a DEVELOPMENT of Semi-Automatic launching, currently outputs data to log
-    op_BackButton.whenPressed(new LaunchSemiAuto(launcher));
+    op_BackButton.whenPressed(new SemiAutoLaunch(launcher));
     op_BackButton.whenReleased(new LaunchSpeed(launcher, 0.0, 0.0));
     //Hold X to rotationally align the robot (driver still has control of translational motion)
     /**

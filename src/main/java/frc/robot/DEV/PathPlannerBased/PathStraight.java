@@ -2,11 +2,11 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-/** FRC 3630 from Alpha
- * Experimental
-*/
+/** FRC 3603
+ * Experimental 
+ * */
 
-package frc.robot.commands.PathPlannerBased;
+package frc.robot.DEV.PathPlannerBased;
 
 import com.pathplanner.lib.PathPlannerTrajectory;
 import com.pathplanner.lib.commands.PPSwerveControllerCommand;
@@ -17,14 +17,12 @@ import frc.robot.subsystems.Drivetrain;
 
 import static frc.robot.Constants.*;
 
-public class FollowPath extends PPSwerveControllerCommand {
+public class PathStraight extends PPSwerveControllerCommand {
   /** Creates a new GenericAutonomousCommand. */
   private final Drivetrain drivetrain;
 
-  public FollowPath(Drivetrain drivetrain, PathPlannerTrajectory path) {
+  public PathStraight(Drivetrain drivetrain, PathPlannerTrajectory path) {
     // Use addRequirements() here to declare subsystem dependencies.
-
-
 
     super(
       path,
@@ -38,7 +36,7 @@ public class FollowPath extends PPSwerveControllerCommand {
       drivetrain::setModuleStates,
       drivetrain
     );
-
+    
     drivetrain.thetaController.enableContinuousInput(-Math.PI, Math.PI);
 
     this.drivetrain = drivetrain;

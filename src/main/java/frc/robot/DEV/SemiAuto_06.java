@@ -2,16 +2,15 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands.Launcher;
+package frc.robot.DEV;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.TargetStatus;
 import frc.robot.subsystems.Launcher;
 
 public class SemiAuto_06 extends CommandBase {
   private final Launcher launcher;
 
-  public SemiAuto_06(Launcher launch, TargetStatus targetStatus) {
+  public SemiAuto_06(Launcher launch, TargetStatus_DEV targetStatus) {
     // Use addRequirements() here to declare subsystem dependencies.
     launcher = launch;
 

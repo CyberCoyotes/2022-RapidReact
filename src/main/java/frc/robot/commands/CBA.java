@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.CBA1Input;
+import frc.robot.DEV.CBA1Input_DEV;
 import frc.robot.subsystems.Drivetrain;
 
 
@@ -12,7 +12,7 @@ import frc.robot.subsystems.Drivetrain;
 public class CBA extends SequentialCommandGroup {
     /**the coords to for the robot to attempt to replicate; note this will be a shallow attempt, and may need tuning forward*/
     //#region properties
-    List<CBA1Input> coords;
+    List<CBA1Input_DEV> coords;
     //this timer is the wpilib version, if it doesnt work its the build teams fault
     Timer timer;
 
@@ -24,7 +24,7 @@ public class CBA extends SequentialCommandGroup {
     private boolean isFin = false;
     
 
-private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input){
+private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input_DEV input){
 
     WaitCommand deadline = new WaitCommand(input.interval);
     DriveCommand driver = new DriveCommand(driveSubsytem, () -> {return input.x;}, () -> {return input.y;}, () -> {return input.theta;});
@@ -38,7 +38,7 @@ return new ParallelDeadlineGroup(deadline, driver);
  * @param coords the Inputs to use 
  * 
  */
- public CBA(Drivetrain subsystem,List<CBA1Input> coords) {
+ public CBA(Drivetrain subsystem,List<CBA1Input_DEV> coords) {
 
     //boring init
      this.timer = new Timer();
@@ -47,7 +47,7 @@ return new ParallelDeadlineGroup(deadline, driver);
      addRequirements(subsystem);
 
      //good stuff
-     for(CBA1Input input : coords){
+     for(CBA1Input_DEV input : coords){
          //Adds a usable version of the input as a command deadlined by the interval for every input.
          //This could possibly be optimized, but list conversions make me wanna cry 
          addCommands(TranslateIntoUsableCommand(input));
