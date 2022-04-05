@@ -19,15 +19,13 @@ public class CBA extends SequentialCommandGroup {
     //Subsystem. Drives.
     private Drivetrain driveSubsytem;
     //A simple flag to indicate if the command has finished.
-    private boolean isFin = false;
+    //private boolean isFin = false;
     //#endregion
    
 //#region helpers
 
 
-    private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input)
-    {
-        
+    private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input) {
         WaitCommand deadline = new WaitCommand(input.interval);
         DriveCommand driver = new DriveCommand(driveSubsytem, () -> {return input.x;}, () -> {return input.y;}, () -> {return input.theta;});
     
@@ -91,7 +89,7 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
           
     }
     
-
+    /*
     @Override
     public void execute() 
         {
@@ -105,7 +103,7 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
         
         return isFin;
     }
-
+    */
 
 //#endregion
 
