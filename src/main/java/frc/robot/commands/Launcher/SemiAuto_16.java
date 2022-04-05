@@ -19,7 +19,6 @@ import frc.robot.subsystems.Launcher;
 public class SemiAuto_16 extends CommandBase {
 
   private final Launcher launcher;
-  boolean targetLock = false;
 
 
   //Shuffleboard.selectTab("Vision");
@@ -64,33 +63,21 @@ public class SemiAuto_16 extends CommandBase {
     // read values periodically
     double TX = tx.getDouble(0.0);
     double TY = ty.getDouble(0.0);
-    double area = ta.getDouble(0.0);
 
-    SmartDashboard.putNumber(("tX"), TX);
-    SmartDashboard.putNumber(("tY"), TY);
-    SmartDashboard.putBoolean("Target Status", targetLock);
-
-    if ((VisionRange.txMin< TX && TX < VisionRange.txMax) & (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
+    if ((VisionRange.txMin< TX && TX < VisionRange.txMax) && (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
       //Sets targetLock to true when tx & ty are within the parameters
-      System.out.println("+ Missle LOCK + " + "(" + TX + "," + TY + ")" + " Area:" + area);
       launcher.setLaunch2();
-      targetLock = true;
 
     } else {
-      System.out.println("- Seeking Target - " + "(" + TX + "," + TY + ")" + " Area:" + area);
       launcher.stopLauncher();
-      targetLock = false;
     } 
   
   }
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {      
-      launcher.stopLauncher();}
-      // FIXME Do TX and TY need to be reset to zero to prevent false positives with next attempt at a shot?
-      // double TX = tx.getDouble(0.0);
-      // double TY = ty.getDouble(0.0);
-      // double area = ta.getDouble(0.0);
+      launcher.stopLauncher();
+  }
 
   // Returns true when the command should end.
   @Override

@@ -6,6 +6,9 @@ package frc.robot;
 
 import java.lang.annotation.Target;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.util.net.PortForwarder;
 
 // USB Camera Imports
@@ -13,8 +16,10 @@ import edu.wpi.first.util.net.PortForwarder;
 // import edu.wpi.first.cscore.UsbCamera;
 // import edu.wpi.first.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.Constants.VisionRange;
 import frc.robot.subsystems.TargetStatus;
 
 
@@ -30,7 +35,10 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
-  public TargetStatus target;
+  NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-back");
+  NetworkTableEntry tx = table.getEntry("tx");
+  NetworkTableEntry ty = table.getEntry("ty");
+  NetworkTableEntry ta = table.getEntry("ta");
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -41,7 +49,6 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
-    target = new TargetStatus();
 
 
     //add USB webcam view to dashboard
@@ -81,6 +88,17 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     m_robotContainer.debugMethod();
+
+    double TX = tx.getDouble(0.0);
+    double TY = ty.getDouble(0.0);
+    double area = ta.getDouble(0.0);
+
+    boolean targetLock = (VisionRange.txMin< TX && TX < VisionRange.txMax) && (VisionRange.tyMin< TY && TY < VisionRange.tyMax);
+    
+    SmartDashboard.putNumber(("tX"), TX);
+    SmartDashboard.putNumber(("tY"), TY);
+    SmartDashboard.putBoolean("Target Status", targetLock);
+
   }
 
   /** This function is called once each time the robot enters Disabled mode. */

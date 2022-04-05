@@ -265,6 +265,9 @@ public class Drivetrain extends SubsystemBase {
   public void periodic() {
 
     //defining states - Repeatedly update
+    System.out.print("X: " + m_chassisSpeeds.vxMetersPerSecond);
+    System.out.print("Y: " + m_chassisSpeeds.vyMetersPerSecond);
+    System.out.println("Rot: " + m_chassisSpeeds.omegaRadiansPerSecond);
     SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
     // removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
     // and changed the first param from itself(states) to the chassisspeeds object 
