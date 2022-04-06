@@ -10,6 +10,6 @@ import frc.robot.subsystems.Drivetrain;
 public class CBAObjectiveThetaCommand extends ParallelCommandGroup implements ICBACommand {
     public CBAObjectiveThetaCommand(Drivetrain drivetrain, CBA1Input input) {
         //this should work since everything is still field oriented. 
-        addCommands(new ParallelCommandGroup(new ParallelDeadlineGroup(new WaitCommand(input.interval), new DriveCommand(drivetrain, () -> {return input.x;}, () -> {return input.y;}, () -> {return 0.0;})), new TurnDegrees(drivetrain, input.theta)));//need the turndegrees from main
+        addCommands(new ParallelCommandGroup(new ParallelDeadlineGroup(new WaitCommand(input.interval), new DriveCommand(drivetrain, () -> {return input.x;}, () -> {return input.y;}, () -> {return 0.0;})), new TurnToDegrees(drivetrain, input.theta)));//need the turndegrees from main
     }
 }
