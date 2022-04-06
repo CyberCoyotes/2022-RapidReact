@@ -1,0 +1,12 @@
+// rumble with boolean, would need else if
+if (bool) {
+    driverController.setRumble(RumbleType.kLeftRumble, 1.0);
+    driverController.setRumble(RumbleType.kRightRumble, 1.0);
+} else {
+    driverController.setRumble(RumbleType.kLeftRumble, 0.0);
+    driverController.setRumble(RumbleType.kRightRumble, 0.0);
+}
+
+//rumble code lines
+controller.setRumble(RumbleType.kLeftRumble, value);
+controller.setRumble(RumbleType.RightRumble, value);
