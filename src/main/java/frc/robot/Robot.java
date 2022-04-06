@@ -99,6 +99,21 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Area", area);
     SmartDashboard.putBoolean("Target Status", targetLock);
 
+    if (TX > VisionRange.txMax) {
+      driverController.setRumble(RumbleType.kRightRumble, 1.0);
+  
+    } else if (TX < VisionRange.txMin) {
+      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
+  
+    } else if (TX > VisionRange.txMin && TX < VisionRange.txMax) {
+      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
+      driverController.setRumble(RumbleType.kRightRumble, 1.0);
+  
+    } else {
+      driverController.setRumble(RumbleType.kLeftRumble, 0.0);
+      driverController.setRumble(RumbleType.kRightRumble, 0.0);
+    } 
+
   } // End of robotPeriodic
 
   /** This function is called once each time the robot enters Disabled mode. */
