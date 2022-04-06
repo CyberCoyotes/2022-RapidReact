@@ -14,6 +14,7 @@ import edu.wpi.first.util.net.PortForwarder;
 // import edu.wpi.first.cscore.UsbCamera;
 // import edu.wpi.first.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -35,6 +36,8 @@ public class Robot extends TimedRobot {
   NetworkTableEntry tx = table.getEntry("tx");
   NetworkTableEntry ty = table.getEntry("ty");
   NetworkTableEntry ta = table.getEntry("ta");
+
+  private final XboxController driverController = new XboxController(0);
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -96,21 +99,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Area", area);
     SmartDashboard.putBoolean("Target Status", targetLock);
 
-    // FIXME
-    if (TX > VisionRange.txMax) {
-      driverController.setRumble(RumbleType.kRightRumble, 1.0);
-  } else if (TX < VisionRange.txMin) {
-      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
-  } else if (TX > VisionRange.txMin && TX < VisionRange.txMax) {
-      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
-      driverController.setRumble(RumbleType.kRightRumble, 1.0);
-  } else {
-      driverController.setRumble(RumbleType.kLeftRumble, 0.0);
-      driverController.setRumble(RumbleType.kRightRumble, 0.0);
-  }
-  
-
-  }
+  } // End of robotPeriodic
 
   /** This function is called once each time the robot enters Disabled mode. */
   @Override
