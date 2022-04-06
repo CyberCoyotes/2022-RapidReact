@@ -14,6 +14,7 @@ import edu.wpi.first.util.net.PortForwarder;
 // import edu.wpi.first.cscore.UsbCamera;
 // import edu.wpi.first.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -94,6 +95,20 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber(("tY"), TY);
     SmartDashboard.putNumber("Area", area);
     SmartDashboard.putBoolean("Target Status", targetLock);
+
+    // FIXME
+    if (TX > VisionRange.txMax) {
+      driverController.setRumble(RumbleType.kRightRumble, 1.0);
+  } else if (TX < VisionRange.txMin) {
+      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
+  } else if (TX > VisionRange.txMin && TX < VisionRange.txMax) {
+      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
+      driverController.setRumble(RumbleType.kRightRumble, 1.0);
+  } else {
+      driverController.setRumble(RumbleType.kLeftRumble, 0.0);
+      driverController.setRumble(RumbleType.kRightRumble, 0.0);
+  }
+  
 
   }
 
