@@ -63,12 +63,12 @@ public class Robot extends TimedRobot {
 
   // Make sure you only configure port forwarding once in your robot code.
   // Do not place these function calls in any periodic functions
-  PortForwarder.add(5800, "limelight-back.local", 5800);
-  PortForwarder.add(5801, "limelight-back.local", 5801);
-  PortForwarder.add(5802, "limelight-back.local", 5802);
-  PortForwarder.add(5803, "limelight-back.local", 5803);
-  PortForwarder.add(5804, "limelight-back.local", 5804);
-  PortForwarder.add(5805, "limelight-back.local", 5805);
+  PortForwarder.add(5800, "limelight-back .local", 5800);
+  PortForwarder.add(5801, "limelight-back .local", 5801);
+  PortForwarder.add(5802, "limelight-back .local", 5802);
+  PortForwarder.add(5803, "limelight-back .local", 5803);
+  PortForwarder.add(5804, "limelight-back .local", 5804);
+  PortForwarder.add(5805, "limelight-back .local", 5805);
 
   }
 
@@ -99,17 +99,19 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Area", area);
     SmartDashboard.putBoolean("Target Status", targetLock);
 
-    if (TX > VisionRange.txMax) {
+    /*if (TX > VisionRange.txMax) {
       driverController.setRumble(RumbleType.kRightRumble, 1.0);
   
     } else if (TX < VisionRange.txMin) {
       driverController.setRumble(RumbleType.kLeftRumble, 1.0);
   
-    } else if (TX > VisionRange.txMin && TX < VisionRange.txMax) {
+    } */
+    if (TX >= VisionRange.txMin && TX <= VisionRange.txMax && TX !=0) {
       driverController.setRumble(RumbleType.kLeftRumble, 1.0);
       driverController.setRumble(RumbleType.kRightRumble, 1.0);
   
-    } else {
+    } 
+    else {
       driverController.setRumble(RumbleType.kLeftRumble, 0.0);
       driverController.setRumble(RumbleType.kRightRumble, 0.0);
     } 

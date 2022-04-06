@@ -156,13 +156,7 @@ public class RobotContainer {
     final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
-    // final JoystickButton d_LeftRumble = new JoystickButton(drivercontroller.setRumble(RumbleType.kLeftRumble, value);
-    //TODO these may be not needed, declared in Robot.java, test rumble without these lines and delete if works. 
-    // driverController.setRumble(RumbleType.kLeftRumble, 0); 
-    // final JoystickButton d_RightRumbled = new JoystickButton(drivercontroller.setRumble(RumbleType.RightRumble, value);
-    // driverController.setRumble(RumbleType.kRightRumble, 0);
-
-    
+      
 
     // Defining the actions associated with buttons
 
