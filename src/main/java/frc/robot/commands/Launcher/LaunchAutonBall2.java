@@ -10,11 +10,11 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
 
-public class LaunchBall2 extends CommandBase {
+public class LaunchAutonBall2 extends CommandBase {
     private final Launcher launcher;
 
   
-  public LaunchBall2(Launcher launch) {
+  public LaunchAutonBall2(Launcher launch) {
 
     launcher = launch;
     addRequirements(launcher);
@@ -27,7 +27,7 @@ public class LaunchBall2 extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    launcher.setLaunch2();
+    launcher.setAuton2Launch();
   }
 
   // Called once the command ends or is interrupted.

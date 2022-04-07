@@ -29,8 +29,8 @@ import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.CommandGroups.GroupHighGoal;
 import frc.robot.commands.CommandGroups.GroupHighGoalX;
-import frc.robot.commands.Launcher.LaunchSpeed;
-import frc.robot.commands.Launcher.SemiAutoLaunch;
+import frc.robot.commands.Launcher.setLaunchSpeed;
+import frc.robot.commands.Launcher.LaunchSemiAutomatic;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
@@ -176,12 +176,12 @@ public class RobotContainer {
        then finally run all 3 motors at once. release to stop all motors */
       d_ButtonA.whenPressed(
        new SequentialCommandGroup(
-        new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
+        new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
           new SequentialCommandGroup(
-            new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
+            new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
               new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
                 new ParallelCommandGroup (
-                  new LaunchSpeed(launcher, 0.25, 0.25),
+                  new setLaunchSpeed(launcher, 0.25, 0.25),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5)))
        )
@@ -190,7 +190,7 @@ public class RobotContainer {
       d_ButtonA.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
-        new LaunchSpeed(launcher, 0.0, 0.0))
+        new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
@@ -217,14 +217,14 @@ public class RobotContainer {
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
-        new LaunchSpeed(launcher, 0.0, 0.0))
+        new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
     d_ButtonX.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
-      new LaunchSpeed(launcher, 0.0, 0.0)
+      new setLaunchSpeed(launcher, 0.0, 0.0)
     ));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
@@ -267,14 +267,14 @@ public class RobotContainer {
 
     // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
     //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
-    op_StartButton.whenPressed(new SemiAutoLaunch(launcher));
+    op_StartButton.whenPressed(new LaunchSemiAutomatic(launcher));
 
     // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
     // op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
 
     // When pressed, activates a DEVELOPMENT of Semi-Automatic launching, currently outputs data to log
-    op_BackButton.whenPressed(new SemiAutoLaunch(launcher));
-    op_BackButton.whenReleased(new LaunchSpeed(launcher, 0.0, 0.0));
+    op_BackButton.whenPressed(new LaunchSemiAutomatic(launcher));
+    op_BackButton.whenReleased(new setLaunchSpeed(launcher, 0.0, 0.0));
     //Hold X to rotationally align the robot (driver still has control of translational motion)
     /**
     op_ButtonX.whenPressed(new DriveCommand(

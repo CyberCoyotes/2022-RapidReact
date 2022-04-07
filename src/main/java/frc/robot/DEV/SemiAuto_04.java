@@ -9,7 +9,7 @@ package frc.robot.DEV;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.Launcher.LaunchSpeed;
+import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
@@ -26,7 +26,7 @@ public class SemiAuto_04 extends CommandBase {
       if (tx < 5) {
           new IndexSpeed(indexMotors, 0.5);
          } else {
-          new LaunchSpeed(launcher, 0.5, 0.5);}
+          new setLaunchSpeed(launcher, 0.5, 0.5);}
     }
 
     public void end(boolean interrupted) {

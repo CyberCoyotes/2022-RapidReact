@@ -68,7 +68,7 @@ public class SemiAuto_14 extends CommandBase {
     {
       //Sets targetLock to true when tx & ty are within the parameters
       System.out.println("++ Target LOCKED ++ " + "(" + TX + "," + TY + ")" + " Area:" + area); // Revised since v.12
-      launcher.setLaunch2();
+      launcher.setHighLaunch();
 
     } else {
       System.out.println("-- Target NOT locked --" + "(" + TX + "," + TY + ")" + " Area:" + area);

@@ -3,7 +3,9 @@ import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.Launcher.LaunchHigh;
 import frc.robot.commands.Launcher.setLaunchSpeed;
+import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
@@ -15,14 +17,14 @@ import frc.robot.subsystems.Launcher;
  * It will allow easier recycing of launcer code for auton
  * */
 
-public class GroupHighGoal extends SequentialCommandGroup {
+public class GroupHighGoalDEV extends SequentialCommandGroup {
     
-    public GroupHighGoal(Launcher launcher, Intake intakeMotor, Index indexMotors) {
+    public GroupHighGoalDEV(Launcher launcher, Intake intakeMotor, Index indexMotors) {
      addCommands(
       // Launches Ball 1 from split-the-tape position
-      new setLaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
+      new PreLaunch(launcher).withTimeout(0.75),
       new SequentialCommandGroup(
-        new setLaunchSpeed(launcher, 0.40,0.45).withTimeout(0.25),
+        new LaunchHigh(launcher).withTimeout(0.25),
         new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
        // end of commands
       // Revs wheels for Ball 2

@@ -35,7 +35,7 @@ public class SemiAuto_12 extends CommandBase {
       System.out.println("Target is lock");
       System.out.println(tx);
       System.out.println(ty);
-      launcher.setLaunch2();
+      launcher.setHighLaunch();
 
     } else {
       System.out.println("Target is NOT locked");

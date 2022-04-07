@@ -15,7 +15,7 @@ import frc.robot.Constants.VisionRange;
 import frc.robot.subsystems.Launcher;
 
 
-public class SemiAutoLaunch extends CommandBase {
+public class LaunchSemiAutomatic extends CommandBase {
 
   private final Launcher launcher;
 
@@ -46,7 +46,7 @@ public class SemiAutoLaunch extends CommandBase {
   */
 
   
-  public SemiAutoLaunch(Launcher launch) {
+  public LaunchSemiAutomatic(Launcher launch) {
     // Use addRequirements() here to declare subsystem dependencies.
     launcher = launch;
     addRequirements(launcher);
@@ -65,7 +65,7 @@ public class SemiAutoLaunch extends CommandBase {
 
     if ((VisionRange.txMin< TX && TX < VisionRange.txMax) && (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
       //Sets targetLock to true when tx & ty are within the parameters
-      launcher.setLaunch2();
+      launcher.setHighLaunch();
 
     } else {
       launcher.stopLauncher();

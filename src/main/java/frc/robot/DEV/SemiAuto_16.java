@@ -65,7 +65,7 @@ public class SemiAuto_16 extends CommandBase {
 
     if ((VisionRange.txMin< TX && TX < VisionRange.txMax) && (VisionRange.tyMin< TY && TY < VisionRange.tyMax)) {
       //Sets targetLock to true when tx & ty are within the parameters
-      launcher.setLaunch2();
+      launcher.setHighLaunch();
 
     } else {
       launcher.stopLauncher();

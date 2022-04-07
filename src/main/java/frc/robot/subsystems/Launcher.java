@@ -4,8 +4,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
-import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -25,8 +23,8 @@ public class Launcher extends SubsystemBase {
  
     backLauncherMotor.setInverted(true);
     backLauncherMotor.setNeutralMode(NeutralMode.Coast);
-    frontLauncherMotor.setNeutralMode(NeutralMode.Coast);
     frontLauncherMotor.setInverted(true);
+    frontLauncherMotor.setNeutralMode(NeutralMode.Coast);
 
     /** 
     backLauncherMotor.configNominalOutputForward(0, Constants.kTimeoutMs);
@@ -34,26 +32,19 @@ public class Launcher extends SubsystemBase {
     backLauncherMotor.configNominalOutputReverse(0, Constants.kTimeoutMs);
     frontLauncherMotor.configNominalOutputReverse(0, Constants.kTimeoutMs);
     */
-
-    /** 
-    backLauncherMotor.getSelectedSensorVelocity();
-    System.out.println(backLauncherMotor);
-    frontLauncherMotor.getSelectedSensorVelocity();
-    System.out.println(frontLauncherMotor);
-    */
-
-    // TODO See if this outputs to Shuffleboard properly
+        
     /*
     Shuffleboard.getTab("Launcher")
-      .add("Back Velocity", backLauncherMotor.getSelectedSensorVelocity())
+      .add("Back Output", backLauncherMotor.getSelectedPercentOutput())
       .withWidget(BuiltInWidgets.kNumberSlider)
       .getEntry();
 
     Shuffleboard.getTab("Launcher") 
-      .add("Front Velocity", frontLauncherMotor.getSelectedSensorVelocity())
+      .add("Front Output", frontLauncherMotor.getSelectedSensorVelocity())
       .withWidget(BuiltInWidgets.kNumberSlider)
       .getEntry();
-      */
+    */
+
   }
 
   /* Launches the Cargo with speed set for low hub
@@ -87,17 +78,6 @@ public class Launcher extends SubsystemBase {
     backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
   }
 */ 
-    // Set for bumper on outside tarmac
-    public void setLaunch2() {
-      frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);
-      backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-    }
-
-    // Set for 3rd ball pickup spot
-    public void setLaunch3() {
-      frontLauncherMotor.set(ControlMode.PercentOutput, 0.68); //0.65 hit the front rim of Hub, changing to 0.68
-      backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-    }
   
   // Set HIGH goal speed. Approximate line up is to have robot "split the tarmac tape; half in, half out"
   public void setHighLaunch() {
@@ -115,6 +95,18 @@ public class Launcher extends SubsystemBase {
   public void setLowLaunch() {
     backLauncherMotor.set(ControlMode.PercentOutput, 0.20);
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.20);
+  }
+
+   // Set for bumper on outside tarmac
+   public void setAuton2Launch() {
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
+  }
+
+  // Set for 3rd ball pickup spot
+  public void setAuton3Launch() {
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.68); //0.65 hit the front rim of Hub, changing to 0.68
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
   }
   
   public void stopLauncher() {

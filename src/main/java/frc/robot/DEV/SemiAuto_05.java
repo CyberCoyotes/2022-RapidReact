@@ -10,7 +10,7 @@ package frc.robot.DEV;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.Launcher.LaunchSpeed;
+import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
@@ -33,6 +33,6 @@ public class SemiAuto_05 extends CommandBase {
     if (targetLock == true){
       new IndexSpeed(indexMotors, 0.5);
       } else {
-      new LaunchSpeed(launcher, 0.5, 0.5);}
+      new setLaunchSpeed(launcher, 0.5, 0.5);}
     }
 } // end of class

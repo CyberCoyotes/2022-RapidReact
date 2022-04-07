@@ -2,14 +2,14 @@ package frc.robot.commands.Launcher;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
-public class LaunchSpeed extends CommandBase {
+public class setLaunchSpeed extends CommandBase {
     
     // The subsystem the command runs on
     private final Launcher subsystem;
     private double speedBack; // Does this need to be seperated into Top and Bottom?
     private double speedFront;
 
-    public LaunchSpeed(Launcher subsystem, double speedFront, double speedBack) {
+    public setLaunchSpeed(Launcher subsystem, double speedFront, double speedBack) {
       this.subsystem = subsystem;
       this.speedFront = speedFront;
       this.speedBack = speedBack;

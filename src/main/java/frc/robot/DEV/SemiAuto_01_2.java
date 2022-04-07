@@ -14,7 +14,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Subsystem;
-import frc.robot.commands.Launcher.LaunchBall2;
+import frc.robot.commands.Launcher.LaunchAutonBall2;
 import frc.robot.subsystems.Launcher;
 
 public class SemiAuto_01_2 implements Command {
@@ -42,7 +42,7 @@ public class SemiAuto_01_2 implements Command {
 
       if ((10 < ty || ty < 14) & (-5 < tx || tx <5)) {
         targetLock = true;
-        new LaunchBall2(launch);
+        new LaunchAutonBall2(launch);
         return targetLock; 
       } // end of if conditional
       else{

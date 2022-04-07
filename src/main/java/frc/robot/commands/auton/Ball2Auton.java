@@ -11,7 +11,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.Launcher.LaunchBall2;
+import frc.robot.commands.Launcher.LaunchAutonBall2;
 import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
@@ -32,7 +32,7 @@ public class Ball2Auton extends SequentialCommandGroup {
       new Ball1PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
       // Launches second cargo
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchBall2(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+      new LaunchAutonBall2(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
 
       // Drive further away from goal after launch
       new ParallelDeadlineGroup(
