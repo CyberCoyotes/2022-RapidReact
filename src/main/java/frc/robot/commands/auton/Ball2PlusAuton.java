@@ -47,7 +47,7 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
 
       // Turn Launcher towards the goal
       // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, 45)
+      new TurnToDegrees(drivetrain, 15) // 45 too much
 
       // Back up to Goal - commenting out for now 
       // new ParallelDeadlineGroup(

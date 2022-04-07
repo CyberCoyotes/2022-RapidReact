@@ -32,9 +32,8 @@ public class Ball3Auton extends SequentialCommandGroup {
       new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
       
       // After shot, turn robot correct orientation and reset gyro automatically in auton
-      new TurnToDegrees(drivetrain, 90) // was 180
+      new TurnToDegrees(drivetrain, 45) // 180 too much, 90 too much
       // FIXME Add command to reset gyro
-      // new Drivetrain.zeroGyroscope(drivetrain)
       ); // End of commands
   }
 
