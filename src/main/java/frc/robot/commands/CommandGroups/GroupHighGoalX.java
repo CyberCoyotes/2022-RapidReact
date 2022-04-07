@@ -9,7 +9,7 @@ import frc.robot.subsystems.Intake;
 /**
  * Do not use: further testing required for XMode alone before anything can be used.
  */
-public class GroupXHigh extends SequentialCommandGroup{
+public class GroupHighGoalX extends SequentialCommandGroup{
 /**
  * Xmode Combined with the button-bound launch commnad; lasts for a set period of time.
  * @param m_drivetrain
@@ -17,11 +17,11 @@ public class GroupXHigh extends SequentialCommandGroup{
  * @param intakeMotor
  * @param launcher
  */
-  public GroupXHigh(Drivetrain m_drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+  public GroupHighGoalX(Drivetrain m_drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
       addRequirements(m_drivetrain, indexMotors);
       
       addCommands( 
-        new Group2BallsHigh(launcher, intakeMotor, indexMotors),
+        new GroupHighGoal(launcher, intakeMotor, indexMotors),
         // Aligns wheels into x pattern so robot isn't pushed around
         new xmode(m_drivetrain) 
       ); // end of commands

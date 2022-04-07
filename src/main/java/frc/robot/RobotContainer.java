@@ -27,8 +27,8 @@ import frc.robot.DEV.SemiAuto_16;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.CommandGroups.Group2BallsHigh;
-import frc.robot.commands.CommandGroups.GroupXHigh;
+import frc.robot.commands.CommandGroups.GroupHighGoal;
+import frc.robot.commands.CommandGroups.GroupHighGoalX;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.Launcher.SemiAutoLaunch;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
@@ -198,7 +198,7 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whenPressed(new Group2BallsHigh(launcher, intakeMotor, indexMotors));
+    d_ButtonY.whenPressed(new GroupHighGoal(launcher, intakeMotor, indexMotors));
     
     /** original 
     new SequentialCommandGroup(
@@ -220,7 +220,7 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.0, 0.0))
       );
 
-    d_ButtonX.whenPressed(new GroupXHigh(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_ButtonX.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
@@ -236,7 +236,7 @@ public class RobotContainer {
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_Start.whenPressed(new GroupXHigh(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_Start.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
     
 
     // Hold X to set launch speed according to Limelight

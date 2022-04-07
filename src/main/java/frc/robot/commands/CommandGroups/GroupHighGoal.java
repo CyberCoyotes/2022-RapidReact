@@ -17,9 +17,9 @@ import frc.robot.subsystems.Launcher;
  * It will allow easier recycing of launcer code for auton
  * */
 
-public class Group2BallsHigh extends SequentialCommandGroup {
+public class GroupHighGoal extends SequentialCommandGroup {
     
-    public Group2BallsHigh(Launcher launcher, Intake intakeMotor, Index indexMotors) {
+    public GroupHighGoal(Launcher launcher, Intake intakeMotor, Index indexMotors) {
      addCommands(
       // Launches Ball 1 from split-the-tape position
       new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),

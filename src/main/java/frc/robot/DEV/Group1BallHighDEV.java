@@ -1,5 +1,5 @@
 
-package frc.robot.commands.CommandGroups;
+package frc.robot.DEV;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
@@ -15,9 +15,9 @@ import frc.robot.subsystems.Launcher;
  * It will allow easier recycing of launcer code for auton
  * */
 
-public class Group1BallHigh extends SequentialCommandGroup {
+public class Group1BallHighDEV extends SequentialCommandGroup {
     
-    public Group1BallHigh(Launcher launcher, Intake intakeMotor, Index indexMotors) {
+    public Group1BallHighDEV(Launcher launcher, Intake intakeMotor, Index indexMotors) {
      addCommands(
        new PreLaunch(launcher).withTimeout(0.4),
        new SequentialCommandGroup(
