@@ -37,7 +37,7 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
 
       // Turn right 90 degrees
        // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, -90),
+      new TurnToDegrees(drivetrain, -90), // was -90
 
       // Turn on Intake and Drive towards ball 3
       new ParallelDeadlineGroup(
@@ -47,7 +47,7 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
 
       // Turn Launcher towards the goal
       // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, 90) 
+      new TurnToDegrees(drivetrain, 45)
 
       // Back up to Goal - commenting out for now 
       // new ParallelDeadlineGroup(

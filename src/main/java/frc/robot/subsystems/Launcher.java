@@ -43,6 +43,7 @@ public class Launcher extends SubsystemBase {
     */
 
     // TODO See if this outputs to Shuffleboard properly
+    /*
     Shuffleboard.getTab("Launcher")
       .add("Back Velocity", backLauncherMotor.getSelectedSensorVelocity())
       .withWidget(BuiltInWidgets.kNumberSlider)
@@ -52,6 +53,7 @@ public class Launcher extends SubsystemBase {
       .add("Front Velocity", frontLauncherMotor.getSelectedSensorVelocity())
       .withWidget(BuiltInWidgets.kNumberSlider)
       .getEntry();
+      */
   }
 
   /* Launches the Cargo with speed set for low hub
@@ -75,8 +77,8 @@ public class Launcher extends SubsystemBase {
   
   // Set Pre Launch Speed
   public void setPreLaunch(){
-    frontLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-    backLauncherMotor.set(ControlMode.PercentOutput, 0.35);
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.35);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.40);
   }
 
   // Set for back bumper on ball spot

@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.Launcher.LaunchHigh;
+import frc.robot.commands.Launcher.LaunchSpeed;
+import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
@@ -20,12 +22,15 @@ public class Group2BallsHigh extends SequentialCommandGroup {
     public Group2BallsHigh(Launcher launcher, Intake intakeMotor, Index indexMotors) {
      addCommands(
       // Launches Ball 1 from split-the-tape position
-      new Group1BallHigh(launcher, intakeMotor, indexMotors),
+      new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
+      new SequentialCommandGroup(
+        new LaunchHigh(launcher).withTimeout(0.25),
+        new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
+       // end of commands
       // Revs wheels for Ball 2
-      new LaunchHigh(launcher).withTimeout(0.4), 
       // Launches Ball 2 from split-the-tape position
         new ParallelCommandGroup (
-          new LaunchHigh(launcher),
+          new LaunchSpeed(launcher, 0.36, 0.42),
           new IntakeSpeed(intakeMotor, 0.5),
           new IndexSpeed(indexMotors, 0.5))
       ); // end of add commands
