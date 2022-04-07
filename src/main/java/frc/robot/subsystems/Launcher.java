@@ -4,6 +4,8 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -18,12 +20,11 @@ public class Launcher extends SubsystemBase {
 
   private final TalonFX backLauncherMotor = new TalonFX(Constants.Launcher.BACK_LAUNCHER_MOTOR);
   private final TalonFX frontLauncherMotor = new TalonFX(Constants.Launcher.FRONT_LAUNCHER_MOTOR);
-
+ 
   public Launcher() {
-    // backLauncherMotor.configFactoryDefault();
+ 
     backLauncherMotor.setInverted(true);
     backLauncherMotor.setNeutralMode(NeutralMode.Coast);
-    // frontLauncherMotor.configFactoryDefault();
     frontLauncherMotor.setNeutralMode(NeutralMode.Coast);
     frontLauncherMotor.setInverted(true);
 
@@ -34,13 +35,32 @@ public class Launcher extends SubsystemBase {
     frontLauncherMotor.configNominalOutputReverse(0, Constants.kTimeoutMs);
     */
 
+    /** 
+    backLauncherMotor.getSelectedSensorVelocity();
+    System.out.println(backLauncherMotor);
+    frontLauncherMotor.getSelectedSensorVelocity();
+    System.out.println(frontLauncherMotor);
+    */
+
+    // TODO See if this outputs to Shuffleboard properly
+    Shuffleboard.getTab("Launcher")
+      .add("Back Velocity", backLauncherMotor.getSelectedSensorVelocity())
+      .withWidget(BuiltInWidgets.kNumberSlider)
+      .getEntry();
+
+    Shuffleboard.getTab("Launcher") 
+      .add("Front Velocity", frontLauncherMotor.getSelectedSensorVelocity())
+      .withWidget(BuiltInWidgets.kNumberSlider)
+      .getEntry();
   }
 
   /* Launches the Cargo with speed set for low hub
   *  Eventually the absolute value could potentially be replaced with sensor-driven values
   */
+
   public static double speedFront;
   public static double speedBack;
+
 
   @Override
   public void periodic() {

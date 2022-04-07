@@ -8,7 +8,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -35,9 +34,9 @@ import frc.robot.commands.Launcher.SemiAutoLaunch;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.auton.Ball2PlusAuton;
-import frc.robot.commands.auton.Ball2Auton;
-import frc.robot.commands.auton.Ball3Auton;
+import frc.robot.commands.Auton.Ball2PlusAuton;
+import frc.robot.commands.Auton.Ball2Auton;
+import frc.robot.commands.Auton.Ball3Auton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
