@@ -99,13 +99,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Area", area);
     SmartDashboard.putBoolean("Target Status", targetLock);
 
-    /*if (TX > VisionRange.txMax) {
-      driverController.setRumble(RumbleType.kRightRumble, 1.0);
-  
-    } else if (TX < VisionRange.txMin) {
-      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
-  
-    } */
+    // Vision & haptic feedback that vibrates when targeting x-value (left to right) is within shooting range.
     if (TX >= VisionRange.txMin && TX <= VisionRange.txMax && TX !=0) {
       driverController.setRumble(RumbleType.kLeftRumble, 1.0);
       driverController.setRumble(RumbleType.kRightRumble, 1.0);
