@@ -6,6 +6,7 @@
 package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
@@ -17,14 +18,13 @@ public class Launcher extends SubsystemBase {
 
   private final TalonFX backLauncherMotor = new TalonFX(Constants.Launcher.BACK_LAUNCHER_MOTOR);
   private final TalonFX frontLauncherMotor = new TalonFX(Constants.Launcher.FRONT_LAUNCHER_MOTOR);
-
+ 
   public Launcher() {
-    // backLauncherMotor.configFactoryDefault();
+ 
     backLauncherMotor.setInverted(true);
     backLauncherMotor.setNeutralMode(NeutralMode.Coast);
-    // frontLauncherMotor.configFactoryDefault();
-    frontLauncherMotor.setNeutralMode(NeutralMode.Coast);
     frontLauncherMotor.setInverted(true);
+    frontLauncherMotor.setNeutralMode(NeutralMode.Coast);
 
     /** 
     backLauncherMotor.configNominalOutputForward(0, Constants.kTimeoutMs);
@@ -32,14 +32,28 @@ public class Launcher extends SubsystemBase {
     backLauncherMotor.configNominalOutputReverse(0, Constants.kTimeoutMs);
     frontLauncherMotor.configNominalOutputReverse(0, Constants.kTimeoutMs);
     */
+        
+    /*
+    Shuffleboard.getTab("Launcher")
+      .add("Back Output", backLauncherMotor.getSelectedPercentOutput())
+      .withWidget(BuiltInWidgets.kNumberSlider)
+      .getEntry();
+
+    Shuffleboard.getTab("Launcher") 
+      .add("Front Output", frontLauncherMotor.getSelectedSensorVelocity())
+      .withWidget(BuiltInWidgets.kNumberSlider)
+      .getEntry();
+    */
 
   }
 
   /* Launches the Cargo with speed set for low hub
   *  Eventually the absolute value could potentially be replaced with sensor-driven values
   */
+
   public static double speedFront;
   public static double speedBack;
+
 
   @Override
   public void periodic() {
@@ -54,8 +68,8 @@ public class Launcher extends SubsystemBase {
   
   // Set Pre Launch Speed
   public void setPreLaunch(){
-    frontLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-    backLauncherMotor.set(ControlMode.PercentOutput, 0.35);
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.35);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.40);
   }
 
   // Set for back bumper on ball spot
@@ -64,17 +78,6 @@ public class Launcher extends SubsystemBase {
     backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
   }
 */ 
-    // Set for bumper on outside tarmac
-    public void setLaunch2() {
-      frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);
-      backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-    }
-
-    // Set for 3rd ball pickup spot
-    public void setLaunch3() {
-      frontLauncherMotor.set(ControlMode.PercentOutput, 0.68); //0.65 hit the front rim of Hub, changing to 0.68
-      backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
-    }
   
   // Set HIGH goal speed. Approximate line up is to have robot "split the tarmac tape; half in, half out"
   public void setHighLaunch() {
@@ -93,6 +96,18 @@ public class Launcher extends SubsystemBase {
     backLauncherMotor.set(ControlMode.PercentOutput, 0.20);
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.20);
   }
+
+   // Set for bumper on outside tarmac
+   public void setAuton2Launch() {
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
+  }
+
+  // Set for 3rd ball pickup spot
+  public void setAuton3Launch() {
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.68); //0.65 hit the front rim of Hub, changing to 0.68
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
+  }
   
   public void stopLauncher() {
     backLauncherMotor.set(ControlMode.PercentOutput, 0);
@@ -107,4 +122,6 @@ public class Launcher extends SubsystemBase {
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation
   }
+
+
 } // End class

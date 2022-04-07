@@ -1,0 +1,588 @@
+[
+    {
+        "timestamp": 17.481201171875,
+        "seqNumber": 7889,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 7 on port 0 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 17.4822998046875,
+        "seqNumber": 7890,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 7 on port 0 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 18.4818115234375,
+        "seqNumber": 7891,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 7 on port 0 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 18.482666015625,
+        "seqNumber": 7892,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 7 on port 0 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 19.5010986328125,
+        "seqNumber": 7893,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 7 on port 0 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 19.5018310546875,
+        "seqNumber": 7894,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 7 on port 0 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 20.5213623046875,
+        "seqNumber": 7895,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 7 on port 0 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.5220947265625,
+        "seqNumber": 7896,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 7 on port 0 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 20.8438720703125,
+        "seqNumber": 7897,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception: java.lang.NullPointerException",
+        "location": "java.base/java.util.Collections.disjoint(Unknown Source)",
+        "callStack": "\tat java.base/java.util.Collections.disjoint(Unknown Source)\n\tat edu.wpi.first.wpilibj2.command.CommandScheduler.schedule(CommandScheduler.java:183)\n\tat edu.wpi.first.wpilibj2.command.CommandScheduler.schedule(CommandScheduler.java:214)\n\tat edu.wpi.first.wpilibj2.command.Command.schedule(Command.java:259)\n\tat edu.wpi.first.wpilibj2.command.Command.schedule(Command.java:264)\n\tat frc.robot.Robot.autonomousInit(Robot.java:79)\n\tat edu.wpi.first.wpilibj.IterativeRobotBase.loopFunc(IterativeRobotBase.java:294)\n\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:131)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)\n\tat frc.robot.Main.main(Main.java:24)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.844970703125,
+        "seqNumber": 7898,
+        "line": "Error at java.base/java.util.Collections.disjoint(Unknown Source): Unhandled exception: java.lang.NullPointerException"
+    },
+    {
+        "timestamp": 20.84521484375,
+        "seqNumber": 7899,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8453369140625,
+        "seqNumber": 7900,
+        "line": "\tat java.base/java.util.Collections.disjoint(Unknown Source)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.845703125,
+        "seqNumber": 7901,
+        "line": "\tat edu.wpi.first.wpilibj2.command.CommandScheduler.schedule(CommandScheduler.java:183)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.845947265625,
+        "seqNumber": 7902,
+        "line": "\tat edu.wpi.first.wpilibj2.command.CommandScheduler.schedule(CommandScheduler.java:214)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.84619140625,
+        "seqNumber": 7903,
+        "line": "\tat edu.wpi.first.wpilibj2.command.Command.schedule(Command.java:259)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.846435546875,
+        "seqNumber": 7904,
+        "line": "\tat edu.wpi.first.wpilibj2.command.Command.schedule(Command.java:264)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8470458984375,
+        "seqNumber": 7905,
+        "line": "\tat frc.robot.Robot.autonomousInit(Robot.java:79)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8477783203125,
+        "seqNumber": 7906,
+        "line": "\tat edu.wpi.first.wpilibj.IterativeRobotBase.loopFunc(IterativeRobotBase.java:294)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.84814453125,
+        "seqNumber": 7907,
+        "line": "\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:131)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8485107421875,
+        "seqNumber": 7908,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8487548828125,
+        "seqNumber": 7909,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8489990234375,
+        "seqNumber": 7910,
+        "line": "\tat frc.robot.Main.main(Main.java:24)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.849365234375,
+        "seqNumber": 7911,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.852783203125,
+        "seqNumber": 7912,
+        "line": "Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "timestamp": 20.8529052734375,
+        "seqNumber": 7913,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The startCompetition() method (or methods called by it) should have handled the exception above.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8544921875,
+        "seqNumber": 7914,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.854736328125,
+        "seqNumber": 7915,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.85693359375,
+        "seqNumber": 7916,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above."
+    },
+    {
+        "timestamp": 20.858642578125,
+        "seqNumber": 7917,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8592529296875,
+        "seqNumber": 7918,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 20.8594970703125,
+        "seqNumber": 7919,
+        "line": ""
+    },
+    {
+        "timestamp": 21.4742431640625,
+        "seqNumber": 7920,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:70|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 21.4754638671875,
+        "seqNumber": 7921,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix] Library shutdown cleanly",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 21.6861572265625,
+        "seqNumber": 7922,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 0,
+        "seqNumber": 7923,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 0.783203125,
+        "seqNumber": 7924,
+        "line": "NT: server: client CONNECTED: 10.36.3.11 port 33984"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 0.793701171875,
+        "seqNumber": 7925,
+        "line": "NT: server: client CONNECTED: 172.22.11.1 port 55745"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 0.912109375,
+        "seqNumber": 7926,
+        "line": "navX-Sensor Java library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 1.087890625,
+        "seqNumber": 7927,
+        "line": "navX-Sensor Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 1.12255859375,
+        "seqNumber": 7928,
+        "line": "navX-Sensor Board Type 50 (navX-MXP (Classic))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 1.1280517578125,
+        "seqNumber": 7929,
+        "line": "navX-Sensor firmware version 3.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 1.1331787109375,
+        "seqNumber": 7930,
+        "line": "navX-Sensor onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 1.1357421875,
+        "seqNumber": 7931,
+        "line": "navX-Sensor Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 1.7569580078125,
+        "seqNumber": 7932,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 7 on port 0 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 1.75830078125,
+        "seqNumber": 7933,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 7 on port 0 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.05810546875,
+        "seqNumber": 7934,
+        "line": "********** Robot program startup complete **********"
+    },
+    {
+        "timestamp": 2.0999755859375,
+        "seqNumber": 7935,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.102294921875,
+        "seqNumber": 7936,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.1044921875,
+        "seqNumber": 7937,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.471435546875,
+        "seqNumber": 7938,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 2.5087890625,
+        "seqNumber": 7939,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tDrivetrain.periodic(): 0.362086s\n\tLift.periodic(): 0.002568s\n\tbuttons.run(): 0.003643s\n\tIntake.periodic(): 0.000593s\n\tIndex.periodic(): 0.000806s\n\tLauncher.periodic(): 0.000448s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.509521484375,
+        "seqNumber": 7940,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tDrivetrain.periodic(): 0.362086s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.5111083984375,
+        "seqNumber": 7941,
+        "line": "\tLift.periodic(): 0.002568s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.5118408203125,
+        "seqNumber": 7942,
+        "line": "\tbuttons.run(): 0.003643s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.51416015625,
+        "seqNumber": 7943,
+        "line": "\tIntake.periodic(): 0.000593s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.5157470703125,
+        "seqNumber": 7944,
+        "line": "\tIndex.periodic(): 0.000806s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.51806640625,
+        "seqNumber": 7945,
+        "line": "\tLauncher.periodic(): 0.000448s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.5186767578125,
+        "seqNumber": 7946,
+        "line": ""
+    },
+    {
+        "timestamp": 2.9334716796875,
+        "seqNumber": 7947,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000750s\n\tdisabledInit(): 0.000841s\n\trobotPeriodic(): 0.447451s\n\tLiveWindow.updateValues(): 0.222759s\n\tShuffleboard.update(): 0.169885s\n\tdisabledPeriodic(): 0.001369s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.9345703125,
+        "seqNumber": 7948,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000750s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.93701171875,
+        "seqNumber": 7949,
+        "line": "\tdisabledInit(): 0.000841s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.937744140625,
+        "seqNumber": 7950,
+        "line": "\trobotPeriodic(): 0.447451s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.9390869140625,
+        "seqNumber": 7951,
+        "line": "\tLiveWindow.updateValues(): 0.222759s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.940185546875,
+        "seqNumber": 7952,
+        "line": "\tShuffleboard.update(): 0.169885s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.9417724609375,
+        "seqNumber": 7953,
+        "line": "\tdisabledPeriodic(): 0.001369s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.942138671875,
+        "seqNumber": 7954,
+        "line": ""
+    },
+    {
+        "timestamp": 2.9700927734375,
+        "seqNumber": 7955,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 7 on port 0 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 2.9705810546875,
+        "seqNumber": 7956,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 7 on port 0 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 3.1865234375,
+        "seqNumber": 7957,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 3.187744140625,
+        "seqNumber": 7958,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 3.1883544921875,
+        "seqNumber": 7959,
+        "line": ""
+    },
+    {
+        "timestamp": 3.9757080078125,
+        "seqNumber": 7960,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 7 on port 0 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 3.9765625,
+        "seqNumber": 7961,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 7 on port 0 not available, check if controller is plugged in"
+    },
+    {
+        "timestamp": 4.0904541015625,
+        "seqNumber": 7962,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000191s\n\trobotPeriodic(): 0.014332s\n\tLiveWindow.updateValues(): 0.004431s\n\tShuffleboard.update(): 0.017967s\n\tdisabledPeriodic(): 0.000333s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 4.0911865234375,
+        "seqNumber": 7963,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000191s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 4.0928955078125,
+        "seqNumber": 7964,
+        "line": "\trobotPeriodic(): 0.014332s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 4.093994140625,
+        "seqNumber": 7965,
+        "line": "\tLiveWindow.updateValues(): 0.004431s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 4.0950927734375,
+        "seqNumber": 7966,
+        "line": "\tShuffleboard.update(): 0.017967s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 4.0965576171875,
+        "seqNumber": 7967,
+        "line": "\tdisabledPeriodic(): 0.000333s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 4.0987548828125,
+        "seqNumber": 7968,
+        "line": ""
+    },
+    {
+        "timestamp": 4.264892578125,
+        "seqNumber": 7969,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix] Library initialization is complete.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    }
+]

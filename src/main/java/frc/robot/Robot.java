@@ -4,14 +4,22 @@
 
 package frc.robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.util.net.PortForwarder;
+
 // USB Camera Imports
 // import edu.wpi.first.cameraserver.CameraServer;
 // import edu.wpi.first.cscore.UsbCamera;
 // import edu.wpi.first.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-
+import frc.robot.Constants.VisionRange;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -24,6 +32,13 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
+  NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-back");
+  NetworkTableEntry tx = table.getEntry("tx");
+  NetworkTableEntry ty = table.getEntry("ty");
+  NetworkTableEntry ta = table.getEntry("ta");
+
+  private final XboxController driverController = new XboxController(0);
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -34,6 +49,7 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
 
+
     //add USB webcam view to dashboard
     /** Not needed this season 
     UsbCamera camera = CameraServer.startAutomaticCapture();
@@ -42,6 +58,17 @@ public class Robot extends TimedRobot {
     camera.setExposureManual(10);
     camera.setWhiteBalanceManual(50);
     */
+
+  // Not entirely sure if this is the correct java file 
+
+  // Make sure you only configure port forwarding once in your robot code.
+  // Do not place these function calls in any periodic functions
+  PortForwarder.add(5800, "limelight-back .local", 5800);
+  PortForwarder.add(5801, "limelight-back .local", 5801);
+  PortForwarder.add(5802, "limelight-back .local", 5802);
+  PortForwarder.add(5803, "limelight-back .local", 5803);
+  PortForwarder.add(5804, "limelight-back .local", 5804);
+  PortForwarder.add(5805, "limelight-back .local", 5805);
 
   }
 
@@ -60,7 +87,30 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     m_robotContainer.debugMethod();
-  }
+
+    double TX = tx.getDouble(0.0);
+    double TY = ty.getDouble(0.0);
+    double area = ta.getDouble(0.0);
+
+    boolean targetLock = (VisionRange.txMin< TX && TX < VisionRange.txMax) && (VisionRange.tyMin< TY && TY < VisionRange.tyMax);
+    
+    SmartDashboard.putNumber(("tX"), TX);
+    SmartDashboard.putNumber(("tY"), TY);
+    SmartDashboard.putNumber("Area", area);
+    SmartDashboard.putBoolean("Target Status", targetLock);
+
+    // Vision & haptic feedback that vibrates when targeting x-value (left to right) is within shooting range.
+    if (TX >= VisionRange.txMin && TX <= VisionRange.txMax && TX !=0) {
+      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
+      driverController.setRumble(RumbleType.kRightRumble, 1.0);
+  
+    } 
+    else {
+      driverController.setRumble(RumbleType.kLeftRumble, 0.0);
+      driverController.setRumble(RumbleType.kRightRumble, 0.0);
+    } 
+
+  } // End of robotPeriodic
 
   /** This function is called once each time the robot enters Disabled mode. */
   @Override

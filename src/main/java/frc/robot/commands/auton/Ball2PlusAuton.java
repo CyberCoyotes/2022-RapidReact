@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands.auton;
+package frc.robot.commands.Auton;
 
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -37,7 +37,7 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
 
       // Turn right 90 degrees
        // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, -90),
+      new TurnToDegrees(drivetrain, -90), // was -90
 
       // Turn on Intake and Drive towards ball 3
       new ParallelDeadlineGroup(
@@ -47,7 +47,7 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
 
       // Turn Launcher towards the goal
       // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, 90) 
+      new TurnToDegrees(drivetrain, 15) // 45 too much
 
       // Back up to Goal - commenting out for now 
       // new ParallelDeadlineGroup(

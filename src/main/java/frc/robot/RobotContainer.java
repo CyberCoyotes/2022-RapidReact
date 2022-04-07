@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -21,20 +22,21 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
 import frc.robot.subsystems.Lift;
-
+import frc.robot.DEV.SemiAuto_16;
 // Command imports
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.CommandGroups.Group2BallsHigh;
-import frc.robot.commands.CommandGroups.GroupXHigh;
-import frc.robot.commands.Launcher.LaunchSpeed;
+import frc.robot.commands.CommandGroups.GroupHighGoal;
+import frc.robot.commands.CommandGroups.GroupHighGoalX;
+import frc.robot.commands.Launcher.setLaunchSpeed;
+import frc.robot.commands.Launcher.LaunchSemiAutomatic;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.auton.Ball2PlusAuton;
-import frc.robot.commands.auton.Ball2Auton;
-import frc.robot.commands.auton.Ball3Auton;
+import frc.robot.commands.Auton.Ball2PlusAuton;
+import frc.robot.commands.Auton.Ball2Auton;
+import frc.robot.commands.Auton.Ball3Auton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -68,8 +70,8 @@ public class RobotContainer {
   // private final LiftPivot liftPivotMotors = new LiftPivot();
 
   //// Limelight
-  // private final Limelight limelight = new Limelight();
-  
+  // public Limelight limelight = new Limelight();
+
   //// Autonomous
   SendableChooser<Command> autonChooser = new SendableChooser<>();
 
@@ -112,9 +114,8 @@ public class RobotContainer {
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
    
-    autonChooser.addOption("DEV TESTING",
-      // The auton command group that needs to be tested can be swapped in & out here
-       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.addOption("DEV TESTING 16", 
+      new SemiAuto_16(launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);
@@ -131,6 +132,8 @@ public class RobotContainer {
   public void debugMethod () {
     // SmartDashboard.putBoolean("Short Drive", autonShortDrive.isScheduled());
     // SmartDashboard.putBoolean("DriveCommand", driveCommand.isScheduled());
+    // SmartDashboard.putBoolean("Target Status", targetStatus.isScheduled(0, 0, indexMotors));
+
   }
 
   private void configureButtonBindings() {
@@ -148,10 +151,11 @@ public class RobotContainer {
     // Not being used. final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
     // final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
-    // final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
-    // final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
+    final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
+    final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
+      
 
     // Defining the actions associated with buttons
 
@@ -172,12 +176,12 @@ public class RobotContainer {
        then finally run all 3 motors at once. release to stop all motors */
       d_ButtonA.whenPressed(
        new SequentialCommandGroup(
-        new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
+        new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
           new SequentialCommandGroup(
-            new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
+            new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
               new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
                 new ParallelCommandGroup (
-                  new LaunchSpeed(launcher, 0.25, 0.25),
+                  new setLaunchSpeed(launcher, 0.25, 0.25),
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5)))
        )
@@ -186,7 +190,7 @@ public class RobotContainer {
       d_ButtonA.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
-        new LaunchSpeed(launcher, 0.0, 0.0))
+        new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
@@ -194,7 +198,7 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whenPressed(new Group2BallsHigh(launcher, intakeMotor, indexMotors));
+    d_ButtonY.whenPressed(new GroupHighGoal(launcher, intakeMotor, indexMotors));
     
     /** original 
     new SequentialCommandGroup(
@@ -213,14 +217,14 @@ public class RobotContainer {
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
         new IndexSpeed(indexMotors, 0.0),
-        new LaunchSpeed(launcher, 0.0, 0.0))
+        new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
-    d_ButtonX.whenPressed(new GroupXHigh(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_ButtonX.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
-      new LaunchSpeed(launcher, 0.0, 0.0)
+      new setLaunchSpeed(launcher, 0.0, 0.0)
     ));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
@@ -232,7 +236,7 @@ public class RobotContainer {
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_Start.whenPressed(new GroupXHigh(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_Start.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
     
 
     // Hold X to set launch speed according to Limelight
@@ -254,6 +258,7 @@ public class RobotContainer {
     ));
 
 
+
     // OPERATOR Controller commands
     
     // Press the Start button to make an x-lockout when shooting
@@ -262,10 +267,14 @@ public class RobotContainer {
 
     // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
     //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
+    op_StartButton.whenPressed(new LaunchSemiAutomatic(launcher));
 
     // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
-    //op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
+    // op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
 
+    // When pressed, activates a DEVELOPMENT of Semi-Automatic launching, currently outputs data to log
+    op_BackButton.whenPressed(new LaunchSemiAutomatic(launcher));
+    op_BackButton.whenReleased(new setLaunchSpeed(launcher, 0.0, 0.0));
     //Hold X to rotationally align the robot (driver still has control of translational motion)
     /**
     op_ButtonX.whenPressed(new DriveCommand(

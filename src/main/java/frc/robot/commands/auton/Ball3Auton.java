@@ -2,14 +2,14 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands.auton;
+package frc.robot.commands.Auton;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.TurnToDegrees;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
-import frc.robot.commands.Launcher.LaunchBall3;
+import frc.robot.commands.Launcher.LaunchAutonBall3;
 import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
@@ -29,11 +29,11 @@ public class Ball3Auton extends SequentialCommandGroup {
       new Ball2PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
       // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+      new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
       
       // After shot, turn robot correct orientation and reset gyro automatically in auton
-      new TurnToDegrees(drivetrain, 180) 
-      // FIXME new Drivetrain.zeroGyroscope(drivetrain)
+      new TurnToDegrees(drivetrain, 45) // 180 too much, 90 too much
+      // FIXME Add command to reset gyro
       ); // End of commands
   }
 
