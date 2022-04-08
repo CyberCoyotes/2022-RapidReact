@@ -317,9 +317,9 @@ public class RobotContainer {
 
   public Command getAutonomousCommand() {
 
-     return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, 0)});
-    //  return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, .5)});
-    //  return new CBAv2(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, .5)});
+     return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, 0)});//no rotation
+    //  return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, .5)});//fifty percent rotational power
+    //  return new CBAv2(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, 90)});//should rotate to 90 deg?
 
   }; // end of getAutonomusCommand()
 
