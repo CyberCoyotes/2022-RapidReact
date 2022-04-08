@@ -21,7 +21,7 @@ public class Group1BallHighDEV extends SequentialCommandGroup {
      addCommands(
        new PreLaunch(launcher).withTimeout(0.4),
        new SequentialCommandGroup(
-         new LaunchHigh(launcher).withTimeout(0.25),
+         new LaunchHigh(launcher, indexMotors).withTimeout(0.25),
          new IndexSpeed(indexMotors, 0.5).withTimeout(0.4))
          ); // end of commands
 

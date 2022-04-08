@@ -28,7 +28,7 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.CommandGroups.GroupHighGoal;
-import frc.robot.commands.CommandGroups.GroupHighGoalX;
+// import frc.robot.commands.CommandGroups.GroupHighGoalX;
 import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.commands.Launcher.LaunchSemiAutomatic;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
@@ -156,7 +156,6 @@ public class RobotContainer {
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
       
-
     // Defining the actions associated with buttons
 
     // DRIVER Controller button commands
@@ -166,10 +165,6 @@ public class RobotContainer {
 
     // Resets the gyroscope to 0 degrees when back button is pressed
     d_backButton.whenPressed(m_drivetrain::zeroGyroscope);
-
-    // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    // d_Start.whenPressed(new IndexSpeed(indexMotors, 0.5));
-    // d_Start.whenReleased(new IndexSpeed(indexMotors, 0));
 
       /**  LOW HOOP UP CLOSE LAUNCH SEQUENCE
        when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
@@ -200,19 +195,6 @@ public class RobotContainer {
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
     d_ButtonY.whenPressed(new GroupHighGoal(launcher, intakeMotor, indexMotors));
     
-    /** original 
-    new SequentialCommandGroup(
-        new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
-          new SequentialCommandGroup(
-            new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
-            new ParallelCommandGroup (
-              new LaunchSpeed(launcher, 0.36, 0.42),
-              new IntakeSpeed(intakeMotor, 0.5),
-              new IndexSpeed(indexMotors, 0.5)))
-      ));
-      */
-
       //stops all 3 motors when Y button released
       d_ButtonY.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
@@ -220,12 +202,14 @@ public class RobotContainer {
         new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
-    d_ButtonX.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
+    /*
+     d_ButtonX.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
       new setLaunchSpeed(launcher, 0.0, 0.0)
     ));
+    */
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
@@ -236,7 +220,7 @@ public class RobotContainer {
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_Start.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
+    // d_Start.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
     
 
     // Hold X to set launch speed according to Limelight

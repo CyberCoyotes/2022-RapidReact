@@ -16,21 +16,23 @@ import frc.robot.subsystems.Launcher;
  * */
 
 public class GroupHighGoal extends SequentialCommandGroup {
-    
-    public GroupHighGoal(Launcher launcher, Intake intakeMotor, Index indexMotors) {
+
+  // Launches a ball from split-the-tape position
+  public GroupHighGoal(Launcher launcher, Intake intakeMotor, Index indexMotors) {
      addCommands(
-      // Launches Ball 1 from split-the-tape position
+      // Prelaunch: new setLaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
       new setLaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
+      // Launch Ball 1
       new SequentialCommandGroup(
+        // setHighGoal: new setLaunchSpeed(launcher, 0.40,0.45).withTimeout(0.25),
         new setLaunchSpeed(launcher, 0.40,0.45).withTimeout(0.25),
+        // Index the ball: new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
         new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
-       // end of commands
-      // Revs wheels for Ball 2
       // Launches Ball 2 from split-the-tape position
-        new ParallelCommandGroup (
-          new setLaunchSpeed(launcher, 0.36, 0.42),
-          new IntakeSpeed(intakeMotor, 0.5),
-          new IndexSpeed(indexMotors, 0.5))
+      new ParallelCommandGroup (
+        new setLaunchSpeed(launcher, 0.36, 0.42),
+        new IntakeSpeed(intakeMotor, 0.5),
+        new IndexSpeed(indexMotors, 0.5))
       ); // end of add commands
     }
   } // end class

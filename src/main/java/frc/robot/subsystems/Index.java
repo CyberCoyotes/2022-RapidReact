@@ -40,7 +40,7 @@ public class Index extends SubsystemBase {
   // 
   
   // double indexVelocity = 3500;
-  public static void setIndexSpeed() {
+  public void setIndexSpeed() { //remove static
     backIndexMotor.set(TalonFXControlMode.PercentOutput, 0.5);
     frontIndexMotor.set(TalonFXControlMode.PercentOutput, 0.5);
     // backIndexMotor.set(TalonFXControlMode.PercentOutput, indexVelocity);
