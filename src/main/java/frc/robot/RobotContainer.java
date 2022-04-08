@@ -27,7 +27,9 @@ import frc.robot.DEV.SemiAuto_16;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.ResetGyro;
 import frc.robot.commands.CommandGroups.GroupHighGoal;
+import frc.robot.commands.CommandGroups.GroupHighGoalX;
 // import frc.robot.commands.CommandGroups.GroupHighGoalX;
 import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.commands.Launcher.LaunchSemiAutomatic;
@@ -145,7 +147,7 @@ public class RobotContainer {
     final JoystickButton d_ButtonY = new JoystickButton(driverController, Button.kY.value);
     final JoystickButton d_RightBumper = new JoystickButton(driverController, Button.kRightBumper.value);
     final JoystickButton d_LeftBumper = new JoystickButton(driverController, Button.kLeftBumper.value);
-    final JoystickButton d_Start = new JoystickButton(driverController, Button.kStart.value);
+    // final JoystickButton d_Start = new JoystickButton(driverController, Button.kStart.value);
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
     // Not being used. final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
@@ -164,7 +166,7 @@ public class RobotContainer {
     //d_Start.whenPressed(new xmode(m_drivetrain));
 
     // Resets the gyroscope to 0 degrees when back button is pressed
-    d_backButton.whenPressed(m_drivetrain::zeroGyroscope);
+    d_backButton.whenPressed(new ResetGyro(m_drivetrain));
 
       /**  LOW HOOP UP CLOSE LAUNCH SEQUENCE
        when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
@@ -202,14 +204,14 @@ public class RobotContainer {
         new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
-    /*
-     d_ButtonX.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
+    
+    d_ButtonX.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
       new setLaunchSpeed(launcher, 0.0, 0.0)
     ));
-    */
+
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));

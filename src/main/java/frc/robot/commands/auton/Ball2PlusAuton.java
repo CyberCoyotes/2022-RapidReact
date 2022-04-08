@@ -47,19 +47,13 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
 
       // Turn Launcher towards the goal
       //FIXME Tweak value to competition field
-      new TurnToDegrees(drivetrain, -49), // manual turn on the robot gyro read -49. Good enough for governtment work
-
-    //Turn robot around and reset gyro afterwards
-    //TODO find a way to reset gyro at the end of this command group
-    new SequentialCommandGroup(
-      new WaitCommand(1),
-      new TurnToDegrees(drivetrain, 130)
+      new TurnToDegrees(drivetrain, -49) // manual turn on the robot gyro read -49. Good enough for government work
      
      // NOT NEEDED - Backup to Goal
          // new ParallelDeadlineGroup(
          // new WaitCommand(0.35),
          // new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))
 
-   )); //end of addCommands
+   ); //end of addCommands
   }
 }

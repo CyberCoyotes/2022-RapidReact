@@ -17,13 +17,13 @@ public class GroupHighGoalX extends ParallelCommandGroup {
  * @param intakeMotor
  * @param launcher
  */
-  public GroupHighGoalX(Launcher launcher, Intake intakeMotor, Index indexMotors, Drivetrain drivetrain) {
+  public GroupHighGoalX(Launcher launcher, Intake intakeMotor, Index indexMotors, Drivetrain m_drivetrain) {
       
       addCommands( 
         new ParallelCommandGroup (
           new GroupHighGoal(launcher, intakeMotor, indexMotors),
           // Aligns wheels into x pattern so robot isn't pushed around
-          new xmode(drivetrain))
+          new xmode(m_drivetrain))
         );
   }
 } // End class

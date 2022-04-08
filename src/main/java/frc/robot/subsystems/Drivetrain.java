@@ -200,7 +200,7 @@ public class Drivetrain extends SubsystemBase {
   {
     return this.m_frontLeftModule.getDriveVelocity() != 0;
   }
-  public void zeroGyroscope() {
+  public void resetGyro() {
     m_navx.zeroYaw();
   }
 

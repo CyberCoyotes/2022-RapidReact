@@ -5,6 +5,8 @@
 package frc.robot.commands.Auton;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
+import frc.robot.commands.ResetGyro;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.TurnToDegrees;
 import frc.robot.subsystems.Drivetrain;
@@ -29,12 +31,15 @@ public class Ball3Auton extends SequentialCommandGroup {
       new Ball2PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
       // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))
-      
-      // After shot, turn robot correct orientation and reset gyro automatically in auton
-      // new TurnToDegrees(drivetrain, 45) // 180 too much, 90 too much
-      // FIXME Add command to reset gyro
-      ); // End of commands
+      new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+
+      //Turn robot around and reset gyro afterwards
+      new SequentialCommandGroup(
+        new WaitCommand(1),
+        // TODO Needs testing
+        new TurnToDegrees(drivetrain, 130),
+        new ResetGyro(drivetrain))        
+        ); // End of commands
   }
 
 }
