@@ -23,7 +23,8 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
 import frc.robot.subsystems.Lift;
-
+import frc.robot.commands.CBA;
+import frc.robot.commands.CBAv2;
 // Command imports
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
@@ -316,8 +317,9 @@ public class RobotContainer {
 
   public Command getAutonomousCommand() {
 
-     return autonChooser.getSelected();
-    
+     return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, 0)});
+    //  return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, .5)});
+    //  return new CBAv2(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, .5)});
 
   }; // end of getAutonomusCommand()
 
