@@ -2,18 +2,17 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-// FRC 3603 Launch High
 package frc.robot.commands.Launcher;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Launcher;
+import frc.robot.Constants.Launcher;
 
-public class PreLaunch extends CommandBase {
-    private final Launcher launcher;
+public class PreLaunchVelocity extends CommandBase {
+  private final Launcher launcher;
 
-  
-  public PreLaunch(Launcher launch) {
-
+  /** Creates a new PreLaunchVelocity. */
+  public PreLaunchVelocity() {
+    
     launcher = launch;
     addRequirements(launcher);
   }

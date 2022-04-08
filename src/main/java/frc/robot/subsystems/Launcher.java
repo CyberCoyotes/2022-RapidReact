@@ -53,7 +53,7 @@ public class Launcher extends SubsystemBase {
 
   public static double speedFront;
   public static double speedBack;
-
+  public static int maxRPM = 6380;
 
   @Override
   public void periodic() {
@@ -72,6 +72,11 @@ public class Launcher extends SubsystemBase {
     backLauncherMotor.set(ControlMode.PercentOutput, 0.40);
   }
 
+  public void setPreLaunchVelocity(){
+    // Max 6380 RPM
+    frontLauncherMotor.set(ControlMode.Velocity, 0.35*maxRPM);
+    backLauncherMotor.set(ControlMode.Velocity, 0.40*maxRPM);
+  }
   // Set for back bumper on ball spot
   /** public void setExtendedLaunch() {
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);

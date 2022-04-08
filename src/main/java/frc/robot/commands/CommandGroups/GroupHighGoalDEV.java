@@ -24,7 +24,7 @@ public class GroupHighGoalDEV extends SequentialCommandGroup {
     public GroupHighGoalDEV(Launcher launcher, Intake intakeMotor, Index indexMotors) {
      addCommands(
       // Prelaunch: new setLaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
-      new PreLaunch(launcher).withTimeout(0.75),
+      new PreLaunchVelocity(launcher),
       // Launch Ball 1
       new SequentialCommandGroup(
         // setHighGoal: new setLaunchSpeed(launcher, 0.40,0.45).withTimeout(0.25),
