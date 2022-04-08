@@ -36,8 +36,8 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
         new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
 
       // Turn right 90 degrees
-       // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, -90), // was -90
+      //FIXME Tweak value to competition field
+      new TurnToDegrees(drivetrain, -90), // was -90. Close enough pre-event
 
       // Turn on Intake and Drive towards ball 3
       new ParallelDeadlineGroup(
@@ -46,14 +46,20 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -1.0;}, () -> {return 0.0;})),
 
       // Turn Launcher towards the goal
-      // TODO Confirm experimentally that values are correct
-      new TurnToDegrees(drivetrain, 15) // 45 too much
+      //FIXME Tweak value to competition field
+      new TurnToDegrees(drivetrain, -49), // manual turn on the robot gyro read -49. Good enough for governtment work
 
-      // Back up to Goal - commenting out for now 
-      // new ParallelDeadlineGroup(
+    //Turn robot around and reset gyro afterwards
+    //TODO find a way to reset gyro at the end of this command group
+    new SequentialCommandGroup(
+      new WaitCommand(1),
+      new TurnToDegrees(drivetrain, 130)
+     
+     // NOT NEEDED - Backup to Goal
+         // new ParallelDeadlineGroup(
          // new WaitCommand(0.35),
          // new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))
 
-   ); //end of addCommands
+   )); //end of addCommands
   }
 }
