@@ -313,11 +313,13 @@ public class RobotContainer {
    * Use this to pass the autonomous command to the main {@link Robot} class.
    * @return the command to run in autonomous
    */
-
+//80 percent power 1 second 1.5 rot power basically 90 deg
+//cant do 100 power, results in rot offset with mildly complex path
+//a single back-forth pretty good at 80 percent, didnt blow up 
 
   public Command getAutonomousCommand() {
-
-     return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, 0)});//no rotation
+//, new CBA1Input(0,.8, 1, 0)
+     return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(-.8,0, 1, 0), new CBA1Input(.8,0, 1, 0)});
     //  return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, .5)});//fifty percent rotational power
     //  return new CBAv2(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0.25, 1, 90)});//should rotate to 90 deg?
 

@@ -10,6 +10,24 @@ import frc.robot.subsystems.Drivetrain;
 public class CBA extends SequentialCommandGroup {
     /**the coords to for the robot to attempt to replicate; note this will be a shallow attempt, and may need tuning forward*/
     //#region properties
+
+    /* Discussing conversion of desired ending angle to actual input
+    80% power
+    1 second
+    150% turning
+    90 deg
+        very likely dependent on turn power and time alone
+
+        let t = turn power, s = time, in seconds
+        90deg = 1.5t*1s
+        1 deg = (1.5/90)*1s
+        45 deg = 45*(1.5/90)*1
+        90 deg = 45*(1.5/90)*2 (?)
+
+            */
+    private double DegToPower(double theta, double seconds){
+        return theta*(1.5/90*seconds);
+    }
     private CBA1Input[] coords;
     //Subsystem. Drives.
     private Drivetrain driveSubsytem;
@@ -21,8 +39,9 @@ public class CBA extends SequentialCommandGroup {
 
 
     private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input) {
+        double deg = DegToPower(input.theta, input.interval);
         WaitCommand deadline = new WaitCommand(input.interval);
-        DriveCommand driver = new DriveCommand(driveSubsytem, () -> {return input.x;}, () -> {return input.y;}, () -> {return input.theta;});
+        DriveCommand driver = new DriveCommand(driveSubsytem, () -> {return input.x;}, () -> {return input.y;}, () -> {return deg;});
     
         return new ParallelDeadlineGroup(deadline, driver);
     
@@ -49,6 +68,12 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
        coords[i].interval = collections[i][3];
        
     }
+
+
+    for(CBA1Input input : coords){
+        //Adds a usable version of the input as a command deadlined by the interval for every input.
+        //This could possibly be optimized, but list conversions make me wanna cry 
+        addCommands(TranslateIntoUsableCommand(input));}
 }
 /**
  * @param subsystem The subsystem
@@ -60,7 +85,12 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
 
      this.driveSubsytem = subsystem;
      this.coords = coords;
-     
+     //note that we cannot add commands while the bot is running, which is to say that during initialize() we cannot add commands as that runs when the command is scheduled
+     for(CBA1Input input : coords){
+        //Adds a usable version of the input as a command deadlined by the interval for every input.
+        //This could possibly be optimized, but list conversions make me wanna cry 
+        addCommands(TranslateIntoUsableCommand(input));}
+
 
    
      }
@@ -77,10 +107,7 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
         
         super.initialize();
         addRequirements(driveSubsytem);
-        for(CBA1Input input : coords){
-            //Adds a usable version of the input as a command deadlined by the interval for every input.
-            //This could possibly be optimized, but list conversions make me wanna cry 
-            addCommands(TranslateIntoUsableCommand(input));}
+        
           
     }
     
