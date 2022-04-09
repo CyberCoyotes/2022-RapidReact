@@ -1,5 +1,6 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.CBA1Input;
@@ -25,9 +26,7 @@ public class CBA extends SequentialCommandGroup {
         90 deg = 45*(1.5/90)*2 (?)
 
             */
-    private double DegToPower(double theta, double seconds){
-        return theta*(1.5/90*seconds);
-    }
+    
     private CBA1Input[] coords;
     //Subsystem. Drives.
     private Drivetrain driveSubsytem;
@@ -37,7 +36,9 @@ public class CBA extends SequentialCommandGroup {
    
 //#region helpers
 
-
+private double DegToPower(double theta, double seconds){
+    return theta*(1.5/90*seconds);
+}
     private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input) {
         double deg = DegToPower(input.theta, input.interval);
         WaitCommand deadline = new WaitCommand(input.interval);
@@ -50,6 +51,25 @@ public class CBA extends SequentialCommandGroup {
 //#endregion
 
 //#region constructors
+
+/**
+ * @param subsystem The subsystem
+ * @param coords the Inputs to use 
+ */
+public CBA(Drivetrain subsystem,CBA1Input[] coords) {
+ 
+     this.driveSubsytem = subsystem;
+     this.coords = coords;
+     //note that we cannot add commands while the bot is running, which is to say that during initialize() we cannot add commands as that runs when the command is scheduled
+     for(CBA1Input input : coords){
+        //Adds a usable version of the input as a command deadlined by the interval for every input.
+        //This could possibly be optimized, but list conversions make me wanna cry 
+        addCommands(TranslateIntoUsableCommand(input));}
+
+
+   
+     }
+     
 /**
      * @param collections the Double array to construct a new Clock-Based-Auton sequence. The ordering for each double is as follows:
      *  <ol>
@@ -75,27 +95,6 @@ public CBA(Drivetrain subsystem, Double[]... collections) {
         //This could possibly be optimized, but list conversions make me wanna cry 
         addCommands(TranslateIntoUsableCommand(input));}
 }
-/**
- * @param subsystem The subsystem
- * @param coords the Inputs to use 
- * 
- */
- public CBA(Drivetrain subsystem,CBA1Input[] coords) {
-
-
-     this.driveSubsytem = subsystem;
-     this.coords = coords;
-     //note that we cannot add commands while the bot is running, which is to say that during initialize() we cannot add commands as that runs when the command is scheduled
-     for(CBA1Input input : coords){
-        //Adds a usable version of the input as a command deadlined by the interval for every input.
-        //This could possibly be optimized, but list conversions make me wanna cry 
-        addCommands(TranslateIntoUsableCommand(input));}
-
-
-   
-     }
-     
-
 
 //#endregion
 

@@ -9,8 +9,10 @@ package frc.robot;
 // import edu.wpi.first.cscore.UsbCamera;
 // import edu.wpi.first.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.subsystems.Drivetrain;
 
 
 /**
@@ -20,10 +22,13 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * project.
  */
 public class Robot extends TimedRobot {
-  private Command m_autonomousCommand;
+  private double beginningRot;
 
+  private Command m_autonomousCommand;
+  
   private RobotContainer m_robotContainer;
 
+  private Drivetrain drivetrain = m_robotContainer.getSubsystemDrivetrain();
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -78,12 +83,20 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
+    beginningRot = drivetrain.getRawRoation();
+    SmartDashboard.putNumber("beginningRot", beginningRot);
+
     
   }
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+    double currentRot = drivetrain.getRawRoation();
+    SmartDashboard.putNumber("currentRot", currentRot);
+    SmartDashboard.putNumber("Overall Change in rotation", Math.abs(currentRot - beginningRot));
+    
+  }
 
   @Override
   public void teleopInit() {
