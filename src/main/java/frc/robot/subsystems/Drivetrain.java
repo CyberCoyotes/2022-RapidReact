@@ -8,7 +8,6 @@ import com.swervedrivespecialties.swervelib.Mk3SwerveModuleHelper;
 import com.swervedrivespecialties.swervelib.SdsModuleConfigurations;
 import com.swervedrivespecialties.swervelib.SwerveModule;
 
-import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.controller.ProfiledPIDController;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -20,17 +19,12 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.robot.Constants.*;
-
-import com.pathplanner.lib.commands.PPSwerveControllerCommand;
 
 
 // Navx imports
 import com.kauailabs.navx.frc.AHRS;
-import com.pathplanner.lib.PathPlannerTrajectory;
 
 import edu.wpi.first.wpilibj.SPI;
 
@@ -172,12 +166,7 @@ public class Drivetrain extends SubsystemBase {
         BACK_RIGHT_MODULE_STEER_ENCODER,
         BACK_RIGHT_MODULE_STEER_OFFSET
     );
-    /** 
-    tab.getLayout("Back Left Module", BuiltInLayouts.kList).addNumber("Back Left Module", ()->m_backLeftModule.getDriveEncoderValue());
-        tab.getLayout("Back Right Module", BuiltInLayouts.kList).addNumber("Back Right Module", ()->m_backRightModule.getDriveEncoderValue());
-        tab.getLayout("Front Left Module", BuiltInLayouts.kList).addNumber("Front Left Module", ()->m_frontLeftModule.getDriveEncoderValue());
-        tab.getLayout("Front Right Module", BuiltInLayouts.kList).addNumber("Front Right Module", ()->m_frontRightModule.getDriveEncoderValue());
-    */
+    
   }
   
   //method to stop motors, used for auton
@@ -190,11 +179,6 @@ public class Drivetrain extends SubsystemBase {
     }
     */
 
-  
-  /**
-   * Sets the gyroscope angle to zero. This can be used to set the direction the robot is currently facing to the
-   * 'forwards' direction.
-   */
   
   public boolean IsMoving()
   {
@@ -256,9 +240,10 @@ public class Drivetrain extends SubsystemBase {
         desiredStates[2].speedMetersPerSecond = Math.abs(m_backLeftModule.getDriveVelocity());
         desiredStates[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
 
-        SmartDashboard.putNumber("Current X", getPose().getX()); 
-        SmartDashboard.putNumber("Current Y", getPose().getY()); 
-        SmartDashboard.putNumber("Auto Angle", getPose().getRotation().getDegrees()); 
+        ShuffleboardTab driveTab = Shuffleboard.getTab("Data");
+          driveTab.add("Current X", getPose().getX()); 
+          driveTab.add("Current Y", getPose().getY()); 
+          driveTab.add("Auton Angle", getPose().getRotation().getDegrees()); 
 
 
   } // end of setModulesStates
@@ -269,8 +254,8 @@ public class Drivetrain extends SubsystemBase {
   public void periodic() {
 
     //defining states - Repeatedly update
-    System.out.print("X: " + m_chassisSpeeds.vxMetersPerSecond);
-    System.out.print("Y: " + m_chassisSpeeds.vyMetersPerSecond);
+    System.out.print("X m/s: " + m_chassisSpeeds.vxMetersPerSecond);
+    System.out.print("Y m/s: " + m_chassisSpeeds.vyMetersPerSecond);
     System.out.println("Rot: " + m_chassisSpeeds.omegaRadiansPerSecond);
     SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
     // removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
@@ -290,19 +275,17 @@ public class Drivetrain extends SubsystemBase {
     m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
       states[3].angle.getRadians());
 
-    SmartDashboard.putNumber("Raw Angle", getRawRoation());
-    SmartDashboard.putNumber("current angle", getGyroscopeRotation().getDegrees());
-    SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
-    SmartDashboard.putNumber("Current X", getPose().getX()); 
-    SmartDashboard.putNumber("Current Y", getPose().getY());
+    ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
+    // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
+      driveTab.add("Raw Angle", getRawRoation());
+      driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
+      // SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
+      driveTab.add("Current X", getPose().getX()); 
+      driveTab.add("Current Y", getPose().getY());
 
-    
-    // SmartDashboard.putNumber("Target", target);
+    } // End of periodic
 
-      
-    // SmartDashboard.putNumber("Target Pose Angle", targetPose.getRotation().getDegrees());
-  }
-
+/** TODO Delete after testing on Saturday to make sure none of this is used
     public void resetEncoders() {
     }
 
@@ -331,20 +314,6 @@ public class Drivetrain extends SubsystemBase {
       );
 
   }
-
-  /** Example code I saw to drive set outputs 
-  public void driveForward(double speed) {
-        m_frontLeftModule.set(speed, 0);
-        m_frontRightModule.set(speed, 0);
-        m_backLeftModule.set(speed, 0);
-        m_backRightModule.set(speed, 0);
-  }
-
-  public void driveForwardAt40() {
-      m_frontLeftModule.set(0.4, 0);
-      m_frontRightModule.set(0.4, 0);
-      m_backLeftModule.set(0.4, 0);
-      m_backRightModule.set(0.4, 0);
-  }
   */
-}
+
+} // END of class

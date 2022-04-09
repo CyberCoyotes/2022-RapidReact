@@ -35,21 +35,19 @@ public class Ball2PlusAuton extends SequentialCommandGroup {
         new WaitCommand(0.5),
         new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
 
-      // Turn right 90 degrees
-      //FIXME Tweak value to competition field
+      // Do a "backup turn" to the right towards ball 3
       new TurnToDegrees(drivetrain, -90), // was -90. Close enough pre-event
 
-      // Turn on Intake and Drive towards ball 3
+      // Turn on Intake & Drive towards ball 3
       new ParallelDeadlineGroup(
         new WaitCommand(3.25),
         new IntakeSpeed(intakeMotor, 0.5),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -1.0;}, () -> {return 0.0;})),
 
       // Turn Launcher towards the goal
-      //FIXME Tweak value to competition field
       new TurnToDegrees(drivetrain, -49) // manual turn on the robot gyro read -49. Good enough for government work
      
-     // NOT NEEDED - Backup to Goal
+     // Probable to not need to backup to Goal
          // new ParallelDeadlineGroup(
          // new WaitCommand(0.35),
          // new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}))

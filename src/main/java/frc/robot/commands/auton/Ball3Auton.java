@@ -33,10 +33,9 @@ public class Ball3Auton extends SequentialCommandGroup {
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
 
-      //Turn robot around and reset gyro afterwards
+      //Turn robot around towards goal, a.k.a. Forward, and reset gyro afterwards
       new SequentialCommandGroup(
         new WaitCommand(1),
-        // TODO Needs testing
         new TurnToDegrees(drivetrain, 130),
         new ResetGyro(drivetrain))        
         ); // End of commands
