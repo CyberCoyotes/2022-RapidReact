@@ -20,17 +20,17 @@ import frc.robot.subsystems.Launcher;
  *   up a second ball and stops
 */
 
-public class Ball1PlusAuton extends SequentialCommandGroup{
-    public Ball1PlusAuton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher){
+public class Ball1AutonPlusFLASH2 extends SequentialCommandGroup{
+    public Ball1AutonPlusFLASH2(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher){
 
         addCommands(
           // Shoots preloaded ball from inside the tarmac  
           new Ball1Auton(indexMotors, intakeMotor, launcher),
           // Start the drivetrains and subsystems to get second cargo
           new ParallelDeadlineGroup(
-            new WaitCommand(1.1),  
+            new WaitCommand(0.55), // Changed from 1.1 to 0.55
             new IntakeSpeed(intakeMotor, 0.5),
-            new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
+            new DriveCommand(drivetrain, () -> {return 2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // Changed from 1.0 to 2.0
             new IntakeSpeed(intakeMotor, 0.5).withTimeout(1)
 
         ); // End of addCommands

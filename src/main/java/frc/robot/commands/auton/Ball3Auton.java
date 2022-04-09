@@ -28,7 +28,7 @@ public class Ball3Auton extends SequentialCommandGroup {
 
     addCommands(
       // Two ball auton, pick up third, and lined up for third shot
-      new Ball2PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
+      new Ball2PlusAutonFLASH2(drivetrain, indexMotors, intakeMotor, launcher),
       // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),

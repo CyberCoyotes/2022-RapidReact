@@ -25,24 +25,24 @@ import frc.robot.subsystems.Launcher;
 */
 
 
-public class Ball2PlusAuton extends SequentialCommandGroup {
-  public Ball2PlusAuton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Ball2PlusAutonFLASH2 extends SequentialCommandGroup {
+  public Ball2PlusAutonFLASH2(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       new Ball2DriveStraightAuton(drivetrain, indexMotors, intakeMotor, launcher),
       // Back up to Goal
        new ParallelDeadlineGroup(
-        new WaitCommand(0.5),
-        new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
+        new WaitCommand(0.5), // 0.5 -> 0.25
+        new DriveCommand(drivetrain, () -> {return -2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // 1.0 -> 2.0
 
       // Do a "backup turn" to the right towards ball 3
       new TurnToDegrees(drivetrain, -90), // was -90. Close enough pre-event
 
       // Turn on Intake & Drive towards ball 3
       new ParallelDeadlineGroup(
-        new WaitCommand(3.25),
+        new WaitCommand(1.625), // 3.25 -> 1.625
         new IntakeSpeed(intakeMotor, 0.5),
-        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -1.0;}, () -> {return 0.0;})),
+        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -2.0;}, () -> {return 0.0;})), // 1.0 -> 2.00
 
       // Turn Launcher towards the goal
       new TurnToDegrees(drivetrain, -49) // manual turn on the robot gyro read -49. Good enough for government work
