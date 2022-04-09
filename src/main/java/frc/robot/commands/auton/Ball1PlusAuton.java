@@ -30,7 +30,7 @@ public class Ball1PlusAuton extends SequentialCommandGroup{
           new ParallelDeadlineGroup(
             new WaitCommand(1.1),  
             new IntakeSpeed(intakeMotor, 0.5),
-            new DriveCommand(drivetrain, () -> {return 4.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
+            new DriveCommand(drivetrain, () -> {return 1.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
             new IntakeSpeed(intakeMotor, 0.5).withTimeout(1)
 
         ); // End of addCommands

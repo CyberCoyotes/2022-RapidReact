@@ -277,7 +277,7 @@ public class Drivetrain extends SubsystemBase {
     m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
       states[3].angle.getRadians());
 
-    ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
+    // ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
     // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
       // driveTab.add("Raw Angle", getRawRoation());
       // driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
