@@ -22,13 +22,13 @@ import frc.robot.subsystems.Drivetrain;
  * project.
  */
 public class Robot extends TimedRobot {
-  private double beginningRot;
+  
 
   private Command m_autonomousCommand;
   
   private RobotContainer m_robotContainer;
 
-  private Drivetrain drivetrain = m_robotContainer.getSubsystemDrivetrain();
+ 
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -83,18 +83,12 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
-    beginningRot = drivetrain.getRawRoation();
-    SmartDashboard.putNumber("beginningRot", beginningRot);
-
-    
+   
   }
 
   /** This function is called periodically during autonomous. */
   @Override
   public void autonomousPeriodic() {
-    double currentRot = drivetrain.getRawRoation();
-    SmartDashboard.putNumber("currentRot", currentRot);
-    SmartDashboard.putNumber("Overall Change in rotation", Math.abs(currentRot - beginningRot));
     
   }
 

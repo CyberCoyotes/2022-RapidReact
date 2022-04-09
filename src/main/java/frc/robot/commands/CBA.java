@@ -20,24 +20,29 @@ public class CBA extends SequentialCommandGroup {
         very likely dependent on turn power and time alone
 
         let t = turn power, s = time, in seconds
-        90deg = 1.5t*1s
-        1 deg = (1.5/90)*1s
-        45 deg = 45*(1.5/90)*1
-        90 deg = 45*(1.5/90)*2 (?)
+        90deg = 1.5t/1s
+        1 deg = (1.5/90)/1s
+        45 deg = 45*(1.5/90)/1
+        90 deg = 45*(1.5/90)/2 (?)
 
             */
     
     private CBA1Input[] coords;
     //Subsystem. Drives.
+    //The value that altered a targettheta of 90 to a true 90. 
+    //TODO: get either confirmation that adjust is constant or find a method to calculate
+    private double adjust = .77; //gold for 45 over 2 sec
+    private double adjustagain = 1.128;
+    private double twosecondadjust = 1.114;
     private Drivetrain driveSubsytem;
     //A simple flag to indicate if the command has finished.
     //private boolean isFin = false;
-    //#endregion
+    //#endregionl
    
 //#region helpers
 
 private double DegToPower(double theta, double seconds){
-    return theta*(1.5/90*seconds);
+    return theta*(1.5/(double)90*adjust/seconds);
 }
     private ParallelDeadlineGroup TranslateIntoUsableCommand(CBA1Input input) {
         double deg = DegToPower(input.theta, input.interval);

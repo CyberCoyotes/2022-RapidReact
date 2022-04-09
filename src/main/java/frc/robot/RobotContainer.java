@@ -51,7 +51,7 @@ import frc.robot.commands.auton.CG_1BallDriveStraight;
  */
 
 public class RobotContainer {
- 
+  private double beginningRot;
   // Main driver controller
   private final XboxController driverController = new XboxController(0);
   // Second operator controller
@@ -100,7 +100,7 @@ public class RobotContainer {
       () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND);
     
     m_drivetrain.setDefaultCommand(driveCommand);
-    
+    this.beginningRot = m_drivetrain.getRawRoation();
     // TODO add and test autonomous files here
     // AUTONOMOUS chooser
 
@@ -136,6 +136,9 @@ public class RobotContainer {
   public void debugMethod () {
     // SmartDashboard.putBoolean("Short Drive", autonShortDrive.isScheduled());
     // SmartDashboard.putBoolean("DriveCommand", driveCommand.isScheduled());
+    double currentRot = m_drivetrain.getRawRoation();
+    SmartDashboard.putNumber("currentRot", currentRot);
+    SmartDashboard.putNumber("Overall Change in rotation", Math.abs(currentRot - beginningRot));
     
   }
 
@@ -320,8 +323,8 @@ public class RobotContainer {
 
   public Command getAutonomousCommand() {
      
-     return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(-.8,0, 1, 0), new CBA1Input(.8,0, 1, 0)});
-    
+     return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0, 2, 90)});
+    //  return new CBA(m_drivetrain, new CBA1Input[] {new CBA1Input(0,0, 2, 180)});
   }
 
 public Drivetrain getSubsystemDrivetrain() {
