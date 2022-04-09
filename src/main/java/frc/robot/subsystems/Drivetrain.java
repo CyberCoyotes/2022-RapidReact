@@ -17,6 +17,7 @@ import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -254,6 +255,7 @@ public class Drivetrain extends SubsystemBase {
   public void periodic() {
 
     //defining states - Repeatedly update
+    // TODO Remove after practice 
     System.out.print("X m/s: " + m_chassisSpeeds.vxMetersPerSecond);
     System.out.print("Y m/s: " + m_chassisSpeeds.vyMetersPerSecond);
     System.out.println("Rot: " + m_chassisSpeeds.omegaRadiansPerSecond);
@@ -277,15 +279,17 @@ public class Drivetrain extends SubsystemBase {
 
     ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
     // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
-      driveTab.add("Raw Angle", getRawRoation());
-      driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
+      // driveTab.add("Raw Angle", getRawRoation());
+      // driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
+      // .withWidget(BuiltInWidgets.kGyro
       // SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
-      driveTab.add("Current X", getPose().getX()); 
-      driveTab.add("Current Y", getPose().getY());
+      // driveTab.add("Current X", getPose().getX()); 
+      // driveTab.add("Current Y", getPose().getY());
+      
 
     } // End of periodic
 
-/** TODO Delete after testing on Saturday to make sure none of this is used
+  /** TODO Delete after testing on Saturday to make sure none of this is used
     public void resetEncoders() {
     }
 
@@ -305,7 +309,7 @@ public class Drivetrain extends SubsystemBase {
             this::getPose, // Functional interface to feed supplier
             this.m_kinematics,
       
-            // Position controllers
+            // Position controller
             new PIDController(kPXController, 0, 0),
             new PIDController(kPYController, 0, 0),
             thetaController,

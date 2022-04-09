@@ -1,0 +1,6103 @@
+[
+    {
+        "messageType": 2,
+        "timestamp": 325.875732421875,
+        "seqNumber": 21123,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 325.895751953125,
+        "seqNumber": 21124,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 325.915771484375,
+        "seqNumber": 21125,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 325.935791015625,
+        "seqNumber": 21126,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 325.955810546875,
+        "seqNumber": 21127,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 325.975830078125,
+        "seqNumber": 21128,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 325.995849609375,
+        "seqNumber": 21129,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.015869140625,
+        "seqNumber": 21130,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.035888671875,
+        "seqNumber": 21131,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.055908203125,
+        "seqNumber": 21132,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.075439453125,
+        "seqNumber": 21133,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.095947265625,
+        "seqNumber": 21134,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.115478515625,
+        "seqNumber": 21135,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.135986328125,
+        "seqNumber": 21136,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.155517578125,
+        "seqNumber": 21137,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.176025390625,
+        "seqNumber": 21138,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.196044921875,
+        "seqNumber": 21139,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.216552734375,
+        "seqNumber": 21140,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.236572265625,
+        "seqNumber": 21141,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.256103515625,
+        "seqNumber": 21142,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.276123046875,
+        "seqNumber": 21143,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.295654296875,
+        "seqNumber": 21144,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 326.300048828125,
+        "seqNumber": 21145,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.300537109375,
+        "seqNumber": 21146,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.316162109375,
+        "seqNumber": 21147,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.336181640625,
+        "seqNumber": 21148,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.356201171875,
+        "seqNumber": 21149,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.375732421875,
+        "seqNumber": 21150,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.395751953125,
+        "seqNumber": 21151,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.415771484375,
+        "seqNumber": 21152,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.435791015625,
+        "seqNumber": 21153,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.456298828125,
+        "seqNumber": 21154,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.475830078125,
+        "seqNumber": 21155,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.495849609375,
+        "seqNumber": 21156,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.515869140625,
+        "seqNumber": 21157,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.535888671875,
+        "seqNumber": 21158,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.555908203125,
+        "seqNumber": 21159,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.575927734375,
+        "seqNumber": 21160,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.595947265625,
+        "seqNumber": 21161,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.615478515625,
+        "seqNumber": 21162,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.635986328125,
+        "seqNumber": 21163,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.656005859375,
+        "seqNumber": 21164,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.676025390625,
+        "seqNumber": 21165,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.696044921875,
+        "seqNumber": 21166,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.716064453125,
+        "seqNumber": 21167,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.736083984375,
+        "seqNumber": 21168,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.755615234375,
+        "seqNumber": 21169,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.776611328125,
+        "seqNumber": 21170,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.796142578125,
+        "seqNumber": 21171,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.816162109375,
+        "seqNumber": 21172,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.836181640625,
+        "seqNumber": 21173,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.855712890625,
+        "seqNumber": 21174,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.876220703125,
+        "seqNumber": 21175,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.896240234375,
+        "seqNumber": 21176,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.915771484375,
+        "seqNumber": 21177,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.935791015625,
+        "seqNumber": 21178,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.955810546875,
+        "seqNumber": 21179,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.975830078125,
+        "seqNumber": 21180,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 326.995849609375,
+        "seqNumber": 21181,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.016845703125,
+        "seqNumber": 21182,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.036376953125,
+        "seqNumber": 21183,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.056396484375,
+        "seqNumber": 21184,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.075927734375,
+        "seqNumber": 21185,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.095947265625,
+        "seqNumber": 21186,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.116455078125,
+        "seqNumber": 21187,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.135986328125,
+        "seqNumber": 21188,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.156494140625,
+        "seqNumber": 21189,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.176025390625,
+        "seqNumber": 21190,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.195556640625,
+        "seqNumber": 21191,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.216064453125,
+        "seqNumber": 21192,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.236083984375,
+        "seqNumber": 21193,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.255615234375,
+        "seqNumber": 21194,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.275634765625,
+        "seqNumber": 21195,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.296142578125,
+        "seqNumber": 21196,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 327.300048828125,
+        "seqNumber": 21197,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.301513671875,
+        "seqNumber": 21198,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.316162109375,
+        "seqNumber": 21199,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.336181640625,
+        "seqNumber": 21200,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.355712890625,
+        "seqNumber": 21201,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.376220703125,
+        "seqNumber": 21202,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.395751953125,
+        "seqNumber": 21203,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.415771484375,
+        "seqNumber": 21204,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.435791015625,
+        "seqNumber": 21205,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.456298828125,
+        "seqNumber": 21206,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.475830078125,
+        "seqNumber": 21207,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.495849609375,
+        "seqNumber": 21208,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.515869140625,
+        "seqNumber": 21209,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.535888671875,
+        "seqNumber": 21210,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.555908203125,
+        "seqNumber": 21211,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.575927734375,
+        "seqNumber": 21212,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.595947265625,
+        "seqNumber": 21213,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.616455078125,
+        "seqNumber": 21214,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.635498046875,
+        "seqNumber": 21215,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.656494140625,
+        "seqNumber": 21216,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.676025390625,
+        "seqNumber": 21217,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.695556640625,
+        "seqNumber": 21218,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.715576171875,
+        "seqNumber": 21219,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.735595703125,
+        "seqNumber": 21220,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.756103515625,
+        "seqNumber": 21221,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.776123046875,
+        "seqNumber": 21222,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.795654296875,
+        "seqNumber": 21223,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.816162109375,
+        "seqNumber": 21224,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.835693359375,
+        "seqNumber": 21225,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.856201171875,
+        "seqNumber": 21226,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.875732421875,
+        "seqNumber": 21227,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.895751953125,
+        "seqNumber": 21228,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.920654296875,
+        "seqNumber": 21229,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.936279296875,
+        "seqNumber": 21230,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.955810546875,
+        "seqNumber": 21231,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.975830078125,
+        "seqNumber": 21232,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 327.996337890625,
+        "seqNumber": 21233,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.015869140625,
+        "seqNumber": 21234,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.036376953125,
+        "seqNumber": 21235,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.055908203125,
+        "seqNumber": 21236,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.075927734375,
+        "seqNumber": 21237,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.095947265625,
+        "seqNumber": 21238,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.115966796875,
+        "seqNumber": 21239,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.135986328125,
+        "seqNumber": 21240,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.156005859375,
+        "seqNumber": 21241,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.175537109375,
+        "seqNumber": 21242,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.195556640625,
+        "seqNumber": 21243,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.216064453125,
+        "seqNumber": 21244,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.235595703125,
+        "seqNumber": 21245,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.255615234375,
+        "seqNumber": 21246,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.276123046875,
+        "seqNumber": 21247,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.296142578125,
+        "seqNumber": 21248,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.315673828125,
+        "seqNumber": 21249,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 328.320068359375,
+        "seqNumber": 21250,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.320556640625,
+        "seqNumber": 21251,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.335693359375,
+        "seqNumber": 21252,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.356201171875,
+        "seqNumber": 21253,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.375732421875,
+        "seqNumber": 21254,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.395751953125,
+        "seqNumber": 21255,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.416259765625,
+        "seqNumber": 21256,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.435791015625,
+        "seqNumber": 21257,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.456298828125,
+        "seqNumber": 21258,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.476318359375,
+        "seqNumber": 21259,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.495849609375,
+        "seqNumber": 21260,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.515869140625,
+        "seqNumber": 21261,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.535888671875,
+        "seqNumber": 21262,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.555908203125,
+        "seqNumber": 21263,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.575927734375,
+        "seqNumber": 21264,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.595947265625,
+        "seqNumber": 21265,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.615966796875,
+        "seqNumber": 21266,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.635986328125,
+        "seqNumber": 21267,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.656005859375,
+        "seqNumber": 21268,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.676025390625,
+        "seqNumber": 21269,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.696044921875,
+        "seqNumber": 21270,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.716064453125,
+        "seqNumber": 21271,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.736083984375,
+        "seqNumber": 21272,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.755615234375,
+        "seqNumber": 21273,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.775634765625,
+        "seqNumber": 21274,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.796142578125,
+        "seqNumber": 21275,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.815673828125,
+        "seqNumber": 21276,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.835693359375,
+        "seqNumber": 21277,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.855712890625,
+        "seqNumber": 21278,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.875732421875,
+        "seqNumber": 21279,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.895751953125,
+        "seqNumber": 21280,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.915771484375,
+        "seqNumber": 21281,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.936279296875,
+        "seqNumber": 21282,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.955810546875,
+        "seqNumber": 21283,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.975830078125,
+        "seqNumber": 21284,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 328.996337890625,
+        "seqNumber": 21285,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.015869140625,
+        "seqNumber": 21286,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.035888671875,
+        "seqNumber": 21287,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.055908203125,
+        "seqNumber": 21288,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.075927734375,
+        "seqNumber": 21289,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.095947265625,
+        "seqNumber": 21290,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.115966796875,
+        "seqNumber": 21291,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.135498046875,
+        "seqNumber": 21292,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.155517578125,
+        "seqNumber": 21293,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.176025390625,
+        "seqNumber": 21294,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.196044921875,
+        "seqNumber": 21295,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.216552734375,
+        "seqNumber": 21296,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.236083984375,
+        "seqNumber": 21297,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.256103515625,
+        "seqNumber": 21298,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.275634765625,
+        "seqNumber": 21299,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.296142578125,
+        "seqNumber": 21300,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.316162109375,
+        "seqNumber": 21301,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 329.321533203125,
+        "seqNumber": 21302,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.322021484375,
+        "seqNumber": 21303,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.336181640625,
+        "seqNumber": 21304,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.356201171875,
+        "seqNumber": 21305,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.375732421875,
+        "seqNumber": 21306,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.395751953125,
+        "seqNumber": 21307,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.416259765625,
+        "seqNumber": 21308,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.435791015625,
+        "seqNumber": 21309,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.455810546875,
+        "seqNumber": 21310,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.475830078125,
+        "seqNumber": 21311,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.495849609375,
+        "seqNumber": 21312,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.515869140625,
+        "seqNumber": 21313,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.535888671875,
+        "seqNumber": 21314,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.555908203125,
+        "seqNumber": 21315,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.575927734375,
+        "seqNumber": 21316,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.595947265625,
+        "seqNumber": 21317,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.615966796875,
+        "seqNumber": 21318,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.635986328125,
+        "seqNumber": 21319,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.656005859375,
+        "seqNumber": 21320,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.676025390625,
+        "seqNumber": 21321,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.696533203125,
+        "seqNumber": 21322,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.715576171875,
+        "seqNumber": 21323,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.735595703125,
+        "seqNumber": 21324,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.755615234375,
+        "seqNumber": 21325,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.776123046875,
+        "seqNumber": 21326,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.796142578125,
+        "seqNumber": 21327,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.816162109375,
+        "seqNumber": 21328,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.836181640625,
+        "seqNumber": 21329,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.855712890625,
+        "seqNumber": 21330,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.875732421875,
+        "seqNumber": 21331,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.896240234375,
+        "seqNumber": 21332,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.915771484375,
+        "seqNumber": 21333,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.935791015625,
+        "seqNumber": 21334,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.955810546875,
+        "seqNumber": 21335,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.975830078125,
+        "seqNumber": 21336,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 329.996826171875,
+        "seqNumber": 21337,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.016357421875,
+        "seqNumber": 21338,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.035888671875,
+        "seqNumber": 21339,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.055908203125,
+        "seqNumber": 21340,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.075927734375,
+        "seqNumber": 21341,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.096435546875,
+        "seqNumber": 21342,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.115966796875,
+        "seqNumber": 21343,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.135986328125,
+        "seqNumber": 21344,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.156005859375,
+        "seqNumber": 21345,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.177001953125,
+        "seqNumber": 21346,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.196533203125,
+        "seqNumber": 21347,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.215576171875,
+        "seqNumber": 21348,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.236572265625,
+        "seqNumber": 21349,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.255615234375,
+        "seqNumber": 21350,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.275634765625,
+        "seqNumber": 21351,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.296142578125,
+        "seqNumber": 21352,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.315673828125,
+        "seqNumber": 21353,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.336181640625,
+        "seqNumber": 21354,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 330.341064453125,
+        "seqNumber": 21355,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.341552734375,
+        "seqNumber": 21356,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.355712890625,
+        "seqNumber": 21357,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.376708984375,
+        "seqNumber": 21358,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.396728515625,
+        "seqNumber": 21359,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.416259765625,
+        "seqNumber": 21360,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.435791015625,
+        "seqNumber": 21361,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.455810546875,
+        "seqNumber": 21362,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.476318359375,
+        "seqNumber": 21363,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.495849609375,
+        "seqNumber": 21364,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.515869140625,
+        "seqNumber": 21365,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.536376953125,
+        "seqNumber": 21366,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.555908203125,
+        "seqNumber": 21367,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.576416015625,
+        "seqNumber": 21368,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.595947265625,
+        "seqNumber": 21369,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.615966796875,
+        "seqNumber": 21370,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.635986328125,
+        "seqNumber": 21371,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.656005859375,
+        "seqNumber": 21372,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.676513671875,
+        "seqNumber": 21373,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.696044921875,
+        "seqNumber": 21374,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.716064453125,
+        "seqNumber": 21375,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.736083984375,
+        "seqNumber": 21376,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.756103515625,
+        "seqNumber": 21377,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.775634765625,
+        "seqNumber": 21378,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.796142578125,
+        "seqNumber": 21379,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.816162109375,
+        "seqNumber": 21380,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.836181640625,
+        "seqNumber": 21381,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.856201171875,
+        "seqNumber": 21382,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.876220703125,
+        "seqNumber": 21383,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.896240234375,
+        "seqNumber": 21384,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.916259765625,
+        "seqNumber": 21385,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.935791015625,
+        "seqNumber": 21386,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.955810546875,
+        "seqNumber": 21387,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.976318359375,
+        "seqNumber": 21388,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 330.995849609375,
+        "seqNumber": 21389,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.015869140625,
+        "seqNumber": 21390,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.035888671875,
+        "seqNumber": 21391,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.056396484375,
+        "seqNumber": 21392,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.076416015625,
+        "seqNumber": 21393,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.095947265625,
+        "seqNumber": 21394,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.116455078125,
+        "seqNumber": 21395,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.135986328125,
+        "seqNumber": 21396,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.155517578125,
+        "seqNumber": 21397,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.176025390625,
+        "seqNumber": 21398,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.196044921875,
+        "seqNumber": 21399,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.215576171875,
+        "seqNumber": 21400,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.235595703125,
+        "seqNumber": 21401,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.255615234375,
+        "seqNumber": 21402,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.276123046875,
+        "seqNumber": 21403,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.296142578125,
+        "seqNumber": 21404,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.316162109375,
+        "seqNumber": 21405,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.336181640625,
+        "seqNumber": 21406,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.356201171875,
+        "seqNumber": 21407,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 331.360107421875,
+        "seqNumber": 21408,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.360595703125,
+        "seqNumber": 21409,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.375732421875,
+        "seqNumber": 21410,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.395751953125,
+        "seqNumber": 21411,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.416259765625,
+        "seqNumber": 21412,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.435791015625,
+        "seqNumber": 21413,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.455810546875,
+        "seqNumber": 21414,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.476318359375,
+        "seqNumber": 21415,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.495849609375,
+        "seqNumber": 21416,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.515869140625,
+        "seqNumber": 21417,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.535888671875,
+        "seqNumber": 21418,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.555908203125,
+        "seqNumber": 21419,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.576416015625,
+        "seqNumber": 21420,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.595947265625,
+        "seqNumber": 21421,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.615966796875,
+        "seqNumber": 21422,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.635986328125,
+        "seqNumber": 21423,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.656494140625,
+        "seqNumber": 21424,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.676025390625,
+        "seqNumber": 21425,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.696533203125,
+        "seqNumber": 21426,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.716552734375,
+        "seqNumber": 21427,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.736083984375,
+        "seqNumber": 21428,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.755615234375,
+        "seqNumber": 21429,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.776123046875,
+        "seqNumber": 21430,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.796142578125,
+        "seqNumber": 21431,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.816650390625,
+        "seqNumber": 21432,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.835693359375,
+        "seqNumber": 21433,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.856201171875,
+        "seqNumber": 21434,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.876220703125,
+        "seqNumber": 21435,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.896240234375,
+        "seqNumber": 21436,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.916748046875,
+        "seqNumber": 21437,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.935791015625,
+        "seqNumber": 21438,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.956298828125,
+        "seqNumber": 21439,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.975830078125,
+        "seqNumber": 21440,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 331.995849609375,
+        "seqNumber": 21441,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.015869140625,
+        "seqNumber": 21442,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.035888671875,
+        "seqNumber": 21443,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.056396484375,
+        "seqNumber": 21444,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.075927734375,
+        "seqNumber": 21445,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.095947265625,
+        "seqNumber": 21446,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.115966796875,
+        "seqNumber": 21447,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.135498046875,
+        "seqNumber": 21448,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.156494140625,
+        "seqNumber": 21449,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.176025390625,
+        "seqNumber": 21450,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.196044921875,
+        "seqNumber": 21451,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.215576171875,
+        "seqNumber": 21452,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.236083984375,
+        "seqNumber": 21453,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.255615234375,
+        "seqNumber": 21454,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.275634765625,
+        "seqNumber": 21455,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.295654296875,
+        "seqNumber": 21456,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.315673828125,
+        "seqNumber": 21457,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.335693359375,
+        "seqNumber": 21458,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.356201171875,
+        "seqNumber": 21459,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 332.360107421875,
+        "seqNumber": 21460,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.360595703125,
+        "seqNumber": 21461,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.375732421875,
+        "seqNumber": 21462,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.395751953125,
+        "seqNumber": 21463,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.416259765625,
+        "seqNumber": 21464,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.435791015625,
+        "seqNumber": 21465,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.455810546875,
+        "seqNumber": 21466,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.475830078125,
+        "seqNumber": 21467,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.495849609375,
+        "seqNumber": 21468,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.515869140625,
+        "seqNumber": 21469,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.535888671875,
+        "seqNumber": 21470,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.556396484375,
+        "seqNumber": 21471,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.575927734375,
+        "seqNumber": 21472,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.595947265625,
+        "seqNumber": 21473,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.615966796875,
+        "seqNumber": 21474,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.635986328125,
+        "seqNumber": 21475,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.656005859375,
+        "seqNumber": 21476,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.675537109375,
+        "seqNumber": 21477,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.696044921875,
+        "seqNumber": 21478,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.716064453125,
+        "seqNumber": 21479,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.736083984375,
+        "seqNumber": 21480,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.756103515625,
+        "seqNumber": 21481,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.776611328125,
+        "seqNumber": 21482,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.796142578125,
+        "seqNumber": 21483,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.815673828125,
+        "seqNumber": 21484,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.835693359375,
+        "seqNumber": 21485,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.855712890625,
+        "seqNumber": 21486,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.877197265625,
+        "seqNumber": 21487,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.895751953125,
+        "seqNumber": 21488,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.915771484375,
+        "seqNumber": 21489,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.935791015625,
+        "seqNumber": 21490,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.955810546875,
+        "seqNumber": 21491,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.975830078125,
+        "seqNumber": 21492,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 332.995849609375,
+        "seqNumber": 21493,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.016357421875,
+        "seqNumber": 21494,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.035888671875,
+        "seqNumber": 21495,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.055908203125,
+        "seqNumber": 21496,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.075927734375,
+        "seqNumber": 21497,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.095947265625,
+        "seqNumber": 21498,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.115966796875,
+        "seqNumber": 21499,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.135986328125,
+        "seqNumber": 21500,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.155517578125,
+        "seqNumber": 21501,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.175537109375,
+        "seqNumber": 21502,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.196044921875,
+        "seqNumber": 21503,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.216064453125,
+        "seqNumber": 21504,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.235595703125,
+        "seqNumber": 21505,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.256103515625,
+        "seqNumber": 21506,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.275634765625,
+        "seqNumber": 21507,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.296142578125,
+        "seqNumber": 21508,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.316650390625,
+        "seqNumber": 21509,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.336181640625,
+        "seqNumber": 21510,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.356201171875,
+        "seqNumber": 21511,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 333.361083984375,
+        "seqNumber": 21512,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.361572265625,
+        "seqNumber": 21513,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.376220703125,
+        "seqNumber": 21514,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.395751953125,
+        "seqNumber": 21515,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.416259765625,
+        "seqNumber": 21516,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.436279296875,
+        "seqNumber": 21517,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.456298828125,
+        "seqNumber": 21518,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.475830078125,
+        "seqNumber": 21519,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.495849609375,
+        "seqNumber": 21520,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.515869140625,
+        "seqNumber": 21521,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.536865234375,
+        "seqNumber": 21522,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.556396484375,
+        "seqNumber": 21523,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.575927734375,
+        "seqNumber": 21524,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.595947265625,
+        "seqNumber": 21525,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.615966796875,
+        "seqNumber": 21526,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.635986328125,
+        "seqNumber": 21527,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.656982421875,
+        "seqNumber": 21528,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.676025390625,
+        "seqNumber": 21529,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.696044921875,
+        "seqNumber": 21530,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.716064453125,
+        "seqNumber": 21531,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.736083984375,
+        "seqNumber": 21532,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.756591796875,
+        "seqNumber": 21533,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.775634765625,
+        "seqNumber": 21534,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.796142578125,
+        "seqNumber": 21535,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.815673828125,
+        "seqNumber": 21536,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.836181640625,
+        "seqNumber": 21537,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.857177734375,
+        "seqNumber": 21538,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.875732421875,
+        "seqNumber": 21539,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.896240234375,
+        "seqNumber": 21540,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.916259765625,
+        "seqNumber": 21541,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.935791015625,
+        "seqNumber": 21542,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.956298828125,
+        "seqNumber": 21543,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.975830078125,
+        "seqNumber": 21544,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 333.995849609375,
+        "seqNumber": 21545,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.015869140625,
+        "seqNumber": 21546,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.035888671875,
+        "seqNumber": 21547,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.056396484375,
+        "seqNumber": 21548,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.075927734375,
+        "seqNumber": 21549,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.097412109375,
+        "seqNumber": 21550,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.115966796875,
+        "seqNumber": 21551,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.136474609375,
+        "seqNumber": 21552,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.156005859375,
+        "seqNumber": 21553,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.176025390625,
+        "seqNumber": 21554,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.196044921875,
+        "seqNumber": 21555,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.216064453125,
+        "seqNumber": 21556,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.236083984375,
+        "seqNumber": 21557,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.255615234375,
+        "seqNumber": 21558,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.276123046875,
+        "seqNumber": 21559,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.296142578125,
+        "seqNumber": 21560,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.316162109375,
+        "seqNumber": 21561,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.336181640625,
+        "seqNumber": 21562,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.356201171875,
+        "seqNumber": 21563,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.376220703125,
+        "seqNumber": 21564,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 334.380615234375,
+        "seqNumber": 21565,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.381591796875,
+        "seqNumber": 21566,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.395751953125,
+        "seqNumber": 21567,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.415771484375,
+        "seqNumber": 21568,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.436279296875,
+        "seqNumber": 21569,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.455810546875,
+        "seqNumber": 21570,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.475830078125,
+        "seqNumber": 21571,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.495849609375,
+        "seqNumber": 21572,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.515869140625,
+        "seqNumber": 21573,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.535888671875,
+        "seqNumber": 21574,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.556396484375,
+        "seqNumber": 21575,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.575927734375,
+        "seqNumber": 21576,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.595947265625,
+        "seqNumber": 21577,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.615966796875,
+        "seqNumber": 21578,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.635498046875,
+        "seqNumber": 21579,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.656005859375,
+        "seqNumber": 21580,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.676025390625,
+        "seqNumber": 21581,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.695556640625,
+        "seqNumber": 21582,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.715576171875,
+        "seqNumber": 21583,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.736083984375,
+        "seqNumber": 21584,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.756103515625,
+        "seqNumber": 21585,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.776123046875,
+        "seqNumber": 21586,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.795654296875,
+        "seqNumber": 21587,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.815673828125,
+        "seqNumber": 21588,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.835693359375,
+        "seqNumber": 21589,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.856201171875,
+        "seqNumber": 21590,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.876220703125,
+        "seqNumber": 21591,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.896240234375,
+        "seqNumber": 21592,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.915771484375,
+        "seqNumber": 21593,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.935791015625,
+        "seqNumber": 21594,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.956298828125,
+        "seqNumber": 21595,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.975830078125,
+        "seqNumber": 21596,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 334.996337890625,
+        "seqNumber": 21597,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.016357421875,
+        "seqNumber": 21598,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.035888671875,
+        "seqNumber": 21599,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.055908203125,
+        "seqNumber": 21600,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.076416015625,
+        "seqNumber": 21601,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.095947265625,
+        "seqNumber": 21602,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.115478515625,
+        "seqNumber": 21603,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.135986328125,
+        "seqNumber": 21604,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.156005859375,
+        "seqNumber": 21605,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.176025390625,
+        "seqNumber": 21606,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.196044921875,
+        "seqNumber": 21607,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.216064453125,
+        "seqNumber": 21608,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.236083984375,
+        "seqNumber": 21609,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.256103515625,
+        "seqNumber": 21610,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.276123046875,
+        "seqNumber": 21611,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.296142578125,
+        "seqNumber": 21612,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.315673828125,
+        "seqNumber": 21613,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.336181640625,
+        "seqNumber": 21614,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.356201171875,
+        "seqNumber": 21615,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.375732421875,
+        "seqNumber": 21616,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.396240234375,
+        "seqNumber": 21617,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 335.399169921875,
+        "seqNumber": 21618,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.400146484375,
+        "seqNumber": 21619,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.416748046875,
+        "seqNumber": 21620,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.435791015625,
+        "seqNumber": 21621,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.455810546875,
+        "seqNumber": 21622,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.476318359375,
+        "seqNumber": 21623,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.495849609375,
+        "seqNumber": 21624,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.515869140625,
+        "seqNumber": 21625,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.535888671875,
+        "seqNumber": 21626,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.555908203125,
+        "seqNumber": 21627,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.575927734375,
+        "seqNumber": 21628,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.596923828125,
+        "seqNumber": 21629,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.615966796875,
+        "seqNumber": 21630,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.635986328125,
+        "seqNumber": 21631,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.656005859375,
+        "seqNumber": 21632,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.676025390625,
+        "seqNumber": 21633,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.696044921875,
+        "seqNumber": 21634,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.716064453125,
+        "seqNumber": 21635,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.735595703125,
+        "seqNumber": 21636,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.755615234375,
+        "seqNumber": 21637,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.776123046875,
+        "seqNumber": 21638,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.795654296875,
+        "seqNumber": 21639,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.815673828125,
+        "seqNumber": 21640,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.836181640625,
+        "seqNumber": 21641,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.855712890625,
+        "seqNumber": 21642,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.876220703125,
+        "seqNumber": 21643,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.896240234375,
+        "seqNumber": 21644,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.915771484375,
+        "seqNumber": 21645,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.935791015625,
+        "seqNumber": 21646,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.955810546875,
+        "seqNumber": 21647,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.975830078125,
+        "seqNumber": 21648,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 335.995849609375,
+        "seqNumber": 21649,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.015869140625,
+        "seqNumber": 21650,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.035888671875,
+        "seqNumber": 21651,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.055908203125,
+        "seqNumber": 21652,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.075927734375,
+        "seqNumber": 21653,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.096435546875,
+        "seqNumber": 21654,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.116455078125,
+        "seqNumber": 21655,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.135986328125,
+        "seqNumber": 21656,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.156005859375,
+        "seqNumber": 21657,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.176025390625,
+        "seqNumber": 21658,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.195556640625,
+        "seqNumber": 21659,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.216064453125,
+        "seqNumber": 21660,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.236083984375,
+        "seqNumber": 21661,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.256103515625,
+        "seqNumber": 21662,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.276123046875,
+        "seqNumber": 21663,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.296142578125,
+        "seqNumber": 21664,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.315673828125,
+        "seqNumber": 21665,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.335693359375,
+        "seqNumber": 21666,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.355712890625,
+        "seqNumber": 21667,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.375732421875,
+        "seqNumber": 21668,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.395751953125,
+        "seqNumber": 21669,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 336.400634765625,
+        "seqNumber": 21670,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.401123046875,
+        "seqNumber": 21671,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.415771484375,
+        "seqNumber": 21672,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.436279296875,
+        "seqNumber": 21673,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.455810546875,
+        "seqNumber": 21674,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.475830078125,
+        "seqNumber": 21675,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.495849609375,
+        "seqNumber": 21676,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.515869140625,
+        "seqNumber": 21677,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.535888671875,
+        "seqNumber": 21678,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.555908203125,
+        "seqNumber": 21679,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.576416015625,
+        "seqNumber": 21680,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.595947265625,
+        "seqNumber": 21681,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.615966796875,
+        "seqNumber": 21682,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.636474609375,
+        "seqNumber": 21683,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.656005859375,
+        "seqNumber": 21684,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.676025390625,
+        "seqNumber": 21685,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.695556640625,
+        "seqNumber": 21686,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.716064453125,
+        "seqNumber": 21687,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.736083984375,
+        "seqNumber": 21688,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.756103515625,
+        "seqNumber": 21689,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.776123046875,
+        "seqNumber": 21690,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.796142578125,
+        "seqNumber": 21691,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.815673828125,
+        "seqNumber": 21692,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.836181640625,
+        "seqNumber": 21693,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.856201171875,
+        "seqNumber": 21694,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.876220703125,
+        "seqNumber": 21695,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.896240234375,
+        "seqNumber": 21696,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.916259765625,
+        "seqNumber": 21697,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.935791015625,
+        "seqNumber": 21698,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.956298828125,
+        "seqNumber": 21699,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.975830078125,
+        "seqNumber": 21700,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 336.995849609375,
+        "seqNumber": 21701,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.016357421875,
+        "seqNumber": 21702,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.035888671875,
+        "seqNumber": 21703,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.055908203125,
+        "seqNumber": 21704,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.075927734375,
+        "seqNumber": 21705,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.095947265625,
+        "seqNumber": 21706,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.115966796875,
+        "seqNumber": 21707,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.135986328125,
+        "seqNumber": 21708,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.155517578125,
+        "seqNumber": 21709,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.175537109375,
+        "seqNumber": 21710,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.196044921875,
+        "seqNumber": 21711,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.216552734375,
+        "seqNumber": 21712,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.236083984375,
+        "seqNumber": 21713,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.256103515625,
+        "seqNumber": 21714,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.276123046875,
+        "seqNumber": 21715,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.296142578125,
+        "seqNumber": 21716,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.316162109375,
+        "seqNumber": 21717,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.335693359375,
+        "seqNumber": 21718,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.356201171875,
+        "seqNumber": 21719,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.376220703125,
+        "seqNumber": 21720,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.395751953125,
+        "seqNumber": 21721,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 337.400634765625,
+        "seqNumber": 21722,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.401123046875,
+        "seqNumber": 21723,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.416259765625,
+        "seqNumber": 21724,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.436279296875,
+        "seqNumber": 21725,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.455810546875,
+        "seqNumber": 21726,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.475830078125,
+        "seqNumber": 21727,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.496826171875,
+        "seqNumber": 21728,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.516357421875,
+        "seqNumber": 21729,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.535888671875,
+        "seqNumber": 21730,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.555908203125,
+        "seqNumber": 21731,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.575927734375,
+        "seqNumber": 21732,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.595947265625,
+        "seqNumber": 21733,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.616455078125,
+        "seqNumber": 21734,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.635986328125,
+        "seqNumber": 21735,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.656005859375,
+        "seqNumber": 21736,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.676025390625,
+        "seqNumber": 21737,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.696044921875,
+        "seqNumber": 21738,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.716064453125,
+        "seqNumber": 21739,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.736083984375,
+        "seqNumber": 21740,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.755615234375,
+        "seqNumber": 21741,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.775634765625,
+        "seqNumber": 21742,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.795654296875,
+        "seqNumber": 21743,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.816162109375,
+        "seqNumber": 21744,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.836181640625,
+        "seqNumber": 21745,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.858642578125,
+        "seqNumber": 21746,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.876220703125,
+        "seqNumber": 21747,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.896240234375,
+        "seqNumber": 21748,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.916259765625,
+        "seqNumber": 21749,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.936279296875,
+        "seqNumber": 21750,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.956298828125,
+        "seqNumber": 21751,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.975830078125,
+        "seqNumber": 21752,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 337.996337890625,
+        "seqNumber": 21753,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.015869140625,
+        "seqNumber": 21754,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.035888671875,
+        "seqNumber": 21755,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.055908203125,
+        "seqNumber": 21756,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.075927734375,
+        "seqNumber": 21757,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.095947265625,
+        "seqNumber": 21758,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.115966796875,
+        "seqNumber": 21759,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.135986328125,
+        "seqNumber": 21760,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.156005859375,
+        "seqNumber": 21761,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.175537109375,
+        "seqNumber": 21762,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.195556640625,
+        "seqNumber": 21763,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.216064453125,
+        "seqNumber": 21764,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.235595703125,
+        "seqNumber": 21765,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.256103515625,
+        "seqNumber": 21766,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.276123046875,
+        "seqNumber": 21767,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.296142578125,
+        "seqNumber": 21768,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.317138671875,
+        "seqNumber": 21769,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.336181640625,
+        "seqNumber": 21770,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.355712890625,
+        "seqNumber": 21771,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.375732421875,
+        "seqNumber": 21772,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.395751953125,
+        "seqNumber": 21773,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.415771484375,
+        "seqNumber": 21774,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 338.420166015625,
+        "seqNumber": 21775,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.420654296875,
+        "seqNumber": 21776,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.436279296875,
+        "seqNumber": 21777,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.455810546875,
+        "seqNumber": 21778,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.476318359375,
+        "seqNumber": 21779,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.495849609375,
+        "seqNumber": 21780,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.515869140625,
+        "seqNumber": 21781,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.537353515625,
+        "seqNumber": 21782,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.555908203125,
+        "seqNumber": 21783,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.575927734375,
+        "seqNumber": 21784,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.595947265625,
+        "seqNumber": 21785,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.615966796875,
+        "seqNumber": 21786,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.636474609375,
+        "seqNumber": 21787,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.656005859375,
+        "seqNumber": 21788,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.676025390625,
+        "seqNumber": 21789,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.696044921875,
+        "seqNumber": 21790,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.716064453125,
+        "seqNumber": 21791,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.736083984375,
+        "seqNumber": 21792,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.756103515625,
+        "seqNumber": 21793,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.775634765625,
+        "seqNumber": 21794,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.795654296875,
+        "seqNumber": 21795,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.816650390625,
+        "seqNumber": 21796,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.835693359375,
+        "seqNumber": 21797,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.856201171875,
+        "seqNumber": 21798,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.875732421875,
+        "seqNumber": 21799,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.895751953125,
+        "seqNumber": 21800,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.916259765625,
+        "seqNumber": 21801,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.936279296875,
+        "seqNumber": 21802,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.955810546875,
+        "seqNumber": 21803,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.975830078125,
+        "seqNumber": 21804,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 338.995849609375,
+        "seqNumber": 21805,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.015869140625,
+        "seqNumber": 21806,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.036376953125,
+        "seqNumber": 21807,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.055908203125,
+        "seqNumber": 21808,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.075927734375,
+        "seqNumber": 21809,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.095947265625,
+        "seqNumber": 21810,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.115966796875,
+        "seqNumber": 21811,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.135986328125,
+        "seqNumber": 21812,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.156005859375,
+        "seqNumber": 21813,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.176025390625,
+        "seqNumber": 21814,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.196044921875,
+        "seqNumber": 21815,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.216552734375,
+        "seqNumber": 21816,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.236083984375,
+        "seqNumber": 21817,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.256103515625,
+        "seqNumber": 21818,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.278076171875,
+        "seqNumber": 21819,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.296142578125,
+        "seqNumber": 21820,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.316162109375,
+        "seqNumber": 21821,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.335693359375,
+        "seqNumber": 21822,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.355712890625,
+        "seqNumber": 21823,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.375732421875,
+        "seqNumber": 21824,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.395751953125,
+        "seqNumber": 21825,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.416259765625,
+        "seqNumber": 21826,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 339.421142578125,
+        "seqNumber": 21827,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.421630859375,
+        "seqNumber": 21828,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.436279296875,
+        "seqNumber": 21829,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.455810546875,
+        "seqNumber": 21830,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.476318359375,
+        "seqNumber": 21831,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.495849609375,
+        "seqNumber": 21832,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.515869140625,
+        "seqNumber": 21833,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.535888671875,
+        "seqNumber": 21834,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.556396484375,
+        "seqNumber": 21835,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.575927734375,
+        "seqNumber": 21836,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.595947265625,
+        "seqNumber": 21837,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.616455078125,
+        "seqNumber": 21838,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.635986328125,
+        "seqNumber": 21839,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.656005859375,
+        "seqNumber": 21840,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.676025390625,
+        "seqNumber": 21841,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.696044921875,
+        "seqNumber": 21842,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.715576171875,
+        "seqNumber": 21843,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.736083984375,
+        "seqNumber": 21844,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.755615234375,
+        "seqNumber": 21845,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.776123046875,
+        "seqNumber": 21846,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.796142578125,
+        "seqNumber": 21847,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.815673828125,
+        "seqNumber": 21848,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.836181640625,
+        "seqNumber": 21849,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.855712890625,
+        "seqNumber": 21850,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.876220703125,
+        "seqNumber": 21851,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.895751953125,
+        "seqNumber": 21852,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.915771484375,
+        "seqNumber": 21853,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.936279296875,
+        "seqNumber": 21854,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.956298828125,
+        "seqNumber": 21855,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.976318359375,
+        "seqNumber": 21856,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 339.996337890625,
+        "seqNumber": 21857,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.015869140625,
+        "seqNumber": 21858,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.035888671875,
+        "seqNumber": 21859,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.055908203125,
+        "seqNumber": 21860,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.075927734375,
+        "seqNumber": 21861,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.095947265625,
+        "seqNumber": 21862,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.116455078125,
+        "seqNumber": 21863,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.135986328125,
+        "seqNumber": 21864,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.156005859375,
+        "seqNumber": 21865,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.176025390625,
+        "seqNumber": 21866,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.197021484375,
+        "seqNumber": 21867,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.216064453125,
+        "seqNumber": 21868,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.236083984375,
+        "seqNumber": 21869,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.256103515625,
+        "seqNumber": 21870,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.275634765625,
+        "seqNumber": 21871,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.295654296875,
+        "seqNumber": 21872,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.315673828125,
+        "seqNumber": 21873,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.335693359375,
+        "seqNumber": 21874,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.355712890625,
+        "seqNumber": 21875,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.375732421875,
+        "seqNumber": 21876,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.396240234375,
+        "seqNumber": 21877,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.415771484375,
+        "seqNumber": 21878,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.435791015625,
+        "seqNumber": 21879,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 340.440673828125,
+        "seqNumber": 21880,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.441162109375,
+        "seqNumber": 21881,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.455810546875,
+        "seqNumber": 21882,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.476318359375,
+        "seqNumber": 21883,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.496337890625,
+        "seqNumber": 21884,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.516357421875,
+        "seqNumber": 21885,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.536376953125,
+        "seqNumber": 21886,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.555908203125,
+        "seqNumber": 21887,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.576416015625,
+        "seqNumber": 21888,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.595947265625,
+        "seqNumber": 21889,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.616455078125,
+        "seqNumber": 21890,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.635986328125,
+        "seqNumber": 21891,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.656005859375,
+        "seqNumber": 21892,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.676513671875,
+        "seqNumber": 21893,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.695556640625,
+        "seqNumber": 21894,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.716064453125,
+        "seqNumber": 21895,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.735595703125,
+        "seqNumber": 21896,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.756103515625,
+        "seqNumber": 21897,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.776611328125,
+        "seqNumber": 21898,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.796142578125,
+        "seqNumber": 21899,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.816162109375,
+        "seqNumber": 21900,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.836181640625,
+        "seqNumber": 21901,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.856201171875,
+        "seqNumber": 21902,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.876708984375,
+        "seqNumber": 21903,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.896240234375,
+        "seqNumber": 21904,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.916259765625,
+        "seqNumber": 21905,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.935791015625,
+        "seqNumber": 21906,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.956787109375,
+        "seqNumber": 21907,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.976318359375,
+        "seqNumber": 21908,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 340.995849609375,
+        "seqNumber": 21909,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.015869140625,
+        "seqNumber": 21910,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.035888671875,
+        "seqNumber": 21911,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.056396484375,
+        "seqNumber": 21912,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.076416015625,
+        "seqNumber": 21913,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.095947265625,
+        "seqNumber": 21914,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.115966796875,
+        "seqNumber": 21915,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.135986328125,
+        "seqNumber": 21916,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.156005859375,
+        "seqNumber": 21917,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.176025390625,
+        "seqNumber": 21918,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.196044921875,
+        "seqNumber": 21919,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.216064453125,
+        "seqNumber": 21920,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.236572265625,
+        "seqNumber": 21921,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.256103515625,
+        "seqNumber": 21922,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.276611328125,
+        "seqNumber": 21923,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.296142578125,
+        "seqNumber": 21924,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.315673828125,
+        "seqNumber": 21925,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.336181640625,
+        "seqNumber": 21926,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.356201171875,
+        "seqNumber": 21927,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.376220703125,
+        "seqNumber": 21928,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.396240234375,
+        "seqNumber": 21929,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.415771484375,
+        "seqNumber": 21930,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.436279296875,
+        "seqNumber": 21931,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 341.440185546875,
+        "seqNumber": 21932,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 1 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.441650390625,
+        "seqNumber": 21933,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 1 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.456298828125,
+        "seqNumber": 21934,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.475830078125,
+        "seqNumber": 21935,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.495849609375,
+        "seqNumber": 21936,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.515869140625,
+        "seqNumber": 21937,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.535888671875,
+        "seqNumber": 21938,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.555908203125,
+        "seqNumber": 21939,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.575927734375,
+        "seqNumber": 21940,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.595947265625,
+        "seqNumber": 21941,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.615966796875,
+        "seqNumber": 21942,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.636474609375,
+        "seqNumber": 21943,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.656005859375,
+        "seqNumber": 21944,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.676025390625,
+        "seqNumber": 21945,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.696533203125,
+        "seqNumber": 21946,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.716064453125,
+        "seqNumber": 21947,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.736083984375,
+        "seqNumber": 21948,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.756103515625,
+        "seqNumber": 21949,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.776611328125,
+        "seqNumber": 21950,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.800048828125,
+        "seqNumber": 21951,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.816162109375,
+        "seqNumber": 21952,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.835693359375,
+        "seqNumber": 21953,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.855712890625,
+        "seqNumber": 21954,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.876220703125,
+        "seqNumber": 21955,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.896240234375,
+        "seqNumber": 21956,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.916259765625,
+        "seqNumber": 21957,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.935791015625,
+        "seqNumber": 21958,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.956298828125,
+        "seqNumber": 21959,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.975830078125,
+        "seqNumber": 21960,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 341.995849609375,
+        "seqNumber": 21961,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.015869140625,
+        "seqNumber": 21962,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.036376953125,
+        "seqNumber": 21963,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.056396484375,
+        "seqNumber": 21964,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.075927734375,
+        "seqNumber": 21965,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.095947265625,
+        "seqNumber": 21966,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.115966796875,
+        "seqNumber": 21967,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.135986328125,
+        "seqNumber": 21968,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.156005859375,
+        "seqNumber": 21969,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.176025390625,
+        "seqNumber": 21970,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.196533203125,
+        "seqNumber": 21971,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.216064453125,
+        "seqNumber": 21972,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.236083984375,
+        "seqNumber": 21973,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.256591796875,
+        "seqNumber": 21974,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.276123046875,
+        "seqNumber": 21975,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.296142578125,
+        "seqNumber": 21976,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.315673828125,
+        "seqNumber": 21977,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.336181640625,
+        "seqNumber": 21978,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.355712890625,
+        "seqNumber": 21979,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.376220703125,
+        "seqNumber": 21980,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.397216796875,
+        "seqNumber": 21981,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.415771484375,
+        "seqNumber": 21982,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.436279296875,
+        "seqNumber": 21983,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 342.441162109375,
+        "seqNumber": 21984,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.441650390625,
+        "seqNumber": 21985,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.455810546875,
+        "seqNumber": 21986,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.476318359375,
+        "seqNumber": 21987,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.496337890625,
+        "seqNumber": 21988,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.515869140625,
+        "seqNumber": 21989,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.535888671875,
+        "seqNumber": 21990,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.555908203125,
+        "seqNumber": 21991,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.576416015625,
+        "seqNumber": 21992,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.596435546875,
+        "seqNumber": 21993,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.615966796875,
+        "seqNumber": 21994,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.636474609375,
+        "seqNumber": 21995,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.656005859375,
+        "seqNumber": 21996,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.676025390625,
+        "seqNumber": 21997,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.696533203125,
+        "seqNumber": 21998,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.716064453125,
+        "seqNumber": 21999,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.736083984375,
+        "seqNumber": 22000,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.756103515625,
+        "seqNumber": 22001,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.775634765625,
+        "seqNumber": 22002,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.796630859375,
+        "seqNumber": 22003,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.816162109375,
+        "seqNumber": 22004,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.836181640625,
+        "seqNumber": 22005,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.855712890625,
+        "seqNumber": 22006,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.876220703125,
+        "seqNumber": 22007,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.896240234375,
+        "seqNumber": 22008,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.916259765625,
+        "seqNumber": 22009,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.936279296875,
+        "seqNumber": 22010,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.955810546875,
+        "seqNumber": 22011,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.976318359375,
+        "seqNumber": 22012,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 342.996337890625,
+        "seqNumber": 22013,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.015869140625,
+        "seqNumber": 22014,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.036376953125,
+        "seqNumber": 22015,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.056396484375,
+        "seqNumber": 22016,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.075927734375,
+        "seqNumber": 22017,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.095947265625,
+        "seqNumber": 22018,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.115966796875,
+        "seqNumber": 22019,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.135986328125,
+        "seqNumber": 22020,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.156494140625,
+        "seqNumber": 22021,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.176025390625,
+        "seqNumber": 22022,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.196044921875,
+        "seqNumber": 22023,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.216064453125,
+        "seqNumber": 22024,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.236083984375,
+        "seqNumber": 22025,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.256103515625,
+        "seqNumber": 22026,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.275634765625,
+        "seqNumber": 22027,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.295654296875,
+        "seqNumber": 22028,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.315673828125,
+        "seqNumber": 22029,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.335693359375,
+        "seqNumber": 22030,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.356201171875,
+        "seqNumber": 22031,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.375732421875,
+        "seqNumber": 22032,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.395751953125,
+        "seqNumber": 22033,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.415771484375,
+        "seqNumber": 22034,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.435791015625,
+        "seqNumber": 22035,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.456298828125,
+        "seqNumber": 22036,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 343.461669921875,
+        "seqNumber": 22037,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 8 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.462646484375,
+        "seqNumber": 22038,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 8 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.476318359375,
+        "seqNumber": 22039,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.495849609375,
+        "seqNumber": 22040,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.515869140625,
+        "seqNumber": 22041,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.535888671875,
+        "seqNumber": 22042,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.556396484375,
+        "seqNumber": 22043,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.576416015625,
+        "seqNumber": 22044,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.595947265625,
+        "seqNumber": 22045,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.615966796875,
+        "seqNumber": 22046,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.635986328125,
+        "seqNumber": 22047,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.656005859375,
+        "seqNumber": 22048,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.676025390625,
+        "seqNumber": 22049,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.696044921875,
+        "seqNumber": 22050,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.716064453125,
+        "seqNumber": 22051,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.736083984375,
+        "seqNumber": 22052,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.756103515625,
+        "seqNumber": 22053,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.776123046875,
+        "seqNumber": 22054,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.796142578125,
+        "seqNumber": 22055,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.816162109375,
+        "seqNumber": 22056,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.835693359375,
+        "seqNumber": 22057,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.856201171875,
+        "seqNumber": 22058,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.876220703125,
+        "seqNumber": 22059,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.896240234375,
+        "seqNumber": 22060,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.915771484375,
+        "seqNumber": 22061,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.936279296875,
+        "seqNumber": 22062,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.955810546875,
+        "seqNumber": 22063,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.975830078125,
+        "seqNumber": 22064,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 343.995849609375,
+        "seqNumber": 22065,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.015869140625,
+        "seqNumber": 22066,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.036376953125,
+        "seqNumber": 22067,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.056396484375,
+        "seqNumber": 22068,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.075927734375,
+        "seqNumber": 22069,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.095947265625,
+        "seqNumber": 22070,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.115966796875,
+        "seqNumber": 22071,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.136474609375,
+        "seqNumber": 22072,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.156494140625,
+        "seqNumber": 22073,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.176025390625,
+        "seqNumber": 22074,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.196044921875,
+        "seqNumber": 22075,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.216064453125,
+        "seqNumber": 22076,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.236083984375,
+        "seqNumber": 22077,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.257080078125,
+        "seqNumber": 22078,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.276123046875,
+        "seqNumber": 22079,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.296142578125,
+        "seqNumber": 22080,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.316162109375,
+        "seqNumber": 22081,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.335693359375,
+        "seqNumber": 22082,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.355712890625,
+        "seqNumber": 22083,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.376220703125,
+        "seqNumber": 22084,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.395751953125,
+        "seqNumber": 22085,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.416259765625,
+        "seqNumber": 22086,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.436279296875,
+        "seqNumber": 22087,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.456298828125,
+        "seqNumber": 22088,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "timestamp": 344.461669921875,
+        "seqNumber": 22089,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Joystick Button 6 on port 1 not available, check if controller is plugged in",
+        "location": "edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.462646484375,
+        "seqNumber": 22090,
+        "line": "Warning at edu.wpi.first.wpilibj.DriverStation.reportJoystickUnpluggedWarning(DriverStation.java:1319): Joystick Button 6 on port 1 not available, check if controller is plugged in"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.475830078125,
+        "seqNumber": 22091,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.495849609375,
+        "seqNumber": 22092,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.515869140625,
+        "seqNumber": 22093,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.536376953125,
+        "seqNumber": 22094,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.555908203125,
+        "seqNumber": 22095,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.575927734375,
+        "seqNumber": 22096,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.595947265625,
+        "seqNumber": 22097,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.616455078125,
+        "seqNumber": 22098,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.636962890625,
+        "seqNumber": 22099,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.656005859375,
+        "seqNumber": 22100,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.676025390625,
+        "seqNumber": 22101,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.696044921875,
+        "seqNumber": 22102,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.716064453125,
+        "seqNumber": 22103,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.736083984375,
+        "seqNumber": 22104,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.756103515625,
+        "seqNumber": 22105,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.776123046875,
+        "seqNumber": 22106,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.796142578125,
+        "seqNumber": 22107,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.817138671875,
+        "seqNumber": 22108,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.836669921875,
+        "seqNumber": 22109,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.856201171875,
+        "seqNumber": 22110,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.876220703125,
+        "seqNumber": 22111,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.895751953125,
+        "seqNumber": 22112,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.915771484375,
+        "seqNumber": 22113,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.936279296875,
+        "seqNumber": 22114,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.956298828125,
+        "seqNumber": 22115,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.975830078125,
+        "seqNumber": 22116,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 344.996337890625,
+        "seqNumber": 22117,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 345.016357421875,
+        "seqNumber": 22118,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 345.035888671875,
+        "seqNumber": 22119,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 345.055908203125,
+        "seqNumber": 22120,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 345.075927734375,
+        "seqNumber": 22121,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 345.095947265625,
+        "seqNumber": 22122,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 345.115966796875,
+        "seqNumber": 22123,
+        "line": "X m/s: 0.0Y m/s: 0.0Rot: 0.0"
+    }
+]
