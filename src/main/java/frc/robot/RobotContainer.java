@@ -26,7 +26,9 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.ResetGyro;
+import frc.robot.commands.CommandGroups.GroupHighGoal;
 import frc.robot.commands.CommandGroups.GroupHighGoalX;
+import frc.robot.commands.CommandGroups.GroupLowGoal;
 import frc.robot.commands.CommandGroups.GroupLowGoalX;
 import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.commands.Launcher.AdaptiveLaunch;
@@ -161,7 +163,7 @@ public class RobotContainer {
     d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
     // Group Command for LOW HOOP goal
-    d_ButtonA.whenPressed(new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
+    d_ButtonA.whenPressed(new GroupLowGoal(launcher, intakeMotor, indexMotors, m_drivetrain));
 
       /** Original low goal sequence, since moved to GroupLowGoal and GroupLowGoalX
        new SequentialCommandGroup(
@@ -188,7 +190,7 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
+    d_ButtonY.whenPressed(new GroupHighGoal(launcher, intakeMotor, indexMotors));
     
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
@@ -309,5 +311,8 @@ public class RobotContainer {
     return autonChooser.getSelected();
 
   }; // end of getAutonomusCommand()
-
+// FIXME xmode breaks code for high shot, and jitters with low
+// FIXME values to shuffleboard and test mode don't show up on board
+// FIXME adaptive mode runs perpetually 
+// FIXME Rumble is fixed DONE!
 } // End of class
