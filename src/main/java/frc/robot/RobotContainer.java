@@ -29,6 +29,7 @@ import frc.robot.commands.ResetGyro;
 import frc.robot.commands.CommandGroups.GroupHighGoalX;
 import frc.robot.commands.CommandGroups.GroupLowGoalX;
 import frc.robot.commands.Launcher.setLaunchSpeed;
+import frc.robot.commands.Launcher.AdaptiveLaunch;
 import frc.robot.commands.Launcher.LaunchSemiAutomatic;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
@@ -70,7 +71,7 @@ public class RobotContainer {
   // private final LiftPivot liftPivotMotors = new LiftPivot();
 
   //// Limelight
-  // public Limelight limelight = new Limelight();
+  public Limelight limelight = new Limelight();
 
   //// Autonomous
   SendableChooser<Command> autonChooser = new SendableChooser<>();
@@ -196,15 +197,14 @@ public class RobotContainer {
       new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
-    
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop WITH an xmode component
-    // d_ButtonX.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
+    d_ButtonX.whenPressed(new AdaptiveLaunch(launcher, limelight));
 
-    // d_ButtonX.whenReleased(new ParallelCommandGroup(
-      // new IntakeSpeed(intakeMotor, 0.0),
-      // new IndexSpeed(indexMotors, 0.0),
-      // new setLaunchSpeed(launcher, 0.0, 0.0)
-    // ));
+    d_ButtonX.whenReleased(new ParallelCommandGroup(
+      new IntakeSpeed(intakeMotor, 0.0),
+      new IndexSpeed(indexMotors, 0.0),
+      new setLaunchSpeed(launcher, 0.0, 0.0)
+    ));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));

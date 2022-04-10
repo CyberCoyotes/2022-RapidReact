@@ -2,19 +2,19 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.DEV;
+package frc.robot.commands.Launcher;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Interpolator;
+import frc.robot.Interpolator_v2;
 import frc.robot.Limelight;
 import frc.robot.subsystems.Launcher;
 
-public class AutomaticAdaptiveLaunch extends CommandBase {
+public class AdaptiveLaunch extends CommandBase {
   private Launcher subsystem;
   private Limelight limelight;
 
   /** Creates a new LaunchAutomatic. */
-  public AutomaticAdaptiveLaunch(Launcher subsystem, Limelight limelight) {
+  public AdaptiveLaunch(Launcher subsystem, Limelight limelight) {
     this.subsystem = subsystem;
     this.limelight = limelight;
     // Use addRequirements() here to declare subsystem dependencies
@@ -30,8 +30,8 @@ public class AutomaticAdaptiveLaunch extends CommandBase {
   public void execute() {
     if(limelight.hasValidTarget()) {
       double yAngle = limelight.getY();
-      double speedFront = Interpolator.getFrontSpeed(yAngle);
-      double speedBack = Interpolator.getBackSpeed(yAngle);
+      double speedFront = Interpolator_v2.getFrontSpeed(yAngle);
+      double speedBack = Interpolator_v2.getBackSpeed(yAngle);
       subsystem.setLauncherSpeed(speedFront, speedBack);
     } else {
       subsystem.setLauncherSpeed(0.35, 0.40); // Split the tape launching, seems to be defaulting to this so that's good
