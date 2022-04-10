@@ -22,7 +22,6 @@ import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;
 import frc.robot.subsystems.Lift;
-import frc.robot.DEV.SemiAuto_16;
 // Command imports
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
@@ -36,8 +35,8 @@ import frc.robot.commands.Launcher.LaunchSemiAutomatic;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.Auton.Ball2PlusAuton;
-import frc.robot.commands.Auton.Ball2Auton;
+import frc.robot.commands.Auton.Ball2PlusAutonFLASH2;
+import frc.robot.commands.Auton.Ball2AutonFLASH2;
 import frc.robot.commands.Auton.Ball3Auton;
 
 /**
@@ -108,16 +107,13 @@ public class RobotContainer {
        //new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.addOption("2 Ball + Drive straight",
-      new Ball2Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new Ball2AutonFLASH2(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.addOption("2 Ball + Pickup 3rd",
-      new Ball2PlusAuton(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new Ball2PlusAutonFLASH2(m_drivetrain, indexMotors, intakeMotor, launcher));
    
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
-   
-    autonChooser.addOption("DEV TESTING 16", 
-      new SemiAuto_16(launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);

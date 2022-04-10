@@ -16,10 +16,12 @@ import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
+import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
-import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardComponent;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.robot.Constants.*;
 
@@ -241,7 +243,8 @@ public class Drivetrain extends SubsystemBase {
         desiredStates[2].speedMetersPerSecond = Math.abs(m_backLeftModule.getDriveVelocity());
         desiredStates[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
 
-        ShuffleboardTab driveTab = Shuffleboard.getTab("Data");
+        // Appeared to be crashing code at Saturday practice
+        ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
           driveTab.add("Current X", getPose().getX()); 
           driveTab.add("Current Y", getPose().getY()); 
           driveTab.add("Auton Angle", getPose().getRotation().getDegrees()); 
@@ -255,10 +258,12 @@ public class Drivetrain extends SubsystemBase {
   public void periodic() {
 
     //defining states - Repeatedly update
-    // TODO Remove after practice 
+    /* Displays ChassisSpeed in Meters per Second  
     System.out.print("X m/s: " + m_chassisSpeeds.vxMetersPerSecond);
     System.out.print("Y m/s: " + m_chassisSpeeds.vyMetersPerSecond);
     System.out.println("Rot: " + m_chassisSpeeds.omegaRadiansPerSecond);
+    **/
+
     SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
     // removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
     // and changed the first param from itself(states) to the chassisspeeds object 
@@ -288,36 +293,5 @@ public class Drivetrain extends SubsystemBase {
       
 
     } // End of periodic
-
-  /** TODO Delete after testing on Saturday to make sure none of this is used
-    public void resetEncoders() {
-    }
-
-    public int getFrontRightEncoderValue() {
-        return 0;
-    }
-
-    public void driveForward(int i) {
-    }
-
-    public void driveBackward(int i) {
-    }
-
-    public Command createCommandForTrajectory(PathPlannerTrajectory trajectory) {
-      return new PPSwerveControllerCommand(
-            trajectory,
-            this::getPose, // Functional interface to feed supplier
-            this.m_kinematics,
-      
-            // Position controller
-            new PIDController(kPXController, 0, 0),
-            new PIDController(kPYController, 0, 0),
-            thetaController,
-            this::setModuleStates,
-            this
-      );
-
-  }
-  */
 
 } // END of class

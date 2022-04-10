@@ -23,7 +23,7 @@ public class Ball2DriveStraightAuton extends SequentialCommandGroup {
   public Ball2DriveStraightAuton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      new Ball1PlusAuton(drivetrain, indexMotors, intakeMotor, launcher),
+      new Ball1AutonPlusFLASH2(drivetrain, indexMotors, intakeMotor, launcher),
       new PreLaunch(launcher).withTimeout(0.5),
       new LaunchAutonBall2(launcher).withTimeout(0.5).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))
     ); // End of addCommands
