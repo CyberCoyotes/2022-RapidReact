@@ -28,6 +28,7 @@ public class AdaptiveLaunch extends CommandBase {
   // adjusting range to include 2.0 but still using default power output 
   @Override
   public void execute() {
+
     if(limelight.hasValidTarget()) {
       double yAngle = limelight.getY();
       double speedFront = Interpolator_v2.getFrontSpeed(yAngle);

@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Interpolator_v2 {
@@ -28,25 +30,28 @@ public class Interpolator_v2 {
     private static double manualOffset = 0;
 
     // At some point would have max angle at which point the launch motors should not fire, i.e. speed = 0  
-    private static double maxAngle = 25; 
+    private static double maxAngle = 25;
+    
     /**
      * Static method that takes in the "distance" measurement and outputs "speed"
      * @param Distance measurement in "distance" units
      * @returns Speed in "speed" units
      */
     private static double getInterpolation(double[] speeds, double angle) {
+        // TODO Test mode
+        // NetworkTableEntry.getEntry("Max", maxAngle);
 
     // Search through the angles[] array to find the two values that the current
     // measurement is between (this is like finding two points on a graph)
-        int interAngle = 0;
-        while(angles[interAngle] > angle) {
-            interAngle++;
+        // int interAngle = 0;
+        // while(angles[interAngle] > angle) {
+            /// interAngle++;
 
         // Added a Max Angle but this might not be needed with line of code in 'if' ~Scoy Comment
-        /** int interAngle = 0;
-         * while(angles[interAngle] > angle && angles[interAngle] < maxAngle ) {
-         * interAngle++;
-        **/
+        int interAngle = 0;
+         while(angles[interAngle] > angle && angles[interAngle] < maxAngle ) {
+         interAngle++;
+        
 
             //If it didn't find two points, return the last speed
             
@@ -59,7 +64,7 @@ public class Interpolator_v2 {
             **/
 
             // if(interAngle >= angles.length) {
-                //return speeds[0];
+                // Sreturn speeds[0];
             
             }
         }
@@ -68,13 +73,13 @@ public class Interpolator_v2 {
          * Chance of heading a taget solution = exactly zero is very, very small
          * 0 is more likely to be returned if there is no target acquired 
          * 
-         * Original code
-         * if(interAngle == 0) {
-         * return speeds[interAngle];
-         **/
+        * Original code
+         */
+        if(interAngle == 0) {
+            return speeds[interAngle];
 
-        if(interAngle == 0 || interAngle > maxAngle) {
-            return speeds[0];
+        // if(interAngle == 0 || interAngle > maxAngle) {
+            // return speeds[0];
         }
 
         // Make a line from the points (angles[i-1], speeds[i-1]) and (angles[i], speeds[i])
@@ -109,5 +114,6 @@ public class Interpolator_v2 {
      */
     public static void setOffset(double offset) {
         manualOffset = offset;
+        SmartDashboard.putNumber("Offset", offset);
     }
 }

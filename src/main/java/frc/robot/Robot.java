@@ -132,6 +132,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+
     double TX = tx.getDouble(0.0);
     double TY = ty.getDouble(0.0);
     double area = ta.getDouble(0.0);
@@ -146,7 +147,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putBoolean("Target Status", targetLock);
     
     // Vision & haptic feedback that vibrates when targeting x-value (left to right) is within shooting range.
-    if (targetLock = true) {
+    if (VisionRange.txMin< TX && TX < VisionRange.txMax && TX != 0 && VisionRange.tyMin< TY && TY < VisionRange.tyMax && TY !=0) {
       driverController.setRumble(RumbleType.kLeftRumble, 1.0);
       driverController.setRumble(RumbleType.kRightRumble, 1.0);
           } // end of true

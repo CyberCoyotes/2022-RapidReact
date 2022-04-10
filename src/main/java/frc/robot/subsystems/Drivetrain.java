@@ -241,10 +241,10 @@ public class Drivetrain extends SubsystemBase {
         desiredStates[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
 
       // Appeared to be crashing code at Saturday practice
-       ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
-          driveTab.add("Current X", getPose().getX()); 
-          driveTab.add("Current Y", getPose().getY()); 
-          driveTab.add("Auton Angle", getPose().getRotation().getDegrees()); 
+      // ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
+        //  driveTab.add("Current X", getPose().getX()); 
+        // driveTab.add("Current Y", getPose().getY()); 
+        //  driveTab.add("Auton Angle", getPose().getRotation().getDegrees()); 
       // ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
       // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
         // driveTab.add("Raw Angle", getRawRoation());

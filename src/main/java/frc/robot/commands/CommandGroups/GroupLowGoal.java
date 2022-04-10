@@ -12,7 +12,7 @@ import frc.robot.subsystems.Intake;
 /**
  * Do not use: further testing required for XMode alone before anything can be used.
  */
-public class GroupLowGoal extends ParallelCommandGroup {
+public class GroupLowGoal extends SequentialCommandGroup {
 /**
  * Xmode Combined with the button-bound launch commnad; lasts for a set period of time.
  * @param m_drivetrain
