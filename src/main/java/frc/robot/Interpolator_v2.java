@@ -20,7 +20,6 @@ public class Interpolator_v2 {
     private static double angles[] = {20.00, 18.00, 11.75, 2.00}; // 3.75 was max previously
     
     // The front and back launch motors need to have different speeds
-
     // Speed of the front launcher motor
     private static double speedFront[] = {0.30, 0.35, 0.40, 0.30}; 
     // Speed of the back launcher motor
@@ -38,9 +37,6 @@ public class Interpolator_v2 {
      * @returns Speed in "speed" units
      */
     private static double getInterpolation(double[] speeds, double angle) {
-        // TODO Test mode
-        // NetworkTableEntry.getEntry("Max", maxAngle);
-
     // Search through the angles[] array to find the two values that the current
     // measurement is between (this is like finding two points on a graph)
         // int interAngle = 0;

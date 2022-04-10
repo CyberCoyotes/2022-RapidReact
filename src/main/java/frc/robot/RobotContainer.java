@@ -311,8 +311,5 @@ public class RobotContainer {
     return autonChooser.getSelected();
 
   }; // end of getAutonomusCommand()
-// FIXME xmode breaks code for high shot, and jitters with low
-// FIXME values to shuffleboard and test mode don't show up on board
-// FIXME adaptive mode runs perpetually 
-// FIXME Rumble is fixed DONE!
+
 } // End of class
