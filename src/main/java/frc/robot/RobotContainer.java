@@ -15,7 +15,6 @@ import static edu.wpi.first.wpilibj.XboxController.Button;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Index;
@@ -27,16 +26,16 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.ResetGyro;
-import frc.robot.commands.CommandGroups.GroupHighGoal;
 import frc.robot.commands.CommandGroups.GroupHighGoalX;
-// import frc.robot.commands.CommandGroups.GroupHighGoalX;
+import frc.robot.commands.CommandGroups.GroupLowGoalX;
 import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.commands.Launcher.LaunchSemiAutomatic;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.Auton.Ball2PlusAutonFLASH2;
-import frc.robot.commands.Auton.Ball2AutonFLASH2;
+import frc.robot.commands.Auton.Ball1Auton;
+import frc.robot.commands.Auton.Ball2Auton;
+import frc.robot.commands.Auton.Ball2AutonLimited;
 import frc.robot.commands.Auton.Ball3Auton;
 
 /**
@@ -98,20 +97,19 @@ public class RobotContainer {
     m_drivetrain.setDefaultCommand(driveCommand);
     
     // AUTONOMOUS chooser
-
     // Launches high goal inside tarmac, drives out with launch sequence operating
-    //autonChooser.addOption("1 Ball & Stay",
-      //new CG_1Ball(indexMotors, intakeMotor, launcher));
+    autonChooser.addOption("1 Ball",
+      new Ball1Auton(indexMotors, intakeMotor, launcher, m_drivetrain));
     
     //autonChooser.addOption("1 Ball & Pickup 2nd",
        //new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.addOption("2 Ball + Drive straight",
-      new Ball2AutonFLASH2(m_drivetrain, indexMotors, intakeMotor, launcher));
+    autonChooser.addOption("2 Ball Limited + Drive straight",
+      new Ball2AutonLimited(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.addOption("2 Ball + Pickup 3rd",
-      new Ball2PlusAutonFLASH2(m_drivetrain, indexMotors, intakeMotor, launcher));
-   
+    autonChooser.addOption("2 Ball",
+      new Ball2Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
+    
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
 
@@ -131,43 +129,40 @@ public class RobotContainer {
     // SmartDashboard.putBoolean("Short Drive", autonShortDrive.isScheduled());
     // SmartDashboard.putBoolean("DriveCommand", driveCommand.isScheduled());
     // SmartDashboard.putBoolean("Target Status", targetStatus.isScheduled(0, 0, indexMotors));
-
   }
 
   private void configureButtonBindings() {
     /// Declaring buttons on driver controller
-    final JoystickButton d_backButton = new JoystickButton(driverController, Button.kBack.value);
     final JoystickButton d_ButtonA = new JoystickButton(driverController, Button.kA.value);
     final JoystickButton d_ButtonB = new JoystickButton(driverController, Button.kB.value);
-    final JoystickButton d_ButtonX = new JoystickButton(driverController, Button.kX.value);
+    final JoystickButton d_ButtonX = new JoystickButton(driverController, Button.kX.value); 
     final JoystickButton d_ButtonY = new JoystickButton(driverController, Button.kY.value);
     final JoystickButton d_RightBumper = new JoystickButton(driverController, Button.kRightBumper.value);
     final JoystickButton d_LeftBumper = new JoystickButton(driverController, Button.kLeftBumper.value);
-    // final JoystickButton d_Start = new JoystickButton(driverController, Button.kStart.value);
+    final JoystickButton d_BackButton = new JoystickButton(driverController, Button.kBack.value);
+    final JoystickButton d_StartButton = new JoystickButton(driverController, Button.kStart.value);
+
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
-    // Not being used. final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
-    // final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
+    final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
+    final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
-    final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
-    final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
+    final JoystickButton op_BackButton = new JoystickButton(operatorController, Button.kBack.value);
+    final JoystickButton op_StartButton = new JoystickButton(operatorController, Button.kStart.value);
       
-    // Defining the actions associated with buttons
 
     // DRIVER Controller button commands
-
-    
     //d_Start.whenPressed(new xmode(m_drivetrain));
 
     // Resets the gyroscope to 0 degrees when back button is pressed
-    d_backButton.whenPressed(new ResetGyro(m_drivetrain));
+    d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
-      /**  LOW HOOP UP CLOSE LAUNCH SEQUENCE
-       when A is held, run Launch motors by themselves for a second, then run Launch and Index motors for 0.5 seconds,
-       then finally run all 3 motors at once. release to stop all motors */
-      d_ButtonA.whenPressed(
+    // Group Command for LOW HOOP goal
+    d_ButtonA.whenPressed(new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
+
+      /** Original low goal sequence, since moved to GroupLowGoal and GroupLowGoalX
        new SequentialCommandGroup(
         new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
           new SequentialCommandGroup(
@@ -178,7 +173,8 @@ public class RobotContainer {
                   new IntakeSpeed(intakeMotor, 0.5),
                   new IndexSpeed(indexMotors, 0.5)))
        )
-     );
+       */
+    
       //stops all 3 motors when A button released
       d_ButtonA.whenReleased(new ParallelCommandGroup(
         new IntakeSpeed(intakeMotor, 0.0),
@@ -191,23 +187,24 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whenPressed(new GroupHighGoal(launcher, intakeMotor, indexMotors));
+    d_ButtonY.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
     
-      //stops all 3 motors when Y button released
-      d_ButtonY.whenReleased(new ParallelCommandGroup(
-        new IntakeSpeed(intakeMotor, 0.0),
-        new IndexSpeed(indexMotors, 0.0),
-        new setLaunchSpeed(launcher, 0.0, 0.0))
+    //stops all 3 motors when Y button released
+    d_ButtonY.whenReleased(new ParallelCommandGroup(
+      new IntakeSpeed(intakeMotor, 0.0),
+      new IndexSpeed(indexMotors, 0.0),
+      new setLaunchSpeed(launcher, 0.0, 0.0))
       );
 
     
-    d_ButtonX.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
-    d_ButtonX.whenReleased(new ParallelCommandGroup(
-      new IntakeSpeed(intakeMotor, 0.0),
-      new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0)
-    ));
+    // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop WITH an xmode component
+    // d_ButtonX.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
 
+    // d_ButtonX.whenReleased(new ParallelCommandGroup(
+      // new IntakeSpeed(intakeMotor, 0.0),
+      // new IndexSpeed(indexMotors, 0.0),
+      // new setLaunchSpeed(launcher, 0.0, 0.0)
+    // ));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
@@ -217,9 +214,6 @@ public class RobotContainer {
     d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.5));
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
-    // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    // d_Start.whenPressed(new GroupHighGoalX(m_drivetrain, indexMotors, intakeMotor, launcher));
-    
 
     // Hold X to set launch speed according to Limelight
     // d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
@@ -243,16 +237,7 @@ public class RobotContainer {
 
     // OPERATOR Controller commands
     
-    // Press the Start button to make an x-lockout when shooting
-    // op_StartButton.whenPressed(new xmode(m_drivetrain));
-    // op_StartButton.whenReleased(new xmode(m_drivetrain));
-
-    // press Start Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #2
-    //  op_StartButton.whenPressed(new LockLiftCommandBar2(liftMotors, -0.5));
     op_StartButton.whenPressed(new LaunchSemiAutomatic(launcher));
-
-    // press Back Button to auto lower both climbing arms to the encoder value of when the locking arms engage on bar #1
-    // op_BackButton.whenPressed(new LockLiftCommandBar1(liftMotors, -0.5));
 
     // When pressed, activates a DEVELOPMENT of Semi-Automatic launching, currently outputs data to log
     op_BackButton.whenPressed(new LaunchSemiAutomatic(launcher));
@@ -322,7 +307,6 @@ public class RobotContainer {
     //sequential(deadline(wait, sequential<launching>, xmode), parallel<stop all motors>)
 
     return autonChooser.getSelected();
-    
 
   }; // end of getAutonomusCommand()
 

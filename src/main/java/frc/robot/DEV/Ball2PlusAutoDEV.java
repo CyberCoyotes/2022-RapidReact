@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands.Auton;
+package frc.robot.DEV;
 
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -12,6 +12,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.TurnToDegrees;
+import frc.robot.commands.Auton.Ball2Auton;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 // import frc.robot.Limelight;
@@ -25,11 +26,11 @@ import frc.robot.subsystems.Launcher;
 */
 
 
-public class Ball2PlusAutonFLASH2 extends SequentialCommandGroup {
-  public Ball2PlusAutonFLASH2(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Ball2PlusAutoDEV extends SequentialCommandGroup {
+  public Ball2PlusAutoDEV(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      new Ball2DriveStraightAuton(drivetrain, indexMotors, intakeMotor, launcher),
+      new Ball2Auton(drivetrain, indexMotors, intakeMotor, launcher),
       // Back up to Goal
        new ParallelDeadlineGroup(
         new WaitCommand(0.5), // 0.5 -> 0.25

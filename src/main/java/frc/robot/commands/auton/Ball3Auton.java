@@ -4,10 +4,13 @@
 
 package frc.robot.commands.Auton;
 
+import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.commands.ResetGyro;
+import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
+import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.TurnToDegrees;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
@@ -28,14 +31,29 @@ public class Ball3Auton extends SequentialCommandGroup {
 
     addCommands(
       // Two ball auton, pick up third, and lined up for third shot
-      new Ball2PlusAutonFLASH2(drivetrain, indexMotors, intakeMotor, launcher),
-      // Launches ball 3
+      new Ball2Auton(drivetrain, indexMotors, intakeMotor, launcher),
+      // Back up towards hub
+       new ParallelDeadlineGroup(
+        new WaitCommand(0.5), // 0.5 -> 0.25
+        new DriveCommand(drivetrain, () -> {return -2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // 1.0 -> 2.0
+
+      // Do a "backup turn" to the right towards ball 3
+      new TurnToDegrees(drivetrain, -90), // was -90. Close enough pre-event
+
+      // Drive towards ball 3 with intake running
+      new ParallelDeadlineGroup(
+        new WaitCommand(1.625), // 3.25 -> 1.625
+        new IntakeSpeed(intakeMotor, 0.5),
+        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -2.0;}, () -> {return 0.0;})), // 1.0 -> 2.00
+
+      // Launch Autononmous Ball 3
+      new TurnToDegrees(drivetrain, -49), // manual turn on the robot gyro read -49. Good enough for government work      // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
 
-      //Turn robot around towards goal, a.k.a. Forward, and reset gyro afterwards
+      //Turn robot towards goal, i.e. "Forward" field orientation, and reset gyro in preperation for auton
       new SequentialCommandGroup(
-        new WaitCommand(1),
+        new WaitCommand(0.5), // Change from 1 to 0.5
         new TurnToDegrees(drivetrain, 130),
         new ResetGyro(drivetrain))        
         ); // End of commands

@@ -22,14 +22,14 @@ import frc.robot.subsystems.Launcher;
  *   up a 2nd ball and shoots the seconds cargo ball, and then drives further away from hub/tarmac
 */
 
-public class Ball2AutonFLASH2 extends SequentialCommandGroup {
-  public Ball2AutonFLASH2(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Ball2AutonLimited extends SequentialCommandGroup {
+  public Ball2AutonLimited(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       /** Shoots preloaded ball from inside the tarmac
        *  Starts drivetrain and subsystems to collect the second cargo
       */
-      new Ball1AutonPlusFLASH2(drivetrain, indexMotors, intakeMotor, launcher),
+      new Ball1Auton(indexMotors, intakeMotor, launcher, drivetrain),
       // Launches second cargo
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchAutonBall2(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),

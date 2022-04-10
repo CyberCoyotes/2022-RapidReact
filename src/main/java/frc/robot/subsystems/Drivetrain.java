@@ -16,12 +16,9 @@ import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
-import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardComponent;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.robot.Constants.*;
 
@@ -113,7 +110,7 @@ public class Drivetrain extends SubsystemBase {
   //
 
   public Drivetrain() {
-    ShuffleboardTab tab = Shuffleboard.getTab("Drivetrain");
+    ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
     // Added from #5804
     thetaController.enableContinuousInput(-Math.PI, Math.PI);
 
@@ -121,7 +118,7 @@ public class Drivetrain extends SubsystemBase {
     // Setup motor configuration
     m_frontLeftModule = Mk3SwerveModuleHelper.createFalcon500(
             // This parameter is optional, but will allow you to see the current state of the module on the dashboard.
-            tab.getLayout("Front Left Module", BuiltInLayouts.kList)
+            driveTab.getLayout("Front Left Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(0, 0),
             // This can either be STANDARD or FAST depending on your gear configuration
@@ -138,7 +135,7 @@ public class Drivetrain extends SubsystemBase {
 
     // We will do the same for the other modules
     m_frontRightModule = Mk3SwerveModuleHelper.createFalcon500(
-            tab.getLayout("Front Right Module", BuiltInLayouts.kList)
+            driveTab.getLayout("Front Right Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(2, 0),
             Mk3SwerveModuleHelper.GearRatio.STANDARD,
@@ -149,7 +146,7 @@ public class Drivetrain extends SubsystemBase {
     );
 
     m_backLeftModule = Mk3SwerveModuleHelper.createFalcon500(
-            tab.getLayout("Back Left Module", BuiltInLayouts.kList)
+            driveTab.getLayout("Back Left Module", BuiltInLayouts.kList)
                     .withSize(2, 4)
                     .withPosition(4, 0),
             Mk3SwerveModuleHelper.GearRatio.STANDARD,
@@ -160,14 +157,14 @@ public class Drivetrain extends SubsystemBase {
     );
 
     m_backRightModule = Mk3SwerveModuleHelper.createFalcon500(
-        tab.getLayout("Back Right Module", BuiltInLayouts.kList)
-            .withSize(2, 4)
-            .withPosition(6, 0),
-        Mk3SwerveModuleHelper.GearRatio.STANDARD,
-        BACK_RIGHT_MODULE_DRIVE_MOTOR,
-        BACK_RIGHT_MODULE_STEER_MOTOR,
-        BACK_RIGHT_MODULE_STEER_ENCODER,
-        BACK_RIGHT_MODULE_STEER_OFFSET
+            driveTab.getLayout("Back Right Module", BuiltInLayouts.kList)
+                .withSize(2, 4)
+                .withPosition(6, 0),
+            Mk3SwerveModuleHelper.GearRatio.STANDARD,
+            BACK_RIGHT_MODULE_DRIVE_MOTOR,
+            BACK_RIGHT_MODULE_STEER_MOTOR,
+            BACK_RIGHT_MODULE_STEER_ENCODER,
+            BACK_RIGHT_MODULE_STEER_OFFSET
     );
     
   }
@@ -243,11 +240,19 @@ public class Drivetrain extends SubsystemBase {
         desiredStates[2].speedMetersPerSecond = Math.abs(m_backLeftModule.getDriveVelocity());
         desiredStates[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
 
-        // Appeared to be crashing code at Saturday practice
-        ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
+      // Appeared to be crashing code at Saturday practice
+       ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
           driveTab.add("Current X", getPose().getX()); 
           driveTab.add("Current Y", getPose().getY()); 
           driveTab.add("Auton Angle", getPose().getRotation().getDegrees()); 
+      // ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
+      // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
+        // driveTab.add("Raw Angle", getRawRoation());
+        // driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
+        // .withWidget(BuiltInWidgets.kGyro
+        // SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
+        // driveTab.add("Current X", getPose().getX()); 
+        // driveTab.add("Current Y", getPose().getY());
 
 
   } // end of setModulesStates
@@ -282,14 +287,7 @@ public class Drivetrain extends SubsystemBase {
     m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
       states[3].angle.getRadians());
 
-    // ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
-    // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
-      // driveTab.add("Raw Angle", getRawRoation());
-      // driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
-      // .withWidget(BuiltInWidgets.kGyro
-      // SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
-      // driveTab.add("Current X", getPose().getX()); 
-      // driveTab.add("Current Y", getPose().getY());
+ 
       
 
     } // End of periodic

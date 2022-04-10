@@ -19,11 +19,12 @@ import frc.robot.subsystems.Launcher;
  *   up a 2nd ball and shoots the seconds cargo ball as well
 */
 
-public class Ball2DriveStraightAuton extends SequentialCommandGroup {
-  public Ball2DriveStraightAuton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Ball2Auton extends SequentialCommandGroup {
+  public Ball2Auton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
-      new Ball1AutonPlusFLASH2(drivetrain, indexMotors, intakeMotor, launcher),
+      new Ball1Auton(indexMotors, intakeMotor, launcher, drivetrain),
+      // Launches Ball 2 
       new PreLaunch(launcher).withTimeout(0.5),
       new LaunchAutonBall2(launcher).withTimeout(0.5).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))
     ); // End of addCommands
