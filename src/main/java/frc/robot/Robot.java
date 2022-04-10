@@ -88,10 +88,6 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().run();
     m_robotContainer.debugMethod();
 
-    
-
-    
-
   } // End of robotPeriodic
 
   /** This function is called once each time the robot enters Disabled mode. */
@@ -113,8 +109,6 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.schedule();
     }
 
-    
-    
   }
 
   /** This function is called periodically during autonomous. */
@@ -142,7 +136,9 @@ public class Robot extends TimedRobot {
     double TY = ty.getDouble(0.0);
     double area = ta.getDouble(0.0);
 
-    boolean targetLock = (VisionRange.txMin< TX && TX < VisionRange.txMax) && (VisionRange.tyMin< TY && TY < VisionRange.tyMax);
+    boolean targetLock = 
+        (VisionRange.txMin< TX && TX < VisionRange.txMax && TX != 0) && 
+        (VisionRange.tyMin< TY && TY < VisionRange.tyMax && TY !=0);
     
     SmartDashboard.putNumber(("tX"), TX);
     SmartDashboard.putNumber(("tY"), TY);
@@ -150,16 +146,15 @@ public class Robot extends TimedRobot {
     SmartDashboard.putBoolean("Target Status", targetLock);
     
     // Vision & haptic feedback that vibrates when targeting x-value (left to right) is within shooting range.
-    if (TX >= VisionRange.txMin && TX <= VisionRange.txMax && TX !=0) {
+    if (targetLock = true) {
       driverController.setRumble(RumbleType.kLeftRumble, 1.0);
       driverController.setRumble(RumbleType.kRightRumble, 1.0);
-
-    } 
+          } // end of true
     else {
       driverController.setRumble(RumbleType.kLeftRumble, 0.0);
       driverController.setRumble(RumbleType.kRightRumble, 0.0);
-    } 
-  }
+    } // end of else
+  } // end of conditional
 
   @Override
   public void testInit() {
