@@ -4,6 +4,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -64,12 +65,18 @@ public class Launcher extends SubsystemBase {
   public void setLauncherSpeed(double speedFront, double speedBack) {
     frontLauncherMotor.set(ControlMode.PercentOutput, speedFront);
     backLauncherMotor.set(ControlMode.PercentOutput, speedBack);
+    // TODO Test mode
+    SmartDashboard.getNumber("Front Set", speedFront);
+    SmartDashboard.getNumber("Back Set", speedBack);
+    
   }
   
   // Set Pre Launch Speed
   public void setPreLaunch(){
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.35);
     backLauncherMotor.set(ControlMode.PercentOutput, 0.40);
+    // SmartDashboard.getNumber("Front Set", speedFront);
+    // SmartDashboard.getNumber("Back Set", speedBack);
   }
 
   // Set for back bumper on ball spot
@@ -83,6 +90,8 @@ public class Launcher extends SubsystemBase {
   public void setHighLaunch() {
     frontLauncherMotor.set(ControlMode.PercentOutput, 0.40);
     backLauncherMotor.set(ControlMode.PercentOutput, 0.35);
+    // SmartDashboard.getNumber("Front Set", speedFront);
+    // SmartDashboard.getNumber("Back Set", speedBack);
   }
   
   // Set inside Tarmac speed. Robot lined up approximately with intake bumper at the edge of the tarmac tape

@@ -241,6 +241,7 @@ public class Drivetrain extends SubsystemBase {
         desiredStates[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
 
       // Appeared to be crashing code at Saturday practice
+      // FIXME
        ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
           driveTab.add("Current X", getPose().getX()); 
           driveTab.add("Current Y", getPose().getY()); 

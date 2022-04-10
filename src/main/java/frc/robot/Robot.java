@@ -132,6 +132,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+
     double TX = tx.getDouble(0.0);
     double TY = ty.getDouble(0.0);
     double area = ta.getDouble(0.0);

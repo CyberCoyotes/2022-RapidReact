@@ -109,5 +109,6 @@ public class Interpolator_v2 {
      */
     public static void setOffset(double offset) {
         manualOffset = offset;
+        SmartDashboard.putNumber("Offset", offset);
     }
 }
