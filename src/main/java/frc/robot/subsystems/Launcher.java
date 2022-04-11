@@ -65,7 +65,7 @@ public class Launcher extends SubsystemBase {
   public void setLauncherSpeed(double speedFront, double speedBack) {
     frontLauncherMotor.set(ControlMode.PercentOutput, speedFront);
     backLauncherMotor.set(ControlMode.PercentOutput, speedBack);
-    // TODO Test mode
+
     SmartDashboard.getNumber("Front Set", speedFront);
     SmartDashboard.getNumber("Back Set", speedBack);
     
