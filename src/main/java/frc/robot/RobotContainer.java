@@ -175,9 +175,8 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    // TODO Test
+
     d_ButtonY.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
-    
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
@@ -219,27 +218,17 @@ public class RobotContainer {
 
 
     // OPERATOR Controller commands
-    
     op_StartButton.whenPressed(new LaunchSemiAutomatic(launcher));
 
     // When pressed, activates a DEVELOPMENT of Semi-Automatic launching, currently outputs data to log
     op_BackButton.whenPressed(new LaunchSemiAutomatic(launcher));
-    op_BackButton.whenReleased(new setLaunchSpeed(launcher, 0.0, 0.0));
-    //Hold X to rotationally align the robot (driver still has control of translational motion)
-    /**
-    op_ButtonX.whenPressed(new DriveCommand(
-        m_drivetrain,
-          () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-          () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-          () -> {return limelight.getX() * Constants.kPThetaLimelightController;}
-      ));
-      op_ButtonX.whenReleased(new DriveCommand(
-          m_drivetrain,
-          () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-          () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-          () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
-      ));
-      */
+    op_BackButton.whenReleased(new ParallelCommandGroup(
+      new IntakeSpeed(intakeMotor, 0.0),
+      new IndexSpeed(indexMotors, 0.0),
+      new setLaunchSpeed(launcher, 0.0, 0.0))
+      );
+
+
 
     // hold left bumper to manually raise both climbing arms, release to stop motors
     op_LeftBumper.whenPressed(new LiftCommand(liftMotors, 0.5));
@@ -251,6 +240,14 @@ public class RobotContainer {
 
     // press A to auto raise both climbing arms to the encoder value of bar #1
     op_ButtonA.whenPressed(new AutoLiftCommandBar1(liftMotors, 0.5));
+
+    // TODO Test operator X Button
+    op_ButtonX.whenPressed(new LaunchSemiAutomatic(launcher));
+    op_ButtonX.whenReleased(new ParallelCommandGroup(
+      new IntakeSpeed(intakeMotor, 0.0),
+      new IndexSpeed(indexMotors, 0.0),
+      new setLaunchSpeed(launcher, 0.0, 0.0))
+      );
 
     // press Y to auto raise both climbing arms to encoder value of bar #2
     op_ButtonY.whenPressed(new AutoLiftCommandBar2(liftMotors, 0.5));
