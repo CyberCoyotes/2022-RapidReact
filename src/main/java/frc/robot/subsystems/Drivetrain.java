@@ -240,12 +240,6 @@ public class Drivetrain extends SubsystemBase {
         desiredStates[2].speedMetersPerSecond = Math.abs(m_backLeftModule.getDriveVelocity());
         desiredStates[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
 
-      // Appeared to be crashing code at Saturday practice
-      // ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
-        //  driveTab.add("Current X", getPose().getX()); 
-        // driveTab.add("Current Y", getPose().getY()); 
-        //  driveTab.add("Auton Angle", getPose().getRotation().getDegrees()); 
-      // ShuffleboardTab driveTab = Shuffleboard.getTab("Drive Data");
       // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
         // driveTab.add("Raw Angle", getRawRoation());
         // driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
@@ -258,6 +252,16 @@ public class Drivetrain extends SubsystemBase {
   } // end of setModulesStates
 
         // https://github.com/5804/rapidReact2022Alpha/blob/master/src/main/java/frc/robot/subsystems/DrivetrainSubsystem.java
+  public void setDefenseDrivetrain(){
+    setModuleStates(
+      new SwerveModuleState[]{
+      new SwerveModuleState(0, Rotation2d.fromDegrees(45)),
+      new SwerveModuleState(0, Rotation2d.fromDegrees(-45)),
+      new SwerveModuleState(0, Rotation2d.fromDegrees(-45)),
+      new SwerveModuleState(0, Rotation2d.fromDegrees(45))
+      }
+    );
+  }
 
   @Override
   public void periodic() {
@@ -286,9 +290,6 @@ public class Drivetrain extends SubsystemBase {
       states[2].angle.getRadians());
     m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
       states[3].angle.getRadians());
-
- 
-      
 
     } // End of periodic
 

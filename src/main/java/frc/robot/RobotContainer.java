@@ -26,9 +26,7 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.ResetGyro;
-import frc.robot.commands.CommandGroups.GroupHighGoal;
 import frc.robot.commands.CommandGroups.GroupHighGoalX;
-import frc.robot.commands.CommandGroups.GroupLowGoal;
 import frc.robot.commands.CommandGroups.GroupLowGoalX;
 import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.commands.Launcher.AdaptiveLaunch;
@@ -163,20 +161,7 @@ public class RobotContainer {
     d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
     // Group Command for LOW HOOP goal
-    d_ButtonA.whenPressed(new GroupLowGoal(launcher, intakeMotor, indexMotors, m_drivetrain));
-
-      /** Original low goal sequence, since moved to GroupLowGoal and GroupLowGoalX
-       new SequentialCommandGroup(
-        new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
-          new SequentialCommandGroup(
-            new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
-                new ParallelCommandGroup (
-                  new setLaunchSpeed(launcher, 0.25, 0.25),
-                  new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5)))
-       )
-       */
+    d_ButtonA.whenPressed(new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
     
       //stops all 3 motors when A button released
       d_ButtonA.whenReleased(new ParallelCommandGroup(
@@ -190,7 +175,8 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whenPressed(new GroupHighGoal(launcher, intakeMotor, indexMotors));
+    // TODO Test
+    d_ButtonY.whenPressed(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
     
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
@@ -215,11 +201,6 @@ public class RobotContainer {
     // Hold left bumper to manually Intake cargo back to the field, release to stop motors
     d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.5));
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
-
-
-    // Hold X to set launch speed according to Limelight
-    // d_ButtonX.whenPressed(new LaunchAutomatic(launcher, limelight));
-    // d_ButtonX.whenPressed(new LaunchSpeed(launcher, 0, 0));
 
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(
