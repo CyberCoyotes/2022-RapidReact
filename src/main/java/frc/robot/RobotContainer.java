@@ -200,7 +200,7 @@ public class RobotContainer {
       ));
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop WITH an xmode component
-    d_ButtonX.whenPressed(new AdaptiveLaunch(launcher, limelight));
+    d_ButtonX.whileHeld(new AdaptiveLaunch(launcher, limelight));
 
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
