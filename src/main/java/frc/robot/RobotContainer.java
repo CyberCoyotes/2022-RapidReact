@@ -28,7 +28,7 @@ import frc.robot.subsystems.Lift;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.XLaunch;
+import frc.robot.commands.XLowLaunch;
 import frc.robot.commands.Launcher.LaunchAutomatic;
 import frc.robot.commands.Launcher.LaunchSpeed;
 import frc.robot.commands.xmode;
@@ -215,7 +215,7 @@ public class RobotContainer {
         new LaunchSpeed(launcher, 0.0, 0.0))
 
       );
-      d_ButtonX.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
+      d_ButtonX.whenPressed(new XLowLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Hold right bumper to manually Intake cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
@@ -226,7 +226,7 @@ public class RobotContainer {
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold Start to manually Advance cargo to the launcher, release to stop motors
-    d_Start.whenPressed(new XLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
+    d_Start.whenPressed(new XLowLaunch(m_drivetrain, indexMotors, intakeMotor, launcher));
     
 
     // Hold X to set launch speed according to Limelight
