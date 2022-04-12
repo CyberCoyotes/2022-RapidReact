@@ -3,11 +3,11 @@ package frc.robot.commands.Launcher;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
-public class xmode_v2 extends CommandBase {
+public class xmode2 extends CommandBase {
   
     private final Drivetrain subsystem;
 
-    public xmode_v2(Drivetrain m_drivetrain) {
+    public xmode2(Drivetrain m_drivetrain) {
         this.subsystem = m_drivetrain;
         addRequirements(subsystem);
     }

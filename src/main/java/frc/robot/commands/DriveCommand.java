@@ -1,6 +1,5 @@
 package frc.robot.commands;
 
-import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
@@ -29,17 +28,18 @@ public class DriveCommand extends CommandBase {
     public void execute() {
         // You can use `new ChassisSpeeds(...)` for robot-oriented movement instead of field-oriented movement
         m_drivetrain.drive(
-                ChassisSpeeds.fromFieldRelativeSpeeds(
+            // ChassisSpeeds.fromFieldRelativeSpeeds(
+
+            // ChassisSpeeds.fromFieldRelativeSpeeds(
                         m_translationXSupplier.getAsDouble(),
                         m_translationYSupplier.getAsDouble(),
                         m_rotationSupplier.getAsDouble(),
                         m_drivetrain.getGyroscopeRotation()
-                )
         );
     }
 
     @Override
     public void end(boolean interrupted) {
-        m_drivetrain.drive(new ChassisSpeeds(0.0, 0.0, 0.0));
+        m_drivetrain.stopDrive();
     }
 }
