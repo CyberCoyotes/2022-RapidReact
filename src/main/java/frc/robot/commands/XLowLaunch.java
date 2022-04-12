@@ -11,7 +11,7 @@ import frc.robot.subsystems.Intake;
 /**
  * Do not use: further testing required for XMode alone before anything can be used.
  */
-public class XLaunch extends SequentialCommandGroup{
+public class XLowLaunch extends SequentialCommandGroup{
 /**
  * Xmode Combined with the button-bound launch commnad; lasts for a set period of time.
  * @param m_drivetrain
@@ -19,23 +19,23 @@ public class XLaunch extends SequentialCommandGroup{
  * @param intakeMotor
  * @param launcher
  */
-  public XLaunch(Drivetrain m_drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+  public XLowLaunch(Drivetrain m_drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
       addRequirements(m_drivetrain, indexMotors);
       
       addCommands( //for 2.05 seconds, run the launchers and xmode, giving the robot resistance to obstrusive pests.
         new ParallelCommandGroup(
         
           new SequentialCommandGroup(
-        new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.75),
-          new SequentialCommandGroup(
-            new LaunchSpeed(launcher, 0.35, 0.40).withTimeout(0.25).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)), // shortened between launches, good timing
-                new ParallelCommandGroup (
-                  new LaunchSpeed(launcher, 0.36, 0.42),
-                  new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)) // FIXME added to stop Index, not stopping still
+            new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
+            new SequentialCommandGroup(
+              new LaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
+                new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
+                  new ParallelCommandGroup (
+                    new LaunchSpeed(launcher, 0.25, 0.25),
+                    new IntakeSpeed(intakeMotor, 0.5),
+                    new IndexSpeed(indexMotors, 0.5)))
       )), new xmode(m_drivetrain))
-      );
+      ;
       
   }
   
