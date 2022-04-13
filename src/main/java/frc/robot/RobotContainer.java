@@ -37,6 +37,7 @@ import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.auton.Ball1Auton;
 import frc.robot.commands.auton.Ball2Auton;
 import frc.robot.commands.auton.Ball2AutonLimited;
+import frc.robot.commands.auton.Ball2AutonWithDefense;
 import frc.robot.commands.auton.Ball3Auton;
 
 /**
@@ -105,11 +106,11 @@ public class RobotContainer {
     //autonChooser.addOption("1 Ball & Pickup 2nd",
        //new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.addOption("2 Ball Limited + Drive straight",
-      new Ball2AutonLimited(m_drivetrain, indexMotors, intakeMotor, launcher));
-    
     autonChooser.addOption("2 Ball",
       new Ball2Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
+
+    autonChooser.addOption("2 Ball + Defense",
+      new Ball2AutonWithDefense(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.setDefaultOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
