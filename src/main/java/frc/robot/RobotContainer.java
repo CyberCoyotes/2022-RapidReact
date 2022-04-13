@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
@@ -27,18 +26,18 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.ResetGyro;
+import frc.robot.commands.commandgroups.GroupHighGoalX;
+import frc.robot.commands.commandgroups.GroupLowGoalX;
+import frc.robot.commands.launcher.setLaunchSpeed;
+import frc.robot.commands.launcher.AdaptiveLaunch;
+import frc.robot.commands.launcher.LaunchSemiAutomatic;
+import frc.robot.commands.lift.AutoLiftCommandBar1;
+import frc.robot.commands.lift.AutoLiftCommandBar2;
+import frc.robot.commands.lift.LiftCommand;
 import frc.robot.commands.auton.Ball1Auton;
 import frc.robot.commands.auton.Ball2Auton;
 import frc.robot.commands.auton.Ball2AutonLimited;
 import frc.robot.commands.auton.Ball3Auton;
-import frc.robot.commands.commandgroups.GroupHighGoalX;
-import frc.robot.commands.commandgroups.GroupLowGoalX;
-import frc.robot.commands.launcher.AdaptiveLaunch;
-import frc.robot.commands.launcher.LaunchSemiAutomatic;
-import frc.robot.commands.launcher.setLaunchSpeed;
-import frc.robot.commands.lift.AutoLiftCommandBar1;
-import frc.robot.commands.lift.AutoLiftCommandBar2;
-import frc.robot.commands.lift.LiftCommand;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -142,17 +141,12 @@ public class RobotContainer {
     final JoystickButton d_RightBumper = new JoystickButton(driverController, Button.kRightBumper.value);
     final JoystickButton d_LeftBumper = new JoystickButton(driverController, Button.kLeftBumper.value);
     final JoystickButton d_BackButton = new JoystickButton(driverController, Button.kBack.value);
-    
-    // NOT currently used 
     // final JoystickButton d_StartButton = new JoystickButton(driverController, Button.kStart.value);
 
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
-    
-    // NOT currently used
     // final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
     // final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
-    
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
@@ -167,40 +161,44 @@ public class RobotContainer {
     d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
     // Group Command for LOW HOOP goal
-    d_ButtonA.whenPressed(
-      new ParallelCommandGroup(
-        new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
-        new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain)
-      ));
+    d_ButtonA.whileHeld(new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
+
+      /** Original low goal sequence, since moved to GroupLowGoal and GroupLowGoalX
+       new SequentialCommandGroup(
+        new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
+          new SequentialCommandGroup(
+            new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
+              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
+                new ParallelCommandGroup (
+                  new setLaunchSpeed(launcher, 0.25, 0.25),
+                  new IntakeSpeed(intakeMotor, 0.5),
+                  new IndexSpeed(indexMotors, 0.5)))
+       )
+       */
     
-    //stops all 3 motors when A button released
-    d_ButtonA.whenReleased(new ParallelCommandGroup(
-      new IntakeSpeed(intakeMotor, 0.0),
-      new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0))
-    );
+      //stops all 3 motors when A button released
+      d_ButtonA.whenReleased(new ParallelCommandGroup(
+        new IntakeSpeed(intakeMotor, 0.0),
+        new IndexSpeed(indexMotors, 0.0),
+        new setLaunchSpeed(launcher, 0.0, 0.0))
+      );
 
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-
-    d_ButtonY.whenPressed(
-      new ParallelCommandGroup(
-        new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
-        new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain)
-    ));
-
+    d_ButtonY.whileHeld(new GroupHighGoalX(launcher, intakeMotor, indexMotors));
+    
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0)
-      ));
+      new setLaunchSpeed(launcher, 0.0, 0.0))
+      );
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop WITH an xmode component
-    d_ButtonX.whenPressed(new AdaptiveLaunch(launcher, limelight));
+    d_ButtonX.whileHeld(new AdaptiveLaunch(launcher, limelight));
 
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
@@ -216,6 +214,10 @@ public class RobotContainer {
     d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.5));
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
+
+    // Hold X to set launch speed according to Limelight
+    // d_ButtonX.whileHeld(new AdpativeLaunch(launcher, limelight));
+    
     //Hold B to drive at slower speed, release to drive normal
     d_ButtonB.whenPressed(new DriveCommand(
       m_drivetrain,
@@ -233,17 +235,27 @@ public class RobotContainer {
 
 
     // OPERATOR Controller commands
+    
     op_StartButton.whenPressed(new LaunchSemiAutomatic(launcher));
 
     // When pressed, activates a DEVELOPMENT of Semi-Automatic launching, currently outputs data to log
     op_BackButton.whenPressed(new LaunchSemiAutomatic(launcher));
-    op_BackButton.whenReleased(new ParallelCommandGroup(
-      new IntakeSpeed(intakeMotor, 0.0),
-      new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0))
-      );
-
-
+    op_BackButton.whenReleased(new setLaunchSpeed(launcher, 0.0, 0.0));
+    //Hold X to rotationally align the robot (driver still has control of translational motion)
+    /**
+    op_ButtonX.whenPressed(new DriveCommand(
+        m_drivetrain,
+          () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
+          () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
+          () -> {return limelight.getX() * Constants.kPThetaLimelightController;}
+      ));
+      op_ButtonX.whenReleased(new DriveCommand(
+          m_drivetrain,
+          () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
+          () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
+          () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
+      ));
+      */
 
     // hold left bumper to manually raise both climbing arms, release to stop motors
     op_LeftBumper.whenPressed(new LiftCommand(liftMotors, 0.5));
@@ -256,15 +268,6 @@ public class RobotContainer {
     // press A to auto raise both climbing arms to the encoder value of bar #1
     op_ButtonA.whenPressed(new AutoLiftCommandBar1(liftMotors, 0.5));
 
-    /** 
-    op_ButtonX.whenPressed(new LaunchSemiAutomatic(launcher));
-    op_ButtonX.whenReleased(new ParallelCommandGroup(
-      new IntakeSpeed(intakeMotor, 0.0),
-      new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0))
-      );
-    */
-    
     // press Y to auto raise both climbing arms to encoder value of bar #2
     op_ButtonY.whenPressed(new AutoLiftCommandBar2(liftMotors, 0.5));
     
