@@ -10,15 +10,16 @@ package frc.robot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Interpolator {
-
-    //This is an ordered list of "distance" measurements (this example is the y-angle reported by the Limelight).
-    //This must be monotonically decreasing
-
-    /*
+    
+    /* Use these for testing with extreme values
     private static double angles[] = {30, 0};
     private static double speedFront[] = {1, 0};
     private static double speedBack[] = {1, 0};
     */
+
+    //This is an ordered list of "distance" measurements (this example is the y-angle reported by the Limelight).
+    //This must be monotonically decreasing
+
     // Find these values from Limelight
     private static double angles[] = {20.00, 18.00, 11.75, 2.00}; // 3.75 was max previously
     
