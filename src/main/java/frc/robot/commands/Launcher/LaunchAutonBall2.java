@@ -4,7 +4,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 // FRC 3603 Launch High
-package frc.robot.commands.Launcher;
+package frc.robot.commands.launcher;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;

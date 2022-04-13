@@ -49,7 +49,7 @@ public class Drivetrain extends SubsystemBase {
    * The maximum velocity of the robot in meters per second.
    * This is a measure of how fast the robot should be able to drive in a straight line.
    */
-
+  
   // Our value is 6380, #5804 uses 5000
   public static final double MAX_VELOCITY_METERS_PER_SECOND = 6380.0 / 60.0 * 
           SdsModuleConfigurations.MK3_STANDARD.getDriveReduction() *
@@ -97,7 +97,6 @@ public class Drivetrain extends SubsystemBase {
   
   // Added for xWing
   private boolean isXstance;
-  private boolean isFieldRelative;
 
   
 
@@ -119,7 +118,6 @@ public class Drivetrain extends SubsystemBase {
     // ShuffleboardTab tabMain = Shuffleboard.getTab("MAIN");
 
     // Added for XWing
-    this.isFieldRelative = false;
     this.isXstance = false;
 
 
@@ -244,37 +242,28 @@ public class Drivetrain extends SubsystemBase {
 
   // Added for XWing
   public void drive(double translationXSupplier, double translationYSupplier, double rotationSupplier, Rotation2d rotation2d) {
-    if (isXstance) {
-            this.setXStance();
-    }
-    else{
-            if (isFieldRelative) {
-                    m_chassisSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(
-                                    translationXSupplier,
-                                    translationYSupplier,
-                                    rotationSupplier,
-                                    getGyroscopeRotation());
+      if (isXstance) {
+          this.setXStance();
+      } else { 
+          m_chassisSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(
+              translationXSupplier,
+              translationYSupplier,
+              rotationSupplier,
+              getGyroscopeRotation());
+          // SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds, centerGravity);
+          SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
 
-            } else {
-                    m_chassisSpeeds = new ChassisSpeeds(
-                                    translationXSupplier,
-                                    translationYSupplier,
-                                    rotationSupplier);
-            }
-
-            // SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds, centerGravity);
-            SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
-
-            // logStates(states);
-            m_frontLeftModule.set(states[0].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                            states[0].angle.getRadians());
-            m_frontRightModule.set(states[1].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                            states[1].angle.getRadians());
-            m_backLeftModule.set(states[2].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                            states[2].angle.getRadians());
-            m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                            states[3].angle.getRadians());
-    }}
+          // logStates(states);
+          m_frontLeftModule.set(states[0].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
+                          states[0].angle.getRadians());
+          m_frontRightModule.set(states[1].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
+                          states[1].angle.getRadians());
+          m_backLeftModule.set(states[2].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
+                          states[2].angle.getRadians());
+          m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
+                          states[3].angle.getRadians());
+      }
+  }
 
 
   public void setModuleStates(SwerveModuleState[] states) {
