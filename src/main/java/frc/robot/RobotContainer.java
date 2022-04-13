@@ -26,20 +26,18 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.ResetGyro;
-import frc.robot.commands.CommandGroups.GroupHighGoal;
-import frc.robot.commands.CommandGroups.GroupHighGoalX;
-import frc.robot.commands.CommandGroups.GroupLowGoal;
-import frc.robot.commands.CommandGroups.GroupLowGoalX;
-import frc.robot.commands.Launcher.setLaunchSpeed;
-import frc.robot.commands.Launcher.AdaptiveLaunch;
-import frc.robot.commands.Launcher.LaunchSemiAutomatic;
-import frc.robot.commands.Lift.AutoLiftCommandBar1;
-import frc.robot.commands.Lift.AutoLiftCommandBar2;
-import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.Auton.Ball1Auton;
-import frc.robot.commands.Auton.Ball2Auton;
-import frc.robot.commands.Auton.Ball2AutonLimited;
-import frc.robot.commands.Auton.Ball3Auton;
+import frc.robot.commands.commandgroups.GroupHighGoal;
+import frc.robot.commands.commandgroups.GroupLowGoal;
+import frc.robot.commands.launcher.setLaunchSpeed;
+import frc.robot.commands.launcher.AdaptiveLaunch;
+import frc.robot.commands.launcher.LaunchSemiAutomatic;
+import frc.robot.commands.lift.AutoLiftCommandBar1;
+import frc.robot.commands.lift.AutoLiftCommandBar2;
+import frc.robot.commands.lift.LiftCommand;
+import frc.robot.commands.auton.Ball1Auton;
+import frc.robot.commands.auton.Ball2Auton;
+import frc.robot.commands.auton.Ball2AutonLimited;
+import frc.robot.commands.auton.Ball3Auton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -143,12 +141,12 @@ public class RobotContainer {
     final JoystickButton d_RightBumper = new JoystickButton(driverController, Button.kRightBumper.value);
     final JoystickButton d_LeftBumper = new JoystickButton(driverController, Button.kLeftBumper.value);
     final JoystickButton d_BackButton = new JoystickButton(driverController, Button.kBack.value);
-    final JoystickButton d_StartButton = new JoystickButton(driverController, Button.kStart.value);
+    // final JoystickButton d_StartButton = new JoystickButton(driverController, Button.kStart.value);
 
     // Declaring buttons on the operator controller
     final JoystickButton op_ButtonA = new JoystickButton(operatorController, Button.kA.value);
-    final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
-    final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
+    // final JoystickButton op_ButtonB = new JoystickButton(operatorController, Button.kB.value);
+    // final JoystickButton op_ButtonX = new JoystickButton(operatorController, Button.kX.value);
     final JoystickButton op_ButtonY = new JoystickButton(operatorController, Button.kY.value);
     final JoystickButton op_RightBumper = new JoystickButton(operatorController, Button.kRightBumper.value);
     final JoystickButton op_LeftBumper = new JoystickButton(operatorController, Button.kLeftBumper.value);
@@ -163,7 +161,7 @@ public class RobotContainer {
     d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
     // Group Command for LOW HOOP goal
-    d_ButtonA.whenPressed(new GroupLowGoal(launcher, intakeMotor, indexMotors, m_drivetrain));
+    d_ButtonA.whileHeld(new GroupLowGoal(launcher, intakeMotor, indexMotors, m_drivetrain));
 
       /** Original low goal sequence, since moved to GroupLowGoal and GroupLowGoalX
        new SequentialCommandGroup(
@@ -190,7 +188,7 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whenPressed(new GroupHighGoal(launcher, intakeMotor, indexMotors));
+    d_ButtonY.whileHeld(new GroupHighGoal(launcher, intakeMotor, indexMotors));
     
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
