@@ -188,7 +188,7 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whileHeld(new GroupHighGoalX(launcher, intakeMotor, indexMotors));
+    d_ButtonY.whileHeld(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
     
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
