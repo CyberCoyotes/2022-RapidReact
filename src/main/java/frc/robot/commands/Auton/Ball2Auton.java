@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.launcher.LaunchAutonBall2;
-import frc.robot.commands.launcher.PreLaunch;
+import frc.robot.commands.Launcher.LaunchAutonBall2;
+import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 

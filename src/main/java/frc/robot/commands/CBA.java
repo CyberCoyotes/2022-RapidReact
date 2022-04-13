@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.dev.CBA1Input_DEV;
+import frc.robot.DEV.CBA1Input_DEV;
 import frc.robot.subsystems.Drivetrain;
 
 

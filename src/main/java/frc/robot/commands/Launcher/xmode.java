@@ -1,4 +1,4 @@
-package frc.robot.commands.launcher;
+package frc.robot.commands.Launcher;
 
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModuleState;

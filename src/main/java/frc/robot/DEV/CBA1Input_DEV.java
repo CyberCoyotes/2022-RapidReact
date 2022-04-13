@@ -1,4 +1,4 @@
-package frc.robot.dev;
+package frc.robot.DEV;
 
 public class CBA1Input_DEV {
     

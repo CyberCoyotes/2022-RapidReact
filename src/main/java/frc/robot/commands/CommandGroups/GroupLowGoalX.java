@@ -1,8 +1,8 @@
-package frc.robot.commands.commandgroups;
+package frc.robot.commands.CommandGroups;
 
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import frc.robot.subsystems.Launcher;
-import frc.robot.commands.launcher.xmode;
+import frc.robot.commands.Launcher.xmode;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
