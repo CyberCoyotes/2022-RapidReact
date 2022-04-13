@@ -167,7 +167,7 @@ public class RobotContainer {
     d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
     // Group Command for LOW HOOP goal
-    d_ButtonA.whenPressed(
+    d_ButtonA.whileHeld(
       new ParallelCommandGroup(
         new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
         new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain)
@@ -186,7 +186,7 @@ public class RobotContainer {
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
 
-    d_ButtonY.whenPressed(
+    d_ButtonY.whileHeld(
       new ParallelCommandGroup(
         new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
         new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain)
