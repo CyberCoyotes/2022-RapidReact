@@ -4,8 +4,13 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.launcher.LaunchHigh;
+<<<<<<< HEAD
 import frc.robot.commands.launcher.PreLaunch;
 import frc.robot.commands.launcher.setLaunchSpeed;
+=======
+import frc.robot.commands.launcher.setLaunchSpeed;
+import frc.robot.commands.launcher.PreLaunch;
+>>>>>>> dev-LimelightXwing
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Launcher;

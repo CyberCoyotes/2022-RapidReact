@@ -10,6 +10,12 @@ package frc.robot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Interpolator {
+    
+    /* Use these for testing with extreme values
+    private static double angles[] = {30, 0};
+    private static double speedFront[] = {1, 0};
+    private static double speedBack[] = {1, 0};
+    */
 
     //This is an ordered list of "distance" measurements (this example is the y-angle reported by the Limelight).
     //This must be monotonically decreasing
@@ -36,25 +42,25 @@ public class Interpolator {
 
     // Search through the angles[] array to find the two values that the current
     // measurement is between (this is like finding two points on a graph)
-        int interAngle = 0;
-        while(angles[interAngle] > angle) {
-            interAngle++;
+        int interAngleIndex = 0;
+        while(angles[interAngleIndex] > angle) {
+            interAngleIndex++;
 
             //If it didn't find two points, return the last speed
-            if(interAngle >= angles.length) {
+            if(interAngleIndex >= angles.length) {
                 return speeds[speeds.length - 1];
             }
         }
         
         // Original code
-        if(interAngle == 0) {
-            return speeds[interAngle];        
+        if(interAngleIndex == 0) {
+            return speeds[interAngleIndex];        
         }
 
         // Make a line from the points (angles[i-1], speeds[i-1]) and (angles[i], speeds[i])
         // in the form y = mx+b
-        int interAngle1 = interAngle-1;
-        int interAngle2 = interAngle;
+        int interAngle1 = interAngleIndex-1;
+        int interAngle2 = interAngleIndex;
         double m = (speeds[interAngle2]-speeds[interAngle1])/(angles[interAngle2]-angles[interAngle1]);
         double b = speeds[interAngle1] - m*angles[interAngle1];
 
