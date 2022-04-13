@@ -36,7 +36,6 @@ import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
 import frc.robot.commands.auton.Ball1Auton;
 import frc.robot.commands.auton.Ball2Auton;
-import frc.robot.commands.auton.Ball2AutonLimited;
 import frc.robot.commands.auton.Ball2AutonWithDefense;
 import frc.robot.commands.auton.Ball3Auton;
 
