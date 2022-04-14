@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands.auton;
+package frc.robot.commands.Auton;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
@@ -33,7 +33,7 @@ public class Ball1Auton extends SequentialCommandGroup {
           new LaunchTarmac(launcher).withTimeout(0.25).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))),
         // Moves out of tarmac and intakes Ball 2
         new ParallelDeadlineGroup(
-          new WaitCommand(0.55), // Changed from 1.1 to 0.55
+          new WaitCommand(0.60), // Changed from 1.1 to 0.55
           new IntakeSpeed(intakeMotor, 0.5),
           new DriveCommand(drivetrain, () -> {return 2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // Changed from 1.0 to 2.0
           new IntakeSpeed(intakeMotor, 0.5).withTimeout(1)

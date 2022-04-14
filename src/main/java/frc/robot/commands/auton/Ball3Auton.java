@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands.auton;
+package frc.robot.commands.Auton;
 
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
@@ -34,20 +34,22 @@ public class Ball3Auton extends SequentialCommandGroup {
       new Ball2Auton(drivetrain, indexMotors, intakeMotor, launcher),
       // Back up towards hub
        new ParallelDeadlineGroup(
-        new WaitCommand(0.5), // 0.5 -> 0.25
-        new DriveCommand(drivetrain, () -> {return -2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // 1.0 -> 2.0
+        new WaitCommand(0.55), // 0.5 -> 0.25
+        new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // 1.0 -> 2.0
 
       // Do a "backup turn" to the right towards ball 3
-      new TurnToDegrees(drivetrain, -90), // was -90. Close enough pre-event
+      new TurnToDegrees(drivetrain, -70), // was -90. Close enough pre-event
 
       // Drive towards ball 3 with intake running
       new ParallelDeadlineGroup(
-        new WaitCommand(1.625), // 3.25 -> 1.625
+        new WaitCommand(1.7), // 3.25 -> 1.625
         new IntakeSpeed(intakeMotor, 0.5),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -2.0;}, () -> {return 0.0;})), // 1.0 -> 2.00
+        
+        new IntakeSpeed(intakeMotor, 0.5).withTimeout(1),
 
       // Launch Autononmous Ball 3
-      new TurnToDegrees(drivetrain, -49), // manual turn on the robot gyro read -49. Good enough for government work      // Launches ball 3
+      new TurnToDegrees(drivetrain, -54), // -49 overturned, changed to -54     // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
 

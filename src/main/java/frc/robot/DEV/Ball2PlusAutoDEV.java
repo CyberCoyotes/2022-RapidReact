@@ -12,7 +12,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.TurnToDegrees;
-import frc.robot.commands.auton.Ball2Auton;
+import frc.robot.commands.Auton.Ball2Auton;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 // import frc.robot.Limelight;

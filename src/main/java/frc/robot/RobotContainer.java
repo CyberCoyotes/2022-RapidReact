@@ -26,6 +26,10 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.ResetGyro;
+import frc.robot.commands.Auton.Ball1Auton;
+import frc.robot.commands.Auton.Ball2Auton;
+import frc.robot.commands.Auton.Ball2AutonWithDefense;
+import frc.robot.commands.Auton.Ball3Auton;
 import frc.robot.commands.CommandGroups.GroupHighGoal;
 import frc.robot.commands.CommandGroups.GroupLowGoal;
 import frc.robot.commands.Launcher.setLaunchSpeed;
@@ -34,10 +38,6 @@ import frc.robot.commands.Launcher.LaunchSemiAutomatic;
 import frc.robot.commands.Lift.AutoLiftCommandBar1;
 import frc.robot.commands.Lift.AutoLiftCommandBar2;
 import frc.robot.commands.Lift.LiftCommand;
-import frc.robot.commands.auton.Ball1Auton;
-import frc.robot.commands.auton.Ball2Auton;
-import frc.robot.commands.auton.Ball2AutonWithDefense;
-import frc.robot.commands.auton.Ball3Auton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a

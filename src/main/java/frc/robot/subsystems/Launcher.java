@@ -96,8 +96,8 @@ public class Launcher extends SubsystemBase {
   
   // Set inside Tarmac speed. Robot lined up approximately with intake bumper at the edge of the tarmac tape
   public void setTarmacLaunch() {
-    frontLauncherMotor.set(ControlMode.PercentOutput, 0.36);
-    backLauncherMotor.set(ControlMode.PercentOutput, 0.42);
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.32);
+    backLauncherMotor.set(ControlMode.PercentOutput, 0.40);
   }
 
   // Set LOW goal speed
