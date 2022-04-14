@@ -52,6 +52,7 @@ public class Ball3Auton extends SequentialCommandGroup {
       new TurnToDegrees(drivetrain, -54), // -49 overturned, changed to -54     // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25)),
+
       //continue to run launcher in case there is another ball in the chamber
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25)),
