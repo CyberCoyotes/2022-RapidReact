@@ -114,7 +114,7 @@ public class Launcher extends SubsystemBase {
 
   // Set for 3rd ball pickup spot
   public void setAuton3Launch() {
-    frontLauncherMotor.set(ControlMode.PercentOutput, 0.68); //0.65 hit the front rim of Hub, changing to 0.68
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.70); //0.65 hit the front rim of Hub, changing to 0.68, changed again to 0.70
     backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
   }
   

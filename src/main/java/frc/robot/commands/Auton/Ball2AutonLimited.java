@@ -32,7 +32,7 @@ public class Ball2AutonLimited extends SequentialCommandGroup {
       new Ball1Auton(indexMotors, intakeMotor, launcher, drivetrain),
       // Launches second cargo
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchAutonBall2(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+      new LaunchAutonBall2(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25)),
 
       // Drive further away from goal after launch
       new ParallelDeadlineGroup(

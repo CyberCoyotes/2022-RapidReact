@@ -26,7 +26,7 @@ public class Ball2Auton extends SequentialCommandGroup {
       new Ball1Auton(indexMotors, intakeMotor, launcher, drivetrain),
       // Launches Ball 2 
       new PreLaunch(launcher).withTimeout(0.5),
-      new LaunchAutonBall2(launcher).withTimeout(0.5).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))
+      new LaunchAutonBall2(launcher).withTimeout(0.5).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25))
     ); // End of addCommands
   }
 }

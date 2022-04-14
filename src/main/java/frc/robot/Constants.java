@@ -119,10 +119,10 @@ public final class Constants {
     
     // Update values at Event Field
     public static final class VisionRange {
-     public static double txMin = -5;
-     public static double txMax = 5;
-     public static double tyMin = 10;
-     public static double tyMax = 15;
+     public static double txMin = -3; // previously -5 to 5 was OK. Should be a tighter range with 3s
+     public static double txMax = 3;
+     public static double tyMin = 17; // previous 10 - 14 was putting us way to far out shooting
+     public static double tyMax = 21;
     }
     
     /**

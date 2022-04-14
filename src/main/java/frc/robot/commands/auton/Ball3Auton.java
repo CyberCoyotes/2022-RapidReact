@@ -43,20 +43,24 @@ public class Ball3Auton extends SequentialCommandGroup {
       // Drive towards ball 3 with intake running
       new ParallelDeadlineGroup(
         new WaitCommand(1.7), // 3.25 -> 1.625
-        new IntakeSpeed(intakeMotor, 0.5),
+        new IntakeSpeed(intakeMotor, 0.6),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -2.0;}, () -> {return 0.0;})), // 1.0 -> 2.00
         
-        new IntakeSpeed(intakeMotor, 0.5).withTimeout(1),
+        new IntakeSpeed(intakeMotor, 0.6).withTimeout(1),
 
       // Launch Autononmous Ball 3
       new TurnToDegrees(drivetrain, -54), // -49 overturned, changed to -54     // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25)),
+      new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25)),
+      //continue to run launcher in case there is another ball in the chamber
+      new PreLaunch(launcher).withTimeout(0.75),
+      new LaunchAutonBall3(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25)),
+
 
       //Turn robot towards goal, i.e. "Forward" field orientation, and reset gyro in preperation for auton
       new SequentialCommandGroup(
         new WaitCommand(0.5), // Change from 1 to 0.5
-        new TurnToDegrees(drivetrain, 130),
+        new TurnToDegrees(drivetrain, 90), // Change from 130 to 90
         new ResetGyro(drivetrain))        
         ); // End of commands
   }

@@ -207,11 +207,11 @@ public class RobotContainer {
     ));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
-    d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
+    d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.6));
     d_RightBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
     // Hold left bumper to manually Intake cargo back to the field, release to stop motors
-    d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.5));
+    d_LeftBumper.whenPressed(new IntakeSpeed(intakeMotor, 0.6));
     d_LeftBumper.whenReleased(new IntakeSpeed(intakeMotor, 0.0));
 
 

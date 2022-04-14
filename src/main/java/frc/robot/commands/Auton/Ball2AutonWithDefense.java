@@ -45,7 +45,7 @@ public class Ball2AutonWithDefense extends SequentialCommandGroup {
       // Drive towards ball 3 with intake running
       new ParallelDeadlineGroup(
         new WaitCommand(1.625), // 3.25 -> 1.625
-        new IntakeSpeed(intakeMotor, 0.5),
+        new IntakeSpeed(intakeMotor, 0.6),
         new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -2.0;}, () -> {return 0.0;})), // 1.0 -> 2.00
 
       //Turn robot towards goal, i.e. "Forward" field orientation, and reset gyro in preperation for auton
@@ -57,7 +57,7 @@ public class Ball2AutonWithDefense extends SequentialCommandGroup {
       // Launch other alliance's ball into corner
       new TurnToDegrees(drivetrain, -49), // manual turn on the robot gyro read -49. Good enough for government work      // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
-      new LaunchLow(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))
+      new LaunchLow(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25))
 
         ); // End of commands
   }
