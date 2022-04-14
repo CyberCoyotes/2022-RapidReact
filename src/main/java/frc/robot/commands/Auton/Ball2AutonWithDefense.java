@@ -19,7 +19,7 @@ import frc.robot.commands.Launcher.PreLaunch;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Launcher;
 
-/**  Auton file name for Auton Chooser = 2 Ball with Defense
+/**  Auton file name for Auton Chooser = 2 Ball + Defense
  *   
  *   This command shoots the pre-loaded cargo ball, 
  *   then robot drives out of the tarmac and picks up and shoots a 2nd cargo ball,
@@ -34,28 +34,24 @@ public class Ball2AutonWithDefense extends SequentialCommandGroup {
     addCommands(
       // Two ball auton, pick up third, and lined up for third shot
       new Ball2Auton(drivetrain, indexMotors, intakeMotor, launcher),
-      // Back up towards hub
-       new ParallelDeadlineGroup(
-        new WaitCommand(0.5), // 0.5 -> 0.25
-        new DriveCommand(drivetrain, () -> {return -2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // 1.0 -> 2.0
 
-      // Do a "backup turn" to the right towards ball 3
+      // Do a "backup turn" to the right towards opposite team ball
       new TurnToDegrees(drivetrain, -90), // was -90. Close enough pre-event
 
-      // Drive towards ball 3 with intake running
+      // Drive towards opposite team ball with intake running
       new ParallelDeadlineGroup(
-        new WaitCommand(1.625), // 3.25 -> 1.625
-        new IntakeSpeed(intakeMotor, 0.6),
-        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return -2.0;}, () -> {return 0.0;})), // 1.0 -> 2.00
+          new WaitCommand(0.60), // Changed from 1.1 to 0.60
+          new IntakeSpeed(intakeMotor, 0.6),
+          new DriveCommand(drivetrain, () -> {return 2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // Changed from 1.0 to 2.0
+          new IntakeSpeed(intakeMotor, 0.6).withTimeout(1),
 
-      //Turn robot towards goal, i.e. "Forward" field orientation, and reset gyro in preperation for auton
+      //Turn robot towards goal, i.e. "Forward" field orientation, and reset gyro in preperation for teleop
       new SequentialCommandGroup(
         new WaitCommand(0.5), // Change from 1 to 0.5
         new TurnToDegrees(drivetrain, 130),
         new ResetGyro(drivetrain)),
         
       // Launch other alliance's ball into corner
-      new TurnToDegrees(drivetrain, -49), // manual turn on the robot gyro read -49. Good enough for government work      // Launches ball 3
       new PreLaunch(launcher).withTimeout(0.75),
       new LaunchLow(launcher).withTimeout(0.75).alongWith(new IndexSpeed(indexMotors, 0.6).withTimeout(0.25))
 
