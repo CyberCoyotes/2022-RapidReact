@@ -161,28 +161,11 @@ public class RobotContainer {
     d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
     // Group Command for LOW HOOP goal
-<<<<<<< HEAD
-    d_ButtonA.whileHeld(new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
-
-      /** Original low goal sequence, since moved to GroupLowGoal and GroupLowGoalX
-       new SequentialCommandGroup(
-        new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
-          new SequentialCommandGroup(
-            new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
-                new ParallelCommandGroup (
-                  new setLaunchSpeed(launcher, 0.25, 0.25),
-                  new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5)))
-       )
-       */
-=======
     d_ButtonA.whileHeld(
       new ParallelCommandGroup(
         new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
         new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain)
       ));
->>>>>>> dev-LimelightXwing
     
       //stops all 3 motors when A button released
       d_ButtonA.whenReleased(new ParallelCommandGroup(
