@@ -59,8 +59,8 @@ public class Ball3Auton extends SequentialCommandGroup {
 
       //Turn robot towards goal, i.e. "Forward" field orientation, and reset gyro in preperation for auton
       new SequentialCommandGroup(
-        new WaitCommand(0.5), // Change from 1 to 0.5
-        new TurnToDegrees(drivetrain, 90), // Change from 130 to 90
+        new WaitCommand(0.5), // Changed from 1 to 0.5
+        new TurnToDegrees(drivetrain, 90), // Changed from 130 to 90
         new ResetGyro(drivetrain))        
         ); // End of commands
   }
