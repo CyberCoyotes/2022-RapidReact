@@ -21,11 +21,15 @@ public class TurnToDegrees extends CommandBase {
     m_speed = 2.0; // Changed from 0.7 to 2.0
   }
 
+  // TODO Test Commenting out second block. Shouldn't be needed b/c we're using a set speed
+
+  /** 
   public TurnToDegrees(Drivetrain drivetrain, double target_angle, double speed) {
     m_drivetrain = drivetrain;
     m_target_angle = target_angle;
     m_speed = speed;
   }
+  */
 
   // Called when the command is initially scheduled.
   @Override

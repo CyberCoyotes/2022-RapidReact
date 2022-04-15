@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
@@ -162,33 +163,25 @@ public class RobotContainer {
 
     // Group Command for LOW HOOP goal
     d_ButtonA.whileHeld(new GroupLowGoal(launcher, intakeMotor, indexMotors, m_drivetrain));
-
-      /** Original low goal sequence, since moved to GroupLowGoal and GroupLowGoalX
-       new SequentialCommandGroup(
-        new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
-          new SequentialCommandGroup(
-            new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
-              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
-                new ParallelCommandGroup (
-                  new setLaunchSpeed(launcher, 0.25, 0.25),
-                  new IntakeSpeed(intakeMotor, 0.5),
-                  new IndexSpeed(indexMotors, 0.5)))
-       )
-       */
     
       //stops all 3 motors when A button released
-      d_ButtonA.whenReleased(new ParallelCommandGroup(
-        new IntakeSpeed(intakeMotor, 0.0),
-        new IndexSpeed(indexMotors, 0.0),
-        new setLaunchSpeed(launcher, 0.0, 0.0))
-      );
+    d_ButtonA.whenReleased(new ParallelCommandGroup(
+      new IntakeSpeed(intakeMotor, 0.0),
+      new IndexSpeed(indexMotors, 0.0),
+      new setLaunchSpeed(launcher, 0.0, 0.0))
+    );
 
      /**  HIGH HOOP EDGE OF TARMAC LAUNCH SEQUENCE
        when Y is held, run Launch motors by themselves for 0.75 seconds, then run Launch and Index motors for 0.25 seconds,
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-    d_ButtonY.whileHeld(new GroupHighGoal(launcher, intakeMotor, indexMotors));
+    d_ButtonY.whileHeld(
+      new ParallelCommandGroup(
+        new InstantCommand(() -> m_drivetrain.enableXwing(), m_drivetrain),  
+        new GroupHighGoal(launcher, intakeMotor, indexMotors)
+        ) // End parallel commands
+      );
     
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(

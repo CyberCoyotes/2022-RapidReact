@@ -287,9 +287,16 @@ public class Drivetrain extends SubsystemBase {
     m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
       states[3].angle.getRadians());
 
- 
-      
+  // Add to Drivetrain.java for XWing
+  
 
-    } // End of periodic
+  } // End of periodic
+  
+  public void enableXwing() {
+    m_frontLeftModule.set(0, (Math.PI/2 - Math.atan(22.5 / 23.5)));
+    m_frontRightModule.set(0, (Math.PI/2 + Math.atan(22.5 / 23.5)));
+    m_backLeftModule.set(0, (Math.PI/2 + Math.atan(22.5 / 23.5)));
+    m_backRightModule.set(0, (3.0/2.0 * Math.PI - Math.atan(22.5 / 23.5)));
+  }
 
 } // END of class
