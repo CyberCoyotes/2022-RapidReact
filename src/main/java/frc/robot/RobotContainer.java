@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
@@ -26,18 +27,18 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IndexSpeed;
 import frc.robot.commands.IntakeSpeed;
 import frc.robot.commands.ResetGyro;
-import frc.robot.commands.commandgroups.GroupHighGoalX;
-import frc.robot.commands.commandgroups.GroupLowGoalX;
-import frc.robot.commands.launcher.setLaunchSpeed;
-import frc.robot.commands.launcher.AdaptiveLaunch;
-import frc.robot.commands.launcher.LaunchSemiAutomatic;
-import frc.robot.commands.lift.AutoLiftCommandBar1;
-import frc.robot.commands.lift.AutoLiftCommandBar2;
-import frc.robot.commands.lift.LiftCommand;
-import frc.robot.commands.auton.Ball1Auton;
-import frc.robot.commands.auton.Ball2Auton;
-import frc.robot.commands.auton.Ball2AutonLimited;
-import frc.robot.commands.auton.Ball3Auton;
+import frc.robot.commands.Auton.Ball1Auton;
+import frc.robot.commands.Auton.Ball2Auton;
+import frc.robot.commands.Auton.Ball2AutonLimited;
+import frc.robot.commands.Auton.Ball3Auton;
+import frc.robot.commands.CommandGroups.GroupHighGoalX;
+import frc.robot.commands.CommandGroups.GroupLowGoalX;
+import frc.robot.commands.Launcher.AdaptiveLaunch;
+import frc.robot.commands.Launcher.LaunchSemiAutomatic;
+import frc.robot.commands.Launcher.setLaunchSpeed;
+import frc.robot.commands.Lift.AutoLiftCommandBar1;
+import frc.robot.commands.Lift.AutoLiftCommandBar2;
+import frc.robot.commands.Lift.LiftCommand;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -179,32 +180,31 @@ public class RobotContainer {
        then finally run all 3 motors at once. release button to stop all motors */
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
-<<<<<<< HEAD
-    d_ButtonY.whileHeld(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
-    
-=======
 
     d_ButtonY.whileHeld(
       new ParallelCommandGroup(
         new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
-        new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain)
+        new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain),
+        new InstantCommand(() -> m_drivetrain.enableXstance())
     ));
 
->>>>>>> dev-LimelightXwing
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
+      
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0))
+      new setLaunchSpeed(launcher, 0.0, 0.0),
+      new InstantCommand(() -> m_drivetrain.disableXstance()))
       );
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop WITH an xmode component
-    d_ButtonX.whileHeld(new AdaptiveLaunch(launcher, limelight));
+    d_ButtonX.whileHeld(new ParallelCommandGroup(new AdaptiveLaunch(launcher, limelight), new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain)));
 
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0)
+      new setLaunchSpeed(launcher, 0.0, 0.0),
+      new InstantCommand(() -> m_drivetrain.disableXstance())
     ));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors

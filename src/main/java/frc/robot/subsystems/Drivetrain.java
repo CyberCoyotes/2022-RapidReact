@@ -243,7 +243,7 @@ public class Drivetrain extends SubsystemBase {
   // Added for XWing
   public void drive(double translationXSupplier, double translationYSupplier, double rotationSupplier, Rotation2d rotation2d) {
       if (isXstance) {
-          this.setXStance();
+          return;
       } else { 
           m_chassisSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(
               translationXSupplier,
@@ -320,7 +320,9 @@ public class Drivetrain extends SubsystemBase {
 
   @Override
   public void periodic() {
-
+    if(isXstance()){
+      setXStance();
+    }
     //defining states - Repeatedly update
     /* Displays ChassisSpeed in Meters per Second  
     System.out.print("X m/s: " + m_chassisSpeeds.vxMetersPerSecond);
@@ -359,7 +361,8 @@ public class Drivetrain extends SubsystemBase {
       states[3].angle.getRadians());
     }
 
-  // Added for XWing
+  //:Added for XWing
+  //:This works(without having a seizure like v1) by setting the modules, rather than setting the entire drive via setmodulestates.
   public void setXStance() {
         m_frontLeftModule.set(0, (Math.PI/2 - Math.atan(22.5 / 23.5)));
         m_frontRightModule.set(0, (Math.PI/2 + Math.atan(22.5 / 23.5)));
@@ -381,4 +384,4 @@ public class Drivetrain extends SubsystemBase {
         return isXstance;
   }  
 
-} // END of class
+} // END of drive
