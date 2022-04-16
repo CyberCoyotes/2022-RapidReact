@@ -19,6 +19,7 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.robot.Constants.*;
 
@@ -96,7 +97,7 @@ public class Drivetrain extends SubsystemBase {
   private final SwerveModule m_backRightModule;
   
   // Added for xWing
-  private boolean isXstance;
+  private boolean isXstance = false;
 
   
 
@@ -119,7 +120,7 @@ public class Drivetrain extends SubsystemBase {
 
     // Added for XWing
     this.isXstance = false;
-
+    
 
     ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
     // Added from #5804
@@ -320,8 +321,10 @@ public class Drivetrain extends SubsystemBase {
 
   @Override
   public void periodic() {
+    SmartDashboard.putBoolean("xmode", isXstance());
     if(isXstance()){
       setXStance();
+      return;
     }
     //defining states - Repeatedly update
     /* Displays ChassisSpeed in Meters per Second  
