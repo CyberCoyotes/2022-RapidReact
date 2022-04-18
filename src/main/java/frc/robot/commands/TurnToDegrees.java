@@ -18,7 +18,7 @@ public class TurnToDegrees extends CommandBase {
     m_drivetrain = drivetrain;
     m_target_angle = target_angle;
     // Adjust speed of turns here if needed
-    m_speed = 2.0; // Changed from 0.7 to 2.0
+    m_speed = 1.0; // Changed from 2.0 to 1.0
   }
 
   public TurnToDegrees(Drivetrain drivetrain, double target_angle, double speed) {
