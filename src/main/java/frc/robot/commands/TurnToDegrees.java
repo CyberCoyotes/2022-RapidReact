@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
@@ -17,8 +16,13 @@ public class TurnToDegrees extends CommandBase {
   public TurnToDegrees(Drivetrain drivetrain, double target_angle) {
     m_drivetrain = drivetrain;
     m_target_angle = target_angle;
+<<<<<<< HEAD
     // Adjust speed of turns here if needed
     m_speed = 1.0; // Changed from 2.0 to 1.0
+=======
+    // Adjust speed (m/s) of turns here if needed
+    m_speed = 2.0;
+>>>>>>> dev
   }
 
   public TurnToDegrees(Drivetrain drivetrain, double target_angle, double speed) {
@@ -37,20 +41,16 @@ public class TurnToDegrees extends CommandBase {
   @Override
   public void execute() {
     m_drivetrain.drive(
-                ChassisSpeeds.fromFieldRelativeSpeeds(
-                        0,
-                        0,
-                        // This might need a negative, but testing on cart seemed to correctly turn robot left with positive angles, right with negative angles
-                        Math.signum(m_target_angle - m_drivetrain.getRawRoation())*m_speed,
-                        m_drivetrain.getGyroscopeRotation()
-                )
+          // This might need a negative, but testing on cart seemed to correctly turn robot left with positive angles, right with negative angles
+          Math.signum(m_target_angle - m_drivetrain.getRawRoation())*m_speed,
+          m_speed, m_speed, m_drivetrain.getGyroscopeRotation()
         );
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_drivetrain.drive(new ChassisSpeeds(0.0, 0.0, 0.0));
+    m_drivetrain.stopDrive();
   }
 
   // Returns true when the command should end.

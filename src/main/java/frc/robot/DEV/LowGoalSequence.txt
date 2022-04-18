@@ -1,0 +1,13 @@
+Original low goal sequence that was in RobotContainer.java
+It's since moved to GroupLowGoal and GroupLowGoalX
+
+       new SequentialCommandGroup(
+        new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(1),
+          new SequentialCommandGroup(
+            new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.5).alongWith(
+              new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
+                new ParallelCommandGroup (
+                  new setLaunchSpeed(launcher, 0.25, 0.25),
+                  new IntakeSpeed(intakeMotor, 0.5),
+                  new IndexSpeed(indexMotors, 0.5)))
+       )

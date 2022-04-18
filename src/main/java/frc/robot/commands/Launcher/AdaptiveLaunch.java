@@ -5,7 +5,7 @@
 package frc.robot.commands.Launcher;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Interpolator_v2;
+import frc.robot.Interpolator;
 import frc.robot.Limelight;
 import frc.robot.subsystems.Launcher;
 
@@ -31,14 +31,17 @@ public class AdaptiveLaunch extends CommandBase {
 
     if(limelight.hasValidTarget()) {
       double yAngle = limelight.getY();
-      double speedFront = Interpolator_v2.getFrontSpeed(yAngle);
-      double speedBack = Interpolator_v2.getBackSpeed(yAngle);
+      double speedFront = Interpolator.getFrontSpeed(yAngle);
+      System.out.println("Front launch output" + speedFront);
+      double speedBack = Interpolator.getBackSpeed(yAngle);
+      System.out.println("Back launch output" + speedBack);
       subsystem.setLauncherSpeed(speedFront, speedBack);
     } else {
       subsystem.setLauncherSpeed(0.35, 0.40); // Split the tape launching, seems to be defaulting to this so that's good
     }
   }
 
+  
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {

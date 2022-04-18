@@ -1,13 +1,18 @@
 package frc.robot.commands.CommandGroups;
 
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.subsystems.Launcher;
-import frc.robot.commands.Launcher.xmode;
+import frc.robot.commands.IndexSpeed;
+import frc.robot.commands.IntakeSpeed;
+import frc.robot.commands.Launcher.setLaunchSpeed;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Index;
 import frc.robot.subsystems.Intake;
-
-public class GroupLowGoalX extends ParallelCommandGroup {
+/**
+ * Do not use: further testing required for XMode alone before anything can be used.
+ */
+public class GroupLowGoalX extends SequentialCommandGroup {
 /**
  * Xmode Combined with the button-bound launch commnad; lasts for a set period of time.
  * @param m_drivetrain
@@ -18,9 +23,18 @@ public class GroupLowGoalX extends ParallelCommandGroup {
   public GroupLowGoalX(Launcher launcher, Intake intakeMotor, Index indexMotors, Drivetrain m_drivetrain) {
       
       addCommands(
-        new GroupLowGoal(launcher, intakeMotor, indexMotors, m_drivetrain),
-        // Aligns wheels into x pattern so robot isn't pushed around
-        new xmode(m_drivetrain)
+      new setLaunchSpeed(launcher, 0.20, 0.20).withTimeout(0.75),
+      
+      // Launch Ball 1
+      new SequentialCommandGroup(
+        new setLaunchSpeed(launcher, 0.20, 0.25).withTimeout(0.25).alongWith(
+        new IndexSpeed(indexMotors, 0.5).withTimeout(0.5)),
+
+      // Launches Ball 2 from up close
+      new ParallelCommandGroup (
+        new setLaunchSpeed(launcher, 0.36, 0.42),
+        new IntakeSpeed(intakeMotor, 0.5),
+        new IndexSpeed(indexMotors, 0.5)))
         );
   }
 } // End class
