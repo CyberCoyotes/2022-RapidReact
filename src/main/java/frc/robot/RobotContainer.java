@@ -12,32 +12,21 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
-
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+
+/**  Since we are doing folders, this wildcard(*) syntax will work to import everything
+  in that folder. Saves some lines of code */
+
 // Subsystem imports
-import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Index;
-import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.Launcher;
-import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.*;
 // Command imports
-import frc.robot.commands.DriveCommand;
-import frc.robot.commands.IndexSpeed;
-import frc.robot.commands.IntakeSpeed;
-import frc.robot.commands.ResetGyro;
-import frc.robot.commands.Auton.Ball1Auton;
-import frc.robot.commands.Auton.Ball2Auton;
-import frc.robot.commands.Auton.Ball2AutonWithDefense;
-import frc.robot.commands.Auton.Ball3Auton;
-import frc.robot.commands.CommandGroups.GroupHighGoal;
-import frc.robot.commands.CommandGroups.GroupLowGoal;
-import frc.robot.commands.Launcher.setLaunchSpeed;
-import frc.robot.commands.Launcher.AdaptiveLaunch;
-import frc.robot.commands.Launcher.LaunchSemiAutomatic;
-import frc.robot.commands.Lift.AutoLiftCommandBar1;
-import frc.robot.commands.Lift.AutoLiftCommandBar2;
-import frc.robot.commands.Lift.LiftCommand;
+import frc.robot.commands.*;
+import frc.robot.commands.CommandGroups.*;
+import frc.robot.commands.Launcher.*;
+import frc.robot.commands.Lift.*;
+// Auton imports
+import frc.robot.commands.Auton.*;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -112,7 +101,10 @@ public class RobotContainer {
       new Ball2AutonWithDefense(m_drivetrain, indexMotors, intakeMotor, launcher));
     
     autonChooser.setDefaultOption("3 Ball",
-      new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
+      new Ball3AutonTurnToDegrees(m_drivetrain, indexMotors, intakeMotor, launcher));
+
+    autonChooser.addOption("3 Ball ROLLBACK CODE",
+      new Ball3AutonTIMER(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
     Shuffleboard.getTab("Auton").add(autonChooser).withSize(2, 4);

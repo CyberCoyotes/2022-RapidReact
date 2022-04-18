@@ -26,8 +26,8 @@ import frc.robot.subsystems.Launcher;
  *   then robot turns right and drives to picks up and shoots a 3rd cargo ball
 */
 
-public class Ball3Auton extends SequentialCommandGroup {
-  public Ball3Auton(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
+public class Ball3AutonTurnToDegrees extends SequentialCommandGroup {
+  public Ball3AutonTurnToDegrees(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
 
     addCommands(
       // Two ball auton, pick up third, and lined up for third shot
