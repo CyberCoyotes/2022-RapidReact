@@ -108,7 +108,7 @@ public class Launcher extends SubsystemBase {
 
    // Set for bumper on outside tarmac
    public void setAuton2Launch() {
-    frontLauncherMotor.set(ControlMode.PercentOutput, 0.60);
+    frontLauncherMotor.set(ControlMode.PercentOutput, 0.70); // TODO Changed for zip tied intake
     backLauncherMotor.set(ControlMode.PercentOutput, 0.30);
   }
 

@@ -33,7 +33,7 @@ public class Ball1Auton extends SequentialCommandGroup {
           new LaunchTarmac(launcher).withTimeout(0.25).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))),
         // Moves out of tarmac and intakes Ball 2
         new ParallelDeadlineGroup(
-          new WaitCommand(0.60), // Changed from 1.1 to 0.55
+          new WaitCommand(0.60), 
           new IntakeSpeed(intakeMotor, 0.6),
           new DriveCommand(drivetrain, () -> {return 2.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // Changed from 1.0 to 2.0
           new IntakeSpeed(intakeMotor, 0.6).withTimeout(1)
