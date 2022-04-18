@@ -323,20 +323,21 @@ public class Drivetrain extends SubsystemBase {
   public void periodic() {
     SmartDashboard.putBoolean("xmode", isXstance());
     if(isXstance()){
+      //:We likely don't actually need to call this since all drive code is being supressed thanks to XStance, but we can cross that bridge when THIS works
       setXStance();
       return;
     }
-    //defining states - Repeatedly update
+    //:defining states - Repeatedly update
     /* Displays ChassisSpeed in Meters per Second  
     System.out.print("X m/s: " + m_chassisSpeeds.vxMetersPerSecond);
     System.out.print("Y m/s: " + m_chassisSpeeds.vyMetersPerSecond);
     System.out.println("Rot: " + m_chassisSpeeds.omegaRadiansPerSecond);
     **/
 
-    // REMOVED SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
+    //! REMOVED SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
     
-    // removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
-    // and changed the first param from itself(states) to the chassisspeeds object 
+    //: removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
+    //: and changed the first param from itself(states) to the chassisspeeds object 
     
     // Updates the odometer constantly
     odometer.update(this.getGyroscopeRotation(),
@@ -351,7 +352,7 @@ public class Drivetrain extends SubsystemBase {
               new Rotation2d(m_backRightModule.getSteerAngle())));
   }
 
-  // Added for XWing
+  //: Added for XWing
   public void setSwerveModuleStates(SwerveModuleState[] states) {
     SwerveDriveKinematics.desaturateWheelSpeeds(states, MAX_VELOCITY_METERS_PER_SECOND);
     m_frontLeftModule.set(states[0].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
@@ -373,7 +374,7 @@ public class Drivetrain extends SubsystemBase {
         m_backRightModule.set(0, (3.0/2.0 * Math.PI - Math.atan(22.5 / 23.5)));
   }
 
-  // Added for XWing
+  //: Added for XWing
   public void enableXstance() {
         this.isXstance = true;
         this.setXStance();
@@ -387,4 +388,4 @@ public class Drivetrain extends SubsystemBase {
         return isXstance;
   }  
 
-} // END of drive
+} //: END of drive
