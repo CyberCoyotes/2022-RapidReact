@@ -268,7 +268,7 @@ public class Drivetrain extends SubsystemBase {
 
 
   public void setModuleStates(SwerveModuleState[] states) {
-      // Changed to states -> desiredStates  
+     
       // Ensures we aren't going past the speed that we should be going
         SwerveDriveKinematics.desaturateWheelSpeeds(states, MAX_VELOCITY_METERS_PER_SECOND);
         odometry.update(getGyroscopeRotation(), states);
@@ -289,29 +289,7 @@ public class Drivetrain extends SubsystemBase {
         states[2].speedMetersPerSecond = Math.abs(m_backLeftModule.getDriveVelocity());
         states[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
 
-      // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
-        // driveTab.add("Raw Angle", getRawRoation());
-        // driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
-        // .withWidget(BuiltInWidgets.kGyro
-        // SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
-        // driveTab.add("Current X", getPose().getX()); 
-        // driveTab.add("Current Y", getPose().getY());
-
-
   } // end of setModulesStates
-
-        // https://github.com/5804/rapidReact2022Alpha/blob/master/src/main/java/frc/robot/subsystems/DrivetrainSubsystem.java
-  /** public void setDefenseDrivetrain(){
-    setModuleStates(
-      new SwerveModuleState[]{
-      new SwerveModuleState(0, Rotation2d.fromDegrees(45)),
-      new SwerveModuleState(0, Rotation2d.fromDegrees(-45)),
-      new SwerveModuleState(0, Rotation2d.fromDegrees(-45)),
-      new SwerveModuleState(0, Rotation2d.fromDegrees(45))
-      }
-    );
-  }
-  **/
 
   public void stopDrive() {
     m_chassisSpeeds = new ChassisSpeeds(0.0, 0.0, 0.0);
@@ -326,18 +304,7 @@ public class Drivetrain extends SubsystemBase {
       //:We likely don't actually need to call this since all drive code is being supressed thanks to XStance, but we can cross that bridge when THIS works
       setXStance();
       return;
-    }
-    //:defining states - Repeatedly update
-    /* Displays ChassisSpeed in Meters per Second  
-    System.out.print("X m/s: " + m_chassisSpeeds.vxMetersPerSecond);
-    System.out.print("Y m/s: " + m_chassisSpeeds.vyMetersPerSecond);
-    System.out.println("Rot: " + m_chassisSpeeds.omegaRadiansPerSecond);
-    **/
-
-    //! REMOVED SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
-    
-    //: removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
-    //: and changed the first param from itself(states) to the chassisspeeds object 
+    }    
     
     // Updates the odometer constantly
     odometer.update(this.getGyroscopeRotation(),
@@ -388,4 +355,4 @@ public class Drivetrain extends SubsystemBase {
         return isXstance;
   }  
 
-} //: END of drive
+} //: END of drivetrain
