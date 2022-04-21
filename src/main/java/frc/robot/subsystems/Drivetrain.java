@@ -19,7 +19,6 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.robot.Constants.*;
 
@@ -96,11 +95,6 @@ public class Drivetrain extends SubsystemBase {
   private final SwerveModule m_backLeftModule;
   private final SwerveModule m_backRightModule;
   
-  // Added for xWing
-  private boolean isXstance = false;
-
-  
-
   // Added from #5804
   Pose2d targetPose;
 
@@ -114,18 +108,10 @@ public class Drivetrain extends SubsystemBase {
     new SwerveDriveOdometry(m_kinematics, getGyroscopeRotation());;
   //
 
-  public Drivetrain() {
-    // ShuffleboardTab tab = Shuffleboard.getTab("Drivetrain");
-    // ShuffleboardTab tabMain = Shuffleboard.getTab("MAIN");
-
-    // Added for XWing
-    this.isXstance = false;
-    
-
+  public Drivetrain() {    
     ShuffleboardTab driveTab = Shuffleboard.getTab("Drivetrain");
     // Added from #5804
     thetaController.enableContinuousInput(-Math.PI, Math.PI);
-
 
     // Setup motor configuration
     m_frontLeftModule = Mk3SwerveModuleHelper.createFalcon500(
@@ -179,13 +165,6 @@ public class Drivetrain extends SubsystemBase {
             BACK_RIGHT_MODULE_STEER_OFFSET
     );
     
-    // Added for XWing
-    // tabMain.addBoolean("isXstance", this :: isXstance);
-    
-    // Added for XWing
-    // tab.add("Enable XStance", new InstantCommand(() -> this.enableXstance()));
-    // tab.add("Disable XStance", new InstantCommand(() -> this.disableXstance()));
-
   }
   
   //method to stop motors, used for auton
@@ -199,11 +178,7 @@ public class Drivetrain extends SubsystemBase {
     */
 
   
-  public boolean IsMoving()
-  {
-    return this.m_frontLeftModule.getDriveVelocity() != 0;
-  }
-  public void resetGyro() {
+    public void resetGyro() {
     m_navx.zeroYaw();
   }
 
@@ -234,38 +209,9 @@ public class Drivetrain extends SubsystemBase {
   }
 
   // Original drive method
-  /** 
   public void drive(ChassisSpeeds chassisSpeeds) {
     m_chassisSpeeds = chassisSpeeds;
   }
-   * @param rotation2d
-  */
-
-  // Added for XWing
-  public void drive(double translationXSupplier, double translationYSupplier, double rotationSupplier, Rotation2d rotation2d) {
-      if (isXstance) {
-          return;
-      } else { 
-          m_chassisSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(
-              translationXSupplier,
-              translationYSupplier,
-              rotationSupplier,
-              getGyroscopeRotation());
-          // SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds, centerGravity);
-          SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
-
-          // logStates(states);
-          m_frontLeftModule.set(states[0].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                          states[0].angle.getRadians());
-          m_frontRightModule.set(states[1].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                          states[1].angle.getRadians());
-          m_backLeftModule.set(states[2].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                          states[2].angle.getRadians());
-          m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
-                          states[3].angle.getRadians());
-      }
-  }
-
 
   public void setModuleStates(SwerveModuleState[] states) {
       // Changed to states -> desiredStates  
@@ -287,18 +233,13 @@ public class Drivetrain extends SubsystemBase {
         states[0].speedMetersPerSecond = Math.abs(m_frontLeftModule.getDriveVelocity());
         states[1].speedMetersPerSecond = Math.abs(m_frontRightModule.getDriveVelocity());
         states[2].speedMetersPerSecond = Math.abs(m_backLeftModule.getDriveVelocity());
-        states[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());     
+        states[3].speedMetersPerSecond = Math.abs(m_backRightModule.getDriveVelocity());
 
-      // ORIGINAL SmartDashboard.putNumber("Raw Angle", getRawRoation());
-        // driveTab.add("Raw Angle", getRawRoation());
-        // driveTab.add("Current Angle SDS", getGyroscopeRotation().getDegrees()); // From SDS default code
-        // .withWidget(BuiltInWidgets.kGyro
-        // SmartDashboard.putNumber("Current Angle", getPose().getRotation().getDegrees()); 
-        // driveTab.add("Current X", getPose().getX()); 
-        // driveTab.add("Current Y", getPose().getY());
+ 
 
 
-  } // end of setModulesStates
+  }
+  // end of setModulesStates
 
         // https://github.com/5804/rapidReact2022Alpha/blob/master/src/main/java/frc/robot/subsystems/DrivetrainSubsystem.java
   /** public void setDefenseDrivetrain(){
@@ -313,47 +254,26 @@ public class Drivetrain extends SubsystemBase {
   }
   **/
 
+  /** 
   public void stopDrive() {
     m_chassisSpeeds = new ChassisSpeeds(0.0, 0.0, 0.0);
     SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
     setSwerveModuleStates(states);
   }
+  */
 
   @Override
   public void periodic() {
-    SmartDashboard.putBoolean("xmode", isXstance());
-    if(isXstance()){
-      //:We likely don't actually need to call this since all drive code is being supressed thanks to XStance, but we can cross that bridge when THIS works
-      setXStance();
-      return;
-    }
-    //:defining states - Repeatedly update
-    /* Displays ChassisSpeed in Meters per Second  
-    System.out.print("X m/s: " + m_chassisSpeeds.vxMetersPerSecond);
-    System.out.print("Y m/s: " + m_chassisSpeeds.vyMetersPerSecond);
-    System.out.println("Rot: " + m_chassisSpeeds.omegaRadiansPerSecond);
-    **/
 
-    //! REMOVED SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
+    //defining states - Repeatedly update
+    SwerveModuleState[] states = m_kinematics.toSwerveModuleStates(m_chassisSpeeds);
+    // removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
+    // and changed the first param from itself(states) to the chassisspeeds object 
     
-    //: removed a second param of MAX_VELOCITY_METERS_PER_SECOND, 
-    //: and changed the first param from itself(states) to the chassisspeeds object 
-    
-    // Updates the odometer constantly
-    odometer.update(this.getGyroscopeRotation(),
-      // Added for XWing
-      new SwerveModuleState(m_frontLeftModule.getDriveVelocity(),
-              new Rotation2d(m_frontLeftModule.getSteerAngle())),
-      new SwerveModuleState(m_frontRightModule.getDriveVelocity(),
-              new Rotation2d(m_frontRightModule.getSteerAngle())),
-      new SwerveModuleState(m_backLeftModule.getDriveVelocity(),
-              new Rotation2d(m_backLeftModule.getSteerAngle())),
-      new SwerveModuleState(m_backRightModule.getDriveVelocity(),
-              new Rotation2d(m_backRightModule.getSteerAngle())));
-  }
-
-  //: Added for XWing
-  public void setSwerveModuleStates(SwerveModuleState[] states) {
+    // Updates the odometer constantly - removing for testing. Added back in
+    odometer.update(getGyroscopeRotation(), states);
+   
+    //This part is for TELEOP
     SwerveDriveKinematics.desaturateWheelSpeeds(states, MAX_VELOCITY_METERS_PER_SECOND);
     m_frontLeftModule.set(states[0].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
       states[0].angle.getRadians());
@@ -363,29 +283,7 @@ public class Drivetrain extends SubsystemBase {
       states[2].angle.getRadians());
     m_backRightModule.set(states[3].speedMetersPerSecond / MAX_VELOCITY_METERS_PER_SECOND * MAX_VOLTAGE,
       states[3].angle.getRadians());
-    }
 
-  //:Added for XWing
-  //:This works(without having a seizure like v1) by setting the modules, rather than setting the entire drive via setmodulestates.
-  public void setXStance() {
-        m_frontLeftModule.set(0, (Math.PI/2 - Math.atan(22.5 / 23.5)));
-        m_frontRightModule.set(0, (Math.PI/2 + Math.atan(22.5 / 23.5)));
-        m_backLeftModule.set(0, (Math.PI/2 + Math.atan(22.5 / 23.5)));
-        m_backRightModule.set(0, (3.0/2.0 * Math.PI - Math.atan(22.5 / 23.5)));
   }
-
-  //: Added for XWing
-  public void enableXstance() {
-        this.isXstance = true;
-        this.setXStance();
-  }
-  
-  public void disableXstance() {
-        this.isXstance = false;
-  }
-
-  public boolean isXstance() {
-        return isXstance;
-  }  
 
 } //: END of drive

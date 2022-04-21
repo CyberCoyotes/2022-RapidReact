@@ -9,13 +9,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 // Subsystem imports
 import frc.robot.subsystems.Drivetrain;
@@ -104,16 +102,10 @@ public class RobotContainer {
     autonChooser.addOption("1 Ball",
       new Ball1Auton(indexMotors, intakeMotor, launcher, m_drivetrain));
     
-    //autonChooser.addOption("1 Ball & Pickup 2nd",
-       //new CG_1BallPLUS(m_drivetrain, indexMotors, intakeMotor, launcher));
-    
-    autonChooser.addOption("2 Ball Limited + Drive straight",
-      new Ball2AutonLimited(m_drivetrain, indexMotors, intakeMotor, launcher));
-    
-    autonChooser.addOption("2 Ball",
+    autonChooser.setDefaultOption("2 Ball",
       new Ball2Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
     
-    autonChooser.setDefaultOption("3 Ball",
+    autonChooser.addOption("3 Ball",
       new Ball3Auton(m_drivetrain, indexMotors, intakeMotor, launcher));
 
     // Puts the chooser on the dashboard
@@ -132,7 +124,6 @@ public class RobotContainer {
     // SmartDashboard.putBoolean("Short Drive", autonShortDrive.isScheduled());
     // SmartDashboard.putBoolean("DriveCommand", driveCommand.isScheduled());
     // SmartDashboard.putBoolean("Target Status", targetStatus.isScheduled(0, 0, indexMotors));
-    SmartDashboard.putBoolean("XStance", m_drivetrain.isXstance());
   }
 
   private void configureButtonBindings() {
@@ -164,11 +155,7 @@ public class RobotContainer {
     d_BackButton.whenPressed(new ResetGyro(m_drivetrain));
 
     // Group Command for LOW HOOP goal
-    d_ButtonA.whileHeld(
-      new ParallelCommandGroup(
-        new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
-        new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain)
-      ));
+    d_ButtonA.whileHeld(new GroupLowGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
     
       //stops all 3 motors when A button released
       d_ButtonA.whenReleased(new ParallelCommandGroup(
@@ -183,31 +170,22 @@ public class RobotContainer {
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop
 
-    d_ButtonY.whileHeld(
-      new ParallelCommandGroup(
-        new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain),
-        new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain),
-        new InstantCommand(() -> m_drivetrain.enableXstance())
-    ));
+    d_ButtonY.whileHeld(new GroupHighGoalX(launcher, intakeMotor, indexMotors, m_drivetrain));
 
     //stops all 3 motors when Y button released
     d_ButtonY.whenReleased(new ParallelCommandGroup(
       
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0),
-      new InstantCommand(() -> m_drivetrain.disableXstance()))
-      );
+      new setLaunchSpeed(launcher, 0.0, 0.0)));
 
     // Goup command for preLaunch and launching of 2 balls from split-the-tape position in teleop WITH an xmode component
-    d_ButtonX.whileHeld(new ParallelCommandGroup(new AdaptiveLaunch(launcher, limelight), new InstantCommand(() -> m_drivetrain.setXStance(), m_drivetrain)));
+    d_ButtonX.whileHeld(new AdaptiveLaunch(launcher, limelight));
 
     d_ButtonX.whenReleased(new ParallelCommandGroup(
       new IntakeSpeed(intakeMotor, 0.0),
       new IndexSpeed(indexMotors, 0.0),
-      new setLaunchSpeed(launcher, 0.0, 0.0),
-      new InstantCommand(() -> m_drivetrain.disableXstance())
-    ));
+      new setLaunchSpeed(launcher, 0.0, 0.0)));
 
     // Hold right bumper to manually Reverses cargo from the field, release to stop motors
     d_RightBumper.whenPressed(new IntakeSpeed(intakeMotor, -0.5));
