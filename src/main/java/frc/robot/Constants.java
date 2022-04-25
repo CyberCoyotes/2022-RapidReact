@@ -117,7 +117,7 @@ public final class Constants {
          Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND);
     
     
-    // TODO Values need to be updated on the game Field
+    // Update values at Event Field
     public static final class VisionRange {
      public static double txMin = -5;
      public static double txMax = 5;

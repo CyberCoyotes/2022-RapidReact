@@ -8,7 +8,7 @@ public class IntakeSpeed extends CommandBase {
     // The subsystem the command runs on
     private final Intake subsystem;
   
-    private double speed = 0.25;
+    private double speed;
   
     public IntakeSpeed(Intake subsystem, double speed) {
       this.subsystem = subsystem;

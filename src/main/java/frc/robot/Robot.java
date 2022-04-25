@@ -88,28 +88,6 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().run();
     m_robotContainer.debugMethod();
 
-    double TX = tx.getDouble(0.0);
-    double TY = ty.getDouble(0.0);
-    double area = ta.getDouble(0.0);
-
-    boolean targetLock = (VisionRange.txMin< TX && TX < VisionRange.txMax) && (VisionRange.tyMin< TY && TY < VisionRange.tyMax);
-    
-    SmartDashboard.putNumber(("tX"), TX);
-    SmartDashboard.putNumber(("tY"), TY);
-    SmartDashboard.putNumber("Area", area);
-    SmartDashboard.putBoolean("Target Status", targetLock);
-
-    // Vision & haptic feedback that vibrates when targeting x-value (left to right) is within shooting range.
-    if (TX >= VisionRange.txMin && TX <= VisionRange.txMax && TX !=0) {
-      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
-      driverController.setRumble(RumbleType.kRightRumble, 1.0);
-  
-    } 
-    else {
-      driverController.setRumble(RumbleType.kLeftRumble, 0.0);
-      driverController.setRumble(RumbleType.kRightRumble, 0.0);
-    } 
-
   } // End of robotPeriodic
 
   /** This function is called once each time the robot enters Disabled mode. */
@@ -117,7 +95,9 @@ public class Robot extends TimedRobot {
   public void disabledInit() {}
 
   @Override
-  public void disabledPeriodic() {}
+  public void disabledPeriodic() {
+    
+  }
 
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
@@ -128,12 +108,15 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
-    
+
   }
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+    driverController.setRumble(RumbleType.kLeftRumble, 0.0);
+    driverController.setRumble(RumbleType.kRightRumble, 0.0);
+  }
 
   @Override
   public void teleopInit() {
@@ -148,7 +131,31 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+
+    double TX = tx.getDouble(0.0);
+    double TY = ty.getDouble(0.0);
+    double area = ta.getDouble(0.0);
+
+    boolean targetLock = 
+        (VisionRange.txMin< TX && TX < VisionRange.txMax && TX != 0) && 
+        (VisionRange.tyMin< TY && TY < VisionRange.tyMax && TY !=0);
+    
+    SmartDashboard.putNumber(("tX"), TX);
+    SmartDashboard.putNumber(("tY"), TY);
+    SmartDashboard.putNumber("Area", area);
+    SmartDashboard.putBoolean("Target Status", targetLock);
+    
+    // Vision & haptic feedback that vibrates when targeting x-value (left to right) is within shooting range.
+    if (VisionRange.txMin< TX && TX < VisionRange.txMax && TX != 0 && VisionRange.tyMin< TY && TY < VisionRange.tyMax && TY !=0) {
+      driverController.setRumble(RumbleType.kLeftRumble, 1.0);
+      driverController.setRumble(RumbleType.kRightRumble, 1.0);
+          } // end of true
+    else {
+      driverController.setRumble(RumbleType.kLeftRumble, 0.0);
+      driverController.setRumble(RumbleType.kRightRumble, 0.0);
+    } // end of else
+  } // end of conditional
 
   @Override
   public void testInit() {
