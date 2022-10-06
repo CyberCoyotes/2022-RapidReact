@@ -94,9 +94,9 @@ public class RobotContainer {
     // Right stick X axis -> rotation
     driveCommand = new DriveCommand(
       m_drivetrain,
-      () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-      () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-      () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND);
+      () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND/2,
+      () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND/2,
+      () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND/2);
 
     m_drivetrain.setDefaultCommand(driveCommand);
 
@@ -226,6 +226,7 @@ public class RobotContainer {
     // d_ButtonX.whileHeld(new AdpativeLaunch(launcher, limelight));
 
     //Hold B to drive at slower speed, release to drive normal
+    //? initing new command sets it
     d_ButtonB.whenPressed(new DriveCommand(
       m_drivetrain,
       () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND / 6,
@@ -234,9 +235,9 @@ public class RobotContainer {
     ));
     d_ButtonB.whenReleased(new DriveCommand(
       m_drivetrain,
-      () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-      () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND,
-      () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
+      () -> -modifyAxis(driverController.getLeftY()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND/2,
+      () -> -modifyAxis(driverController.getLeftX()) * Drivetrain.MAX_VELOCITY_METERS_PER_SECOND/2,
+      () -> -modifyAxis(driverController.getRightX()) * Drivetrain.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND/2
     ));
 
 
