@@ -33,10 +33,18 @@ public class Ball1Auton extends SequentialCommandGroup {
           new LaunchTarmac(launcher).withTimeout(0.25).alongWith(new IndexSpeed(indexMotors, 0.5).withTimeout(0.25))),
           
         // Moves out of tarmac and intakes Ball 2
+        new SequentialCommandGroup(
         new ParallelDeadlineGroup(
           new WaitCommand(0.85), // FIXME changed from 0.6 to 0.7 at worlds. 0.7 still short. Trying 0.85
           new IntakeSpeed(intakeMotor, 0.6),
-          new DriveCommand(drivetrain, () -> {return 2.0;}, () -> {return 0.0;}, () -> {return 0.0;}))
-          );
+          //? the big baby
+          new DriveCommand(drivetrain, () -> {return 2.0;}, () -> {return 0.0;}, () -> {return 0.0;})),
+          
+          
+          
+        //: until we figure out what is wrong with auton3, gonna try to do this to remove state
+        
+        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 0.0;}))) // 1.0 -> 2.0
+        ;
     }
   }

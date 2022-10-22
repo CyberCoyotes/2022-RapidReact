@@ -28,14 +28,18 @@ import frc.robot.subsystems.Launcher;
 
 public class Ball3AutonTurnToDegrees extends SequentialCommandGroup {
   public Ball3AutonTurnToDegrees(Drivetrain drivetrain, Index indexMotors, Intake intakeMotor, Launcher launcher) {
-
+//screws up before ball2 finsishes
     addCommands(
       // Two ball auton, pick up third, and lined up for third shot
       new Ball2Auton(drivetrain, indexMotors, intakeMotor, launcher),
       // Back up towards hub
        new ParallelDeadlineGroup(
         new WaitCommand(0.55), // 0.5 -> 0.25
-        new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // 1.0 -> 2.0
+        new DriveCommand(drivetrain, () -> {return -1.0;}, () -> {return 0.0;}, () -> {return 0.0;}), // 1.0 -> 2.0
+       
+        //: until we figure out what is wrong with auton3, gonna try to do this to remove state
+        
+        new DriveCommand(drivetrain, () -> {return 0.0;}, () -> {return 0.0;}, () -> {return 0.0;})), // 1.0 -> 2.0
 
       // Do a "backup turn" to the right towards ball 3
       new TurnToDegrees(drivetrain, -70), // was -90. Close enough pre-event
