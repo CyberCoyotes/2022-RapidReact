@@ -52,8 +52,8 @@ public class Drivetrain extends SubsystemBase {
    */
   
   // Our value is 6380, #5804 uses 5000
- 
-  public static final double MAX_VELOCITY_METERS_PER_SECOND = 6380.0 / 60.0 * 
+ private static final int divisor = 16;//:for community night stuff
+  public static final double MAX_VELOCITY_METERS_PER_SECOND = 6380.0 / 60.0 / divisor * 
           SdsModuleConfigurations.MK3_STANDARD.getDriveReduction() *
           SdsModuleConfigurations.MK3_STANDARD.getWheelDiameter() * Math.PI;
   /**
